@@ -17,6 +17,7 @@ import GroceryList from "./Pages/GroceryList";
 import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/recipeInstructions"
+import Habbits from "./Pages/Habbits"
 
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
@@ -49,6 +50,7 @@ function App() {
         {/* errors */}
         <Route path="*" element={<PageNotFound/>}/>
         <Route path="/RecipeInstructionsView" element={<RecipeInstructionsView/>}/>
+        <Route path="/Habbits" element={<Habbits/>}/>
        </Routes>
     </Router>
   </>

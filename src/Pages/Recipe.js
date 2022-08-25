@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/footer";
-import { Container, Row, Col, Card} from "react-bootstrap";
+import {Row, Col, Card} from "react-bootstrap";
 import '../Styles/app.css'
 import Breakfast from "../assets/images/blueberryToast.jpg";
 import H1 from "../assets/images/h1.png";
@@ -10,9 +10,15 @@ import H3 from "../assets/images/h3.jpg";
 import H4 from "../assets/images/h4.jpg";
 import H5 from "../assets/images/h5.jpg"
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function RecipeView() {
-
+    let navigate = useNavigate(); 
+    function useRecipeInstructions(e) {
+        e.preventDefault();
+        let path = '/RecipeInstructionsView'; 
+        navigate(path);
+    } 
     return (
         <React.Fragment>
             <Header />
@@ -29,12 +35,7 @@ export default function RecipeView() {
                         </div>
                         <Row style={{ marginTop: '5em' }}>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)',
-                                        background:'linear-gradient(to right, rgb(161, 255, 206), rgb(250, 255, 209))'
-                                        }}>
+                            <Card onClick={useRecipeInstructions}>
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -60,12 +61,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)',
-                                        background:'linear-gradient(to right, rgb(161, 255, 206), rgb(250, 255, 209))'
-                                        }}>
+                            <Card onClick={useRecipeInstructions}>
                                 <Card.Img variant="top" src={H1} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -91,11 +87,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)',background:'linear-gradient(to right, rgb(161, 255, 206), rgb(250, 255, 209))'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={H2} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -121,12 +113,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)',
-                                        background:'linear-gradient(to right, rgb(161, 255, 206), rgb(250, 255, 209))'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={H3} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -168,11 +155,7 @@ export default function RecipeView() {
                         </div>
                         <Row style={{ marginTop: '5em' }}>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card onClick={useRecipeInstructions}>
                                 <Card.Img variant="top" src={H4} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -198,11 +181,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={H5} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -228,11 +207,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card >
                                 <Card.Img variant="top" src={H4} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -258,11 +233,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={H3} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -305,11 +276,7 @@ export default function RecipeView() {
                         
                         <Row style={{ marginTop: '5em' }}>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card onClick={useRecipeInstructions}>
                                 <Card.Img variant="top" src={H1} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -335,11 +302,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -365,11 +328,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card >
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -395,11 +354,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card >
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -445,11 +400,7 @@ export default function RecipeView() {
                         </Link>
                         <Row style={{ marginTop: '5em' }}>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card onClick={useRecipeInstructions}>
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -475,11 +426,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card >
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -505,11 +452,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
@@ -535,11 +478,7 @@ export default function RecipeView() {
                             </Card>
                             </Col>
                             <Col>
-                            <Card style={{ width: '14rem',
-                                        height: '19em', 
-                                        '--bs-card-cap-bg':"none",
-                                        boxShadow:'0px 0px 10px rgb(0 0 0 / 30%)'
-                                        }}>
+                            <Card>
                                 <Card.Img variant="top" src={Breakfast} className="recipe-img" />
                                 <Card.Body style = {{   
                                             marginTop: '7em',
