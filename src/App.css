@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.err-notification {
+  display: none;
+}
+/* section {
+  background: #fdfdfd;
+} */
+
+.recipe-img {
+  border-radius: 50% !important;
+  width: 160px !important;
+  height: 160px;
+  top: -60px;
+  position: absolute;
+  left: 15%;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 80%);
+}
+
+.cal-wrapper {
+  padding: 5px;
+  box-shadow: 0px -5px 8px rgb(0 0 0 / 10%);
+  margin-top: 3em !important;
+}
+
+.protien-wrapper {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.bf-header {
+  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-flex;
+}
+
+.lunch-header {
+  background: linear-gradient(to bottom, #88c5ff 0%, #bf59ff8a 90%);
+}
+
+.dinner-header {
+  background: linear-gradient(to right, rgb(128, 0, 128), rgb(255, 192, 203));
+}

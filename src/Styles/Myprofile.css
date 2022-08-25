@@ -1,0 +1,255 @@
+.prof-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.prof-links {
+    padding-top: 2rem;
+}
+
+.prof-txt h1 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.prof-links {
+    display: flex;
+    align-items: center;
+}
+
+.prof-lin h1,
+.prof-ep h1,
+.prof-acadmin h1{
+    font-size: 1rem;
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.act {
+    border-bottom: 3px solid #e06358;
+    color: #8b8b8b;
+}
+
+.prof-ep h1:hover,
+.prof-acadmin h1:hover {
+    color: #e06358;
+    transition: all .2s ease;
+}
+
+.prof-lin,
+.prof-ep,
+.prof-acadmin {
+    padding-right: 2.5rem;
+}
+
+.prof-bx {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 100%;
+    min-height: 475px;
+    border: 1px solid;
+    margin: 2rem auto;
+    border-color: #ECE9E5;
+}
+
+/*   */
+.prof-p-bg {
+    margin-top: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* margin: 2rem auto; */
+}
+.ProfileBg {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius:100px;
+}
+
+.proflie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cancel {
+    padding: 5px 10px;
+    outline:none;
+    margin: auto 10px;
+    border: 1px solid gray;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.save {
+    padding: 5px 10px;
+    outline:none;
+    margin: auto 10px;
+    border: 1px solid gray;
+    font-size: 14px;
+    border-radius: 8px;
+    background: #344154;
+    color: #fff;
+}
+
+.save:hover,.cancel:hover {
+    color: #e06358;
+    background: #262c36;
+    color: white;
+    transition: all .3s ease-out;
+}
+
+.prof-nme {
+    margin-left: 180px;
+    display: flex;
+    flex-direction: column;
+}
+.prof-nme span{
+    margin: auto;
+    position: absolute;
+    bottom: -7px;
+    font-size: 16px;
+    color: #8b8b8b;
+}
+
+.prof-nme h1 {
+    font-size: 1.5rem;
+    padding: 16px;
+}
+
+.prof-dwn {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.usericn {
+    position: absolute;
+    top: 174px;
+    left: 15px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.edit-prof {
+    position: absolute;
+    top: 2rem;
+}
+
+.usr-details {
+    background: #fff;
+}
+
+.userName {
+    padding: 2rem;
+}
+
+.arrowss {
+    position: relative;
+}
+
+.arrowss::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 80%;
+    border-radius: 50%;
+    background: rgb(218 214 214);
+    top: 90px;
+}
+
+
+.userName span{
+    font-size: 16px;
+    color: gray;
+    font-weight: 400;
+    font-family: 'Lato',sans-serif;
+}
+
+/* .acct-one {
+    padding: ;
+}
+
+.userNme {
+    padding: 1rem 2rem;
+} */
+
+.user-pers-info {
+    /* width: 40%; */
+    /* max-width: 50%; */
+}
+
+.plans-det {
+    max-width: 50%;
+    padding: 1rem;
+}
+
+.userform ,
+.account-infrm {
+    border: 1px solid #c1c2c4;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.userform .username {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.userform .username  label,
+.account-infrm label{
+    font-size:16px;
+    margin-bottom: 8px;
+}
+
+.usr-details {
+    padding: 2rem;
+}
+
+.userform .username input,
+.account-infrm input {
+    padding: 8px 10px;
+    outline: none;
+    border: 2px solid #e4e4e3;
+    font-size: 1rem;
+    border-radius: 10px;
+    color: black;
+}
+
+.acc-wrp {
+    justify-content: center;
+    display: flex;
+}
+
+.user-heading-txt h1,
+.acct-txt h1{
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.user-det {
+    width: 100%;
+}
+
+.userform .username input:focus,
+.account-infrm input:focus {
+    color: red;
+    border:2px solid #e06358;
+    transition: all .2s ease;
+}
+
+.account-infrm  {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+}

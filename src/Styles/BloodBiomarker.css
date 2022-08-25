@@ -1,0 +1,14 @@
+.bldmrks {
+    width: 100%;
+    background: #fff;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.bld-img {
+    width: 50%;
+    height: auto;
+    background: gray;
+    border-radius: 50%;
+}

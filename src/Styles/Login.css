@@ -1,0 +1,429 @@
+@import url('../Styles/utilities.css');
+
+.login-sec {
+    background: #f2f5ff;
+}
+.login-hero {
+    background: #f2f5ff;
+    width: 100%;
+    height: auto;
+    height: 130vh;
+}
+.txt-col h1{
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.txt-col p {
+    color: #959595;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 300;
+    font-family: 'Inter',sans-serif;
+}
+.email-field , .Password-field{
+    display: flex;
+    flex-direction: column;
+}
+.login-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_main {
+    background: var(--white-bg);
+    padding: 1rem 2rem 2rem 2rem;
+    width: 100%;
+    max-width: 30%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px -1px 20px 1px rgb(0 0 0 / 14%);;
+}
+.login_logo {
+    text-align: center;
+}   
+.login_logo img{
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+/* .form-col {
+    /* padding-top: 10px; 
+    /* padding-bottom: 10px; 
+} */
+
+.alert {
+    color: red;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-style: italic;
+    display: none;
+}
+/* .email-field {
+    /* padding: 1rem 0; 
+    padding-bottom: 10px;
+} */
+
+.email-field input , .Password-field input{
+    padding: 15px 10px;
+    display: inline;
+    background: #f9f8f6;
+    font-size: 13px;
+    outline: none;
+    font-weight: 500;
+    /* border:1px solid #959595; */
+    border:1px solid #dfdfdf;
+    /* border: 2px solid rgb(229, 62, 62); */
+    border-radius: 10px;
+    margin: 8px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.email-field input:focus ,.Password-field input:focus{
+    border: 1px solid rgb(229, 62, 62);
+    box-shadow: rgb(229 62 62) 0px 0px 0px 1px;
+    font-weight: 600;
+    transition: all .3s ease
+}
+
+.email-field input::placeholder ,.Password-field input::placeholder{
+    font-style: italic;
+}
+
+.btn-login {
+    width: 100%;
+    margin: 20px 0;
+    height: auto;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    outline: none;
+    background: #e06358;
+    border: 1px solid rgb(229, 62, 62);
+    color: var(--white-bg);
+    line-height: 18px;
+    font-family: 'Inter', sans-serif;
+    display: inline-flex;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.btn-login:hover {
+    background-color: rgb(244, 67, 67);
+    transition: all .3s ease-in-out;
+}
+
+.chakra-text {
+    background-color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    display: inline;
+    color: var(--grey-grade8);
+    font-size: 15px;
+}
+
+.line {
+    text-align: center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: var(--grey-grade2);
+    line-height: 0.1em;
+    margin: 18px 0px;
+}
+
+.g-signin {
+    display: flex;
+    align-items: center;
+}
+
+.g-signin p {
+    margin-left: 1rem;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--grey-grade18);
+}
+
+.g-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 500;
+    height: 48px;
+    cursor: pointer;
+    box-shadow: rgb(0 0 0 / 6%) 0px 1px 2px, rgb(0 0 0 / 10%) 0px 1px 3px;
+    background: #f9f8f6;
+    border: 1px solid #e1e1e1;
+}
+
+.g-btn:hover {
+    background: #f2f0ed;
+    transition: all .3s ease-in-out;
+}
+.google {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: currentcolor;
+    vertical-align: middle;
+}
+
+.f-pass-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rembr {
+    display: flex;
+}
+.rembr p{
+    margin-left:10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.f-pass {
+    font-size: 13.2px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--grey-grade14);
+}
+
+
+.dnt-acct {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 13px;
+}
+
+.dnt-acct a {
+    color: #959595;
+    font-style: italic;
+}
+
+
+
+
+/* forgotemail or username */
+
+
+/* ForgotPassword */
+.reset-pass ,.psd-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-pass-col {
+    background: var(--white-bg);
+    padding: 1rem 2rem 1rem 2rem;
+    width: 100%;
+    max-width: 30%;
+    margin-top: 6rem;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px -1px 20px 1px rgb(0 0 0 / 14%);
+}
+
+.rest-txt {
+    margin-bottom: 10px;
+}
+
+.rest-txt h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.rest-txt p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.forgot-pass {
+    display: flex;
+    flex-direction: column;
+}
+.p-f-field {
+    display: flex;
+    flex-direction: column;
+    /* margin: 1rem 0; */
+}
+.password-alert {
+    font-size: 10px;
+    color: red;
+    font-family: 'Inter',sans-serif;
+    line-height: 13px;
+    display: none;
+}
+.confirm-pass {
+    /* margin: 1rem 0; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    cursor:pointer;
+}
+.back-btn  p {
+    margin: 0 10px;
+}
+
+.confirm-input ,.forgot-input   {
+    width: 90%;
+    height: 25px;
+    padding: 10px 8px;
+    display: inline;
+    background: #f2f3f8;
+    font-size: 13px;
+    outline: none;
+    font-weight: 500;
+    border: 1px solid #959595; 
+    border-radius: 5px;
+    margin: 8px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.pass-submit {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    /* background: var(--selector-black); */
+    color: var(--white-bg);
+    font-size: 1rem;
+    outline: none;
+    /* border: 1px solid #fff; */
+    border-radius: 10px;
+    cursor: pointer;
+    background: #e06358;
+    border: 1px solid rgb(229, 62, 62);
+}
+
+/* check email */
+.checkmail ,.pad-alert, .forgot-p{
+    background: #f2f5ff;
+    height: 100vh;
+}
+
+.email-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-row ,.psd-row{
+    background: var(--white-bg);
+    padding: 2rem 2.5rem 2rem 2.5rem;
+    width: 100%;
+    max-width: 30%;
+    margin-top: 6rem;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px -1px 20px 1px rgb(0 0 0 / 14%);
+}
+
+.mail-icon {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.svgicn {
+    background: var(--white-bg);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 3px;
+}
+.mail-svg {
+    color: #e06358;
+}
+
+.mail-col {
+    margin-top: 2rem;
+}
+
+/* .mail-txt {
+    align-items: center;
+} */
+.mail-txt h1{
+    font-size: 20px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.mail-txt p {
+    font-size: 13px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.mail-btn {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.backto-login {
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+    color: var(--white-bg);
+    font-size: 1rem;
+    outline: none;
+    border-radius: 10px;
+    background: #e06358;
+    border: 1px solid rgb(229, 62, 62);
+    cursor: pointer;
+
+}
+
+.backto-login:hover,.pass-submit:hover{
+    color: #e06358;
+    background-color: transparent;
+    border: 1px solid #e06358;
+    transition: all .3s ease-out;
+}
+
+.dntrec-mail h5{
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 13px;
+    font-weight: 500;
+}.dntrec-mail h5 a {
+    color: #e06358;
+}
+
+.psd-check {
+    color: #90EE90;
+}
+
+.psd-txt h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.psd-txt p {
+    text-align: center;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
