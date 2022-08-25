@@ -1,14 +1,131 @@
 .bldmrks {
     width: 100%;
     background: #fff;
-    height: 10vh;
+    height: 200vh;
     display: flex;
     justify-content: center;
 }
 
+.usr-det {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.inrtxt {
+    font-size: 10px;
+}
+
+.user-circle {
+    display: flex;
+   justify-content: flex-end;
+}
 .bld-img {
     width: 50%;
     height: auto;
     background: gray;
     border-radius: 50%;
+}
+
+.hlthscore {
+    display: flex;
+    height: auto;
+}
+
+.helt-imgbg {
+    background: #90ee90;
+    width: 40%;
+    height: auto;
+    border-radius: 50%;   
+}
+
+.hrt-sectn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.bdy-img {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+
+.heart-icn {
+    width: 80px;
+    border: 3px solid #b6b6b6;
+    border-radius: 50px;
+}
+
+
+.hlth-items {
+    position: relative;
+}
+.hrt-sectn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: -3rem;
+    max-width: 220px;
+    left: 1rem;
+    bottom: 26rem;
+    flex-direction: row-reverse;
+}
+.chous {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 16.5rem;
+    left: -9rem;
+    max-width: 220px;
+    flex-direction: row-reverse;
+    right: -5rem;
+}
+.Vitamin {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 2.5rem;
+    left: -9rem;
+    max-width: 220px;
+    flex-direction: row-reverse;
+    right: -5rem;
+}
+.lever {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 10.5rem;
+    left: -13rem;
+    flex-direction: row-reverse;
+    right: -2rem;
+}
+.HBA {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 23rem;
+    width: 220px;
+    left: -1rem;
+    flex-direction: column;
+    right: 0;
+}
+
+.vta-d {
+    
+}
+
+.hrt-txt h1 {
+    font-size: 10px;
+}
+.hrt-txt p {
+    margin: 0;
+}
+
+.hrt-txt {
+    width: 14em;
+}
+
+.inrtxt span{
+    margin: 0;
+    padding: 0;
 }
