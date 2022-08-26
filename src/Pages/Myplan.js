@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 import Footer from '../Components/footer'
 import Header from '../Components/Header'
 // images
@@ -16,6 +17,13 @@ import '../Styles/app.css'
 export default function Myplan() {
   const [activeTab, setActive] = useState('dietPlan');
 
+  let navigate = useNavigate(); 
+    function useNavigateToBloodBiomarker(e) {
+        e.preventDefault();
+        let path = '/BloodBiomarker'; 
+        navigate(path);
+    } 
+
   return (
     <React.Fragment>
       <Header/>
@@ -28,7 +36,7 @@ export default function Myplan() {
                 <h1>My Plan</h1>
               </div>
               <div className='plan-btn'>
-                <button className='plnbtn'>Blood  BioMarker</button>
+                <button className='plnbtn' onClick={useNavigateToBloodBiomarker}>Blood  BioMarker</button>
               </div>
             </div>
             {/* calender */}
