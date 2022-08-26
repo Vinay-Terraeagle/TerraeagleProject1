@@ -30,20 +30,18 @@
 
 .hlthscore {
     display: flex;
-    height: auto;
+    height: 200vh;
+    margin-top: 5rem;
 }
 
 .helt-imgbg {
     background: #90ee90;
-    width: 40%;
-    height: auto;
-    border-radius: 50%;   
+    width: 30em;
+    height: 30em;
+    border-radius: 50%;
 }
 
-.hrt-sectn {
-    display: flex;
-    flex-direction: row-reverse;
-}
+
 .bdy-img {
     /* width: 100%;
     height: auto;
@@ -68,18 +66,18 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: -3rem;
+    top: -6rem;
     max-width: 220px;
-    left: 1rem;
-    bottom: 26rem;
+    left: 0rem;
+    /* bottom: 26rem; */
     flex-direction: row-reverse;
 }
 .chous {
     position: absolute;
     display: flex;
     align-items: center;
-    top: 16.5rem;
-    left: -9rem;
+    top: 17.5rem;
+    left: -14rem;
     max-width: 220px;
     flex-direction: row-reverse;
     right: -5rem;
@@ -88,8 +86,8 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: 2.5rem;
-    left: -9rem;
+    top: 0.5rem;
+    left: -11rem;
     max-width: 220px;
     flex-direction: row-reverse;
     right: -5rem;
@@ -98,8 +96,9 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: 10.5rem;
-    left: -13rem;
+    top: 9rem;
+    left: -15rem;
+    max-width: 220px;
     flex-direction: row-reverse;
     right: -2rem;
 }
@@ -107,12 +106,43 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: 23rem;
+    top: 25rem;
     width: 220px;
-    left: -1rem;
-    flex-direction: column;
+    left: -9rem;
+    flex-direction: row-reverse;
     right: 0;
 }
+
+/* rigth section */
+.right-sect {
+    position: relative;
+}
+
+.Vitd {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: -5rem;
+    /* padding: 1rem; */
+    width: fit-content;
+    left: -10rem;
+    flex-direction: inherit;
+    right: 0;
+}
+.liver {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 2.5rem;
+    left: -2em;
+    
+    width: fit-content;
+    flex-direction: row;
+    right: -2rem;
+}
+
+
+
 
 /* .vta-d {
     
@@ -155,8 +185,8 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: 4.5rem;
-    left: -4em;
+    top: 1.5rem;
+    left: -2em;
     width: fit-content;
     flex-direction: row;
     right: -2rem;
@@ -166,18 +196,17 @@
     display: flex;
     align-items: center;
     top: 10rem;
-    left: -3rem;
+    left: 1rem;
     width: fit-content;
     flex-direction: row;
-    right: -2rem
+    right: -2rem;
 }
 .iron {
     position: absolute;
     display: flex;
     align-items: center;
     top: 17.5rem;
-    left: -4rem;
-    width: -moz-fit-content;
+    left: 0rem;
     width: fit-content;
     flex-direction: row;
     right: -2rem;
@@ -186,10 +215,9 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: 24.5rem;
-    left: -7rem;
-    width: -moz-fit-content;
+    top: 25.5rem;
+    left: -4rem;
     width: fit-content;
     flex-direction: row;
-    right: -2rem;
+    right: 0rem;
 }
