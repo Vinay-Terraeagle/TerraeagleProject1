@@ -17,10 +17,9 @@ export default function BloodBiomarker() {
   return (
     <React.Fragment>
       <Header/>
-        <section className='h-20'>
+        <section>
             <Container>
               <Col>
-              <div className='bldmrks-main'>
                 <Row className="pt-5 mt-2">
                   <h1 style={{ fontSize: "2rem" }}>Blood BioMarker</h1>
                   <p></p>
@@ -116,81 +115,9 @@ export default function BloodBiomarker() {
                       <img src={bodyimg} className="bdy-img"/>
                     </div>
                     {/* rightside */}
-                    <div className='right-section'>
-                    <div className='vita-d'>
-                        <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
-                        <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
-                        </div>
-                        </div>
-                      </div>
-                    <div className='liver'>
-                        <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
-                        <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
-                        </div>
-                        </div>
-                      </div>
-                    <div className='cal'>
-                        <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
-                        <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
-                        </div>
-                        </div>
-                      </div>
-                    <div className='iron'>
-                        <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
-                        <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
-                        </div>
-                        </div>
-                      </div>
-                    <div className='comp'>
-                        <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
-                        <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
+                    {/* <div className=''></div> */}
                   </div>
                 </Row>
-                </div>
               </Col>
             </Container>
         </section>
