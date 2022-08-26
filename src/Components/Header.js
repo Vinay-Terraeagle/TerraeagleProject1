@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../Styles/app.css'
 import logo from '../assets/images/logo-sm.png'
+import MenuClick from './MenuClick'
 
 export default function Header() {
+    // const [menuclick, setmenuClick] = useState(false);
+
+    // const onMouseEnter = () => {
+    //     if(window.innerWidth <960) {
+    //         setmenuClick(false);
+    //     } else {
+    //         setmenuClick(true);
+    //     }   
+    // };
+    // const onMouseLeave = () => {
+    //     if (window.innerWidth < 960) {
+    //         setmenuClick(false);
+    //     } else {
+    //         setmenuClick(false);
+    //     }
+    // }
 
   return (
     <React.Fragment>
@@ -33,9 +50,13 @@ export default function Header() {
                         </Link>
                         </div>
                         <div>
+                        {<MenuClick/>}
                         <button className='menu-btn'>
                             <div className='btn-txt'>
-                                <p>Dashboard</p>
+                            {/* {menuclick && <MenuClick/>}
+                                <li className='menubtn-drp' onMouseEnter={onMouseEnter}
+                                onMouseLeave={onMouseLeave} >Dashboard</li> */}
+                                
                             </div>
                             <div className='svg-icon'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-down" viewBox="0 0 16 16">
