@@ -1,22 +1,20 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import Header from '../Components/Header'
 import HealthMatrix from '../Components/HealthMatrix'
 import '../Styles/app.css'
-import Images from "../assets/images/h1.png"
-import Img2 from "../assets/images/h2.png"
-// images
-import Yoga1 from "../assets/images/y6.jpg"
-import Yoga2 from "../assets/images/y7.jpg"
-import Yoga3 from "../assets/images/y8.jpg"
-import Yoga4 from "../assets/images/y9.jpg"
-import Yoga5 from "../assets/images/y10.jpg"
-import Yoga6 from "../assets/images/y11.png"
 import Footer from '../Components/footer'
 import AddonCarousels from '../Components/AddonCarousels'
 import MealsComp from '../Components/MealsComp'
 
 
 export default function Dashboard() {
+  let navigate = useNavigate(); 
+    function useNavigateToMyPlan(e) {
+        e.preventDefault();
+        let path = '/Myplan'; 
+        navigate(path);
+    } 
 
   const Sliders ={
      items:1,
@@ -57,7 +55,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <div>
-                <button className='btn-dash-1'> My Plan</button>
+                <button className='btn-dash-1' onClick={useNavigateToMyPlan}> My Plan</button>
               </div>
             </div>
           </div>

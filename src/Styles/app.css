@@ -1487,23 +1487,28 @@ td {
     background: #F5F6FA;
 }
 
-.grocery-ilst-container {
-    background: #fdfdfd;
+.grocery-list-container {
     padding: 50px 0px;
 }
-
+.grocery-list-label {
+    padding-left: 50px;
+}
 /* End CSS - Grocery View  */
 
 /*
  * CSS - Recipe
  */
 .recipe-instruction-container,
-.habits-container {
-    background: #fdfdfd;
-    border-top-right-radius: 200px;
-    margin-top: 100px;
-        box-shadow: rgb(159 159 193 / 55%) 0px 0px 50px;
+.habits-container,
+.exercise-container,
+.grocery-list-container {
+    background: #fff;
+    border-top-right-radius: 80px;
+    margin-top: 50px;
+    box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
         margin-bottom: 100px;
+    width: 62%;
+        border: 1px solid #d1d1d1;
 }
 .habits-container {
     padding: 50px;
@@ -1588,11 +1593,6 @@ td {
 .not-checked-item {
     margin-left: 10px;
 }
-
-.checked-item {
-    text-decoration: line-through;
-}
-
 
 input[type='checkbox'] {
     height: 0;
@@ -1711,3 +1711,32 @@ input[type='checkbox']:checked+label>span:before {
 }
 
 /* CSS End - Habits*/
+/* 
+ */
+.workout-card {
+    display: flex;
+    background: #fff;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 10px;
+    box-shadow: rgb(99 99 99 / 20%) 1px 2px 6px 2px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .5s ease;
+}
+
+.workout-card:hover {
+    transform: scale(1.1);
+}
+
+.exercise-container .wrk-title {
+    flex-direction: column;
+}
+
+.exercise-container {
+    padding: 50px;
+}
+
+/* 
+  */
