@@ -1462,8 +1462,6 @@ position: relative;}
 
 table {
     border-collapse: collapse;
-    color: #4a4a4d;
-    font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, Sans-serif;
     width: 100%;
 }
 
@@ -1665,8 +1663,8 @@ input[type='checkbox']:checked+label>span {
 input[type='checkbox']:checked+label>span:before {
     content: "";
     position: absolute;
-    top: .9em;
-    left: .8em;
+    top: .8em;
+        left: .4em;
     border-right: 3px solid transparent;
     border-bottom: 3px solid transparent;
     transform: rotate(45deg);
@@ -1697,19 +1695,23 @@ input[type='checkbox']:checked+label>span:before {
     }
 
     33% {
-        width: .2em;
+        width: .5em;
         height: 0;
         transform: translate3d(0, 0, 0) rotate(45deg);
     }
 
     100% {
-        width: .2em;
-        height: .5em;
+        width: .4em;
+            height: .9em;
         border-color: #212121;
         transform: translate3d(0, -.5em, 0) rotate(45deg);
     }
 }
-
+.habits-label {
+    background: #f0fffd;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
 /* CSS End - Habits*/
 /* 
  */
@@ -1740,3 +1742,29 @@ input[type='checkbox']:checked+label>span:before {
 
 /* 
   */
+/* 
+* Dropdown CSS
+*/
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.button-menu {
+    position: absolute;
+    top: 65px;
+    right: 0px;
+    width: 250px;
+    background: linear-gradient(to bottom, #b9ddff 0%, #88c5ff 90%)
+}
+
+.menu_links {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.menuDropdown {
+    color: #fff;
+}
+
+/* End CSS Dropdown */

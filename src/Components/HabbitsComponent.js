@@ -21,8 +21,8 @@ export default function HabbitsComponent() {
     }
 
     // Return classes based on whether item is checked
-    var isChecked = (item) =>
-    checked.includes(item) ? "checked-item" : "not-checked-item";
+    // var isChecked = (item) =>
+    // checked.includes(item) ? "checked-item" : "not-checked-item";
 
 
   return (
@@ -33,11 +33,11 @@ export default function HabbitsComponent() {
                 <div className="list-container d-flex fs-22">
                 {checkList.map((item, index) => (
                     <div key={index}>
-                    <input id={item}  value={item} type="checkbox" onChange={handleCheck} />
-                    <label for={item}> 
-                        <span></span>
-                        <div className={isChecked(item)}>{item}</div>
-                    </label>
+                        <input id={item}  value={item} type="checkbox" onChange={handleCheck} />
+                        <label for={item}> 
+                            <span></span>
+                            <div className='habits-label'   >{item}</div>
+                        </label>
                     </div>
                 ))}
                 </div>

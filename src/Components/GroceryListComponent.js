@@ -8,8 +8,8 @@ export default function GroceryListComponent() {
       <div className="container grocery-list-container">
         <h4 className='pb-5 grocery-list-label'>Your Grocery List !!!</h4>
         <Row className='justify-content-center'>
-          <Col className='col-5'>
-            <table>
+          <Col className='col-6'>
+            <table className='fs-18'>
               <thead>
                 <tr>
                   <th scope="col">Vegetables</th>

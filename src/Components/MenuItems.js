@@ -1,37 +1,37 @@
 export const MenuItems = [
     {
         title: 'Dashboard',
-        path:'/Dashboard',
+        url:'/Dashboard',
         Cname:'menuDropdown'
         // icnpath:
       },
       {
         title: 'MyPlan',
-        path:'/MyPlan',
+        url:'/MyPlan',
         Cname:'menuDropdown'
         // icnpath:
       },
       {
         title: 'Resources',
-        path:'/Dashboard',
+        url:'/Dashboard',
         Cname:'menuDropdown'
         // icnpath:
       },
       {
         title: 'Discover',
-        path:'/Dashboard',
+        url:'/Dashboard',
         Cname:'menuDropdown'
         // icnpath:
       },
       {
         title: 'Spaces',
-        path:'/Dashboard',
+        url:'/Dashboard',
         Cname:'menuDropdown'
         // icnpath:
       },
       {
         title: 'Settings',
-        path:'/Dashboard',
+        url:'/Dashboard',
         Cname:'menuDropdown'
         // icnpath:
       },
