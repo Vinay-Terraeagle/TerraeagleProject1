@@ -1,16 +1,15 @@
 import React , { useState } from 'react';
 import ReactDOM from "react-dom";
-import Header from '../Components/Header';
-import Footer from '../Components/footer';
 
-export default function Habbits() {
-
-
+export default function HabbitsComponent() {
     // State with list of all checked item
-  const [checked, setChecked] = useState([]);
-  const checkList = ["Apple", "Banana", "Tea", "Coffee"];
+    const [checked, setChecked] = useState([]);
+    const checkList = [ "Drink water in the morning", 
+                        "Eat more vegetables and fruits daily", 
+                        "Increase Non-Exercise Activity", 
+                        "Picking foods that are fewer in calories, fat, sugar and salt"];
 
-  // Add/Remove checked item from list
+    // Add/Remove checked item from list
     const handleCheck = (event) => {
         var updatedList = [...checked];
         if (event.target.checked) {
@@ -21,13 +20,6 @@ export default function Habbits() {
         setChecked(updatedList);
     }
 
-    // Generate string of checked items
-    const checkedItems = checked.length
-    ? checked.reduce((total, item) => {
-        return total + ", " + item;
-        })
-    : "";
-
     // Return classes based on whether item is checked
     var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
@@ -35,10 +27,9 @@ export default function Habbits() {
 
   return (
     <React.Fragment>
-        <Header />
         <div className='container habits-container'>
             <div className="checkList">
-                <h2>Your Habbits CheckList:</h2>
+                <h4>Your Todays Habits !!!</h4>
                 <div className="list-container d-flex fs-22">
                 {checkList.map((item, index) => (
                     <div key={index}>
@@ -46,18 +37,13 @@ export default function Habbits() {
                     <label for={item}> 
                         <span></span>
                         <div className={isChecked(item)}>{item}</div>
-                        <ins><i>{item}</i></ins>
                     </label>
                     </div>
                 ))}
                 </div>
             </div>
 
-            <div>
-                {`Items checked are: ${checkedItems}`}
-            </div>
         </div>
-        <Footer />
     </React.Fragment>
   )
 }

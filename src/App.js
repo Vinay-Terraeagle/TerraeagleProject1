@@ -13,11 +13,9 @@ import EmailReq from "./Pages/EmailReq"
 import Dashboard from "./Pages/Dashboard"
 import Myplan from "./Pages/Myplan"
 import Myprofile from "./Pages/Myprofile"
-import GroceryList from "./Pages/GroceryList";
 import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/recipeInstructions"
-import Habbits from "./Pages/Habbits"
 
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
@@ -42,7 +40,6 @@ function App() {
         {/* Dashboard */}
         <Route path="/Myplan" element={<Myplan/>}/>
         <Route path="/Myprofile" element={<Myprofile/>}/>
-        <Route path="/GroceryList" element={<GroceryList/>}/>
         <Route path="/Dietplan" element={<Dietplan/>}/>
         <Route path="/RecipeView" element={<RecipeView/>}/>
         {/* Pages */}
@@ -50,7 +47,6 @@ function App() {
         {/* errors */}
         <Route path="*" element={<PageNotFound/>}/>
         <Route path="/RecipeInstructionsView" element={<RecipeInstructionsView/>}/>
-        <Route path="/Habbits" element={<Habbits/>}/>
        </Routes>
     </Router>
   </>

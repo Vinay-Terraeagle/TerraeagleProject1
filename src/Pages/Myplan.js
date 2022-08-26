@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Footer from '../Components/footer'
 import Header from '../Components/Header'
 // images
@@ -6,12 +6,16 @@ import Mount from '../assets/images/Mount.png'
 import Demb from '../assets/images/Demb.png'
 import groce from '../assets/images/groce.png'
 import goals from '../assets/images/goals.png'
-// import crdmg from '../assets/images/h5.jpg'
 import DietPlanComponent from '../Components/DietPlanComponent'
+import GroceryListComponent from '../Components/GroceryListComponent'
+import HabbitsComponent from '../Components/HabbitsComponent'
+import ExcerciseComponent from '../Components/ExcerciseComponent'
 
 import '../Styles/app.css'
 
 export default function Myplan() {
+  const [activeTab, setActive] = useState('dietPlan');
+
   return (
     <React.Fragment>
       <Header/>
@@ -164,76 +168,71 @@ export default function Myplan() {
         </div>
       </section>
 
-    <section>
-      <div className='container'>
-        <div className='main-col'>
-          <div className='cal-box'>
-            <div className='tdy-dte'>
-                <div className='tdy-col'>
-                  <h1>01</h1>
-                    <span>August</span>
-                    <p>2022</p>
+      <section>
+        <div className='container'>
+          <div className='main-col'>
+            <div className='cal-box'>
+              <div className='tdy-dte'>
+                  <div className='tdy-col'>
+                    <h1>01</h1>
+                      <span>August</span>
+                      <p>2022</p>
+                  </div>
+              </div>
+            </div>
+            <div className='cal-meal-bx'>
+              <div className={activeTab==='dietPlan'?'activeTab calo-crd' : 'calo-crd'}  onClick={() => setActive("dietPlan")}>
+                <div className='cl-icn'>
+                  <img src={Demb} className="dembo" alt='/'/>
                 </div>
-            </div>
-          </div>
-          <div className='cal-meal-bx'>
-            <div className='calo-crd'>
-              <a href='/'>
-              <div className='cl-icn'>
+                <div className='cl-txt'>
+                  <h1>Diet Plan</h1>
+                </div>
+              </div>
+              <div className={activeTab==='exercise'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("exercise")}>
+                <div className='cl-icn'>
                 <img src={Demb} className="dembo" alt='/'/>
+                </div>
+                <div className='cl-txt'>
+                  <h1>Exercise</h1>
+                </div>
               </div>
-              <div className='cl-txt'>
-                <h1>Diet Plan</h1>
+              <div className={activeTab==='habits'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("habits")}>
+                <div className='cl-icn'>
+                <img src={goals} className="goals" alt='/'/>
+                </div>
+                <div className='cl-txt'>
+                  <h1>Habits</h1>
+                </div>
               </div>
-              </a>
-            </div>
-            <div className='calo-crd'>
-              <a href='/'>
-              <div className='cl-icn'>
-              <img src={Demb} className="dembo" alt='/'/>
+              <div className={activeTab==='groceryList'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("groceryList")}>
+                <div className='cl-icn'>
+                <img src={groce} className="groce" alt='/'/>
+                </div>
+                <div className='cl-txt'>
+                  <h1>Grocery plan</h1>
+                </div>
               </div>
-              <div className='cl-txt'>
-                <h1>Exercise</h1>
+              <div className={activeTab==='myProgress'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("myProgress")}>
+                <div className='cl-icn'>
+                  <img src={Mount} className="Mounimg"/>
+                </div>
+                <div className='cl-txt'>
+                  <h1>My Insight</h1>
+                </div>
               </div>
-              </a>
-            </div>
-            <div className='calo-crd'>
-              <a href='/'>
-              <div className='cl-icn'>
-              <img src={goals} className="goals" alt='/'/>
-              </div>
-              <div className='cl-txt'>
-                <h1>Goal Plan (Habits)</h1>
-              </div>
-              </a>
-            </div>
-            <div className='calo-crd'>
-              <a href='/'>
-              <div className='cl-icn'>
-              <img src={groce} className="groce" alt='/'/>
-              </div>
-              <div className='cl-txt'>
-                <h1>Grocery plan</h1>
-              </div>
-              </a>
-            </div>
-            <div className='calo-crd'>
-              <a href='/'>
-              <div className='cl-icn'>
-                <img src={Mount} className="Mounimg"/>
-              </div>
-              <div className='cl-txt'>
-                <h1>Challenges</h1>
-              </div>
-              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    {activeTab === "dietPlan" && <DietPlanComponent/>}
+    {activeTab === "groceryList" && <GroceryListComponent/>}
+    {activeTab === "habits" && <HabbitsComponent />}
+    {activeTab === "exercise" && <ExcerciseComponent />}
 
-  {/* dietPlanComponent */}
-    <DietPlanComponent/>
+    
+
+    
 
     <Footer/>
 
