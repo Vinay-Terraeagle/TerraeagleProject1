@@ -30,7 +30,7 @@
 
 .hlthscore {
     display: flex;
-    height: 200vh;
+    height: 100vh;
     margin-top: 5rem;
 }
 
@@ -77,8 +77,8 @@
     display: flex;
     align-items: center;
     top: 17.5rem;
-    left: -14rem;
-    max-width: 220px;
+    left: -11rem;
+    max-width: 181px;
     flex-direction: row-reverse;
     right: -5rem;
 }
@@ -86,9 +86,9 @@
     position: absolute;
     display: flex;
     align-items: center;
-    top: 0.5rem;
-    left: -11rem;
-    max-width: 220px;
+    top: 1.5rem;
+    left: -7rem;
+    max-width: 154px;
     flex-direction: row-reverse;
     right: -5rem;
 }
@@ -97,8 +97,8 @@
     display: flex;
     align-items: center;
     top: 9rem;
-    left: -15rem;
-    max-width: 220px;
+    left: -12rem;
+    max-width: 181px;
     flex-direction: row-reverse;
     right: -2rem;
 }
@@ -107,8 +107,8 @@
     display: flex;
     align-items: center;
     top: 25rem;
-    width: 220px;
-    left: -9rem;
+    width: 133px;
+    left: -5rem;
     flex-direction: row-reverse;
     right: 0;
 }
@@ -152,7 +152,7 @@
 } */
 
 .hrt-txt h1 {
-    font-size: 10px;
+    font-size: 18px;
 }
 .hrt-txt p {
     margin: 0;

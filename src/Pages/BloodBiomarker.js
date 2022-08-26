@@ -57,11 +57,11 @@ export default function BloodBiomarker() {
                         </div>
                         <div className='hrt-txt'>
                         <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <p>Thyroid Stimulating Hormone</p>
                         <div className='inrtxt'>
                         <span>(TSH)-Ultrosensit: 5.546</span>
                         <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <p className='danger'>Concern</p>
                         </div>
                         </div>
                       </div>
@@ -70,12 +70,11 @@ export default function BloodBiomarker() {
                           <img src={thy} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Vitamin D</h1>
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>38.03</span>
+                        <p>mg / ml</p>
+                        <p className='green'>Everything looks goods</p>
                         </div>
                         </div>
                       </div>
@@ -84,12 +83,11 @@ export default function BloodBiomarker() {
                           <img src={thy} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Kideny</h1>
+                        <p>Function</p>
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>Creatinine : 0.81 mg/dl</span>
+                        <p className='good'>Everything looks goods</p>
                         </div>
                         </div>
                       </div>
@@ -98,12 +96,12 @@ export default function BloodBiomarker() {
                           <img src={thy} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Cholesterol</h1>
+                        <p>Total</p>
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>2.4.1</span>
+                        <p>mg/ dl</p>
+                        <p className='denger'>Concern</p>
                         </div>
                         </div>
                       </div>
@@ -112,11 +110,11 @@ export default function BloodBiomarker() {
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>HbA1C</h1>
+                        {/* <p>Thyroid Stimulating Hoemone</p> */}
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
+                        <span>6.8 %</span>
+                        {/* <p></p> */}
                         <p>Concern</p>
                         </div>
                         </div>
@@ -146,12 +144,12 @@ export default function BloodBiomarker() {
                           <img src={L1} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Liver Function</h1>
+                        <p>Alanina Aminotransforase</p>
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>(ALT/SGPT): 5.2.3 </span>
+                        <p>U/I</p>
+                        <p className='denger'>Concern</p>
                         </div>
                         </div>
                       </div> 
@@ -160,11 +158,11 @@ export default function BloodBiomarker() {
                           <img src={L4} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Calcium Total</h1>
+                        {/* <p>Thyroid Stimulating Hoemone</p> */}
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
+                        <span>9.3</span>
+                        <p>mg / dl</p>
                         <p>Concern</p>
                         </div>
                         </div>
@@ -174,57 +172,44 @@ export default function BloodBiomarker() {
                           <img src={L5} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Iron Studies</h1>
+                        <p>Serum iron: 82.6 </p>
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>82.6</span>
+                        <p>ug/dl</p>
+                        <p className='good'>Everything looks goods</p>
                         </div>
                         </div>
                       </div> 
-                    <div className='Vitd'>
+                    {/* <div className='Vitd'>
                         <div className='hrt-img'>
                           <img src={L6} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Vitamin</h1>
+                        {/* <p>Thyroid Stimulating Hoemone</p> *}
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>200</span>
+                        <p>og / ml</p>
+                        <p className='good'>Everything looks goods</p>
                         </div>
                         </div>
-                      </div>
+                      </div> */}
                     <div className='comp'>
                         <div className='hrt-img'>
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Complete Hemogram</h1>
+                        {/* <p>Hoemoglobin</p> */}
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>Hoemoglobin: (HB) :14.2</span>
+                        {/* <p>ulU/ml</p> */}
+                        <p>Everything looks goods</p>
                         </div>
                         </div>
                       </div>
-                    {/* <div className='Vitd'>
-                        <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
-                        <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
-                        </div>
-                        </div>
-                      </div> */}
+                   
                     </div>
                   </div>
                 </Row>

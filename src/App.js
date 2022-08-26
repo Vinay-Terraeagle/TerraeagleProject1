@@ -16,6 +16,7 @@ import Myprofile from "./Pages/Myprofile"
 import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/recipeInstructions"
+import Subscriptionplan from './Pages/Subscriptionplan'
 
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
@@ -30,7 +31,7 @@ function App() {
       <Routes>
         <Route path='/'  element={<Dashboard/>}/>
         <Route path='/Register' element={<Register/>}/>
-        {/* <Route path="/Dashboard" element={<Dashboard/>}/> */}
+        {/* <Route path="/Dashboard" element={<Dashboard/>}/>  */}
         <Route path="/Forgotpassword" element={<Forgotpassword/>}/>
         {/* PasswordReset */}
         <Route path="/Resetpassword" element={<Resetpassword/>}/>
@@ -42,6 +43,7 @@ function App() {
         <Route path="/Myprofile" element={<Myprofile/>}/>
         <Route path="/Dietplan" element={<Dietplan/>}/>
         <Route path="/RecipeView" element={<RecipeView/>}/>
+        <Route path="/Subscriptionplan" element={<Subscriptionplan/>}/>
         {/* Pages */}
         <Route path="/BloodBiomarker" element={<BloodBiomarker/>}/>
         {/* errors */}
