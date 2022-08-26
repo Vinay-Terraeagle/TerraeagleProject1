@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import Header from '../Components/Header'
 import HealthMatrix from '../Components/HealthMatrix'
 import '../Styles/app.css'
@@ -8,6 +9,12 @@ import MealsComp from '../Components/MealsComp'
 
 
 export default function Dashboard() {
+  let navigate = useNavigate(); 
+    function useNavigateToMyPlan(e) {
+        e.preventDefault();
+        let path = '/Myplan'; 
+        navigate(path);
+    } 
 
   const Sliders ={
      items:1,
@@ -48,7 +55,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <div>
-                <button className='btn-dash-1'> My Plan</button>
+                <button className='btn-dash-1' onClick={useNavigateToMyPlan}> My Plan</button>
               </div>
             </div>
           </div>
