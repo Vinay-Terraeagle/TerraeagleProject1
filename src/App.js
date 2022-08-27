@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path='/'  element={<Dashboard/>}/>
         <Route path='/Register' element={<Register/>}/>
-        {/* <Route path="/Dashboard" element={<Dashboard/>}/>  */}
+        <Route path="/Dashboard" element={<Dashboard/>}/> 
         <Route path="/Forgotpassword" element={<Forgotpassword/>}/>
         {/* PasswordReset */}
         <Route path="/Resetpassword" element={<Resetpassword/>}/>

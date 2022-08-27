@@ -13,27 +13,40 @@ export const MenuItems = [
       },
       {
         title: 'Resources',
-        url:'/Dashboard',
-        Cname:'menuDropdown'
+        url:'/Resources',
+        Cname:'menuDropdown',
         // icnpath:
+        submenu: [
+          {
+            title: 'Recipe',
+            url: '/RecipeView',
+          },
+          {
+            title: 'Leaderboard',
+            url: '/Leaderboard',
+          },
+          {
+            title: 'Message',
+            url: '/Message',
+          },
+          {
+            title: 'Raise Ticket',
+            url: '/RaiseTicket',
+          },
+        ],
       },
       {
         title: 'Discover',
-        url:'/Dashboard',
+        url:'/Discover',
         Cname:'menuDropdown'
         // icnpath:
       },
       {
         title: 'Spaces',
-        url:'/Dashboard',
+        url:'/Spaces',
         Cname:'menuDropdown'
         // icnpath:
       },
-      {
-        title: 'Settings',
-        url:'/Dashboard',
-        Cname:'menuDropdown'
-        // icnpath:
-      },
+      
 ];
 
