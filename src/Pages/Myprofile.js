@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
   
 import React from 'react'
 import '../Styles/Myprofile.css'
@@ -8,16 +8,6 @@ import {Container, Col, Row,Card } from 'react-bootstrap'
 import bgbckgr from '../assets/images/background-bg.jpg'
 import Usericon from '../assets/images/user.png'
 import { Link } from 'react-router-dom'
-=======
-  import React from 'react'
-  import '../Styles/Myprofile.css'
-  import Header from '../Components/Header'
-  import Footer from '../Components/footer'
-  import {Container, Col, Row,Card } from 'react-bootstrap'
-  import bgbckgr from '../assets/images/background-bg.jpg'
-  import Usericon from '../assets/images/user.png'
-  import { Link } from 'react-router-dom'
->>>>>>> c087f36692f2e24a328be43b156b6c7aebacbd17
 
 
   export default function Myprofile() {
@@ -45,20 +35,7 @@ import { Link } from 'react-router-dom'
               </div>
           </section>
 
-<<<<<<< HEAD
-        <section>
-          <Container>
-            <Row>
-              <Col className='prof-p-bg  rounded'>
-              <div className='prof-dwn'>
-                <img src={bgbckgr} className="ProfileBg  pt-3"/>  
-                <div className='proflie'>
-                <img src={Usericon} alt="/" className='usericn'/>
-              
-                <div className='prof-nme d-flex justify-content-between'>
-                  <h1>Lorem Ipsom</h1>
-                  <span>Update Your photo and profile Details</span>
-=======
+       
           <section>
             <Container>
               <Row>
@@ -76,7 +53,6 @@ import { Link } from 'react-router-dom'
                       <button className='cancel'>Cancel</button>
                       <button className='save'>Save</button>
                   </div>
->>>>>>> c087f36692f2e24a328be43b156b6c7aebacbd17
                 </div>
                   </div>
                 </Col>

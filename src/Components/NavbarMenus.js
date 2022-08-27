@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-import Dropdown from './Dropdown';
+import Dropdown from './dropdown';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from "react";
 

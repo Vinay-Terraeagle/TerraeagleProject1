@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
 import logo from '../assets/images/logo-sm.png'
 import Navbar from './Navbar'
-import Dropdown from './Dropdown';
+import Dropdown from './dropdown';
 import { MyProfileMenus } from './MyProfileMenus';
 
 export default function Header() {
-<<<<<<< HEAD
     // const [menuclick, setmenuClick] = useState(false);
 
     // const onMouseEnter = () => {
@@ -25,9 +24,8 @@ export default function Header() {
     //         setmenuClick(false);
     //     }
     // }
-=======
+
     const [dropdown, setDropdown] = useState(false);
->>>>>>> c087f36692f2e24a328be43b156b6c7aebacbd17
 
     let navigate = useNavigate(); 
     function useNavigateToMyProfile(e) {

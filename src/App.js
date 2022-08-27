@@ -32,12 +32,9 @@ function App() {
       <Routes>
         <Route path='/'  element={<Dashboard/>}/>
         <Route path='/Register' element={<Register/>}/>
-<<<<<<< HEAD
         {/* <Route path="/Dashboard" element={<Dashboard/>}/>  */}
         <Route path="/Notification" element={<Notification/>}/>
-=======
-        <Route path="/Dashboard" element={<Dashboard/>}/> 
->>>>>>> c087f36692f2e24a328be43b156b6c7aebacbd17
+        <Route path="/Dashboard" element={<Dashboard/>}/>
         <Route path="/Forgotpassword" element={<Forgotpassword/>}/>
         {/* PasswordReset */}
         <Route path="/Resetpassword" element={<Resetpassword/>}/>
