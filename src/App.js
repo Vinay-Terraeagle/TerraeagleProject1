@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Login from './Components/Login'
+// import Login from './Components/Login'
 import Register from './Pages/Register'
 // reset password pages
 import Resetpassword from "./Pages/Resetpassword"
@@ -17,7 +17,7 @@ import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/recipeInstructions"
 import Subscriptionplan from './Pages/Subscriptionplan'
-
+import Notification from './Components/Notification'
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
 
@@ -32,6 +32,7 @@ function App() {
         <Route path='/'  element={<Dashboard/>}/>
         <Route path='/Register' element={<Register/>}/>
         {/* <Route path="/Dashboard" element={<Dashboard/>}/>  */}
+        <Route path="/Notification" element={<Notification/>}/>
         <Route path="/Forgotpassword" element={<Forgotpassword/>}/>
         {/* PasswordReset */}
         <Route path="/Resetpassword" element={<Resetpassword/>}/>

@@ -22,9 +22,6 @@ export default function checkEmail() {
                             <h1>Email has been sent!</h1>
                             <p>Please Check your inboxand click in the received link to reset a password</p>
                         </div>
-                        {/* <div className='mail-btn'>
-                            <button className='backto-login'>Login</button>
-                        </div> */}
                         <div className='dntrec-mail'>
                             <h5>Don't receive the link? <a href='/'>Resend</a></h5>
                         </div>

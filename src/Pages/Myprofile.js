@@ -1,14 +1,23 @@
 import React from 'react'
+// import { useState } from 'react'
+import { Link } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import '../Styles/Myprofile.css'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
+// import {Container, Col, Row,Card } from 'react-bootstrap'
+// import bgbckgr from '../assets/images/background-bg.jpg'
+// import Usericon from '../assets/images/user.png'
+// import EditProfile from '../Components/EditProfile'
 import {Container, Col, Row,Card } from 'react-bootstrap'
 import bgbckgr from '../assets/images/background-bg.jpg'
 import Usericon from '../assets/images/user.png'
-import { Link } from 'react-router-dom'
+import '../Styles/Myprofile.css'
 
 
 export default function Myprofile() {
+
+  // const [activeTab, setActive] = useState('EditProfile');
 
   return (
     <React.Fragment>
@@ -20,18 +29,20 @@ export default function Myprofile() {
                   <h1>Settings</h1>
               </div>
               <div className='prof-links'>
-                <div className='prof-lin'>
-                  <h1 className='act'>My Profile</h1>
+                <div className="prof-lin">
+                  <Link className='act'>My Profile</Link>
                 </div>
                 <div className='prof-ep'>
-                <h1>Edit Profile</h1>
+                <Link>Edit Profile</Link>
                 </div>
                 <div className='prof-acadmin'>
-                <h1>Account Administrator</h1>
+                <Link>Account Administrator</Link>
                 </div>
               </div>
             </div>
         </section>
+
+        <Footer/>
 
         <section>
           <Container>
@@ -125,7 +136,6 @@ export default function Myprofile() {
             </Row>
           </Container>
         </section>
-        <Footer/>
 
     </React.Fragment>
   )
