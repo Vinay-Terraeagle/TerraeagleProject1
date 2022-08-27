@@ -27,7 +27,7 @@ export default function RecipeView() {
                     <div>
                         <h2 className="pt-5"> Healthy and nutritious food recipes</h2>
                         <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Breakfast Recipes</h4>
+                            <h4 className="mt-5 bf-header">Trending Breakfast Recipes</h4>
                             <Link to="">
                                 View All
                             </Link>
@@ -147,7 +147,7 @@ export default function RecipeView() {
                 <section>
                     <div className="lunch-container">
                         <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Lunch Recipes</h4>
+                            <h4 className="mt-5 bf-header">Trending Lunch Recipes</h4>
                             <Link to="">
                                 View All
                             </Link>
@@ -267,7 +267,7 @@ export default function RecipeView() {
                 <section>
                     <div>
                         <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Snacks Recipes</h4>
+                            <h4 className="mt-5 bf-header">Trending Snacks Recipes</h4>
                                 <Link to="">
                                     View All
                                 </Link>
@@ -388,7 +388,7 @@ export default function RecipeView() {
                 <section style={{paddingBottom: '50px'}}>
                     <div>
                         <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Dinner Recipes</h4>
+                            <h4 className="mt-5 bf-header">Trending Dinner Recipes</h4>
                             <Link to="">
                                 View All
                             </Link>
