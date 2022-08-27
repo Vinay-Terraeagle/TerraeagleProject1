@@ -6,25 +6,26 @@ import logo from '../assets/images/logo-sm.png'
 import Dropdown from './dropdown'
 
 export default function Header() {
-    const [menuclick, setmenuClick] = useState(false);
+    // const [menuclick, setmenuClick] = useState(false);
 
-    const onMouseEnter = () => {
-        if(window.innerWidth <960) {
-            setmenuClick(false);
-        } else {
-            setmenuClick(true);
-        }   
-    };
-    const onMouseLeave = () => {
-        if (window.innerWidth < 960) {
-            setmenuClick(false);
-        } else {
-            setmenuClick(false);
-        }
-    }
+    // const onMouseEnter = () => {
+    //     if(window.innerWidth <960) {
+    //         setmenuClick(false);
+    //     } else {
+    //         setmenuClick(true);
+    //     }   
+    // };
+    // const onMouseLeave = () => {
+    //     if (window.innerWidth < 960) {
+    //         setmenuClick(false);
+    //     } else {
+    //         setmenuClick(false);
+    //     }
+    // }
 
     let navigate = useNavigate(); 
     function useNavigateToMyProfile(e) {
+        console.log('hello wo');
         e.preventDefault();
         let path = '/MyProfile'; 
         navigate(path);

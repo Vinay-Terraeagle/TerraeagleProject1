@@ -20,9 +20,10 @@ import Subscriptionplan from './Pages/Subscriptionplan'
 import Notification from './Components/Notification'
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
-
 // error Pages
 import PageNotFound from './Errors/PageNotFound'
+// test route
+import Biodetails from './Components/Biodetails'
 
 function App() {
   return (
@@ -50,7 +51,10 @@ function App() {
         {/* errors */}
         <Route path="*" element={<PageNotFound/>}/>
         <Route path="/RecipeInstructionsView" element={<RecipeInstructionsView/>}/>
+        {/* test route */}
+        <Route path="/Biodetails" element={<Biodetails/>}/>
        </Routes>
+
     </Router>
   </>
   );

@@ -221,3 +221,75 @@
     flex-direction: row;
     right: 0rem;
 }
+
+/* Blood Bio Marker Details */
+.txrp {
+    font-size: 10px;
+    color: rgba(255, 95, 95, 0.79);
+}
+
+.rnttxt {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+table td {
+    padding: 12px 30px;
+    border-bottom: 1px solid #a1a1a1;
+}
+.thdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.boicard-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inf-card {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+}
+.headerpart h1 {
+    font-size: 18px;
+}
+
+.information-card {
+    width: 33%;
+}
+
+.bio-details p {
+    font-size: 10px;
+}
+
+.table-resp {
+    background: #90ee90;
+    width: 60%;
+}
+
+.bioDet h1 {
+    font-size: 1.7rem;
+}
+
+#row_8_0{
+    background: green;
+}
+
+#row_10_1 {
+    background: #E8B61C;
+}
+#row_13_1 {
+    background-color: red;
+    color: white;
+}
+#row_14_1 {
+    background-color: red;
+    color: white;
+}
