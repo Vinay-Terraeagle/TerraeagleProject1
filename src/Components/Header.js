@@ -8,22 +8,6 @@ import Dropdown from './dropdown';
 import { MyProfileMenus } from './MyProfileMenus';
 
 export default function Header() {
-    // const [menuclick, setmenuClick] = useState(false);
-
-    // const onMouseEnter = () => {
-    //     if(window.innerWidth <960) {
-    //         setmenuClick(false);
-    //     } else {
-    //         setmenuClick(true);
-    //     }   
-    // };
-    // const onMouseLeave = () => {
-    //     if (window.innerWidth < 960) {
-    //         setmenuClick(false);
-    //     } else {
-    //         setmenuClick(false);
-    //     }
-    // }
 
     const [dropdown, setDropdown] = useState(false);
 

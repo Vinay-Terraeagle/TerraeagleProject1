@@ -54,7 +54,7 @@ export default function Login() {
                     </div>
                     <div className='Password-field'>
                       <label>Enter Password</label>
-                      <input type="passsword" className='password' placeholder='Enter Password' value={password} onChange={(e) => setpassword(e.target.value)} />
+                      <input type="password" className='password' placeholder='Enter Password' value={password} onChange={(e) => setpassword(e.target.value)} />
                       <span className='alert'>this field is required </span>
                     </div>
                     <div className='login-btn'>
