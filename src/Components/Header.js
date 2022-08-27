@@ -3,25 +3,25 @@ import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
 import logo from '../assets/images/logo-sm.png'
-import MenuClick from './MenuClick'
+import Dropdown from './dropdown'
 
 export default function Header() {
-    // const [menuclick, setmenuClick] = useState(false);
+    const [menuclick, setmenuClick] = useState(false);
 
-    // const onMouseEnter = () => {
-    //     if(window.innerWidth <960) {
-    //         setmenuClick(false);
-    //     } else {
-    //         setmenuClick(true);
-    //     }   
-    // };
-    // const onMouseLeave = () => {
-    //     if (window.innerWidth < 960) {
-    //         setmenuClick(false);
-    //     } else {
-    //         setmenuClick(false);
-    //     }
-    // }
+    const onMouseEnter = () => {
+        if(window.innerWidth <960) {
+            setmenuClick(false);
+        } else {
+            setmenuClick(true);
+        }   
+    };
+    const onMouseLeave = () => {
+        if (window.innerWidth < 960) {
+            setmenuClick(false);
+        } else {
+            setmenuClick(false);
+        }
+    }
 
     let navigate = useNavigate(); 
     function useNavigateToMyProfile(e) {
@@ -66,15 +66,15 @@ export default function Header() {
                         </button>
                         </Link>
                         </div>
-                        <div>
-                        {<MenuClick/>}
-                        <button className='menu-btn' onClick={useNavigateToDashboard}>
-                            Dashboard
+                        <div className='dropdown-wrapper'>
+                        <button className='menu-btn'>
+                            {<Dropdown />}
+                            {/* Dashboard
                             <div className='svg-icon'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-caret-down" viewBox="0 0 16 16">
                             <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
                             </svg>
-                            </div>
+                            </div> */}
                         </button>
                         </div> 
                     </div>
