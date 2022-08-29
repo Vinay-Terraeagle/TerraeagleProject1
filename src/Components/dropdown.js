@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 // import { useState, useEffect, useRef } from "react";
 
-export default function dropdown({ submenus, dropdown  }) {
+export default function Dropdown({ submenus, dropdown  }) {
   
 
     return (
