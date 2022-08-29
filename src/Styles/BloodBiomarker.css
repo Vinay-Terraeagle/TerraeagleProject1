@@ -272,7 +272,8 @@ table td {
 }
 
 .bioDet h1 {
-    font-size: 1.7rem;
+    font-size: 25px;
+    font-family: 'Lato',sans-serif;
 }
 
 #row_8_0{

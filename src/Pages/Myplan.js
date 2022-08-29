@@ -36,7 +36,7 @@ export default function Myplan() {
                 <h1>My Plan</h1>
               </div>
               <div className='plan-btn'>
-                <button className='plnbtn' onClick={useNavigateToBloodBiomarker}>Blood  BioMarker</button>
+                <button className='btn-dash-1' onClick={useNavigateToBloodBiomarker}>Blood  BioMarker</button>
               </div>
             </div>
             {/* calender */}

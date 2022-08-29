@@ -11,11 +11,11 @@ export default function RaiseTicket() {
         <Container>
             <Row> 
                 <div className='leader-section d-flex justify-content-between pt-5' style={{alignItems: 'center'}}>
-                    <div>
-                        <h1 className='display-6'>RaiseTicket</h1>
+                    <div className='plans-txts'>
+                        <h1>RaiseTicket</h1>
                     </div>
                     <div>
-                        <button className='complants'>View my complaints</button>
+                        <button className='btn-dash-1'>View my complaints</button>
                     </div>
                 </div>
                 <Col className='bg-white rounded-3 mt-5'>
