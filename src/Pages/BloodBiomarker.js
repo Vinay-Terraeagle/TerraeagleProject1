@@ -13,10 +13,10 @@ import L1 from '../assets/images/L1.png'
 // import L3 from '../assets/images/L3.jpg'
 import L4 from '../assets/images/L4.jpg'
 import L5 from '../assets/images/L5.jpg'
-// import L6 from '../assets/images/L6.jpg'
+import L6 from '../assets/images/L6.jpg'
 // import L7 from '../assets/images/L7.png'
 import L8 from '../assets/images/L8.png'
-// import L9 from '../assets/images/L9.jpg'
+import L9 from '../assets/images/L9.jpg'
 // import L10 from '../assets/images/L10.png'
 // import L11 from '../assets/images/L11.png'
 import hrt from '../assets/images/hrt.png'
@@ -56,24 +56,22 @@ export default function BloodBiomarker() {
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
+                        <h1>Rental Function</h1>
                         <p>Thyroid Stimulating Hormone</p>
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
+                        <span className='tname'>(TSH)-Ultrosensit: 5.546 UlU / ml</span>
                         <p className='danger'>Concern</p>
                         </div>
                         </div>
                       </div>
                       <div className='chous'>
                         <div className='hrt-img'>
-                          <img src={thy} className="heart-icn" alt="/"/>
+                          <img src={L8} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
                         <h1>Vitamin D</h1>
                         <div className='inrtxt'>
-                        <span>38.03</span>
-                        <p>mg / ml</p>
+                        <span className='details'>38.03 mg/ml</span>
                         <p className='green'>Everything looks goods</p>
                         </div>
                         </div>
@@ -93,21 +91,20 @@ export default function BloodBiomarker() {
                       </div>
                       <div className='Vitamin'>
                         <div className='hrt-img'>
-                          <img src={thy} className="heart-icn" alt="/"/>
+                          <img src={L9} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
                         <h1>Cholesterol</h1>
                         <p>Total</p>
                         <div className='inrtxt'>
-                        <span>2.4.1</span>
-                        <p>mg/ dl</p>
+                        <span>2.4.1 mg/dl</span>
                         <p className='denger'>Concern</p>
                         </div>
                         </div>
                       </div>
                       <div className='HBA'>
                         <div className='hrt-img'>
-                          <img src={hrt} className="heart-icn" alt="/"/>
+                          <img src={L6} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
                         <h1>HbA1C</h1>
@@ -130,12 +127,11 @@ export default function BloodBiomarker() {
                           <img src={L8} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Thyroid Function</h1>
-                        <p>Thyroid Stimulating Hoemone</p>
+                        <h1>Vitamin</h1>
+                        {/* <p>200</p> */}
                         <div className='inrtxt'>
-                        <span>(TSH)-Ultrosensit: 5.546</span>
-                        <p>ulU/ml</p>
-                        <p>Concern</p>
+                        <span>200 Pg / Ml</span>
+                        <p>Everything looks Goods</p>
                         </div>
                         </div>
                       </div>
@@ -147,8 +143,7 @@ export default function BloodBiomarker() {
                         <h1>Liver Function</h1>
                         <p>Alanina Aminotransforase</p>
                         <div className='inrtxt'>
-                        <span>(ALT/SGPT): 5.2.3 </span>
-                        <p>U/I</p>
+                        <span>(ALT/SGPT): 5.2.3 U/I</span>
                         <p className='denger'>Concern</p>
                         </div>
                         </div>
@@ -161,8 +156,7 @@ export default function BloodBiomarker() {
                         <h1>Calcium Total</h1>
                         {/* <p>Thyroid Stimulating Hoemone</p> */}
                         <div className='inrtxt'>
-                        <span>9.3</span>
-                        <p>mg / dl</p>
+                        <span>9.3 mg / dl</span>
                         <p>Concern</p>
                         </div>
                         </div>
@@ -175,26 +169,11 @@ export default function BloodBiomarker() {
                         <h1>Iron Studies</h1>
                         <p>Serum iron: 82.6 </p>
                         <div className='inrtxt'>
-                        <span>82.6</span>
-                        <p>ug/dl</p>
+                        <span>82.6 ug / dl</span>
                         <p className='good'>Everything looks goods</p>
                         </div>
                         </div>
                       </div> 
-                    {/* <div className='Vitd'>
-                        <div className='hrt-img'>
-                          <img src={L6} className="heart-icn" alt="/"/>
-                        </div>
-                        <div className='hrt-txt'>
-                        <h1>Vitamin</h1>
-                        {/* <p>Thyroid Stimulating Hoemone</p> *}
-                        <div className='inrtxt'>
-                        <span>200</span>
-                        <p>og / ml</p>
-                        <p className='good'>Everything looks goods</p>
-                        </div>
-                        </div>
-                      </div> */}
                     <div className='comp'>
                         <div className='hrt-img'>
                           <img src={hrt} className="heart-icn" alt="/"/>

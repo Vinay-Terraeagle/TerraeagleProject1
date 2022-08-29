@@ -4,10 +4,10 @@ import React from 'react'
 import '../Styles/Myprofile.css'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
-import {Container, Col, Row,Card } from 'react-bootstrap'
+import {Container, Col, Row } from 'react-bootstrap'
 import bgbckgr from '../assets/images/background-bg.jpg'
 import Usericon from '../assets/images/user.png'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
   export default function Myprofile() {
@@ -35,8 +35,7 @@ import { Link } from 'react-router-dom'
               </div>
           </section>
 
-       
-          <section>
+       <section>
             <Container>
               <Row>
                 <Col className='prof-p-bg  rounded'>

@@ -215,7 +215,7 @@ export default function Myplan() {
               </div>
               <div className={activeTab==='groceryList'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("groceryList")}>
                 <div className='cl-icn'>
-                <img src={groce} className="groce" alt='/'/>
+                <img src={groce} className="groce" alt="/"/>
                 </div>
                 <div className='cl-txt'>
                   <h1>Grocery plan</h1>
@@ -223,7 +223,7 @@ export default function Myplan() {
               </div>
               <div className={activeTab==='myProgress'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("myProgress")}>
                 <div className='cl-icn'>
-                  <img src={Mount} className="Mounimg"/>
+                  <img src={Mount} className="Mounimg" alt='/'/>
                 </div>
                 <div className='cl-txt'>
                   <h1>My Insight</h1>

@@ -19,6 +19,9 @@ import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/recipeInstructions"
 import Subscriptionplan from './Pages/Subscriptionplan'
 import Notification from './Components/Notification'
+import RaiseTicket from './Pages/RaiseTicket'
+import Message from "./Pages/Message";
+import LeaderBoard from './Pages/LeaderBoard'
 // import MySubscriptions from './Components/MySubscriptions'
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
@@ -51,6 +54,9 @@ function App() {
         <Route path="/Dietplan" element={<Dietplan/>}/>
         <Route path="/RecipeView" element={<RecipeView/>}/>
         <Route path="/Subscriptionplan" element={<Subscriptionplan/>}/>
+        <Route path="/RaiseTicket" element={<RaiseTicket/>}/>
+        <Route path="/Message" element={<Message/>}/>
+        <Route path="/LeaderBoard" element={<LeaderBoard/>}/>
         {/* plans and Subscriptions section */}
         {/* <Route path="/MySubscriptions" element={<MySubscriptions/>}/> */}
         {/* Recipe Instructions */}

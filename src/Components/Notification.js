@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styles/Notification.css'
-import { Container, Col , Row, Card } from 'react-bootstrap'
+import { Container, Col , Row } from 'react-bootstrap'
 import Header from './Header'
 
 export default function Notification() {
