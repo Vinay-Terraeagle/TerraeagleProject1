@@ -1,11 +1,13 @@
-  import React from 'react'
-  import '../Styles/Myprofile.css'
-  import Header from '../Components/Header'
-  import Footer from '../Components/footer'
-  import {Container, Col, Row,Card } from 'react-bootstrap'
-  import bgbckgr from '../assets/images/background-bg.jpg'
-  import Usericon from '../assets/images/user.png'
-  import { Link } from 'react-router-dom'
+
+  
+import React from 'react'
+import '../Styles/Myprofile.css'
+import Header from '../Components/Header'
+import Footer from '../Components/footer'
+import {Container, Col, Row,Card } from 'react-bootstrap'
+import bgbckgr from '../assets/images/background-bg.jpg'
+import Usericon from '../assets/images/user.png'
+import { Link } from 'react-router-dom'
 
 
   export default function Myprofile() {
@@ -33,6 +35,7 @@
               </div>
           </section>
 
+       
           <section>
             <Container>
               <Row>

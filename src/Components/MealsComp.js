@@ -22,7 +22,7 @@ export default function MealsComp() {
         autoplayHoverPause:true,
         items:1,
         loop:true,
-        margin:50,
+        // margin:50,
         responsive: {
             0: {
                 items: 1,
@@ -34,7 +34,7 @@ export default function MealsComp() {
                 items: 2,
             },
             1000: {
-                items: 1.1,
+                items: 1.8,
             },
         }
         
