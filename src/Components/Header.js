@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
 import logo from '../assets/images/logo-sm.png'
 import Navbar from './Navbar'
-import Dropdown from './dropdown';
+import Dropdown from './Dropdown';
 import { MyProfileMenus } from './MyProfileMenus';
 
 export default function Header() {

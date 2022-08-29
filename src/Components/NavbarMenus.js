@@ -1,10 +1,11 @@
 import React, { useState }  from 'react'
-import Dropdown from './dropdown';
+import Dropdown from './Dropdown';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from "react";
 
 export default function NavbarMenus({ items }) {
     const [activeTab, setActive] = useState('Dashboard');
+    console.log(activeTab);
     const [dropdown, setDropdown] = useState(false);
     let ref = useRef();
 
@@ -43,7 +44,7 @@ export default function NavbarMenus({ items }) {
           <Dropdown submenus={items.submenu} dropdown={dropdown}  />
         </>
       ) : (
-        <NavLink to={items.url} activeClassName="active" className="menus">{items.title}</NavLink>
+        <NavLink to={items.url} activeclassName="active" className="menus">{items.title}</NavLink>
       )}
     </li>
   )

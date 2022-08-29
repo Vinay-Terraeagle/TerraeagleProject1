@@ -1749,7 +1749,6 @@ input[type='checkbox']:checked+label>span:before {
 
 .dropdown-wrapper {
     position: relative;
-    display: none;
 }
 
 .button-menu {
