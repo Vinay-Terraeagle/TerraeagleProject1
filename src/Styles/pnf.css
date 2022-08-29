@@ -4,3 +4,78 @@
    justify-content: center;
     margin: 15rem;
 }
+
+/* leaderboardcssss */
+.mnth {
+    padding: 10px 24px;
+    margin-right:  1rem;
+    outline: none;
+    border: none;
+    border: 1px solid #e06358;
+    font-size: 15px;
+    color: #fff;
+    background: #e06358;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}   
+
+.wek ,.altime {
+    padding: 10px 24px;
+    margin-right:  1rem;
+    outline: none;
+    border: none;
+    border: 1px solid #e06358;
+    font-size: 15px;
+    color: #fff;
+    background: #ffffff;
+    color: black;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.wek:hover ,.altime:hover {
+    background: #e06358;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+.rnk-card {
+    width: 25%;
+    height:19em;
+    margin: 2rem;
+    color: var(--white-bg);
+    padding: 20px;
+    border-radius: 10px;
+    /* background: linear-gradient(to bottom, #88ffb2 0%, #8ce698 90%); */
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+.a-icn {
+    width: 100px;
+}
+.usricn {
+    width: 60px;
+    height: auto;
+}
+
+.rnkimg {
+    border-bottom: 1px solid rgb(237 237 237);
+    margin-bottom: 1rem;
+}
+.rnk-txt {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+.rnk-txt {
+    padding: 1rem;
+    color: black;
+}
+
+.starfill {
+    margin: 10px;
+}
