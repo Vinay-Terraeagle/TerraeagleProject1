@@ -13,7 +13,6 @@ export default function Header() {
 
     let navigate = useNavigate(); 
     function useNavigateToMyProfile(e) {
-        console.log('hello wo');
         e.preventDefault();
         let path = '/MyProfile'; 
         navigate(path);

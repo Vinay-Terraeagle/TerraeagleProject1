@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 
 export default function NavbarMenus({ items }) {
     const [activeTab, setActive] = useState('Dashboard');
-    console.log(activeTab);
     const [dropdown, setDropdown] = useState(false);
     let ref = useRef();
 

@@ -22,492 +22,496 @@ export default function RecipeView() {
     return (
         <React.Fragment>
             <Header />
-            <div className="container recipe-container">
-                <section>
-                    <div>
-                        <h2 className="pt-5"> Healthy and nutritious food recipes</h2>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Trending Breakfast Recipes</h4>
-                            <Link to="">
-                                View All
-                            </Link>
+            <div className="container">
+                <h2 className="pt-5"> Healthy and nutritious food recipes</h2>
+                  
+                <div className="recipe-container mt-5">
+                    <section>
+                        <div>
+                            {/* <h2 className="pt-5"> Healthy and nutritious food recipes</h2> */}
+                            <div className="d-flex justify-content-between align-items-baseline">
+                                <h4 className="mt-5 bf-header">Trending Breakfast Recipes</h4>
+                                <Link to="">
+                                    View All
+                                </Link>
+
+                            </div>
+                            <Row style={{ marginTop: '5em' }}>
+                                <Col>
+                                <Card onClick={useRecipeInstructions}>
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card onClick={useRecipeInstructions}>
+                                    <Card.Img variant="top" src={H1} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={H2} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={H3} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                
+                            </Row>
 
                         </div>
-                        <Row style={{ marginTop: '5em' }}>
-                            <Col>
-                            <Card onClick={useRecipeInstructions}>
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card onClick={useRecipeInstructions}>
-                                <Card.Img variant="top" src={H1} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={H2} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={H3} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            
-                        </Row>
+                    </section>
 
-                    </div>
-                </section>
+                    <section>
+                        <div className="lunch-container">
+                            <div className="d-flex justify-content-between align-items-baseline">
+                                <h4 className="mt-5 bf-header">Trending Lunch Recipes</h4>
+                                <Link to="">
+                                    View All
+                                </Link>
 
-                <section>
-                    <div className="lunch-container">
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Trending Lunch Recipes</h4>
-                            <Link to="">
-                                View All
-                            </Link>
+                            </div>
+                            <Row style={{ marginTop: '5em' }}>
+                                <Col>
+                                <Card onClick={useRecipeInstructions}>
+                                    <Card.Img variant="top" src={H4} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={H5} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card >
+                                    <Card.Img variant="top" src={H4} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={H3} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                
+                            </Row>
 
                         </div>
-                        <Row style={{ marginTop: '5em' }}>
-                            <Col>
-                            <Card onClick={useRecipeInstructions}>
-                                <Card.Img variant="top" src={H4} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={H5} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card >
-                                <Card.Img variant="top" src={H4} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={H3} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
+                    </section>
+
+                    <section>
+                        <div>
+                            <div className="d-flex justify-content-between align-items-baseline">
+                                <h4 className="mt-5 bf-header">Trending Snacks Recipes</h4>
+                                    <Link to="">
+                                        View All
+                                    </Link>
+
+                                </div>
                             
-                        </Row>
+                            <Row style={{ marginTop: '5em' }}>
+                                <Col>
+                                <Card onClick={useRecipeInstructions}>
+                                    <Card.Img variant="top" src={H1} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card >
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card >
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                
+                            </Row>
 
-                    </div>
-                </section>
+                        </div>
+                    </section>
 
-                <section>
-                    <div>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Trending Snacks Recipes</h4>
+                    <section style={{paddingBottom: '50px'}}>
+                        <div>
+                            <div className="d-flex justify-content-between align-items-baseline">
+                                <h4 className="mt-5 bf-header">Trending Dinner Recipes</h4>
                                 <Link to="">
                                     View All
                                 </Link>
 
                             </div>
                         
-                        <Row style={{ marginTop: '5em' }}>
-                            <Col>
-                            <Card onClick={useRecipeInstructions}>
-                                <Card.Img variant="top" src={H1} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card >
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card >
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            
-                        </Row>
-
-                    </div>
-                </section>
-
-                <section style={{paddingBottom: '50px'}}>
-                    <div>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <h4 className="mt-5 bf-header">Trending Dinner Recipes</h4>
                             <Link to="">
                                 View All
                             </Link>
+                            <Row style={{ marginTop: '5em' }}>
+                                <Col>
+                                <Card onClick={useRecipeInstructions}>
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card >
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                <Col>
+                                <Card>
+                                    <Card.Img variant="top" src={Breakfast} className="recipe-img" />
+                                    <Card.Body style = {{   
+                                                marginTop: '7em',
+                                                textAlign: 'center'
+                                                }}>
+                                        <Card.Title>Blueberry Toast</Card.Title>
+                                        <Card.Text>260 kcal</Card.Text>
+                                        <Row className="cal-wrapper">
+                                            <Col>
+                                                <span>156g </span>
+                                                <span>Carbs</span>
+                                            </Col>
+                                            <Col className="protien-wrapper">
+                                                <span>56g </span>
+                                                <span>Protien</span>
+                                            </Col>
+                                            <Col>
+                                                <span>16g </span>
+                                                <span>Fats</span>
+                                            </Col>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
+                                </Col>
+                                
+                            </Row>
 
                         </div>
-                    
-                        <Link to="">
-                            View All
-                        </Link>
-                        <Row style={{ marginTop: '5em' }}>
-                            <Col>
-                            <Card onClick={useRecipeInstructions}>
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card >
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            <Col>
-                            <Card>
-                                <Card.Img variant="top" src={Breakfast} className="recipe-img" />
-                                <Card.Body style = {{   
-                                            marginTop: '7em',
-                                            textAlign: 'center'
-                                            }}>
-                                    <Card.Title>Blueberry Toast</Card.Title>
-                                    <Card.Text>260 kcal</Card.Text>
-                                    <Row className="cal-wrapper">
-                                        <Col>
-                                            <span>156g </span>
-                                            <span>Carbs</span>
-                                        </Col>
-                                        <Col className="protien-wrapper">
-                                            <span>56g </span>
-                                            <span>Protien</span>
-                                        </Col>
-                                        <Col>
-                                            <span>16g </span>
-                                            <span>Fats</span>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                            </Col>
-                            
-                        </Row>
-
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
             <Footer />
         </React.Fragment>

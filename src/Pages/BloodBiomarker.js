@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import Header from '../Components/Header'
-// import Footer from '../Components/footer'
+import Footer from '../Components/footer'
 import '../Styles/BloodBiomarker.css'
 import {Container ,Card ,Row ,Col,} from 'react-bootstrap'
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -25,17 +26,27 @@ export default function BloodBiomarker() {
 
   const percentage = 66;
 
+  let navigate = useNavigate(); 
+    function renderBloodBioIndetail(e) {
+        e.preventDefault();
+        let path = '/Biodetails'; 
+        navigate(path);
+    } 
+
+
+
   return (
     <React.Fragment>
       <Header/>
         <section>
             <Container>
               <Col>
-                <Row className="pt-5 mt-2">
-                  <h1 style={{ fontSize: "2rem" }}>Blood BioMarker</h1>
+                <Row className="mt-5">
+                  <h2>Blood BioMarker</h2>
+                  
                   <p></p>
                 </Row>
-                <Row className='bldmrks mt-5 h-100 rounded-2'>
+                <Row className='bldmrks mt-3 h-100 rounded-2'>
                   <div className='usr-det d-flex justify-content-spbetween align-items-center'>
                   <div className='col-8 mr-2'>
                   <h1>Hi, Vinesh</h1>
@@ -51,7 +62,7 @@ export default function BloodBiomarker() {
                   </div>
                   <div className='hlthscore dflex justify-content-center'>
                     <div className='hlth-items'>
-                      <div className='hrt-sectn'>
+                      <div className='hrt-sectn blood-bio-info' onClick={renderBloodBioIndetail} >
                         <div className='hrt-img'>
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
@@ -64,7 +75,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div>
-                      <div className='chous'>
+                      <div className='chous blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L8} className="heart-icn" alt="/"/>
                         </div>
@@ -76,7 +87,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div>
-                      <div className='lever'>
+                      <div className='lever blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={thy} className="heart-icn" alt="/"/>
                         </div>
@@ -89,7 +100,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div>
-                      <div className='Vitamin'>
+                      <div className='Vitamin blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L9} className="heart-icn" alt="/"/>
                         </div>
@@ -102,7 +113,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div>
-                      <div className='HBA'>
+                      <div className='HBA blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L6} className="heart-icn" alt="/"/>
                         </div>
@@ -122,7 +133,7 @@ export default function BloodBiomarker() {
                     </div>
                     {/* rightside */}
                     <div className='right-sect'>
-                    <div className='Vitd'>
+                    <div className='Vitd blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L8} className="heart-icn" alt="/"/>
                         </div>
@@ -135,7 +146,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div>
-                     <div className='liver'>
+                     <div className='liver blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L1} className="heart-icn" alt="/"/>
                         </div>
@@ -148,7 +159,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div> 
-                     <div className='calo'>
+                     <div className='calo blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L4} className="heart-icn" alt="/"/>
                         </div>
@@ -161,7 +172,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div> 
-                     <div className='iron'>
+                     <div className='iron blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={L5} className="heart-icn" alt="/"/>
                         </div>
@@ -174,7 +185,7 @@ export default function BloodBiomarker() {
                         </div>
                         </div>
                       </div> 
-                    <div className='comp'>
+                    <div className='comp blood-bio-info' onClick={renderBloodBioIndetail}>
                         <div className='hrt-img'>
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
@@ -195,7 +206,7 @@ export default function BloodBiomarker() {
               </Col>
             </Container>
         </section>
-
+      <Footer />
 
     </React.Fragment>
   )

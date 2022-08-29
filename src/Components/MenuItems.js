@@ -36,8 +36,8 @@ export const MenuItems = [
         ],
       },
       {
-        title: 'Discover',
-        url:'/Discover',
+        title: 'Threads',
+        url:'/Threads',
         Cname:'menuDropdown'
         // icnpath:
       },

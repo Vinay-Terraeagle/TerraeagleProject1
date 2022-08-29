@@ -118,8 +118,6 @@ nav{
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    outline: none;
-    background: #b3e9dd;
     border: none;
     border: 1px solid #73ecd2;
     position: relative;
@@ -1502,12 +1500,13 @@ td {
 .exercise-container,
 .grocery-list-container {
     background: #fff;
-    border-top-right-radius: 80px;
+    border-radius: 10px;
+        border-top-right-radius: 100px;
     margin-top: 50px;
     box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
         margin-bottom: 100px;
     width: 62%;
-        border: 1px solid #d1d1d1;
+    border: 1px solid #ECE9E5;
 }
 .habits-container {
     padding: 50px;
@@ -1572,6 +1571,7 @@ td {
     --bs-card-cap-bg: none;
     box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
     background: linear-gradient(to right, rgb(161, 255, 206), rgb(250, 255, 209));
+    cursor: pointer;
 }
 
 .recipe-container .card:hover {

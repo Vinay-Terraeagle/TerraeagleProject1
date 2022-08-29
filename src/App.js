@@ -16,7 +16,7 @@ import Myplan from "./Pages/Myplan"
 import Myprofile from "./Pages/Myprofile"
 import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
-import RecipeInstructionsView from "./Pages/recipeInstructions"
+import RecipeInstructionsView from "./Pages/RecipeInstructions"
 import Subscriptionplan from './Pages/Subscriptionplan'
 import Notification from './Components/Notification'
 import RaiseTicket from './Pages/RaiseTicket'

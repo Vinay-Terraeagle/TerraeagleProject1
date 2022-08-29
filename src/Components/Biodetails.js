@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Col , Row, Card } from 'react-bootstrap'
 import '../Styles/BloodBiomarker.css'
@@ -6,19 +6,25 @@ import Header from './Header'
 import Footer  from './footer'
 import biodropdown from './biodropdown'
 import biomenuitems from './biomenuitems'
+import Breadcrumbs from '../Components/Breadcrumbs';
 // Cards
 export default function Biodetails() {
+    const [crumbs, setCrumbs] = useState(['BloodBiomarker', 'Biodetails']);
+
+    const selected = crumb => { }
+    
   return (
    <React.Fragment>
     <Header/>
     <section>
-        <Container>
+        <Container ClassName="mb-5">
             <Row>
-                <div className='bioDet p-5'>
-                    <h1>Blood Details</h1>
+                <div className='bioDet pt-5 pb-4'>
+                    <Breadcrumbs crumbs={crumbs} selected={selected}/>
+                    <h2>Blood Details</h2>
                 </div>
-                <Col className='bg-white p-5 rounded-3'>
-                    <div className='boicard-body'>
+                <Col className='bg-white p-5 bio-detail-wrapper mt-3'>
+                    <div className='boicard-body d-flex justify-content-around mt-2'>
                         <div className='table-resp rounded-2'>
                             <table>
                                 <thead>
@@ -457,13 +463,46 @@ export default function Biodetails() {
                             <div className='headerpart'>
                                 <h1>Basophils %</h1>
                             </div>
-                            <div className='tabswitch'>
+                            {/* <div className='tabswitch'>
                                 <div className='tabs d-flex jusstify-center mb-3'>
                                     <button className='inf-ntr'>Nutritions</button> 
                                     <button className='inf-sym'>Symptoms</button>
                                     <button className='inf'>Information</button>
                                 </div>
+                            </div> */}
+
+                            <ul class="nav nav-pills">
+                                <li><a data-toggle="pill" href="#menu1">Nutritions</a></li>
+                                <li><a data-toggle="pill" href="#menu2">Symptoms</a></li>
+                                <li><a data-toggle="pill" href="#menu3">Information</a></li>
+                            </ul>
+
+
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                <h3>HOME</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                <h3>Menu 1</h3>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div id="menu2" class="tab-pane fade">
+                                <h3>Menu 2</h3>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                                </div>
+                                <div id="menu3" class="tab-pane fade">
+                                <h3>Menu 3</h3>
+                                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                </div>
                             </div>
+
+
+
+
+
+                            {/*  */}
+
                             <div className='bodypart '>
                                <div className='navdiv'>
                                     <a href='/'>Lab Results</a>
