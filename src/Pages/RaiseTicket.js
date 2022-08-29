@@ -1,8 +1,14 @@
 import React from 'react'
 import '../Styles/RaiseTicket.css'
 import {Container, Col, Row} from 'react-bootstrap'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Header from '../Components/Header'
+import UserIcon from '../assets/images/usericn.png'
+// icons
+import {PencilSquare}from 'react-bootstrap-icons';
+import {TicketDetailedFill}from 'react-bootstrap-icons';
+import {ThreeDots} from 'react-bootstrap-icons'
+
 
 export default function RaiseTicket() {
   return (
@@ -18,13 +24,95 @@ export default function RaiseTicket() {
                         <button className='btn-dash-1'>View my complaints</button>
                     </div>
                 </div>
-                <Col className='bg-white rounded-3 mt-5'>
+                <Col className='bg-white rounded-3 mt-5 p-5'>
                     <div className='ticketmenu'>
-                        <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper" viewBox="0 0 16 16">
-  <path d="M4 0a2 2 0 0 0-2 2v1.133l-.941.502A2 2 0 0 0 0 5.4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.4a2 2 0 0 0-1.059-1.765L14 3.133V2a2 2 0 0 0-2-2H4Zm10 4.267.47.25A1 1 0 0 1 15 5.4v.817l-1 .6v-2.55Zm-1 3.15-3.75 2.25L8 8.917l-1.25.75L3 7.417V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v5.417Zm-11-.6-1-.6V5.4a1 1 0 0 1 .53-.882L2 4.267v2.55Zm13 .566v5.734l-4.778-2.867L15 7.383Zm-.035 6.88A1 1 0 0 1 14 15H2a1 1 0 0 1-.965-.738L8 10.083l6.965 4.18ZM1 13.116V7.383l4.778 2.867L1 13.117Z"/>
-</svg>
-                            <h5>All Tickets</h5>
+                        <div className='nw-ticket d-flex justify-content-end'>
+                            <button className='ticketadd'>
+                            <PencilSquare className='mr-1 square'/>RaiseTicket</button>
+                        </div>
+                        <div className='ticket-cards'>
+                          <div className='ticket-top d-flex justify-content-between text-center'>
+                            <div className='icket-icn d-flex align-content-center' >
+                               <div className='icn-wrap mr-2'>
+                               <TicketDetailedFill className='ticketicn' color='#f46154'/>
+                               </div>
+                                <div className='tct-txt d-flex mr-5'>
+                                <h5>Ticket  #2022</h5>
+                            </div>
+                            </div>
+                            <div className='tct-tm d-flex align-items-center'>
+                                <p>11:20 AM</p>
+                                <div className='icn-wrap ml-2'>
+                                <ThreeDots color='#f46154'/>
+                                </div>
+                            </div> 
+                          </div>
+                          <div className='body p-1 mt-3'>
+                          <h1>How to write better Advertising Copy</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                          </div>
+                          <div className='userlst'>
+                            <div className='ussr d-flex'>
+                            <img src={UserIcon} className="usin" alt='/'/>
+                            <p className='usrname'>Syamsir Alam</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='ticket-cards'>
+                          <div className='ticket-top d-flex justify-content-between text-center'>
+                            <div className='icket-icn d-flex align-content-center' >
+                               <div className='icn-wrap mr-2'>
+                               <TicketDetailedFill className='ticketicn' color='#f46154'/>
+                               </div>
+                                <div className='tct-txt d-flex mr-5'>
+                                <h5>Ticket  #2022</h5>
+                            </div>
+                            </div>
+                            <div className='tct-tm d-flex align-items-center'>
+                                <p>11:20 AM</p>
+                                <div className='icn-wrap ml-2'>
+                                <ThreeDots color='#f46154'/>
+                                </div>
+                            </div> 
+                          </div>
+                          <div className='body p-1 mt-3'>
+                          <h1>How to write better Advertising Copy</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                          </div>
+                          <div className='userlst'>
+                            <div className='ussr d-flex'>
+                            <img src={UserIcon} className="usin" alt='/'/>
+                            <p className='usrname'>Syamsir Alam</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='ticket-cards'>
+                          <div className='ticket-top d-flex justify-content-between text-center'>
+                            <div className='icket-icn d-flex align-content-center' >
+                               <div className='icn-wrap mr-2'>
+                               <TicketDetailedFill className='ticketicn' color='#f46154'/>
+                               </div>
+                                <div className='tct-txt d-flex mr-5'>
+                                <h5>Ticket  #2022</h5>
+                            </div>
+                            </div>
+                            <div className='tct-tm d-flex align-items-center'>
+                                <p>11:20 AM</p>
+                                <div className='icn-wrap ml-2'>
+                                <ThreeDots color='#f46154'/>
+                                </div>
+                            </div> 
+                          </div>
+                          <div className='body p-1 mt-3'>
+                          <h1>How to write better Advertising Copy</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                          </div>
+                          <div className='userlst'>
+                            <div className='ussr d-flex'>
+                            <img src={UserIcon} className="usin" alt='/'/>
+                            <p className='usrname'>Syamsir Alam</p>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </Col>

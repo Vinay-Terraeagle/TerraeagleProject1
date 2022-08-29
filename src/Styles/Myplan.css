@@ -131,10 +131,9 @@
     background: #f1efec;
     margin-top: 1rem;
     border-radius: 10px;
-    overflow: scroll;
-    overflow-y: hidden;
-    width: 70%;
-    cursor: grab;
+    /* overflow: scroll;
+    overflow-y: hidden; */
+    width: 100%;
 }
 .cals-row::-webkit-scrollbar {
     width: 2px;
