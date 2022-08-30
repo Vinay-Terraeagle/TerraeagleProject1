@@ -4,6 +4,8 @@ import {Container, Col, Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Header from '../Components/Header'
 import UserIcon from '../assets/images/usericn.png'
+// import { bi-circle-fill } from 'react-bootstrap-icons'
+import { CircleFill } from 'react-bootstrap-icons'
 // icons
 import {PencilSquare}from 'react-bootstrap-icons';
 import {TicketDetailedFill}from 'react-bootstrap-icons';
@@ -34,13 +36,14 @@ export default function RaiseTicket() {
                           <div className='ticket-top d-flex justify-content-between text-center'>
                             <div className='icket-icn d-flex align-content-center' >
                                <div className='icn-wrap mr-2'>
-                               <TicketDetailedFill className='ticketicn' color='#f46154'/>
+                               <TicketDetailedFill className='ticketicn' color='#ffffff'/>
                                </div>
                                 <div className='tct-txt d-flex mr-5'>
                                 <h5>Ticket  #2022</h5>
                             </div>
                             </div>
                             <div className='tct-tm d-flex align-items-center'>
+                              <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>11:20 AM</p>
                                 <div className='icn-wrap ml-2'>
                                 <ThreeDots color='#ffffff'/>
@@ -52,9 +55,17 @@ export default function RaiseTicket() {
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                           </div>
                           <div className='userlst'>
-                            <div className='ussr d-flex'>
+                            <div className='ussr d-flex align-items-center justify-content-between'>
+                            <div className='d-flex'>
                             <img src={UserIcon} className="usin" alt='/'/>
-                            <p className='usrname'>Syamsir Alam</p>
+                            <p className='usrname'>Syamsir Alama</p>
+                            </div>
+                            <div className='tick-status d-flex justify-content-between'>
+                              <div>
+                                <CircleFill classsName="circle" style={{width: '10px'}} color="#00FF00"/>
+                                <span className='m-1'>Open</span>
+                              </div>
+                            </div>
                             </div>
                           </div>
                         </div>
@@ -69,7 +80,8 @@ export default function RaiseTicket() {
                             </div>
                             </div>
                             <div className='tct-tm d-flex align-items-center'>
-                                <p>11:20 AM</p>
+                            <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
+                                <p>1:20 PM</p>
                                 <div className='icn-wrap ml-2'>
                                 <ThreeDots color='#ffffff'/>
                                 </div>
@@ -80,9 +92,18 @@ export default function RaiseTicket() {
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                           </div>
                           <div className='userlst'>
-                            <div className='ussr d-flex'>
+                            <div className='ussr d-flex align-items-center justify-content-between'>
+                            <div className='d-flex'>
                             <img src={UserIcon} className="usin" alt='/'/>
-                            <p className='usrname'>Syamsir Alam</p>
+                            <p className='usrname'>Syamsir Alama</p>
+                            </div>
+                            <div className='tick-status d-flex justify-content-between'>
+                              <div>
+                                <CircleFill classsName="circle" style={{width: '10px'}} color="#ff0000"/>
+                                <span className='m-1'>Closed</span>
+                                <span>at: <b>2022-08-30 12:38:30</b></span>
+                              </div>
+                            </div>
                             </div>
                           </div>
                         </div>
@@ -90,14 +111,15 @@ export default function RaiseTicket() {
                           <div className='ticket-top d-flex justify-content-between text-center'>
                             <div className='icket-icn d-flex align-content-center' >
                                <div className='icn-wrap mr-2'>
-                               <TicketDetailedFill className='ticketicn' color='#f46154'/>
+                               <TicketDetailedFill className='ticketicn' color='#ffffff'/>
                                </div>
                                 <div className='tct-txt d-flex mr-5'>
                                 <h5>Ticket  #2022</h5>
                             </div>
                             </div>
                             <div className='tct-tm d-flex align-items-center'>
-                                <p>11:20 AM</p>
+                            <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
+                                <p>1:20 PM</p>
                                 <div className='icn-wrap ml-2'>
                                 <ThreeDots color='#ffffff'/>
                                 </div>
@@ -108,12 +130,22 @@ export default function RaiseTicket() {
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                           </div>
                           <div className='userlst'>
-                            <div className='ussr d-flex'>
+                            <div className='ussr d-flex align-items-center justify-content-between'>
+                            <div className='d-flex'>
                             <img src={UserIcon} className="usin" alt='/'/>
-                            <p className='usrname'>Syamsir Alam</p>
+                            <p className='usrname'>Syamsir Alama</p>
+                            </div>
+                            <div className='tick-status d-flex justify-content-between'>
+                            <div>
+                                <CircleFill classsName="circle" style={{width: '10px'}} color="#ff0000"/>
+                                <span className='m-1'>Closed</span>
+                                <span>at: <b>2022-08-30 12:38:30</b></span>
+                              </div>
+                            </div>
                             </div>
                           </div>
                         </div>
+                        
                     </div>
                 </Col>
             </Row>
