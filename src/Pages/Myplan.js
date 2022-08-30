@@ -11,7 +11,6 @@ import DietPlanComponent from '../Components/DietPlanComponent'
 import GroceryListComponent from '../Components/GroceryListComponent'
 import HabbitsComponent from '../Components/HabbitsComponent'
 import ExcerciseComponent from '../Components/ExcerciseComponent'
-
 import '../Styles/app.css'
 
 export default function Myplan() {

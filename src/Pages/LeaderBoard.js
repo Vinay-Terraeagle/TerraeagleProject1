@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Col,Row } from 'react-bootstrap'
 import Header from '../Components/Header'
-// import Footer from '../Components/footer'
+import Footer from '../Components/footer'
 import '../Styles/pnf.css'
 // images
 import User from '../assets/images/usericn.png';
@@ -182,12 +182,45 @@ export default function LeaderBoard() {
                           <img src={forth} className="firstmed" alt='/'/>
                         </div>
                       </div>
+                      <div className='ldr-cards'>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>6St</span>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>500 <b>Points</b></h5>
+                        </div>
+                        <div className='rating'>
+                          <img src={forth} className="firstmed" alt='/'/>
+                        </div>
+                      </div>
+                      <div className='ldr-cards'>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>7St</span>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>500 <b>Points</b></h5>
+                        </div>
+                        <div className='rating'>
+                          <img src={forth} className="firstmed" alt='/'/>
+                        </div>
+                      </div>
                     </div>
                   </div>
               </Col>
             </Row>
         </Container>
       </section>
+      <Footer/>
    </React.Fragment>
   
   )
