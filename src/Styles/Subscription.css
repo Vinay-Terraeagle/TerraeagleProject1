@@ -10,9 +10,188 @@
     border-right-color: rgb(229, 225, 220);
     border-left-color: rgb(229, 225, 220);
     max-width: 100%;
+
+
+
+
+    outline: none;
+    display: flex;
+    cursor: pointer;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: none 0s ease 0s;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171)
+
+
+
+
+
+
+    plas
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 24px;
+    cursor: pointer;
+    min-height: 400px;
+    min-width: 275px;
+    position: relative;
+    overflow: hidden;
 } */
+
+/* .mypln-crd {
+    pad
+
+} */
+
+
+.activeplan {
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    /* color: rgb(40, 39, 39); */
+    color: #ff6f62;
+    font-weight: 500;
+    border-bottom: 2px solid #fc594a;
+}
+
+.addonplan {
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    color: rgb(40, 39, 39);
+    /* border-bottom: 2px solid #fc594a; */
+}
+
+.plncrd,.nxtcd {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 24px;
+    cursor: pointer;
+    width: 30%;
+    min-height: auto;
+    min-width: 275px;
+    position: relative;
+    overflow: hidden;
+}
+.nxtcd {
+    margin-left: 3rem;
+}
+
+.addonplan:hover {
+    color: #fc594a;
+    transition: all .3s ease;
+}
 
 .myplantablist {
     margin-top: 3rem;
     align-items: center;
+    border-bottom: 2px solid rgb(229, 225, 220);
+    max-width: 100%;
+}
+
+/* plans det */
+.pln-info {
+    /* margin: 1rem 0; */
+    font-family: 'Lato',sans-serif;
+    padding: 8px 10px;
+    background-color: rgb(234, 237, 241);
+    font-size: 14px;
+    border-radius: 8px;
+    color: rgb(45, 61, 84);
+    max-width: 45%;
+}
+
+.plantitle h4{
+    line-height: 120%;
+    color: rgb(45, 61, 84);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.status p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.validty p,
+.enddte p,
+.expin p,
+.strtdte p{
+    font-size: 14px;
+    font-weight: 500;}
+
+.myplnactive {
+    background: #ff6f62;
+    padding: 7px 10px;
+    color: aliceblue;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.due {
+    font-size: 13px;
+    font-weight: 600;
+    color: #687df1;
+}
+
+.val {
+    background: #90EE90;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.exp {
+    background: #f70d1a;
+    padding: 6px 13px;
+    color: white;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.more {
+    outline: none;
+    margin-top: 10px;
+    padding: 8px 1px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: #ff938a;
+    font-size: 18px;
+}
+
+.more:hover {
+    color: #f70d1a;
+    transition: all .3s ease;
 }
