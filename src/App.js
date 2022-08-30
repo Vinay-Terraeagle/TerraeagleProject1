@@ -18,6 +18,7 @@ import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/RecipeInstructions"
 import Subscriptionplan from './Pages/Subscriptionplan'
+import MySubscriptions from './Pages/MySubscriptions'
 import Notification from './Components/Notification'
 import RaiseTicket from './Pages/RaiseTicket'
 import Message from "./Pages/Message";
@@ -56,6 +57,7 @@ function App() {
         <Route path="/Dietplan" element={<Dietplan/>}/>
         <Route path="/RecipeView" element={<RecipeView/>}/>
         <Route path="/Subscriptionplan" element={<Subscriptionplan/>}/>
+        <Route path="/MySubscriptions" element={<MySubscriptions/>}/>
         <Route path="/RaiseTicket" element={<RaiseTicket/>}/>
         <Route path="/Message" element={<Message/>}/>
         <Route path="/LeaderBoard" element={<LeaderBoard/>}/>

@@ -22,6 +22,14 @@ export const MenuItems = [
             url: '/RecipeView',
           },
           {
+            title: 'Subscriptions',
+            url: '/MySubscriptions',
+          },
+          {
+            title: 'MySubscriptions',
+            url: '/Subscriptionplan',
+          },
+          {
             title: 'Leaderboard',
             url: '/Leaderboard',
           },
