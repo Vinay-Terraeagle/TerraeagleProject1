@@ -27,7 +27,7 @@ export default function Discover() {
             <div className='threads-container w-100'>
                 
                 <div className='row mt-3'>
-                    <form method="GET" action="https://wellness.revibe.in/threads/search" class="d-inline order-md-1">
+                    <form method="GET" action="" class="d-inline order-md-1">
                         <div class="sidebar-item sidebar-search col-6">
                             <div class="input-group">
                                 <input type="text" name="q" id="q" required="" class="form-control search-menu" placeholder="Search Wellness..." autocomplete="off" />

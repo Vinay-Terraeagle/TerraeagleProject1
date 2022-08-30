@@ -48,8 +48,17 @@ export const MenuItems = [
       {
         title: 'Spaces',
         url:'/Spaces',
-        Cname:'menuDropdown'
-        // icnpath:
+        Cname:'menuDropdown',
+        submenu: [
+          {
+            title: 'Events',
+            url: '/EventsView',
+          },
+          {
+            title: 'Challenges',
+            url: '/ChallengesView',
+          }
+        ]
       },
       
 ];

@@ -32,6 +32,7 @@ import PageNotFound from './Errors/PageNotFound'
 import Biodetails from './Components/Biodetails'
 import Discover from "./Pages/Discover";
 import ThreadsDetailedView from "./Pages/ThreadsDetailedView"
+import EventsView from "./Pages/EventsView";
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
         <Route path="/Biodetails" element={<Biodetails/>}/>
         <Route path="/Discover" element={<Discover />} />
         <Route path="/ThreadsDetailedView" element={<ThreadsDetailedView />} />
+        <Route path="/EventsView" element={<EventsView />} />
        </Routes>
 
     </Router>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }from 'react'
 import '../Styles/RaiseTicket.css'
 import {Container, Col, Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -10,9 +10,19 @@ import { CircleFill } from 'react-bootstrap-icons'
 import {PencilSquare}from 'react-bootstrap-icons';
 import {TicketDetailedFill}from 'react-bootstrap-icons';
 import {ThreeDots} from 'react-bootstrap-icons'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 export default function RaiseTicket() {
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   return (
     <React.Fragment>
         <Header/>
@@ -29,7 +39,7 @@ export default function RaiseTicket() {
                 <Col className='bg-white rounded-3 mt-5 p-5'>
                     <div className='ticketmenu'>
                         <div className='nw-ticket d-flex justify-content-end'>
-                            <button className='ticketadd'>
+                            <button className='ticketadd' onClick={handleShow}>
                             <PencilSquare className='mr-1 square'/>RaiseTicket</button>
                         </div>
                         <div className='ticket-cards'>
@@ -149,6 +159,27 @@ export default function RaiseTicket() {
                     </div>
                 </Col>
             </Row>
+
+
+
+
+
+            <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Raise Your Ticket</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Need to add some editor </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={handleClose}>
+                Raise Ticket
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          
         </Container>
     </React.Fragment>
   )
