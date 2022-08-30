@@ -79,3 +79,9 @@
 .starfill {
     margin: 10px;
 }
+
+.listview span {
+    font-size: 20px;
+    color: #e06358;
+    font-weight: 400;
+}

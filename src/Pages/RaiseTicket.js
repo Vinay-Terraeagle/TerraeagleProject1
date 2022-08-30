@@ -43,7 +43,35 @@ export default function RaiseTicket() {
                             <div className='tct-tm d-flex align-items-center'>
                                 <p>11:20 AM</p>
                                 <div className='icn-wrap ml-2'>
-                                <ThreeDots color='#f46154'/>
+                                <ThreeDots color='#ffffff'/>
+                                </div>
+                            </div> 
+                          </div>
+                          <div className='body p-1 mt-3'>
+                          <h1>How to write better Advertising Copy</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                          </div>
+                          <div className='userlst'>
+                            <div className='ussr d-flex'>
+                            <img src={UserIcon} className="usin" alt='/'/>
+                            <p className='usrname'>Syamsir Alam</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className='ticket-cards'>
+                          <div className='ticket-top d-flex justify-content-between text-center'>
+                            <div className='icket-icn d-flex align-content-center' >
+                               <div className='icn-wrap mr-2'>
+                               <TicketDetailedFill className='ticketicn' color='#ffffff'/>
+                               </div>
+                                <div className='tct-txt d-flex mr-5'>
+                                <h5>Ticket  #2022</h5>
+                            </div>
+                            </div>
+                            <div className='tct-tm d-flex align-items-center'>
+                                <p>11:20 AM</p>
+                                <div className='icn-wrap ml-2'>
+                                <ThreeDots color='#ffffff'/>
                                 </div>
                             </div> 
                           </div>
@@ -71,35 +99,7 @@ export default function RaiseTicket() {
                             <div className='tct-tm d-flex align-items-center'>
                                 <p>11:20 AM</p>
                                 <div className='icn-wrap ml-2'>
-                                <ThreeDots color='#f46154'/>
-                                </div>
-                            </div> 
-                          </div>
-                          <div className='body p-1 mt-3'>
-                          <h1>How to write better Advertising Copy</h1>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                          </div>
-                          <div className='userlst'>
-                            <div className='ussr d-flex'>
-                            <img src={UserIcon} className="usin" alt='/'/>
-                            <p className='usrname'>Syamsir Alam</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className='ticket-cards'>
-                          <div className='ticket-top d-flex justify-content-between text-center'>
-                            <div className='icket-icn d-flex align-content-center' >
-                               <div className='icn-wrap mr-2'>
-                               <TicketDetailedFill className='ticketicn' color='#f46154'/>
-                               </div>
-                                <div className='tct-txt d-flex mr-5'>
-                                <h5>Ticket  #2022</h5>
-                            </div>
-                            </div>
-                            <div className='tct-tm d-flex align-items-center'>
-                                <p>11:20 AM</p>
-                                <div className='icn-wrap ml-2'>
-                                <ThreeDots color='#f46154'/>
+                                <ThreeDots color='#ffffff'/>
                                 </div>
                             </div> 
                           </div>

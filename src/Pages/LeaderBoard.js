@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Col,Row,Card } from 'react-bootstrap'
+import { Container, Col,Row } from 'react-bootstrap'
 import Header from '../Components/Header'
-import Footer from '../Components/footer'
+// import Footer from '../Components/footer'
 import '../Styles/pnf.css'
 // images
 import User from '../assets/images/usericn.png';
@@ -72,16 +72,42 @@ export default function LeaderBoard() {
                     <div className='rnk-txt'>
                       <p>Jhone_Doe</p>
                       <div className='rnk-icn'>
-                        <StarFill className='starfill ml-01' color='#f46154'/>
+                        <StarFill className='starfill' color='#f46154'/>
                         <span>2500 <b>Points</b></span>
                       </div>
                     </div>
                   </div>
                   {/* card is over */}
 
-                  {/*  */}
-
+                  {/* lists */}
                 </div>
+                <div className='listcards'>
+                    <div className='listview d-flex justify-content-around mt-5 border-bottom'>
+                      <div>
+                        <span>User</span>
+                      </div>
+                      <div>
+                        <span>Points</span>
+                      </div>
+                      <div>
+                        <span>Recent Badge</span>
+                      </div>
+                    </div>
+                    <div className='ldr-cardmin'>
+                      <div className='ldr-cards'>
+                        <div>
+                          <span>1St</span>
+                        </div>
+                            <div>
+                          <img src={User} className="avatar"/>
+                        </div>
+                          <div>
+                            <h4>Tomassz Porostowski</h4>
+                            <span>Tomcioporo</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </Col>
             </Row>
         </Container>
