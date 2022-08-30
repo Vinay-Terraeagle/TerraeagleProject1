@@ -1495,6 +1495,11 @@ td {
 /*
  * CSS - Recipe
  */
+.threads-container {
+    padding: 50px;
+}
+
+.threads-container,
 .recipe-instruction-container,
 .habits-container,
 .exercise-container,
@@ -1514,7 +1519,9 @@ td {
 .fs-18 {
     font-size: 18px;
 }
-
+.fs-20 {
+    font-size: 20px;
+}
 .fs-22 {
     font-size: 22px;
 }
