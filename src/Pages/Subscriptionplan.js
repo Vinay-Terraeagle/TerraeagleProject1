@@ -19,7 +19,12 @@ export default function Subscriptionplan() {
                         <button className='btn-dash-1'>My Profile </button>
                     </div>
                 </div>
-              <Col className='bg-white rounded-3 p-5 mt-5 col'>
+              <Col>
+                {/* My plan tablist */}
+                <div className='myplantablist'>
+                  <button>My Active Plans</button>
+                  <button>My Active Addon Plans</button>
+                </div>
 
               </Col>
             </Row>
