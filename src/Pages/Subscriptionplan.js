@@ -10,7 +10,7 @@ export default function Subscriptionplan() {
   return (
     <React.Fragment>
       <Header/>
-      <section>
+      <section className='mb-5'>
         <Container>
             <Row>
             <div className='leader-section d-flex justify-content-between pt-5' style={{alignItems: 'center'}}>
@@ -124,6 +124,7 @@ export default function Subscriptionplan() {
             </Row>
         </Container>
       </section>
+      <Footer/>
     </React.Fragment>
   )
 }
