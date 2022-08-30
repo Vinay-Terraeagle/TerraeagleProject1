@@ -1,7 +1,18 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import crdmg from '../assets/images/h5.jpg'
 
 export default function DietPlanComponent() {
+
+
+
+  let navigate = useNavigate(); 
+    function renderRecipeInstructionsView(e) {
+        e.preventDefault();
+        let path = '/RecipeInstructionsView'; 
+        navigate(path);
+    } 
+
   return (
     <React.Fragment>
         {/* Lunch */}
@@ -59,7 +70,7 @@ export default function DietPlanComponent() {
                   <span>140 Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>View More</button>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView}>View More</button>
                 </div>
             </div>
             <div className='dt-rw'>
@@ -73,7 +84,7 @@ export default function DietPlanComponent() {
                   <span>140 Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>ViewMore</button>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView} >ViewMore</button>
                 </div>
             </div>
             <div className='dt-rw'>
@@ -87,7 +98,7 @@ export default function DietPlanComponent() {
                   <span>140 Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>ViewMore</button>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView}>ViewMore</button>
                 </div>
             </div>
             <div className='dt-rw'>
@@ -101,7 +112,7 @@ export default function DietPlanComponent() {
                   <span>140 Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>ViewMore</button>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView} >ViewMore</button>
                 </div>
             </div>
           </div>
@@ -162,7 +173,7 @@ export default function DietPlanComponent() {
                   <span>Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>View More</button>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView}>View More</button>
                 </div>
             </div>
             <div className='dt-rw'>
@@ -176,7 +187,7 @@ export default function DietPlanComponent() {
                   <span>Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView} >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 </svg>
@@ -194,7 +205,7 @@ export default function DietPlanComponent() {
                   <span>Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView} >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
           </svg>
@@ -212,7 +223,7 @@ export default function DietPlanComponent() {
                   <span>Kcal</span>
                 </div>
                 <div className='dbtn'>
-                  <button className='viw-btn'>
+                  <button className='viw-btn' onClick={renderRecipeInstructionsView} >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 </svg>
