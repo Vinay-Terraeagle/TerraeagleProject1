@@ -29,6 +29,7 @@ import BloodBiomarker from './Pages/BloodBiomarker'
 import PageNotFound from './Errors/PageNotFound'
 // test route
 import Biodetails from './Components/Biodetails'
+import Threads from "./Pages/Threads";
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
         
         {/* test route */}
         <Route path="/Biodetails" element={<Biodetails/>}/>
+        <Route path="/Threads" element={<Threads />} />
        </Routes>
 
     </Router>
