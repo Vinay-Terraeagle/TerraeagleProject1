@@ -7,6 +7,11 @@ import '../Styles/pnf.css'
 import User from '../assets/images/usericn.png';
 import bdge from '../assets/images/badge.png'
 import { StarFill } from 'react-bootstrap-icons'
+// medals
+import first from '../assets/images/G1.png'
+import second from '../assets/images/G2.png'
+import Third from '../assets/images/G3.png'
+import forth from '../assets/images/G4.png'
 
 export default function LeaderBoard() {
   return (
@@ -84,6 +89,9 @@ export default function LeaderBoard() {
                 <div className='listcards'>
                     <div className='listview d-flex justify-content-around mt-5 border-bottom'>
                       <div>
+                        <span>S.No</span>
+                      </div>
+                      <div>
                         <span>User</span>
                       </div>
                       <div>
@@ -95,15 +103,83 @@ export default function LeaderBoard() {
                     </div>
                     <div className='ldr-cardmin'>
                       <div className='ldr-cards'>
-                        <div>
-                          <span>1St</span>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>1St</span>
                         </div>
-                            <div>
-                          <img src={User} className="avatar"/>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>5000 <b>Points</b></h5>
                         </div>
-                          <div>
-                            <h4>Tomassz Porostowski</h4>
-                            <span>Tomcioporo</span>
+                        <div className='rating'>
+                          <img src={first} className="firstmed" alt='/'/>
+                        </div>
+                      </div>
+                      <div className='ldr-cards'>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>2St</span>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>3000 <b>Points</b></h5>
+                        </div>
+                        <div className='rating'>
+                          <img src={second} className="firstmed" alt='/'/>
+                        </div>
+                      </div>
+                      <div className='ldr-cards'>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>3St</span>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>2000 <b>Points</b></h5>
+                        </div>
+                        <div className='rating'>
+                          <img src={Third} className="firstmed" alt='/'/>
+                        </div>
+                      </div>
+                      <div className='ldr-cards'>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>4St</span>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>1000 <b>Points</b></h5>
+                        </div>
+                        <div className='rating'>
+                          <img src={forth} className="firstmed" alt='/'/>
+                        </div>
+                      </div>
+                      <div className='ldr-cards'>
+                        <div className='usic d-flex align-items-center justify-content-between'>
+                          <span className='SNo'>5St</span>
+                        </div>
+                        <div className='d-flex align-items-center'>
+                          <img src={User} className="crdicn mr-1" alt="/"/>
+                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            {/* <span>@ClientUserName</span> */}
+                          </div>
+                        <div className='pnts'>
+                        <h5>500 <b>Points</b></h5>
+                        </div>
+                        <div className='rating'>
+                          <img src={forth} className="firstmed" alt='/'/>
                         </div>
                       </div>
                     </div>
