@@ -60,18 +60,17 @@ export default function BloodBiomarker() {
                     </div>
                   </div>
                   </div>
-                  <div className='hlthscore dflex justify-content-center'>
+                  <div className='hlthscore dflex justify-content-center mb-5'>
                     <div className='hlth-items'>
                       <div className='hrt-sectn blood-bio-info' onClick={renderBloodBioIndetail} >
                         <div className='hrt-img'>
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Rental Function</h1>
-                        <p>Thyroid Stimulating Hormone</p>
+                        <h1>Blood</h1>
+                        <p>5%</p>
                         <div className='inrtxt'>
-                        <span className='tname'>(TSH)-Ultrosensit: 5.546 UlU / ml</span>
-                        <p className='danger'>Concern</p>
+                        <span className='tname'>Normal Range</span>
                         </div>
                         </div>
                       </div>
@@ -80,10 +79,10 @@ export default function BloodBiomarker() {
                           <img src={L8} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Vitamin D</h1>
+                        <h1>Protiens</h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span className='details'>38.03 mg/ml</span>
-                        <p className='green'>Everything looks goods</p>
+                          <span className='details'>Normal Range</span>
                         </div>
                         </div>
                       </div>
@@ -92,11 +91,10 @@ export default function BloodBiomarker() {
                           <img src={thy} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Kideny</h1>
-                        <p>Function</p>
+                        <h1>Metabolic</h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span>Creatinine : 0.81 mg/dl</span>
-                        <p className='good'>Everything looks goods</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div>
@@ -105,11 +103,10 @@ export default function BloodBiomarker() {
                           <img src={L9} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Cholesterol</h1>
-                        <p>Total</p>
+                        <h1>Renal</h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span>2.4.1 mg/dl</span>
-                        <p className='denger'>Concern</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div>
@@ -118,12 +115,10 @@ export default function BloodBiomarker() {
                           <img src={L6} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>HbA1C</h1>
-                        {/* <p>Thyroid Stimulating Hoemone</p> */}
+                        <h1>Hormones</h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span>6.8 %</span>
-                        {/* <p></p> */}
-                        <p>Concern</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div>
@@ -138,11 +133,10 @@ export default function BloodBiomarker() {
                           <img src={L8} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Vitamin</h1>
-                        {/* <p>200</p> */}
+                        <h1>Vit & Minerals</h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span>200 Pg / Ml</span>
-                        <p>Everything looks Goods</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div>
@@ -151,11 +145,10 @@ export default function BloodBiomarker() {
                           <img src={L1} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Liver Function</h1>
-                        <p>Alanina Aminotransforase</p>
+                        <h1>Liver </h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span>(ALT/SGPT): 5.2.3 U/I</span>
-                        <p className='denger'>Concern</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div> 
@@ -164,11 +157,10 @@ export default function BloodBiomarker() {
                           <img src={L4} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Calcium Total</h1>
-                        {/* <p>Thyroid Stimulating Hoemone</p> */}
+                        <h1>Iron</h1>
+                        <p>0%</p>
                         <div className='inrtxt'>
-                        <span>9.3 mg / dl</span>
-                        <p>Concern</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div> 
@@ -177,11 +169,10 @@ export default function BloodBiomarker() {
                           <img src={L5} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Iron Studies</h1>
-                        <p>Serum iron: 82.6 </p>
+                        <h1>Lipid</h1>
+                        <p>0% </p>
                         <div className='inrtxt'>
-                        <span>82.6 ug / dl</span>
-                        <p className='good'>Everything looks goods</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div> 
@@ -190,12 +181,10 @@ export default function BloodBiomarker() {
                           <img src={hrt} className="heart-icn" alt="/"/>
                         </div>
                         <div className='hrt-txt'>
-                        <h1>Complete Hemogram</h1>
-                        {/* <p>Hoemoglobin</p> */}
+                        <h1>Thyroid</h1>
+                        <p>Not Active</p>
                         <div className='inrtxt'>
-                        <span>Hoemoglobin: (HB) :14.2</span>
-                        {/* <p>ulU/ml</p> */}
-                        <p>Everything looks goods</p>
+                        <span>Normal Range</span>
                         </div>
                         </div>
                       </div>
