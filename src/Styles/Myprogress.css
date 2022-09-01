@@ -1,0 +1,10 @@
+.myprogress-container {
+    background: #fff;
+    border-radius: 10px;
+    border-top-right-radius: 100px;
+    margin-top: 50px;
+    box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
+    margin-bottom: 100px;
+    width: 62%;
+    border: 1px solid #ECE9E5;
+}

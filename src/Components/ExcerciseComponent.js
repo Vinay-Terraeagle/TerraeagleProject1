@@ -11,7 +11,7 @@ export default function excerciseComponent() {
   return (
     <React.Fragment>
         <div className='container exercise-container'>
-            <h4>Your Todays Workout Plan !!!</h4>
+            <h4>Your Todays Workout Plan</h4>
             <Row>
                 <Col className='col-5 workout-card'>
                     <div className='wrk-imgs'>
