@@ -164,7 +164,7 @@ export default function RaiseTicket() {
 
 
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} size="lg" onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Raise Your Ticket</Modal.Title>
             </Modal.Header>
@@ -179,7 +179,7 @@ export default function RaiseTicket() {
             </Modal.Footer>
           </Modal>
 
-          
+
         </Container>
     </React.Fragment>
   )
