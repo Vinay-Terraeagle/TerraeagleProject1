@@ -1,62 +1,4 @@
-/* .myplantablist {
-    margin: 3rem;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    border-bottom: 2px solid rgb(229, 225, 220);
-    border-top-color: rgb(229, 225, 220);
-    border-right-color: rgb(229, 225, 220);
-    border-left-color: rgb(229, 225, 220);
-    max-width: 100%;
-
-
-
-
-    outline: none;
-    display: flex;
-    cursor: pointer;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    transition: none 0s ease 0s;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-bottom: 2px solid transparent;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-left-color: transparent;
-    margin-bottom: -2px;
-    height: 100%;
-    color: rgb(140, 152, 171)
-
-
-
-
-
-
-    plas
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    padding: 24px;
-    cursor: pointer;
-    min-height: 400px;
-    min-width: 275px;
-    position: relative;
-    overflow: hidden;
-} */
-
-/* .mypln-crd {
-    pad
-
-} */
-
-
-.activeplan {
+.Tabactive.activeplan {
     outline: none;
     background: transparent;
     margin-right: 2rem;
@@ -69,8 +11,42 @@
     font-size: 14px;
     /* color: rgb(40, 39, 39); */
     color: #ff6f62;
-    font-weight: 500;
+    font-weight: 700;
     border-bottom: 2px solid #fc594a;
+}
+
+.myplan {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #a9a9a9;
+    margin: 0;
+}
+
+.addonplans {
+    margin-bottom: 2rem;
+}
+
+.adtxt {
+    padding: 1rem 0;
+    color: #e06358;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.activeplan {
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    padding: 0.5rem 0rem;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    font-size: 13px;
+    /* color: rgb(40, 39, 39); */
+    color: #3a3a3a;
+    font-weight: 500;
+    /* border-bottom: 2px solid #fc594a; */
 }
 
 .addonplan {
@@ -89,7 +65,7 @@
     /* border-bottom: 2px solid #fc594a; */
 }
 
-.plncrd,.nxtcd {
+.plncrd,.nxtcd ,.plnsecrd {
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -102,6 +78,40 @@
     position: relative;
     overflow: hidden;
 }
+
+/* btns */
+.bynw {
+    padding: 8px 10px;
+    margin-top: 10px;
+    max-width: 40%;
+    outline: none;
+    border: 1px solid #fc594a;
+    background: transparent;
+    font-size: 1rem;
+    border-radius: 10px;
+    color: #fc594a;
+    cursor: pointer;
+}
+.bynw:hover {
+    background: #fc594a;
+    color: #fff;
+    transition:  all .3s ease;
+}
+.addplan {
+    /* margin-top: 2rem; */
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 24px;
+    cursor: pointer;
+    width: 30%;
+    min-height: auto;
+    min-width: 275px;
+    position: relative;
+    overflow: hidden;
+}
+
 .nxtcd {
     margin-left: 3rem;
 }
@@ -112,10 +122,17 @@
 }
 
 .myplantablist {
-    margin-top: 3rem;
+    margin-top: 1rem;
     align-items: center;
     border-bottom: 2px solid rgb(229, 225, 220);
     max-width: 100%;
+}
+
+.myplan {
+    display: flex;
+    flex-direction: row;
+
+
 }
 
 /* plans det */
@@ -129,13 +146,16 @@
     color: rgb(45, 61, 84);
     max-width: 45%;
 }
+.dnger,.chck {
+    font-size: 25px;
+}
 
 .plantitle h4{
     line-height: 120%;
     color: rgb(45, 61, 84);
     font-size: 20px;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .status p {
@@ -143,12 +163,14 @@
     font-weight: 600;
 }
 
+
 .validty p,
 .enddte p,
 .expin p,
 .strtdte p{
     font-size: 14px;
-    font-weight: 500;}
+    font-weight: 500;
+    margin-bottom: 8px;}
 
 .myplnactive {
     background: #ff6f62;
@@ -189,6 +211,9 @@
     background: transparent;
     color: #ff938a;
     font-size: 18px;
+}
+.more span {
+    font-size: 14px;
 }
 
 .more:hover {
