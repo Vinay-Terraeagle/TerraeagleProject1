@@ -6,16 +6,16 @@ import Breadcrumbs from '../Components/Breadcrumbs'
 import BreakfastRecipe from "../assets/images/blueberryToast.jpg";
 
 export default function RecipeInstructions() {
-    const [crumbs, setCrumbs] = useState(['RecipeView', 'RecipeInstructionsView']);
+    // const [crumbs, setCrumbs] = useState(['RecipeView', 'RecipeInstructionsView']);
 
-    const selected = crumb => { }
+    // const selected = crumb => { }
 
     return (
 
         <React.Fragment>
             <Header />
             <div className='container mt-3'>
-                <Breadcrumbs crumbs={crumbs} selected={selected}/>
+                {/* <Breadcrumbs crumbs={crumbs} selected={selected}/> */}
                 <h2 className=""> Recipes Preparation Steps</h2>
                 <div className='recipe-instruction-container w-100'>
 
