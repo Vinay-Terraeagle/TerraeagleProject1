@@ -11,7 +11,7 @@ import DietPlanComponent from '../Components/DietPlanComponent'
 import GroceryListComponent from '../Components/GroceryListComponent'
 import HabbitsComponent from '../Components/HabbitsComponent'
 import ExcerciseComponent from '../Components/ExcerciseComponent'
-import myProgressComponent from '../Components/myProgressComponent';
+import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
 
 export default function Myplan() {
@@ -221,7 +221,7 @@ export default function Myplan() {
                   <h1>Grocery plan</h1>
                 </div>
               </div>
-              <div className={activeTab==='myProgress'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("myProgress")}>
+              <div className={activeTab==='myprogress'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("myprogress")}>
                 <div className='cl-icn'>
                   <img src={Mount} className="Mounimg" alt='/'/>
                 </div>
@@ -237,7 +237,7 @@ export default function Myplan() {
     {activeTab === "groceryList" && <GroceryListComponent/>}
     {activeTab === "habits" && <HabbitsComponent />}
     {activeTab === "exercise" && <ExcerciseComponent />}
-    {activeTab === "myProgress" && <myProgressComponent />}
+    {activeTab === "myprogress" && <MyprogressComponent />}
 
     
 

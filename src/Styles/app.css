@@ -1460,27 +1460,27 @@ position: relative;}
  * CSS Grocery View 
  */
 
-table {
+.grocery-list-container table {
     border-collapse: collapse;
     width: 100%;
 }
 
-thead {
+.grocery-list-container thead {
     background: #EAEEFC;
     color: #000;
 }
 
-tbody tr:nth-child(even) {
+.grocery-list-container tbody tr:nth-child(even) {
     background: #f0f0f2;
 }
 
-th,
-td {
+.grocery-list-container th,
+.grocery-list-container td {
     padding: 6px 10px;
     vertical-align: middle;
 }
 
-td {
+.grocery-list-container td {
     border: none;
     background: #F5F6FA;
 }
