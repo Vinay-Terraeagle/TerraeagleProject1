@@ -23,10 +23,6 @@ export const MenuItems = [
           },
           {
             title: 'Subscriptions',
-            url: '/MySubscriptions',
-          },
-          {
-            title: 'MySubscriptions',
             url: '/Subscriptionplan',
           },
           {

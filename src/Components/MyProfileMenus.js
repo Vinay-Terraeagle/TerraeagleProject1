@@ -5,7 +5,7 @@ export const MyProfileMenus = [
     },
     {
         title: 'My Subscriptions',
-        url:'/SubscriptionsPlan',
+        url:'/SubscriptionPlan',
     },
     {
         title: 'Logout',
