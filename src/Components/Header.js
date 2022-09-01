@@ -11,12 +11,12 @@ export default function Header() {
 
     const [dropdown, setDropdown] = useState(false);
 
-    let navigate = useNavigate(); 
-    function useNavigateToMyProfile(e) {
-        e.preventDefault();
-        let path = '/MyProfile'; 
-        navigate(path);
-    } 
+    // let navigate = useNavigate(); 
+    // function useNavigateToMyProfile(e) {
+    //     e.preventDefault();
+    //     let path = '/MyProfile'; 
+    //     navigate(path);
+    // } 
     
     let navigatetoHome = useNavigate(); 
     function useNavigateToDashboard(e) {

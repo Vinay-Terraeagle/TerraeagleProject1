@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
 import '../Styles/BloodBiomarker.css'
-import {Container ,Card ,Row ,Col,} from 'react-bootstrap'
+import {Container ,Row ,Col,} from 'react-bootstrap'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import bodyimg from '../assets/images/bodyimg.png'
@@ -124,7 +124,7 @@ export default function BloodBiomarker() {
                       </div>
                     </div>
                     <div className='helt-imgbg'>
-                      <img src={bodyimg} className="bdy-img"/>
+                      <img src={bodyimg} className="bdy-img" alt="/"/>
                     </div>
                     {/* rightside */}
                     <div className='right-sect'>

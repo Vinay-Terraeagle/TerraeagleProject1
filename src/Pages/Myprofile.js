@@ -40,7 +40,7 @@ import Usericon from '../assets/images/user.png'
               <Row>
                 <Col className='prof-p-bg  rounded'>
                 <div className='prof-dwn'>
-                  <img src={bgbckgr} className="ProfileBg  pt-3"/>  
+                  <img src={bgbckgr} className="ProfileBg  pt-3" alt="/"/>  
                   <div className='proflie'>
                   <img src={Usericon} alt="/" className='usericn'/>
                 

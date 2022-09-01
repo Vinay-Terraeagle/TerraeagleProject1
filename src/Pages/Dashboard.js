@@ -16,12 +16,6 @@ export default function Dashboard() {
         navigate(path);
     } 
 
-  const Sliders ={
-     items:1,
-    arrow:true,
-    margin: 10,
-    
-  }
 
   return (
     <React.Fragment>
