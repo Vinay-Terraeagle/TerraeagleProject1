@@ -96,22 +96,6 @@ export default function Dashboard() {
           </div>
             <div className='goal-m-col'>
               <div className='goal-m-row'>
-                {/* <div className='goal-icon'>
-                  <div className='goal-circle'>
-                    <div className='goal-cl'>
-                      <div className='gl-msk hf'>
-                        <div className='fll'></div>
-                      </div>
-                      <div className='msk-full'>
-                        <div className='fll'></div>
-                      </div>
-                      <div className='insd-crle'> 50%</div>
-                    </div>
-                  </div>
-                  {/* <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="droplet" viewBox="0 0 16 16">
-                  <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/>
-                  </svg> 
-                </div> */}
                 <div className='goal-icon'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" className="droplet" viewBox="0 0 16 16">
                   <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/>

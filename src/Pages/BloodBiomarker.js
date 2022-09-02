@@ -43,8 +43,6 @@ export default function BloodBiomarker() {
               <Col>
                 <Row className="mt-5">
                   <h2>Blood BioMarker</h2>
-                  
-                  <p></p>
                 </Row>
                 <Row className='bldmrks mt-3 h-100 rounded-2'>
                   <div className='usr-det d-flex justify-content-spbetween align-items-center'>

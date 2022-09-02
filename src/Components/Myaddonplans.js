@@ -2,6 +2,9 @@ import React from 'react'
 import { Container, Row ,Col, Card } from 'react-bootstrap'
 import '../Styles/Subscription.css'
 import { ArrowRightShort } from 'react-bootstrap-icons'
+import { Check } from 'react-bootstrap-icons'
+import { X } from 'react-bootstrap-icons'
+
 
 export default function Myaddonplans() {
   return (
@@ -9,50 +12,107 @@ export default function Myaddonplans() {
       <Container>
         <Row>
         <Col>
-                {/* myplan */}
-                <div className='myplan d-flex'>
-                  <div className='plncrd'>
+                
+                <div className='adonplns'>
+                <div className='plncrd col-4'>
+                    <div className='plns d-flex justify-content-between align-items-center'>
                     <div className='pln-info'>
                       <span>Diet Consultation</span>
                     </div>
+                    <div className='viewmore'>
+                          <button className='more'>₹<b>4999.00</b><span>/Month</span></button>
+                      </div>
+                    </div>
                     <div className='plantitle'>
-                      <h4>3 Month Comprehensive Plan</h4>
+                      <h4>1 Month Exercise = Diet Consultation</h4>
                     </div>
                     <div className='plandet '>
-                      <div className='status mt-2 mb-2 d-flex justify-content-between'>
-                        <p>Plan Status</p>
-                        <div>
-                          <span className='myplnactive'>Active</span>
-                        </div>
-                      </div>
                       <div className='strtdte mt-2 mb-2 d-flex justify-content-between'>
-                        <p>Start Date</p>
+                        <p>8 Excercise Plan</p>
                         <div>
-                          <span className='due'>22/08/2020</span>
+                            <Check color='#00FF00' className='chck'/>
                         </div>
                       </div>
                       <div className='enddte mt-2 mb-2  d-flex justify-content-between'>
-                        <p>End Date</p>
+                        <p>Mental Wellness</p>
                         <div>
-                          <span className='due'>21/08/2021</span>
+                          <X color='#ff0000' className="dnger"/>
                         </div>
                       </div>
                       <div className='validty mt-2 mb-2 d-flex justify-content-between'>
-                        <p>validity</p>
+                        <p>1:1 TRaining Session </p>
                         <div>
-                          <span className='val'>90 Days</span>
+                          <X color='#ff0000' className="dnger"/>
                         </div>
                       </div>
                       <div className='expin d-flex justify-content-between'>
-                        <p>Expires in</p>
+                        <p>Precision Nutrition</p>
                         <div>
-                          <span className='exp d-flex justify-content-between'>87</span>
+                          <X color='#ff0000' className="dnger"/>
                         </div>
                       </div>
-                      {/* <div className='viewmore'>
-                          <button className='more'>View More <ArrowRightShort/></button>
-                      </div> */}
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Full Body Blood Test</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Precision Nutrition</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Blood Biomarker Analysis</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>24x7 Dietitian Support</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Daily Checkin</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Doctor Consultation</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Weekly Nutrition Plan</p>
+                        <div>
+                          <Check color='#00FF00' className='chck'/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Weekly Dietitian Support</p>
+                        <div>
+                          <Check color='#00FF00' className='chck'/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Weekly Exercise List</p>
+                        <div>
+                          <Check color='#00FF00' className='chck'/>
+                        </div>
+                      </div>
+                      <div className='expin d-flex justify-content-between'>
+                        <p>Recipes</p>
+                        <div>
+                          <Check color='#00FF00' className='chck'/>
+                        </div>
+                      </div>
                     </div>
+                    <button className='bynw'>Buy Now</button>
                   </div>
                 </div>
               </Col>
