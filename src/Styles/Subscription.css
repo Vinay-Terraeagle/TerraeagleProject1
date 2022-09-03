@@ -15,7 +15,7 @@
     border-bottom: 2px solid #fc594a;
 }
 
-.myplan {
+.mpln {
     padding-bottom: 2rem;
     border-bottom: 1px solid #a9a9a9;
     margin: 0;
@@ -128,11 +128,9 @@
     max-width: 100%;
 }
 
-.myplan {
+.mpln {
     display: flex;
     flex-direction: row;
-
-
 }
 
 /* plans det */

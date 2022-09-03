@@ -7,7 +7,6 @@ export default function Navbar() {
     <React.Fragment>
         <nav>
           <ul className="menus p-0 m-0">
-
             {MenuItems.map((menu, index) => {
               return <NavbarMenus items={menu} key={index} />;
             })}
@@ -15,6 +14,5 @@ export default function Navbar() {
           </ul>
         </nav>
     </React.Fragment>
-
   )
 }
