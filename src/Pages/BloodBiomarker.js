@@ -10,16 +10,11 @@ import bodyimg from '../assets/images/bodyimg.png'
 // images
 import thy from '../assets/images/thy.png'
 import L1 from '../assets/images/L1.png'
-// import L2 from '../assets/images/L2.png'
-// import L3 from '../assets/images/L3.jpg'
 import L4 from '../assets/images/L4.jpg'
 import L5 from '../assets/images/L5.jpg'
 import L6 from '../assets/images/L6.jpg'
-// import L7 from '../assets/images/L7.png'
 import L8 from '../assets/images/L8.png'
 import L9 from '../assets/images/L9.jpg'
-// import L10 from '../assets/images/L10.png'
-// import L11 from '../assets/images/L11.png'
 import hrt from '../assets/images/hrt.png'
 
 export default function BloodBiomarker() {

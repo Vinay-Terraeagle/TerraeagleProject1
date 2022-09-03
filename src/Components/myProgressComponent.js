@@ -12,12 +12,8 @@ import Modal from 'react-bootstrap/Modal'
 export default function MyProgressComponent() {
 
   const [ShowUpdateInput, setUpdateInput] = useState('hide');
-
-
   const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
-
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

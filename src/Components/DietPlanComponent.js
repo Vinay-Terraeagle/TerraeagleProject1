@@ -4,8 +4,6 @@ import crdmg from '../assets/images/h5.jpg'
 
 export default function DietPlanComponent() {
 
-
-
   let navigate = useNavigate(); 
     function renderRecipeInstructionsView(e) {
         e.preventDefault();

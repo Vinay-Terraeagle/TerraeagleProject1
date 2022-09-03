@@ -14,6 +14,12 @@
     font-weight: 700;
     border-bottom: 2px solid #fc594a;
 }
+.expin p {
+    color: #765ef3;
+}
+.enddte p {
+    color: #8a8a8a;
+}
 
 .mpln {
     padding-bottom: 2rem;
@@ -166,7 +172,7 @@
 .enddte p,
 .expin p,
 .strtdte p{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     margin-bottom: 8px;}
 

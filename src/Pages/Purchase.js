@@ -32,60 +32,6 @@ export default function Purchase() {
                             <Check color='#00FF00' className='chck'/>
                         </div>
                       </div>
-                      <div className='enddte mt-2 mb-2  d-flex justify-content-between'>
-                        <p>Mental Wellness</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='validty mt-2 mb-2 d-flex justify-content-between'>
-                        <p>1:1 TRaining Session </p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>Precision Nutrition</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>Full Body Blood Test</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>Precision Nutrition</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>Blood Biomarker Analysis</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>24x7 Dietitian Support</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>Daily Checkin</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
-                      <div className='expin d-flex justify-content-between'>
-                        <p>Doctor Consultation</p>
-                        <div>
-                          <X color='#ff0000' className="dnger"/>
-                        </div>
-                      </div>
                       <div className='expin d-flex justify-content-between'>
                         <p>Weekly Nutrition Plan</p>
                         <div>
@@ -108,6 +54,60 @@ export default function Purchase() {
                         <p>Recipes</p>
                         <div>
                           <Check color='#00FF00' className='chck'/>
+                        </div>
+                      </div>
+                      <div className='enddte mt-2 mb-2  d-flex justify-content-between'>
+                        <p>Mental Wellness</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte mt-2 mb-2 d-flex justify-content-between'>
+                        <p>1:1 TRaining Session </p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>Precision Nutrition</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>Full Body Blood Test</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>Precision Nutrition</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>Blood Biomarker Analysis</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>24x7 Dietitian Support</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>Daily Checkin</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
+                        </div>
+                      </div>
+                      <div className='enddte d-flex justify-content-between'>
+                        <p>Doctor Consultation</p>
+                        <div>
+                          <X color='#ff0000' className="dnger"/>
                         </div>
                       </div>
                     </div>
