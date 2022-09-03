@@ -6,7 +6,10 @@ import { PencilSquare } from 'react-bootstrap-icons'
 import { Trash } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-
+import LineChart from './LineChart'
+import Dropdown from './Dropdown'
+import { MyProgressFilterMenus } from './MyprogressFilterMenus'
+import Select from 'react-dropdown-select'
 
 
 export default function MyProgressComponent() {
@@ -16,6 +19,10 @@ export default function MyProgressComponent() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const handleChange = (selectedOption) => {
+    console.log(selectedOption)
+  }
 
   return (
     <React.Fragment>
@@ -31,7 +38,15 @@ export default function MyProgressComponent() {
                   </svg>
                 </span>
               </div>
-              <div className="col-2 text-center">
+
+              <div className='progress-filter-wrapper col-3'>
+                <Select options={MyProgressFilterMenus} onChange={handleChange}></Select>
+              </div>
+
+
+
+
+              {/* <div className="col-2 text-center">
                   <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by  Weight'">
                       Weight
                   </a>
@@ -50,13 +65,21 @@ export default function MyProgressComponent() {
                   <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by Muscle Mass %'">
                     Muscle Mass %
                   </a>
-              </div>
+              </div> */}
             </div>
           </div>
             
-          <div className='my-progress-wrapper p-5'> 
-          
-            <div className='graph-wrapper my-progress-section'></div>
+            <div className='my-progress-wrapper p-5'> 
+              <div className='my-progress-history-section'>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <h4>Initial Shape</h4>
+                    {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
+                </div>
+                    
+              <div className='graph-wrapper my-progress-section'>
+                  <LineChart />
+              </div>
+            </div>
 
             <div className='my-progress-history-section'>
               <div className='d-flex justify-content-between align-items-center'>
