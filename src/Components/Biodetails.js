@@ -7,6 +7,7 @@ import Footer  from './footer'
 // import biodropdown from './biodropdown'
 // import biomenuitems from './biomenuitems'
 import Breadcrumbs from '../Components/Breadcrumbs';
+import { Link } from 'react-router-dom'
 
 // Cards
 export default function Biodetails() {
@@ -63,11 +64,11 @@ export default function Biodetails() {
                     <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/></svg>
                     <span>NA</span>
                 </div></td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg>
-                   </a>
+                   </Link>
                    </td>
                 </tr>
                 <tr data-id="1">
@@ -87,11 +88,11 @@ export default function Biodetails() {
                 </div>
                     </td>
                     <td ClassName="detail">
-                    <a href="/">
+                    <Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg>
-                    </a>
+                    </Link>
                     </td>
                 </tr>
                 <tr data-id="2">
@@ -110,10 +111,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="3">
                     <td>Eosinophils %</td>
@@ -131,10 +132,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="4">
                     <td>ESR</td>
@@ -150,10 +151,10 @@ export default function Biodetails() {
                     <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/></svg>
                     <span>NA</span>
                 </div></td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="5">
                     <td>PCV</td>
@@ -169,10 +170,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="6">
                     <td>Hemoglobin</td>
@@ -190,10 +191,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="7">
                     <td>Lymphocytes %</td>
@@ -211,10 +212,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="8">
                     <td>MCH</td>
@@ -231,10 +232,10 @@ export default function Biodetails() {
                     <span>29.00</span>
                 </div><span ClassName="px-2" id="arrow_8_1"><i ClassName="fa fa-arrow-down"></i></span>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="9">
                     <td>MCHC</td>
@@ -252,10 +253,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td ClassName="detail"><a href="/">
+                    <td ClassName="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="10">
                     <td>MCV</td>
@@ -273,10 +274,10 @@ export default function Biodetails() {
                     <span>90.00</span>
                 </div>
                     <span className="px-2" id="arrow_10_1"></span></td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="11">
                     <td>Monocytes %</td>
@@ -294,10 +295,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="12">
                     <td>Neutrophils %</td>
@@ -315,10 +316,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="13">
                     <td>Platelet Count</td>
@@ -332,10 +333,10 @@ export default function Biodetails() {
                     <td id="row_13_1" className="above_or_below_std">
                     100.00<span className="px-2" id="arrow_13_1"><i className="fa fa-arrow-down"></i></span>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="14">
                     <td>RBC</td>
@@ -347,9 +348,9 @@ export default function Biodetails() {
                 </div>
                     </td>
                     <td id="row_14_1" className="above_or_below_std">6.00<span className="px-2" id="arrow_14_1"></span></td>
-                    <td className="detail"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
+                    <td className="detail"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="15">
                     <td>RDW-CV</td>
@@ -367,10 +368,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="16">
                     <td>Hs CRP</td>
@@ -388,10 +389,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="17">
                     <td>C-Reactive Protein</td>
@@ -409,10 +410,11 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail">
+                        <Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="18">
                     <td>MPV</td>
@@ -430,10 +432,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
                 <tr data-id="19">
                     <td>RDW-SD</td>
@@ -451,10 +453,10 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td className="detail"><a href="/">
+                    <td className="detail"><Link to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg></a></td>
+                    </svg></Link></td>
                 </tr>
             </tbody>
                         </table>
@@ -486,7 +488,7 @@ export default function Biodetails() {
 
                             <div className='bodypart '>
                                <div className='navdiv'>
-                                    <a href='/'>Lab Results</a>
+                                    <Link to='/'>Lab Results</Link>
                                </div>
                                <div className="col-sm-12 col d-flex justify-center">
                                     <div className="col-sm-6" style={{background: 'pink', height: '47px'}}>

@@ -12,29 +12,9 @@ import first from '../assets/images/G1.png'
 import second from '../assets/images/G2.png'
 import Third from '../assets/images/G3.png'
 import forth from '../assets/images/G4.png'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default function LeaderBoard() {
-
-  useEffect(() => {
-    axios.get('https://revdev.revibe.in/api/leader_board',{
-      headers:{
-        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZTc0MzI5MThmYmIxNzQ2NjEzYzJjZWUyMWNmMTI5MzM1NDM0NTg1OThhYjI2YTBlNGZlM2IzNGQyZWRlYzYxMWJjZGJlZTc2MGRkZTllYzEiLCJpYXQiOjE2NjIyMTE4MzIuOTk1ODMxLCJuYmYiOjE2NjIyMTE4MzIuOTk1ODM1LCJleHAiOjE2OTM3NDc4MzIuOTkwMTE2LCJzdWIiOiIxMjkiLCJzY29wZXMiOltdfQ.hVglBoyWq-HPxTrEz5tKqCDqnKcpnKhEZb6qPfgaPjvcjHWptbX3M0Y_RVIIKXx4IWC9IAbu2SlTlNU4uskG8zgLIYh4BsNuBcaI4eDjqCLsYsXf0gj60lCFGwzsnxPHAOPwQNa_ny4-BUn2fkAFa2v_eFj6SBq8TLDkNwc8RlEWIve10Q7o0WN2kmeTDPQS0sb7ygf7sI4wUt7i09EXT0p1PrO62ZsldErR3plancWzfXhIkldOmaY92mOFFVO2lbUBeABU3dfv-tyM1olNBoO0TGHcw6afRTbEXNfX3NzTGNb7q2V5Te0SX7cR7lNNDcjKrmMe1ze_jGwE6mthMrOne1_D1ZzAIvwcV3SU8wG0rt1G3QXGNiHCtnLxXPc-d8v7ARB-VOYyimHyhrsCT8BTX1IWw3bs-kxUV5qEQDykkxiYKU59iYf9AP2uFOJB1jFunJ8NPcEiyZvipWR54sRpC_1xvZnAsuwqNq0wlTsLfgusWSejnOTVzMS5Mdj8dPgqzhhCmB1zwiZPtHQPz5wPXxoTqqEzQD7VgJFb7SrxnrmYuq3RT-b-73pIiMZmbC6LFjk5C2LbWvgwFKgNje-eXahfPBUb_CwW9V74eYiB_vVhPkdql-EMu_fgKG72nf8j-E5c6iNhNMYeBUW3qEEKjegdNjCR8rpA9gJ_bOo"
-      }
-    }).then((response) => {
-      // console.log(response)
-      // const resData = response.data.data.leaders[0];
-      const arr1 = response.data.data.leaders[0];
-      const arr2 = response.data.data.leaders[1];
-      console.log(arr1)
-      console.log(arr2)
-      // const arr1 = response.data.data.leaders;
-      // console.log(resData)
-    }).catch((error) => {
-      console.log(error)
-    })
-  })
-
 
   return (
    <React.Fragment>

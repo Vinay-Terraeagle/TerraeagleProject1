@@ -280,15 +280,15 @@ export default function Dashboard() {
                             </div>
                           </div>
                           <div className='iner-logo'>
-                          <div class="circle-wrap">
-                            <div class="circle">
-                              <div class="mask half">
-                                <div class="fill"></div>
+                          <div className="circle-wrap">
+                            <div className="circle">
+                              <div className="mask half">
+                                <div className="fill"></div>
                                 </div>
-                                <div class="mask full">
-                                <div class="fill"></div>
+                                <div className="mask full">
+                                <div className="fill"></div>
                                 </div>
-                                <div class="inside-circle"> 
+                                <div className="inside-circle"> 
                                 <p>75%</p>
                                 <span>Compliance</span>
                                 </div>

@@ -7,7 +7,9 @@ import { Trash } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import LineChart from './LineChart'
-import Dropdown from './Dropdown'
+import { Link } from 'react-router-dom'
+// import Dropdown from './Dropdown'
+
 import { MyProgressFilterMenus } from './MyprogressFilterMenus'
 import Select from 'react-dropdown-select'
 
@@ -49,22 +51,22 @@ export default function MyprogressComponent() {
               {/* <div className="col-2 text-center">
                   <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by  Weight'">
                       Weight
-                  </a>
+                  </Link>
               </div>
               <div className="col-2 text-center">
                   <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by Waist'">
                     Waist
-                  </a>
+                  </Link>
               </div>
               <div className="col-2 text-center">
                 <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by  Body Fat %'">
                   Body Fat %
-                </a>
+                </Link>
               </div>
               <div className="col-2 text-center">
                   <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by Muscle Mass %'">
                     Muscle Mass %
-                  </a>
+                  </Link>
               </div> */}
             </div>
           </div>
@@ -207,19 +209,19 @@ export default function MyprogressComponent() {
                         <tbody>
                             <tr>
                                 <td className='text-center'>
-                                  <a href="#" className="pop">
+                                  <Link to="#" className="pop">
                                     <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" />
-                                  </a>
+                                  </Link>
                                 </td>
                                 <td className='text-center'>
-                                  <a href="#" className="pop">
+                                  <Link to="#" className="pop">
                                     <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" />
-                                  </a>
+                                  </Link>
                                 </td>
                                 <td className='text-center'>
-                                  <a href="#" className="pop">
+                                  <Link to="#" className="pop">
                                     <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" />
-                                  </a>
+                                  </Link>
                                 </td>
                             </tr>
                         </tbody>
@@ -248,19 +250,19 @@ export default function MyprogressComponent() {
                         <tbody>
                             <tr>
                                 <td className='text-center'>
-                                  <a href="#" className="pop">
+                                  <Link to="#" className="pop">
                                     <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" />
-                                  </a>
+                                  </Link>
                                 </td>
                                 <td className='text-center'>
-                                  <a href="#" className="pop">
+                                  <Link to="#" className="pop">
                                     <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" />
-                                  </a>
+                                  </Link>
                                 </td>
                                 <td className='text-center'>
-                                  <a href="#" className="pop">
+                                  <Link to="#" className="pop">
                                     <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" />
-                                  </a>
+                                  </Link>
                                 </td>
                             </tr>
                         </tbody>
