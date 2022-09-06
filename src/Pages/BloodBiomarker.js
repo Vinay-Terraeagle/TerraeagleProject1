@@ -43,9 +43,9 @@ export default function BloodBiomarker() {
                   <div className='usr-det d-flex justify-content-spbetween align-items-center'>
                   <div className='col-8 mr-2'>
                   <h1>Hi, Vinesh</h1>
-                    <p>Congratulaations, We have Sucessfully Completed your health diagnosis. This ia a big steptowaeds staying on top of your health and identify potentine to improve!</p>
-                    <h4>10 Vita Health Parameters of a Human body EcoSystem</h4>
-                    <p>Below are the health Parameters which reqire routine checkups for primary helthcard. the view also includes personalised information depending on the tests you have taken.</p>
+                    <p>Congratulations, We have successfully completed your health diagnosis. This is a big step towards staying on top of your health and identify potential to improve!</p>
+                    <h4>10 Vital Health Parameters of a Human Body Ecosystem 8 5</h4>
+                    <p>Below are the health parameters which require routine checkups Out of 100 for primary healthcare. The view also includes personalised infor-mation depending on the tests you have taken.</p>
                   </div>
                     <div className='user-circle col-3'>
                     <div style={{ width: 200, height: 200 }}>

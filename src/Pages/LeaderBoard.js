@@ -26,9 +26,6 @@ export default function LeaderBoard() {
                     <div className='plans-txts'>
                         <h1>LeaderBoard</h1>
                     </div>
-                    <div>
-                        <button className='btn-dash-1'>View my </button>
-                    </div>
                 </div>
               <Col className='bg-white rounded-3 p-5 mt-5'>
               <div className='ledr-btns d-flex justify-content-end'>

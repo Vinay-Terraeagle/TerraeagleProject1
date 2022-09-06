@@ -46,7 +46,7 @@ export default function Activeplan() {
                       <div className='expin d-flex justify-content-between'>
                         <p>Expires in</p>
                         <div>
-                          <span className='exp d-flex justify-content-between'>87</span>
+                          <span className='expl d-flex justify-content-between'>87</span>
                         </div>
                       </div>
                       {/* <div className='viewmore'>
@@ -89,7 +89,7 @@ export default function Activeplan() {
                       <div className='expin d-flex justify-content-between'>
                         <p>Expires in</p>
                         <div>
-                          <span className='exp d-flex justify-content-between'>87</span>
+                          <span className='expl d-flex justify-content-between'>87</span>
                         </div>
                       </div>
                       {/* <div className='viewmore'>
@@ -139,7 +139,7 @@ export default function Activeplan() {
                       <div className='expin d-flex justify-content-between'>
                         <p>Expires in</p>
                         <div>
-                          <span className='exp d-flex justify-content-between'>87</span>
+                          <span className='expl d-flex justify-content-between'>87</span>
                         </div>
                       </div>
                       {/* <div className='viewmore'>

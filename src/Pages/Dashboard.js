@@ -1,13 +1,16 @@
 import React  from 'react'
 // import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import Header from '../Components/Header'
-import HealthMatrix from '../Components/HealthMatrix'
 import '../Styles/app.css'
+import { Link } from 'react-router-dom'
+// Components
+import EmailVerify from '../Components/EmailVerifyComp/EmailVerify'
+import EventsComp from '../Components/EventsComponents/EventsComp.js'
 import Footer from '../Components/footer'
 import AddonCarousels from '../Components/AddonCarousels'
 import MealsComp from '../Components/MealsComp'
-import { Link } from 'react-router-dom'
+import Header from '../Components/Header'
+import HealthMatrix from '../Components/HealthMatrix'
 // api
 // import axios from 'axios';
 
@@ -61,134 +64,9 @@ export default function Dashboard() {
         </section>
 
         {/* alertbox */}
-        <section className='alert-box'>
-          <div className='container'>
-            <div className='alert-col'>
-              <div className='alert-row'>
-                <div className='alert-txt-bx'>
-                  <h1>Verification Pending</h1>
-                  <p>Please verify Email and Mobile number </p>
-                </div>
-                <div className='verify-box'>
-                  <div className='verify-email'>
-                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="email" viewBox="0 0 16 16">
-                  <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
-                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1.5a.5.5 0 0 1-1 0V11a.5.5 0 0 1 1 0Zm0 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
-                  </svg> 
-                  </div>
-                  <div className='verify-mobile'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="mobile" viewBox="0 0 16 16">
-                  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
-                  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                  </svg>
-                  </div>
-                </div>
-                <div className='close-icon'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="close-arrow" viewBox="0 0 16 16">
-                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       <EmailVerify/>
 
         {/* Dashboard-body */}
-      <section className='your-goal'>
-        <div className='container'>
-          <div className='goal-txt'>
-            <h1>Your Goals</h1>
-          </div>
-            <div className='goal-m-col'>
-              <div className='goal-m-row'>
-                <div className='goal-icon'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" className="droplet" viewBox="0 0 16 16">
-                  <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/>
-                  </svg>
-                </div>
-                <div className='goal-tx-row'>
-                  <div className='goal-tx'>
-                    <h1>Water</h1>
-                  </div>
-                  <div className='gl-num'>
-                    <h1>4</h1>
-                  </div>
-                  <div className='gl-limit'>
-                    <h1>Liters</h1>
-                  </div>
-                  <div className='main-tx'>
-                    <h1>Ideal Water intake</h1>
-                  </div>
-                </div>
-              </div>
-              <div className='goal-sleep'>
-                <div className='goal-icon'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className='Sleep' viewBox="0 0 16 16">
-              <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-              <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-            </svg>
-                </div>
-                <div className='goal-tx-row'>
-                  <div className='goal-tx'>
-                    <h1>Sleep</h1>
-                  </div>
-                  <div className='gl-num'>
-                    <h1>7</h1>
-                  </div>
-                  <div className='gl-limit'>
-                    <h1>Liters</h1>
-                  </div>
-                  <div className='main-tx'>
-                    <h1>Ideal Sleep</h1>
-                  </div>
-                </div>
-              </div>
-              <div className='goal-steps'>
-                <div className='goal-icon'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="droplet" viewBox="0 0 16 16">
-                  <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/>
-                  </svg>
-                </div>
-                <div className='goal-tx-row'>
-                  <div className='goal-tx'>
-                    <h1>Steps</h1>
-                  </div>
-                  <div className='gl-num'>
-                    <h1>10,000</h1>
-                  </div>
-                  <div className='gl-limit'>
-                    <h1>Steps</h1>
-                  </div>
-                  <div className='main-tx'>
-                    <h1>Ideal Steps activity</h1>
-                  </div>
-                </div>
-              </div>
-              <div className='goal-workout'>
-                <div className='goal-icon'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="droplet" viewBox="0 0 16 16">
-                  <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/>
-                  </svg>
-                </div>
-                <div className='goal-tx-row'>
-                  <div className='goal-tx'>
-                    <h1>WorkOuts</h1>
-                  </div>
-                  <div className='gl-num'>
-                    <h1>325</h1>
-                  </div>
-                  <div className='gl-limit'>
-                    <h1>WorkOuts</h1>
-                  </div>
-                  <div className='main-tx'>
-                    <h1>Ideal Workout</h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </section>
-
         <section className='dashboard-body'>
             <div className='container'>
               <div className='dash-main-col'>
@@ -302,7 +180,6 @@ export default function Dashboard() {
 
                       <div className='dash-second-card'>
                         <MealsComp/>
-
                       </div>
                     </div>
                     <div>
@@ -341,174 +218,7 @@ export default function Dashboard() {
                       
                       </div>
                       {/* calender section */}
-                      <div className='events'>
-                        <div className="calender-row">
-                          <div className='calender-txt'>
-                            <div className='cl-tx'>
-                              <div className='cl-txt'>
-                              <h1>Events Today. </h1>
-                              </div>
-                              <div className='cl-days'>
-                                <button className='wek-dropdwn'>
-                                  Today
-                                  <div>
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="drpdwn" viewBox="0 0 16 16">
-                                <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                              </svg>
-                                  </div>
-                                </button>
-                              </div>
-                            </div>
-                            <div className='cal-rows'>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>20</h1>
-                                  <span>Aug</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>While we often see it as a means to populate a mockup or show</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>10</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>02</h1>
-                                  <span>Sep</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>While we often see it as a means to populate a mockup or show</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>2</h1>
-                                  <span>:40 PM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>25</h1>
-                                  <span>Oct</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>While we often see it as a means to populate a mockup or show</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>9</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>25</h1>
-                                  <span>Oct</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>While we often see it as a means to populate a mockup or show</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>9</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>25</h1>
-                                  <span>Oct</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>demo content can live up to its name by helping</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>9</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>25</h1>
-                                  <span>Oct</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>While we often see it as a means to populate </h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>9</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>25</h1>
-                                  <span>Oct</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>Demo content is probably one of the least talked</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>9</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-                              <div className='cal-card'>
-                                <div className='day'>
-                                  <h1>25</h1>
-                                  <span>Oct</span>
-                                </div>
-                                <div className='evnt-bdy'>
-                                <h1>Demo content is probably one of the least talked</h1>
-                                </div>
-                                <div className='goto'>
-                                <div className='clck'>
-                                  <h1>9</h1>
-                                  <span>:00 AM</span>
-                                </div>
-                                <div className='gg-btn'>
-                                    <button className='gt-btn'>View details..</button>
-                                </div>
-                                </div>
-                              </div>
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <EventsComp/>
 
                     </div>
                     <div>
