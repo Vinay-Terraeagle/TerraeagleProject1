@@ -43,7 +43,7 @@ export default function NavbarMenus({ items }) {
           <Dropdown submenus={items.submenu} dropdown={dropdown}  />
         </>
       ) : (
-        <NavLink to={items.url} activeclassName="active" className="menus">{items.title}</NavLink>
+        <NavLink to={items.url} activeClassName="active" className="menus">{items.title}</NavLink>
       )}
     </li>
   )

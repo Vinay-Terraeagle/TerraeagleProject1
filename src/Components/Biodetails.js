@@ -272,8 +272,8 @@ export default function Biodetails() {
                     <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/></svg>
                     <span>90.00</span>
                 </div>
-                    <span class="px-2" id="arrow_10_1"></span></td>
-                    <td class="detail"><a href="/">
+                    <span className="px-2" id="arrow_10_1"></span></td>
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -294,7 +294,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -315,7 +315,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -330,9 +330,9 @@ export default function Biodetails() {
                 </div>
                     </td>
                     <td id="row_13_1" className="above_or_below_std">
-                    100.00<span class="px-2" id="arrow_13_1"><i className="fa fa-arrow-down"></i></span>
+                    100.00<span className="px-2" id="arrow_13_1"><i className="fa fa-arrow-down"></i></span>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -346,8 +346,8 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td id="row_14_1" class="above_or_below_std">6.00<span class="px-2" id="arrow_14_1"></span></td>
-                    <td class="detail"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
+                    <td id="row_14_1" className="above_or_below_std">6.00<span className="px-2" id="arrow_14_1"></span></td>
+                    <td className="detail"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
                 </tr>
@@ -367,7 +367,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -388,7 +388,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -409,7 +409,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -430,7 +430,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -451,7 +451,7 @@ export default function Biodetails() {
                     <span>NA</span>
                 </div>
                     </td>
-                    <td class="detail"><a href="/">
+                    <td className="detail"><a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" fill="currentColor" className="bioarw" viewBox="0 0 16 16">
                     <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg></a></td>
@@ -488,7 +488,7 @@ export default function Biodetails() {
                                <div className='navdiv'>
                                     <a href='/'>Lab Results</a>
                                </div>
-                               <div class="col-sm-12 col d-flex justify-center">
+                               <div className="col-sm-12 col d-flex justify-center">
                                     <div className="col-sm-6" style={{background: 'pink', height: '47px'}}>
                                         <p style={{marginTop: '15px' ,alignItems: 'center'}}>NA<small>%</small></p>
                                         </div>
@@ -497,25 +497,25 @@ export default function Biodetails() {
                                         </div>
         
                                 </div>
-                                <div class="col-sm-12 d-flex">
-                                    <div class="col-sm-2" style={{height: '4px'}}>
+                                <div className="col-sm-12 d-flex">
+                                    <div className="col-sm-2" style={{height: '4px'}}>
                                     <p style={{fontSize: '10px',marginTop: '1.2rem', width: 'fit-content'}}>low</p></div>
-                                    <div class="col-sm-2" style={{height: '4px'}}>
+                                    <div className="col-sm-2" style={{height: '4px'}}>
                                     <p style={{fontSize: '10px',marginTop: '1.2rem', width: 'fit-content'}}>border low</p></div>
-                                    <div class="col-sm-4" style={{height: '4px', alignItems: 'center'}}>
+                                    <div className="col-sm-4" style={{height: '4px', alignItems: 'center'}}>
                                     <p style={{fontSize: '10px',marginTop: '1.2rem', width: 'fit-content'}}>normal</p></div>
-                                    <div class="col-sm-2" style={{height: '4px'}}>
+                                    <div className="col-sm-2" style={{height: '4px'}}>
                                     <p style={{fontSize: '10px',marginTop: '1.2rem', width: 'fit-content'}}>border high</p></div>
-                                    <div class="col-sm-2" style={{height: '4px'}}>
+                                    <div className="col-sm-2" style={{height: '4px'}}>
                                     <p style={{fontSize: '10px', marginTop: '1.2rem', width: 'fit-content'}}>high</p></div>
                                 </div>
 
-                                <div class="col-sm-12 mt-5 d-flex">
-                                    <div class="col-sm-2" style={{height: '4px',background: 'red'}}></div>
-                                    <div class="col-sm-2" style={{height: '4px', background: 'orange'}}></div>
-                                    <div class="col-sm-4" style={{height: '4px', background: 'green'}}></div>
-                                    <div class="col-sm-2" style={{height: '4px', background: 'orange'}}></div>
-                                    <div class="col-sm-2" style={{height: '4px', background: 'red'}}></div>
+                                <div className="col-sm-12 mt-5 d-flex">
+                                    <div className="col-sm-2" style={{height: '4px',background: 'red'}}></div>
+                                    <div className="col-sm-2" style={{height: '4px', background: 'orange'}}></div>
+                                    <div className="col-sm-4" style={{height: '4px', background: 'green'}}></div>
+                                    <div className="col-sm-2" style={{height: '4px', background: 'orange'}}></div>
+                                    <div className="col-sm-2" style={{height: '4px', background: 'red'}}></div>
                                 </div>
                                 <div className='bio-details'>
                                     <span>Background</span>

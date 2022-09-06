@@ -276,7 +276,8 @@ position: relative;}
 
 .email, .mobile {
     color: #c4473c;
-    cursor: pointer;}
+    cursor: pointer;
+}
 .verify-email, .verify-mobile {
     background: var(--white-bg);
     width: 50px;

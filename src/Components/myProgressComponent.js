@@ -12,7 +12,7 @@ import { MyProgressFilterMenus } from './MyprogressFilterMenus'
 import Select from 'react-dropdown-select'
 
 
-export default function MyProgressComponent() {
+export default function MyprogressComponent() {
 
   const [ShowUpdateInput, setUpdateInput] = useState('hide');
   const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
@@ -34,7 +34,7 @@ export default function MyProgressComponent() {
               <div className="col-3 fs-18 filter-wrapper">Filter By:
                 <span className="arrow-wrapper">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" className="arrow-icon">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
                   </svg>
                 </span>
               </div>
@@ -274,31 +274,31 @@ export default function MyProgressComponent() {
 
         <Modal show={show} size="lg" onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title><h4 class="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4></Modal.Title>
+              <Modal.Title><h4 className="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4></Modal.Title>
             </Modal.Header>
             <Modal.Body>
               
-            <form action="https://wellness.revibe.in/uploadfile" class="fileUploadForm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+            <form action="https://wellness.revibe.in/uploadfile" className="fileUploadForm" method="post" enctype="multipart/form-data" novalidate="novalidate">
                             <input type="hidden" name="_token" value="" />                    
                             <input type="hidden" name="client_name" value="" id="upload_image_client" />
-                            <div class="form-group row">
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp" class="form-text text-muted">Front View. Size of image should not be
+                            <div className="form-group row">
+                                <div className="form-group">
+                                    <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                    <small id="fileHelp" className="form-text text-muted">Front View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp2" class="form-text text-muted">Side View. Size of image should not be
+                                <div className="form-group">
+                                    <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                    <small id="fileHelp2" className="form-text text-muted">Side View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp3" class="form-text text-muted">Back View. Size of image should not be
+                                <div className="form-group">
+                                    <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                    <small id="fileHelp3" className="form-text text-muted">Back View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
                               </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
             </Modal.Body>
             <Modal.Footer>
@@ -315,39 +315,39 @@ export default function MyProgressComponent() {
 
 
 
-        <div class="modal fade show" id="uploadModal" tabindex="-1" role="dialog" aria-modal="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4>
+        <div className="modal fade show" id="uploadModal" tabindex="-1" role="dialog" aria-modal="true">
+            <div className="modal-dialog" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h4 className="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
 
-                        <form action="https://wellness.revibe.in/uploadfile" class="fileUploadForm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+                        <form action="https://wellness.revibe.in/uploadfile" className="fileUploadForm" method="post" enctype="multipart/form-data" novalidate="novalidate">
                             <input type="hidden" name="_token" value="" />                    
                             <input type="hidden" name="client_name" value="" id="upload_image_client" />
-                            <div class="form-group row">
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp" class="form-text text-muted">Front View. Size of image should not be
+                            <div className="form-group row">
+                                <div className="form-group">
+                                    <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                    <small id="fileHelp" className="form-text text-muted">Front View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp2" class="form-text text-muted">Side View. Size of image should not be
+                                <div className="form-group">
+                                    <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                    <small id="fileHelp2" className="form-text text-muted">Side View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp3" class="form-text text-muted">Back View. Size of image should not be
+                                <div className="form-group">
+                                    <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                    <small id="fileHelp3" className="form-text text-muted">Back View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
                               </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
                     </div>
                 </div>
             </div>

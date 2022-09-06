@@ -12,11 +12,11 @@ export default function ThreadsDetailedView() {
                 <div className="row justify-content-around threads-detailed-view-container">
                     <div className="col-10 mt-4">
                         <div className='row mb-4'>
-                            <div class="col-12 d-flex justify-content-end">
-                                <button class="btn rounded-pill btn-sm btn-green mr-2">
-                                    <span class="text-white fw-bold">Subscribe</span>
+                            <div className="col-12 d-flex justify-content-end">
+                                <button className="btn rounded-pill btn-sm btn-green mr-2">
+                                    <span className="text-white fw-bold">Subscribe</span>
                                 </button> 
-                                <button class="btn rounded-pill btn-sm btn-blue mr-2"><span class="fw-bold text-white">Unlocked</span></button>
+                                <button className="btn rounded-pill btn-sm btn-blue mr-2"><span className="fw-bold text-white">Unlocked</span></button>
                             </div>
                         </div>
 
@@ -24,15 +24,15 @@ export default function ThreadsDetailedView() {
                             <div className="card-header p-3">
 
                                 <div className='row align-items-center'>
-                                    <div  class="col-6 d-flex align-items-center">
-                                        <div class="d-flex flex-column">
-                                            <a href="/profiles/sanjana" class="mr-2 fs-22 text-white">Sanjana</a> 
-                                            <small  class="mr-2 text-capitalize fw-bold text-white">said 2 days ago...</small>
+                                    <div  className="col-6 d-flex align-items-center">
+                                        <div className="d-flex flex-column">
+                                            <a href="/profiles/sanjana" className="mr-2 fs-22 text-white">Sanjana</a> 
+                                            <small  className="mr-2 text-capitalize fw-bold text-white">said 2 days ago...</small>
                                         </div>
-                                        <div class="d-flex align-items-center">
-                                            <button type="submit" class="btn btn-sm bg-white rounded-pill">
-                                                <span class="">0</span> 
-                                                <span class="fa fa-heart"></span>
+                                        <div className="d-flex align-items-center">
+                                            <button type="submit" className="btn btn-sm bg-white rounded-pill">
+                                                <span className="">0</span> 
+                                                <span className="fa fa-heart"></span>
                                             </button>
                                         </div>
                                     </div>
@@ -49,7 +49,7 @@ export default function ThreadsDetailedView() {
                                 </div>
                             </div>
                             <div className="card-footer p-4">
-                                <div class="">
+                                <div>
                                      This thread was published 2 days ago by sanjana and currently has <span>1 reply</span>
                                 </div>
                             </div>

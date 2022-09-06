@@ -12,6 +12,7 @@ import {TicketDetailedFill}from 'react-bootstrap-icons';
 import {ThreeDots} from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Trash3 } from 'react-bootstrap-icons'
 
 
 export default function RaiseTicket() {
@@ -33,15 +34,14 @@ export default function RaiseTicket() {
                         <h1>RaiseTicket</h1>
                     </div>
                     <div>
-                        <button className='btn-dash-1'>View my complaints</button>
+                        {/* <button className='btn-dash-1'>View my complaints</button> */}
+                        <button className='btn-dash-1' onClick={handleShow}>
+                            <PencilSquare className='mr-1 square'/>RaiseTicket</button>
                     </div>
                 </div>
                 <Col className='bg-white rounded-3 mt-5 p-5'>
                     <div className='ticketmenu'>
-                        <div className='nw-ticket d-flex justify-content-end'>
-                            <button className='ticketadd' onClick={handleShow}>
-                            <PencilSquare className='mr-1 square'/>RaiseTicket</button>
-                        </div>
+                        
                         <div className='ticket-cards'>
                           <div className='ticket-top d-flex justify-content-between text-center'>
                             <div className='icket-icn d-flex align-content-center' >
@@ -56,7 +56,7 @@ export default function RaiseTicket() {
                               <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>11:20 AM</p>
                                 <div className='icn-wrap ml-2'>
-                                <ThreeDots color='#ffffff'/>
+                                <Trash3 color='#ffffff'/>
                                 </div>
                             </div> 
                           </div>
@@ -93,7 +93,7 @@ export default function RaiseTicket() {
                             <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>1:20 PM</p>
                                 <div className='icn-wrap ml-2'>
-                                <ThreeDots color='#ffffff'/>
+                                <Trash3 color='#ffffff'/>
                                 </div>
                             </div> 
                           </div>
@@ -131,7 +131,7 @@ export default function RaiseTicket() {
                             <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>1:20 PM</p>
                                 <div className='icn-wrap ml-2'>
-                                <ThreeDots color='#ffffff'/>
+                                <Trash3 color='#ffffff'/>
                                 </div>
                             </div> 
                           </div>
