@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 // Cards
 export default function Biodetails() {
-    const [crumbs, setCrumbs] = useState(['BloodBiomarker', 'Biodetails']);
+    const [crumbs] = useState(['BloodBiomarker', 'Biodetails']);
 
     const selected = crumb => { }
     

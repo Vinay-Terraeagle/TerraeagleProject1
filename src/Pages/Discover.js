@@ -7,7 +7,7 @@ import {Eye} from 'react-bootstrap-icons'
 import {ChatText} from 'react-bootstrap-icons'
 import {Search} from 'react-bootstrap-icons'
 import {ArrowRight} from 'react-bootstrap-icons'
-
+import { Link } from 'react-router-dom';
 import '../Styles/Discover.css'
 
 
@@ -34,7 +34,6 @@ export default function Discover() {
                                 <div className="input-group-append">
                                     <button type="submit" className="input-group-text search-menu-icon">
                                     <Search />
-                                        <i className="fa fa-search" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>
@@ -45,36 +44,31 @@ export default function Discover() {
                     <div className="col-2 fs-18 filter-wrapper">
                         Filter By: 
                         <span className='arrow-wrapper'>
-                            <LinkrrowRight className='arrow-icon'/>
+                            <ArrowRight className='arrow-icon'/>
                         </span>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="''">
-                        <i className="fa fa-dumbbell"></i>
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
                         Workouts
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Mental Wellness'">
-                        <i className="fas fa-user-md red"></i>
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
                         Mental Wellness
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Kids Nutrition'">
-                        <i className="fas fa-baby blue"></i>
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
                         Kids Nutrition
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by General'">
-                        <i className="fas fa-th"></i>
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
                         General
                         </Link>
                     </div>
                     <div className="col-2 text-center">
                         <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Nutrition'">
-                        <i className="fab fa-nutritionix blue"></i>
                         Nutrition
                         </Link>
                     </div>
@@ -115,7 +109,6 @@ export default function Discover() {
                                     </div>
                                     <div className="ml-auto">
                                         <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
-                                        <i className="fas fa-th"></i>
                                         General
                                         </span>
                                     </div>
@@ -156,7 +149,6 @@ export default function Discover() {
                                     </div>
                                     <div className="ml-auto">
                                         <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
-                                        <i className="fas fa-th"></i>
                                         General
                                         </span>
                                     </div>
@@ -197,7 +189,6 @@ export default function Discover() {
                                     </div>
                                     <div className="ml-auto">
                                         <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold"  v-tooltip="'Filter threads by General'">
-                                        <i className="fas fa-th"></i>
                                         General
                                         </span>
                                     </div>
@@ -238,7 +229,6 @@ export default function Discover() {
                                     </div>
                                     <div className="ml-auto">
                                         <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
-                                        <i className="fas fa-th"></i>
                                         General
                                         </span>
                                     </div>
@@ -279,7 +269,6 @@ export default function Discover() {
                                     </div>
                                     <div className="ml-auto">
                                         <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
-                                        <i className="fas fa-th"></i>
                                         General
                                         </span>
                                     </div>
