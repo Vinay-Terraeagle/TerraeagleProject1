@@ -4,6 +4,7 @@ import '../../Styles/app.css'
 import {Link} from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+<<<<<<< HEAD:src/Components/AuthFile/Login.js
 import Validator from 'validatorjs'
 import { useEffect } from 'react'
 
@@ -73,6 +74,35 @@ export default function Login() {
 
     
 
+=======
+import { useNavigate } from "react-router-dom";
+import { BASE_URL } from '../Backend/config'
+
+
+export default function Login() {
+  
+  const [email, setEmail] = useState('')
+  const [password, setpassword] = useState('')
+  
+  const data = {email:email, password:password }
+
+  let navigate = useNavigate(); 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+      axios.post(`${BASE_URL}/login`, data)
+      .then(res => {
+          if(res.data.success === true) {
+            localStorage.setItem('$Token', res.data.data.token) 
+            navigate('/Dashboard');
+          }
+          // Need to add the validation for email and password mismatch
+      }).catch(error => {
+        console.log("Error::::",error);      
+      })
+      
+  } 
+>>>>>>> 00740d2c9fe9749f24e13f4b9a39db7a20fdabef:src/Components/Login.js
 
   return (
     <>

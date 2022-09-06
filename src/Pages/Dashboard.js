@@ -1,5 +1,5 @@
 import React  from 'react'
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
 import { Link } from 'react-router-dom'
@@ -12,18 +12,31 @@ import MealsComp from '../Components/MealsComp'
 import Header from '../Components/Header'
 import HealthMatrix from '../Components/HealthMatrix'
 // api
-// import axios from 'axios';
-
+import axios from 'axios';
+import { BASE_URL, TOKEN } from '../Backend/config';
 
 export default function Dashboard() {
+  const [username, setusername] = useState(); 
+  useEffect(() => {
+    axios.get(`${BASE_URL}/home`, {
+        headers: {
+            Authorization: TOKEN
+        }
+    })
+    .then((response) => {
+        console.log(response);
+        setusername(response.data.data.user_details.user_name)
 
+    });
+  },[]);
 
-  let navigate = useNavigate(); 
+    let navigate = useNavigate(); 
     function useNavigateToMyPlan(e) {
         e.preventDefault();
         let path = '/Myplan'; 
         navigate(path);
     } 
+
 
   return (
     <React.Fragment>
@@ -39,7 +52,7 @@ export default function Dashboard() {
                 </div>
                 <div className='text-row-bx'>
                   <div className='text-col'>
-                    <h5  className='pt-2'>Hello, <p>{}</p></h5>
+                    <h5  className='pt-2'>Hello {username}, <p></p></h5>
                   </div>
                   <div className='awards'>
                   <div className='awa-icn'>
