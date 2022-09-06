@@ -4,29 +4,33 @@ import '../Styles/app.css'
 import {Link} from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+import { BASE_URL } from '../Backend/config'
 
-const url = "http://revdev.revibe.in/api/login";
 
 export default function Login() {
-
-    const [email, setEmail] = useState('')
-    const [password, setpassword] = useState('')
-
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const resp = await axios.post(url, {email:email, password:password });
-        console.log("response",resp.data.error);
-        if(resp.status === 200) {
-          window.location = "/Dashboard";
-        } else if(resp.data.error === "Invalid Credentials") {
-          e.parents('.login_main').find('.err-notification').show();
-        }
-      } catch(error) {
-
-        console.log("response ::::",error);      }
-    };
   
+  const [email, setEmail] = useState('')
+  const [password, setpassword] = useState('')
+  
+  const data = {email:email, password:password }
+
+  let navigate = useNavigate(); 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+      axios.post(`${BASE_URL}/login`, data)
+      .then(res => {
+          if(res.data.success === true) {
+            localStorage.setItem('$Token', res.data.data.token) 
+            navigate('/Dashboard');
+          }
+          // Need to add the validation for email and password mismatch
+      }).catch(error => {
+        console.log("Error::::",error);      
+      })
+      
+  } 
 
   return (
     <>
