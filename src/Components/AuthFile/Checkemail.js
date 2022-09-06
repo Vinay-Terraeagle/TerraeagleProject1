@@ -1,5 +1,5 @@
-    import React from 'react'
-import '../Styles/app.css'
+import React from 'react'
+import '../../Styles/app.css'
 
 export default function checkEmail() {
   return (

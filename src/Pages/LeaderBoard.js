@@ -13,7 +13,7 @@ import first from '../assets/images/G1.png'
 import second from '../assets/images/G2.png'
 import Third from '../assets/images/G3.png'
 import forth from '../assets/images/G4.png'
-// import axios from 'axios'
+import axios from 'axios'
 
 export default function LeaderBoard() {
 

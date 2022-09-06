@@ -1,32 +1,78 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import '../Styles/app.css'
+import '../../Styles/app.css'
 import {Link} from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import Validator from 'validatorjs'
+import { useEffect } from 'react'
 
-const url = "http://revdev.revibe.in/api/login";
+const url = "https://revdev.revibe.in/api/login"; 
 
 export default function Login() {
 
-    const [email, setEmail] = useState('')
-    const [password, setpassword] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [password, setpassword] = useState('')
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const resp = await axios.post(url, {email:email, password:password });
-        console.log("response",resp.data.error);
-        if(resp.status === 200) {
-          window.location = "/Dashboard";
-        } else if(resp.data.error === "Invalid Credentials") {
-          e.parents('.login_main').find('.err-notification').show();
-        }
-      } catch(error) {
+    // const handleSubmit = async (e) => {
+    //   e.preventDefault();
+    //   try {
+    //     const resp = await axios.post(url, {email:email, password:password });
+    //     console.log("response",resp.data.error);
+    //     if(resp.status === 200) {
+    //       window.location = "/Dashboard";
+    //     } else if(resp.data.error === "Invalid Credentials") {
+    //       e.parents('.login_main').find('.err-notification').show();
+    //     }
+    //   } catch(error) {
 
-        console.log("response ::::",error);      }
-    };
-  
+    //     console.log("response ::::",error);      }
+    // };
+    // login
+
+    // const initialValues = { email:"", password:"" };
+    // const [formValues, setFormValues] = useState(initialValues);
+    // const [formErrors, setFormErrors] = useState({})
+    // const [isSubmit, setIsSubmit] = useState(false);
+
+    // const handleChange = (e) => {
+    //     const {name , value} = e.target;
+    //     setFormValues({...formValues, [name]: value});
+    // };
+
+    // const handleSubmit =(e) => {
+    //   e.preventDefault();
+    //   setFormErrors(Validate(formValues));
+    //   setIsSubmit(true);
+    // };
+
+    // useEffect(() => {
+    //   console.log(formError);
+    //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+    //     console.log(formValues)
+    //   }
+    // },[formValues]);
+
+    // const Validate = (values) => {
+    //   const error = {};
+    //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    //   if(!values.email) {
+    //     error.email = "email is required";
+    //   } else if (!regex.test(value.email)) {
+    //     error.email = "This is not valid email format!";}
+    //   if(!value.password) {
+    //     error.password = "password is required";
+    //   } else if (values.password.length < 4) {
+    //     error.password = "Password must be more then 4 characters";}
+    //   else if (values.password.length > 10) {
+    //     error.password = "password is cannot exxed more then 10 characters"}
+    //   }
+    //   return errors;
+    // };
+    
+
+    
+
 
   return (
     <>
@@ -50,12 +96,12 @@ export default function Login() {
                     <div className='email-field'>
                       <label>Enter Your Email</label>
                       <input type="email" className='email' placeholder='Enter Email...' value={email} onChange={(e) => setEmail(e.target.value)} />
-                      <span className='alert'>this field is required</span>
+                      <span className='form-error'>this field is required</span>
                     </div>
                     <div className='Password-field'>
                       <label>Enter Password</label>
                       <input type="password" className='password' placeholder='Enter Password' value={password} onChange={(e) => setpassword(e.target.value)} />
-                      <span className='alert'>this field is required </span>
+                      <span className='form-error'>this field is required </span>
                     </div>
                     <div className='login-btn'>
                     <button className='btn-login'>Sign In</button>

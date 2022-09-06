@@ -1,15 +1,16 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Login from './Components/Login'
-import Register from './Pages/Register'
-// Wizards Section
-import Resetpassword from "./Pages/Resetpassword"
-import Forgotpassword from './Pages/Forgotpassword'
-import Checkemail from "./Pages/Checkemail"
-import Passwordchanged from './Pages/Passwordchanged'
-import EmailReq from "./Pages/EmailReq"
-// Pages
+
+// Auth
+import Forgotpassword from "./Components/AuthFile/Forgotpassword";
+import Checkemail from "./Components/AuthFile/Checkemail"
+import Passwordchanged from "./Components/AuthFile/Passwordchanged"
+import EmailReq from "./Components/AuthFile/EmailReq"
+import Login from "./Components/AuthFile/Login"
+import Register from "./Components/AuthFile/Register"
+// import Logout from "./Components/AuthFile/Logout"
+
 // Dashboard Links
 import Dashboard from "./Pages/Dashboard"
 import Myplan from "./Pages/Myplan"
@@ -44,7 +45,7 @@ function App() {
         <Route path='/'  element={<Dashboard/>}/>
         <Route path='/Login'  element={<Login/>}/>
         <Route path='/Register' element={<Register/>}/>
-         <Route path="/Resetpassword" element={<Resetpassword/>}/>
+         {/* <Route path="/Resetpassword" element={<Resetpassword/>}/> */}
         <Route path="/Checkemail" element={<Checkemail/>}/>
         <Route path="/Passwordchanged" element={<Passwordchanged/>}/>
         <Route path="/EmailReq" element={<EmailReq/>}/>
