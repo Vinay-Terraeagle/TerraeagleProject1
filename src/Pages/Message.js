@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styles/Message.css'
-import {Container, Col, Row, Card} from 'react-bootstrap'
+import {Container, Col, Row } from 'react-bootstrap'
 // import { Link } from 'react-router-dom'
 import Header from '../Components/Header'
 import { PencilSquare } from 'react-bootstrap-icons'
@@ -146,7 +146,7 @@ export default function Message() {
                     <span>August 20</span>
                 </div>
                 <div className='msg-mbx'>
-                  <img src={UserIcon} className="txicn"/>
+                  <img src={UserIcon} className="txicn" alt='/' />
                   <div className='mg-bx'>
                       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                   </div>

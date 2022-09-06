@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container, Row ,Col, Card } from 'react-bootstrap'
+import { Container, Row ,Col} from 'react-bootstrap'
 import '../Styles/Subscription.css'
-import { ArrowRightShort } from 'react-bootstrap-icons'
 import { Check } from 'react-bootstrap-icons'
 import { X } from 'react-bootstrap-icons'
 

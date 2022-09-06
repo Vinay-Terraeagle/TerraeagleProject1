@@ -186,17 +186,17 @@ export default function MyprogressComponent() {
                             <tr>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" />
+                                    <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" />
+                                    <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" />
+                                    <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                             </tr>
@@ -227,17 +227,17 @@ export default function MyprogressComponent() {
                             <tr>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" />
+                                    <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" />
+                                    <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" />
+                                    <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                             </tr>
