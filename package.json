@@ -23,6 +23,7 @@
     "react-scripts": "5.0.1",
     "react-summernote": "^2.0.2",
     "react-wow": "^1.0.0",
+    "validatorjs": "^3.22.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
