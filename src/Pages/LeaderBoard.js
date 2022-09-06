@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react'
+import React from 'react'
+// import { useEffect } from 'react'
 import { Container, Col,Row } from 'react-bootstrap'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'

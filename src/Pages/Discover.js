@@ -30,7 +30,7 @@ export default function Discover() {
                     <form method="GET" action="" className="d-inline order-md-1">
                         <div className="sidebar-item sidebar-search col-6">
                             <div className="input-group">
-                                <input type="text" name="q" id="q" required="" className="form-control search-menu" placeholder="Search Wellness..." autocomplete="off" />
+                                <input type="text" name="q" id="q" required="" className="form-control search-menu" placeholder="Search Wellness..." autoComplete="off" />
                                 <div className="input-group-append">
                                     <button type="submit" className="input-group-text search-menu-icon">
                                     <Search />
@@ -48,27 +48,27 @@ export default function Discover() {
                         </span>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" to="/">
                         Workouts
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" to="/">
                         Mental Wellness
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" to="/">
                         Kids Nutrition
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" to="/">
                         General
                         </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Nutrition'">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" to="/">
                         Nutrition
                         </Link>
                     </div>
@@ -79,7 +79,7 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" to="/">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
@@ -108,7 +108,7 @@ export default function Discover() {
                                         </div>
                                     </div>
                                     <div className="ml-auto">
-                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
+                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold">
                                         General
                                         </span>
                                     </div>
@@ -119,7 +119,7 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" to="/">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
@@ -148,7 +148,7 @@ export default function Discover() {
                                         </div>
                                     </div>
                                     <div className="ml-auto">
-                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
+                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold">
                                         General
                                         </span>
                                     </div>
@@ -159,7 +159,7 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" to="/">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
@@ -188,7 +188,7 @@ export default function Discover() {
                                         </div>
                                     </div>
                                     <div className="ml-auto">
-                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold"  v-tooltip="'Filter threads by General'">
+                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold">
                                         General
                                         </span>
                                     </div>
@@ -199,7 +199,7 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" to="/">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
@@ -228,7 +228,7 @@ export default function Discover() {
                                         </div>
                                     </div>
                                     <div className="ml-auto">
-                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
+                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold">
                                         General
                                         </span>
                                     </div>
@@ -239,7 +239,7 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" to="/">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
@@ -268,7 +268,7 @@ export default function Discover() {
                                         </div>
                                     </div>
                                     <div className="ml-auto">
-                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" v-tooltip="'Filter threads by General'">
+                                        <span className="btn btn-sm rounded-pill btn-color w-100 text-uppercase font-weight-bold" >
                                         General
                                         </span>
                                     </div>
@@ -282,33 +282,33 @@ export default function Discover() {
                             <span className="mr-2 fw-bold blink fs-20 trending-label">
                             🔥 Trending Threads
                             </span>
-                            <Link v-tooltip="'Create a Thread'" href="" className="btn btn-sm btn-primary text-white text-wrap ml-auto">
+                            <Link to="/" className="btn btn-sm btn-primary text-white text-wrap ml-auto">
                                 Ask a Question
                             </Link>
                         </div>
                         <ul className="list-group mb-4">
                             <li className="list-group-item">
-                                <Link title="How to handle overeating?" href="" v-pre="">
+                                <Link title="How to handle overeating?" to="/" v-pre="">
                                 How to handle overeating?
                                 </Link>
                             </li>
                             <li className="list-group-item">
-                                <Link title="How long should i perform an HIIT workout?" href="" v-pre="">
+                                <Link title="How long should i perform an HIIT workout?" to="/" v-pre="">
                                 How long should i perform an HIIT workout?
                                 </Link>
                             </li>
                             <li className="list-group-item">
-                                <Link title="Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p" href="" v-pre="">
+                                <Link title="Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p" to="/" v-pre="">
                                 Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p
                                 </Link>
                             </li>
                             <li className="list-group-item">
-                                <Link title="What kind of foods can be consumed in PCOS?" href="" v-pre="">
+                                <Link title="What kind of foods can be consumed in PCOS?" to="/" v-pre="">
                                 What kind of foods can be consumed in PCOS?
                                 </Link>
                             </li>
                             <li className="list-group-item">
-                                <Link title="Can beans and lentils alone fulfil my daily protein requirement?" href="" v-pre="">
+                                <Link title="Can beans and lentils alone fulfil my daily protein requirement?" to="/" v-pre="">
                                 Can beans and lentils alone fulfil my daily protein requirement?
                                 </Link>
                             </li>
