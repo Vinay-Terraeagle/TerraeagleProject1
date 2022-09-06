@@ -12,7 +12,7 @@ export default function EventsComp() {
               <div className='cl-txt'>
                 <h1>Events Today. </h1>
               </div>
-              <div className='cl-days'>
+              {/* <div className='cl-days'>
                 <button className='wek-dropdwn'>
                   Today
                   <div>
@@ -21,7 +21,7 @@ export default function EventsComp() {
                     </svg>
                   </div>
                 </button>
-              </div>
+              </div> */}
             </div>
             <div className='cal-rows'>
               <div className='cal-card'>

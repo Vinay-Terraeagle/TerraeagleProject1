@@ -55,9 +55,9 @@ export default function Dashboard() {
                     <h5  className='pt-2'>Hello {username}, <p></p></h5>
                   </div>
                   <div className='awards'>
-                  <div className='awa-icn'>
+                  {/* <div className='awa-icn'>
                   <svg xmlns="http://www.w3.org/2000/svg" className='award' width="28" height="28"><path fill="#FFD700" d="M5 8.999a6.99 6.99 0 0 0 2.879 5.646l.001.001a6.972 6.972 0 0 0 1.881.979l.051.019a6.906 6.906 0 0 0 1.163.271 6.79 6.79 0 0 0 1.024.085H12c.35 0 .69-.034 1.027-.084l.182-.028c.336-.059.664-.139.981-.243l.042-.016C17 14.693 19 12.078 19 8.999 19 5.14 15.86 2 12 2S5 5.14 5 8.999zM12 4c2.756 0 5 2.242 5 4.999h-2A3.003 3.003 0 0 0 12 6V4zM7.521 16.795V22L12 20.5l4.479 1.5.001-5.205a8.932 8.932 0 0 1-8.959 0z"></path></svg>
-                  </div>
+                  </div> */}
                   <div className='staricn'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ffd700" className="bi bi-star-fill" viewBox="0 0 16 16">
                     <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
@@ -66,7 +66,7 @@ export default function Dashboard() {
                       <span>Points</span>
                     </div>
                   </div>
-                  <Link to='/' className='click-more'>View more</Link>
+                  {/* <Link to='/' className='click-more'>View more</Link> */}
                 </div>
               </div>
               <div>
@@ -160,12 +160,12 @@ export default function Dashboard() {
                                 <div className='upradebtn'>
                                     <div><button className='btn-upgrade'>Upgrade Plan</button></div>
                                     <div>
-                                  <button className='viewmore-btn'>
+                                  {/* <button className='viewmore-btn'>
                                     <Link to='/'>View detais</Link>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="arrow-2" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                                     </svg>
-                                  </button>
+                                  </button> */}
                                 </div>
                                 </div>
                             </div>

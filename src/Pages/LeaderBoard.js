@@ -1,5 +1,5 @@
 import React from 'react'
-// import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Container, Col,Row } from 'react-bootstrap'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
@@ -14,8 +14,24 @@ import second from '../assets/images/G2.png'
 import Third from '../assets/images/G3.png'
 import forth from '../assets/images/G4.png'
 import axios from 'axios'
+import { BASE_URL, TOKEN } from '../Backend/config';
 
 export default function LeaderBoard() {
+
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}/leader_board`, {
+      headers: {
+        Authorization: TOKEN
+      }
+    })
+    .then((response) => {
+      console.log(response);
+      setData(response.data.data.leaders[0])
+      console.log(setData);
+    });
+  },[]);
 
   return (
    <React.Fragment>
@@ -30,11 +46,11 @@ export default function LeaderBoard() {
                 </div>
               <Col className='bg-white rounded-3 p-5 mt-5'>
               <div className='ledr-btns d-flex justify-content-end'>
-                <div className='bordsection'>
+                {/* <div className='bordsection'>
                   <button className='mnth'>Month</button>
                   <button className='wek'>Week</button>
                   <button className='altime'>All Time</button>
-                </div>
+                </div> */}
               </div>
                 <div className='tp-rnk d-flex justify-content-center'>
                   <div className='rnk-card'>
@@ -45,7 +61,7 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                      <p>Lear</p>
+                      <p>Lear {data}</p>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
                         <span>2500 <b>Points</b></span>
@@ -60,7 +76,7 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                      <p>Jhone_Doe</p>
+                      <p></p>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
                         <span>2500 <b>Points</b></span>
@@ -75,7 +91,7 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                      <p>Jhone_Doe</p>
+                      <p>data</p>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
                         <span>2500 <b>Points</b></span>
