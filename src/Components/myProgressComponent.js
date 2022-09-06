@@ -44,30 +44,6 @@ export default function MyprogressComponent() {
               <div className='progress-filter-wrapper col-3'>
                 <Select options={MyProgressFilterMenus} onChange={handleChange}></Select>
               </div>
-
-
-
-
-              {/* <div className="col-2 text-center">
-                  <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by  Weight'">
-                      Weight
-                  </Link>
-              </div>
-              <div className="col-2 text-center">
-                  <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by Waist'">
-                    Waist
-                  </Link>
-              </div>
-              <div className="col-2 text-center">
-                <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by  Body Fat %'">
-                  Body Fat %
-                </Link>
-              </div>
-              <div className="col-2 text-center">
-                  <a className="btn btn-sm rounded-pill btn-red w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter by Muscle Mass %'">
-                    Muscle Mass %
-                  </Link>
-              </div> */}
             </div>
           </div>
             

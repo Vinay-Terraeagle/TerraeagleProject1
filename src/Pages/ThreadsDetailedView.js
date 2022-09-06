@@ -27,7 +27,7 @@ export default function ThreadsDetailedView() {
                                 <div className='row align-items-center'>
                                     <div  className="col-6 d-flex align-items-center">
                                         <div className="d-flex flex-column">
-                                            <Link to="/profiles/sanjana" className="mr-2 fs-22 text-white">Sanjana</Link> 
+                                            <Link to="/" className="mr-2 fs-22 text-white">Sanjana</Link> 
                                             <small  className="mr-2 text-capitalize fw-bold text-white">said 2 days ago...</small>
                                         </div>
                                         <div className="d-flex align-items-center">

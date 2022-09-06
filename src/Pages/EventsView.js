@@ -12,19 +12,14 @@ export default function EventsView() {
         <div className="events-container w-100 row justify-content-center pt-5 pb-5">
 
           <div
-            className="events_card_wrapper m-4 col-4"
-            data-mdb-toggle="animation"
-            data-mdb-animation-start="onHover"
-            data-mdb-animation="zoom-in"
-            data-mdb-animation-reset="true"
-          >
+            className="events_card_wrapper m-4 col-4">
             <div className="event_img_wrapper">
               <img
                 src="https://media.allforsport.in/events/f4edd60c-bfd2-11ec-9c8d-f360743f77e3/1650367714463.jpeg"
                 loading="lazy"
                 width="100%"
                 weight="100%"
-                alt=''
+                alt='/'
               />
             </div>
 
@@ -90,15 +85,14 @@ export default function EventsView() {
             </div>
           </div>
 
-          <div className="events_card_wrapper m-4 col-4" data-mdb-toggle="animation" data-mdb-animation-start="onHover" data-mdb-animation="zoom-in" data-mdb-animation-reset="true"
-          >
+          <div className="events_card_wrapper m-4 col-4">
             <div className="event_img_wrapper">
               <img
                 src="https://media.allforsport.in/events/12b2d9fa-af05-11ec-b3e6-efe2f1c1361c/1648520391247.jpeg"
                 loading="lazy"
                 width="100%"
                 weight="100%"
-                alt=''
+                alt='/'
               />
             </div>
 
@@ -165,19 +159,14 @@ export default function EventsView() {
           </div>
 
           <div
-            className="events_card_wrapper m-4 col-4"
-            data-mdb-toggle="animation"
-            data-mdb-animation-start="onHover"
-            data-mdb-animation="zoom-in"
-            data-mdb-animation-reset="true"
-          >
+            className="events_card_wrapper m-4 col-4">
             <div className="event_img_wrapper">
               <img
                 src="https://media.allforsport.in/events/2d9fceb2-bbda-11ec-88e4-970e9900e2a6/1649930975752.jpeg"
                 loading="lazy"
                 width="100%"
                 weight="100%"
-                alt=''
+                alt="/"
               />
             </div>
 
@@ -244,19 +233,14 @@ export default function EventsView() {
           </div>
 
           <div
-            className="events_card_wrapper m-4 col-4"
-            data-mdb-toggle="animation"
-            data-mdb-animation-start="onHover"
-            data-mdb-animation="zoom-in"
-            data-mdb-animation-reset="true"
-          >
+            className="events_card_wrapper m-4 col-4">
             <div className="event_img_wrapper">
               <img
                 src="https://media.allforsport.in/events/1b141dc8-b5ab-11ec-8101-17832aca8834/1649250926539.jpeg"
                 loading="lazy"
                 width="100%"
                 weight="100%"
-                alt='/'
+                alt="/"
               />
             </div>
 
