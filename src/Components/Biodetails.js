@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
-import { Container, Col , Row, Card } from 'react-bootstrap'
+import { Container, Col , Row} from 'react-bootstrap'
 import '../Styles/BloodBiomarker.css'
 import Header from './Header'
 import Footer  from './footer'

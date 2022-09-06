@@ -11,7 +11,7 @@ import DietPlanComponent from '../Components/DietPlanComponent'
 import GroceryListComponent from '../Components/GroceryListComponent'
 import HabbitsComponent from '../Components/HabbitsComponent'
 import ExcerciseComponent from '../Components/ExcerciseComponent'
-import MyprogressComponent from '../Components/MyprogressComponent';
+// import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
 
 export default function Myplan() {
@@ -237,7 +237,7 @@ export default function Myplan() {
     {activeTab === "groceryList" && <GroceryListComponent/>}
     {activeTab === "habits" && <HabbitsComponent />}
     {activeTab === "exercise" && <ExcerciseComponent />}
-    {activeTab === "myprogress" && <MyprogressComponent />}
+    {/* {activeTab === "myprogress" && <MyprogressComponent />} */}
 
     
 

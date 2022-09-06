@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+// import { useState } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'   
 import { Row, Col } from 'react-bootstrap'
-import Breadcrumbs from '../Components/Breadcrumbs'
+// import Breadcrumbs from '../Components/Breadcrumbs'
 import BreakfastRecipe from "../assets/images/blueberryToast.jpg";
 
 export default function RecipeInstructions() {

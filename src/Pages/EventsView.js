@@ -24,6 +24,7 @@ export default function EventsView() {
                 loading="lazy"
                 width="100%"
                 weight="100%"
+                alt=''
               />
             </div>
 
@@ -97,6 +98,7 @@ export default function EventsView() {
                 loading="lazy"
                 width="100%"
                 weight="100%"
+                alt=''
               />
             </div>
 
@@ -175,6 +177,7 @@ export default function EventsView() {
                 loading="lazy"
                 width="100%"
                 weight="100%"
+                alt=''
               />
             </div>
 
@@ -253,6 +256,7 @@ export default function EventsView() {
                 loading="lazy"
                 width="100%"
                 weight="100%"
+                alt='/'
               />
             </div>
 

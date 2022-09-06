@@ -45,38 +45,38 @@ export default function Discover() {
                     <div className="col-2 fs-18 filter-wrapper">
                         Filter By: 
                         <span className='arrow-wrapper'>
-                            <ArrowRight className='arrow-icon'/>
+                            <LinkrrowRight className='arrow-icon'/>
                         </span>
                     </div>
                     <div className="col-2 text-center">
-                        <a className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="''">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="''">
                         <i className="fa fa-dumbbell"></i>
                         Workouts
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <a className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Mental Wellness'">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Mental Wellness'">
                         <i className="fas fa-user-md red"></i>
                         Mental Wellness
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <a className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Kids Nutrition'">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Kids Nutrition'">
                         <i className="fas fa-baby blue"></i>
                         Kids Nutrition
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <a className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by General'">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by General'">
                         <i className="fas fa-th"></i>
                         General
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-2 text-center">
-                        <a className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Nutrition'">
+                        <Link className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" href="" v-tooltip="'Filter threads by Nutrition'">
                         <i className="fab fa-nutritionix blue"></i>
                         Nutrition
-                        </a>
+                        </Link>
                     </div>
 
                 </div>
@@ -85,11 +85,11 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <a className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
-                                    </a>
+                                    </Link>
                                         <div className="ml-auto mb-2 d-none d-md-block d-flex-shrink0 thread-view-comment-wrapper">
                                             <span className="d-flex align-items-center rounded-pill">
                                                 <span>3</span>
@@ -126,11 +126,11 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <a className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
-                                    </a>
+                                    </Link>
                                         <span className="ml-auto mb-2 d-none d-md-block d-flex-shrink0 thread-view-comment-wrapper">
                                         <span className="d-flex align-items-center rounded-pill">
                                             <span>3</span>
@@ -167,11 +167,11 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <a className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
-                                    </a>
+                                    </Link>
                                         <span className="ml-auto mb-2 d-none d-md-block d-flex-shrink0 thread-view-comment-wrapper">
                                         <span className="d-flex align-items-center rounded-pill">
                                             <span>3</span>
@@ -208,11 +208,11 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <a className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
-                                    </a>
+                                    </Link>
                                         <span className="ml-auto mb-2 d-none d-md-block d-flex-shrink0 thread-view-comment-wrapper">
                                         <span className="d-flex align-items-center rounded-pill ">
                                             <span>3</span>
@@ -249,11 +249,11 @@ export default function Discover() {
                         <div className='threads-left-section-wrapper p-4 mb-5' onClick={renderThreadsDetailedView}>
                             <div className="row">
                                 <div className="col-12 d-flex align-items-center">
-                                    <a className="mr-2" title="How do millet affect your metabolism?" href="">
+                                    <Link className="mr-2" title="How do millet affect your metabolism?" href="">
                                         <h3 className="font-weight-bold">
                                         How do millet affect your metabolism?
                                         </h3>
-                                    </a>
+                                    </Link>
                                         <span className="ml-auto mb-2 d-none d-md-block d-flex-shrink0 thread-view-comment-wrapper">
                                         <span className="d-flex align-items-center rounded-pill">
                                             <span>3</span>
@@ -293,35 +293,35 @@ export default function Discover() {
                             <span className="mr-2 fw-bold blink fs-20 trending-label">
                             🔥 Trending Threads
                             </span>
-                            <a v-tooltip="'Create a Thread'" href="" className="btn btn-sm btn-primary text-white text-wrap ml-auto">
+                            <Link v-tooltip="'Create a Thread'" href="" className="btn btn-sm btn-primary text-white text-wrap ml-auto">
                                 Ask a Question
-                            </a>
+                            </Link>
                         </div>
                         <ul className="list-group mb-4">
                             <li className="list-group-item">
-                                <a title="How to handle overeating?" href="" v-pre="">
+                                <Link title="How to handle overeating?" href="" v-pre="">
                                 How to handle overeating?
-                                </a>
+                                </Link>
                             </li>
                             <li className="list-group-item">
-                                <a title="How long should i perform an HIIT workout?" href="" v-pre="">
+                                <Link title="How long should i perform an HIIT workout?" href="" v-pre="">
                                 How long should i perform an HIIT workout?
-                                </a>
+                                </Link>
                             </li>
                             <li className="list-group-item">
-                                <a title="Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p" href="" v-pre="">
+                                <Link title="Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p" href="" v-pre="">
                                 Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p
-                                </a>
+                                </Link>
                             </li>
                             <li className="list-group-item">
-                                <a title="What kind of foods can be consumed in PCOS?" href="" v-pre="">
+                                <Link title="What kind of foods can be consumed in PCOS?" href="" v-pre="">
                                 What kind of foods can be consumed in PCOS?
-                                </a>
+                                </Link>
                             </li>
                             <li className="list-group-item">
-                                <a title="Can beans and lentils alone fulfil my daily protein requirement?" href="" v-pre="">
+                                <Link title="Can beans and lentils alone fulfil my daily protein requirement?" href="" v-pre="">
                                 Can beans and lentils alone fulfil my daily protein requirement?
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         
