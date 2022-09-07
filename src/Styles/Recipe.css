@@ -1,0 +1,56 @@
+.recipe-container input[type='checkbox']:checked+label>span,
+.recipe-container input[type='checkbox']+label>span {
+    border-radius: 4px;
+}
+
+.recipe-container input[type='checkbox']:checked+label>span:before {
+    top: 0.5em;
+}
+
+.recipe-container button {
+    box-shadow: rgb(159 159 193 / 55%) 3px 3px 4px;
+}
+
+.recipe-container button:hover {
+    transform: scale(1.05);
+}
+
+.recipe-container .meal_type,
+.recipe-container .diet_type,
+.recipe-container .calories,
+.recipe-container .macronutrients,
+.recipe-container .must_include,
+.recipe-container .must_exclude {
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+    border: 1px solid #ECE9E5;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#recipe_name {
+    border: 1px solid #FF746E;
+    border-radius: 0px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 0.9rem 0.9rem;
+    box-shadow: rgb(159 159 193 / 55%) 3px 3px 4px;
+    margin-bottom: 12px;
+}
+
+.search-recipe {
+    background: #FF746E;
+    color: #fff;
+    border-radius: 0px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    height: 55px;
+    width: 60px;
+}
+
+.search-menu {
+    border: 1px solid #FF746E;
+    border-radius: 0px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 0.9rem 0.9rem;
+}
