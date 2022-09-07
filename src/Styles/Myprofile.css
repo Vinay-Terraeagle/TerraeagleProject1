@@ -184,8 +184,8 @@
 } */
 
 .user-pers-info {
-    /* width: 40%; */
-    /* max-width: 50%; */
+    width: 80%; 
+    margin: 0 auto;
 }
 
 .plans-det {
@@ -252,4 +252,68 @@
     display: flex;
     flex-direction: column;
     margin-top: 1.2rem;
+}
+
+
+.activeTab.activeplan {
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+    color: #ff6f62;
+    font-weight: 700;
+    border-bottom: 2px solid #fc594a;
+}
+
+.account.cngepass {
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+    color: #ff6f62;
+    font-weight: 700;
+    border-bottom: 2px solid #fc594a;
+}
+
+
+/* bntns */
+.btns {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.cngepass ,.dltacc{ 
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+    color: #ff6f62;
+    font-weight: 700;
+    /* border-bottom: 2px solid #fc594a; */
+}
+
+.erroralt {
+    width: 30px;
 }

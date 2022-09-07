@@ -788,6 +788,8 @@ position: relative;}
 
 .kols{
     margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
 }
 .txtrws p, .kols p {
     margin: 10px 0;
@@ -808,10 +810,24 @@ position: relative;}
     color: #fc5b4d;
 }
 
-.carbs-col {
+/* .carbs-col {
     display: flex;
     align-items: center;
     justify-content: space-between;
+} */
+
+.carbs-col h4 {
+    font-size: 16px;
+}
+
+.carbs-wrp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carbs-col p{
+    font-size: 13px;
+    margin: 0;
 }
 
 /* .cml-carm {
@@ -1034,7 +1050,6 @@ position: relative;}
 
 .bio-buttons {
     display: flex;
-    justify-content: space-around;
 }
 
 
@@ -1402,7 +1417,12 @@ position: relative;}
 
 
 .workout-plans {
-    margin-top: 2.5rem;
+    margin-top: 3.5em;
+    background-color: #ffffff;
+    padding: 40px 35px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
 }
 .wrk-row {
     display: flex;

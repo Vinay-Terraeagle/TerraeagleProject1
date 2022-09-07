@@ -20,8 +20,10 @@ export default function DietPlanComponent() {
           <div className='lch-bx'>
               <div className='ln-txb'>
                 <div className='ln-hed'>
-                  <h2>Lunch</h2>
-                  <p>Today, 01 August, 2022</p>  
+                  <h2>Todays Meals</h2>
+                  <div className='kcl'>
+                    <h1>540 Kcal</h1>
+                  </div>
                 </div>
                 <div>
                   <div  className='ln-clb'>
@@ -38,11 +40,8 @@ export default function DietPlanComponent() {
                       <p>Fat</p>
                     </div>
                   </div>
-                  <div className='kcl'>
-                    <h1>540 Kcal</h1>
-                  </div>
+                  
                 </div>
-                
               </div>
           </div>
         </div>
@@ -126,7 +125,10 @@ export default function DietPlanComponent() {
           <div className='dnr-bx'>
               <div className='dn-txb'>
                 <div className='dn-hed'>
-                  <h1>Todays Meals</h1>  
+                  <h1>Lunch</h1>  
+                  <div className='kcl'>
+                    <h1>540 Kcal</h1>
+                  </div>
                 </div>
                 <div>
                   <div  className='dn-clb'>
@@ -153,9 +155,9 @@ export default function DietPlanComponent() {
     <section>
       <div className='container'>
         <div className='brk-fst-mn'>
-          <div className='brk-txt'>
-            <h2>Breakfast</h2>
-          </div>
+          {/* <div className='brk-txt'>
+            
+          </div> */}
             {/* <div className='brk-col'>
                 <div></div>
             </div> */}

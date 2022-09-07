@@ -21,9 +21,9 @@ export default function Subscriptionplan() {
                     <div className='plans-txts'>
                         <h1>MySubscriptions</h1>
                     </div>
-                    <div>
+                    {/* <div>
                         <button className='btn-dash-1'>My Profile </button>
-                    </div>
+                    </div> */}
                 </div>
               <Col>
                 {/* My plan tablist */}

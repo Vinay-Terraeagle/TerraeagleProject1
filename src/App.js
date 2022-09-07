@@ -42,8 +42,8 @@ function App() {
       <Routes>
         {/* Wizard Sections */}
         {/* Login and Reg Part */}
-        <Route path='/'  element={<Dashboard/>}/>
-        <Route path='/Login'  element={<Login/>}/>
+        <Route path='/'  element={<Login/>}/>
+        <Route path='/Dashboard'  element={<Dashboard/>}/>
         <Route path='/Register' element={<Register/>}/>
          {/* <Route path="/Resetpassword" element={<Resetpassword/>}/> */}
         <Route path="/Checkemail" element={<Checkemail/>}/>

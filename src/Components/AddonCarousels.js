@@ -31,11 +31,11 @@ export default function AddonCarousels() {
                           <p>Talk to us for instant Support</p>
                           </div>
                           <div className='bio-buttons'>
-                            <div  className="btn-purch">
+                            {/* <div  className="btn-purch">
                               <button className='gbtn-gt'>Learn More</button>
-                            </div>
+                            </div> */}
                             <div className='btn-purch'>
-                              <button className='btn-lrn'>Purchese</button>
+                              <button className='btn-lrn'>Purchase</button>
                             </div>
                           </div>
                         </div>
@@ -50,11 +50,11 @@ export default function AddonCarousels() {
                           <p>Talk to us for instant Support</p>
                           </div>
                           <div className='bio-buttons'>
-                            <div  className="btn-purch">
+                            {/* <div  className="btn-purch">
                               <button className='gbtn-gt'>Learn More</button>
-                            </div>
+                            </div> */}
                             <div className='btn-purch'>
-                              <button className='btn-lrn'>Purchese</button>
+                              <button className='btn-lrn'>Purchase</button>
                             </div>
                           </div>
                         </div>

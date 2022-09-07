@@ -29,9 +29,9 @@
 .dt-rw {
     display: flex;
     background: #ffffff;
-    max-width: 80%;
+    max-width: 85%;
     padding: 1.6rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
@@ -278,7 +278,7 @@
     width: 88%;
     min-height: 475px;
     border: 1px solid;
-    margin: 2rem auto;
+    margin: 10px auto;
     border-color: #ECE9E5;
     box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
 }
@@ -292,7 +292,8 @@
     padding-right: 80px;
     width: 88%;
     border: 1px solid;
-    margin: 3.1rem auto;
+    margin: 0 auto;
+    margin-top: 3rem !important;
     border-color: #ECE9E5;
     border-top-right-radius: 100px;
         box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
@@ -392,6 +393,6 @@
     width: 88%;
     min-height: 475px;
     border: 1px solid;
-    margin: 2rem auto;
+    margin: 10px auto;
     border-color: #ECE9E5;
 }

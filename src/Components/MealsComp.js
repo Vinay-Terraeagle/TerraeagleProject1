@@ -12,9 +12,9 @@ import WorkoutCompo from './WorkOutComponent/WorkoutCompo'
 export default function MealsComp() {
 
     const MealSlider = {
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause:true,
+        // autoplay: true,
+        // autoplayTimeout: 3000,
+        // autoplayHoverPause:true,
         items:1,
         loop:true,
         // margin:50,
@@ -57,12 +57,20 @@ export default function MealsComp() {
                     <h4>12.47</h4>
                     <p>kcal</p>
                   </div>
+                  <div className='carbs-wrp'>
                   <div className='carbs-col'>
+                    <p>156G</p>
                     <h4>Carbs</h4>
-                    <p>12g Left</p>
                   </div>
-                  <div></div>
-                  <div></div>
+                  <div className='carbs-col'>
+                    <p>56G</p>
+                    <h4>Fat</h4>
+                  </div>
+                  <div className='carbs-col'>
+                  <p>16G</p>
+                    <h4>Protein</h4>
+                  </div>
+                  </div>
                 </div>
                 <div className='crd-row'>
                   <div className='cml-img'>
@@ -76,12 +84,20 @@ export default function MealsComp() {
                     <h4>12.47</h4>
                     <p>kcal</p>
                   </div>
+                  <div className='carbs-wrp'>
                   <div className='carbs-col'>
+                    <p>156G</p>
                     <h4>Carbs</h4>
-                    <p>12g Left</p>
                   </div>
-                  <div></div>
-                  <div></div>
+                  <div className='carbs-col'>
+                    <p>56G</p>
+                    <h4>Fat</h4>
+                  </div>
+                  <div className='carbs-col'>
+                  <p>16G</p>
+                    <h4>Protein</h4>
+                  </div>
+                  </div>
                 </div>
 
                 <div className='lnch-row'>
@@ -96,12 +112,20 @@ export default function MealsComp() {
                     <h4>12.47</h4>
                     <p>kcal</p>
                   </div>
+                  <div className='carbs-wrp'>
                   <div className='carbs-col'>
+                    <p>156G</p>
                     <h4>Carbs</h4>
-                    <p>12g Left</p>
                   </div>
-                  <div></div>
-                  <div></div>
+                  <div className='carbs-col'>
+                    <p>56G</p>
+                    <h4>Fat</h4>
+                  </div>
+                  <div className='carbs-col'>
+                  <p>16G</p>
+                    <h4>Protein</h4>
+                  </div>
+                  </div>
                 </div>
                 <div className='lnch-row'>
                   <div className='cml-img'>
@@ -115,19 +139,27 @@ export default function MealsComp() {
                     <h4>525</h4>
                     <p>kcal</p>
                   </div>
+                  <div className='carbs-wrp'>
                   <div className='carbs-col'>
+                    <p>156G</p>
                     <h4>Carbs</h4>
-                    <p>12g Left</p>
                   </div>
-                  <div></div>
-                  <div></div>
+                  <div className='carbs-col'>
+                    <p>56G</p>
+                    <h4>Fat</h4>
+                  </div>
+                  <div className='carbs-col'>
+                  <p>16G</p>
+                    <h4>Protein</h4>
+                  </div>
+                  </div>
                 </div>
               </OwlCarousel>
             </div>
           </div>
 
           {/* workout */}
-          <WorkoutCompo />
+          {/* <WorkoutCompo /> */}
         </div>
       </section>
     

@@ -28,13 +28,16 @@ export default function LeaderBoard() {
     })
     .then((response) => {
       console.log(response);
-      setData(response.data.data.leaders[0])
+      setData(response.data.data.leaders)
       console.log(setData);
-    });
+    }).catch((error) => {
+      console.log(error)
+    })
   },[]);
 
   return (
    <React.Fragment>
+
     <Header/>
       <section>
         <Container>
@@ -45,14 +48,15 @@ export default function LeaderBoard() {
                     </div>
                 </div>
               <Col className='bg-white rounded-3 p-5 mt-5'>
-              <div className='ledr-btns d-flex justify-content-end'>
-                {/* <div className='bordsection'>
+              {/*<div className='ledr-btns d-flex justify-content-end'>
+                 <div className='bordsection'>
                   <button className='mnth'>Month</button>
                   <button className='wek'>Week</button>
                   <button className='altime'>All Time</button>
-                </div> */}
-              </div>
-                <div className='tp-rnk d-flex justify-content-center'>
+                </div> 
+          </div>*/}
+         
+                <div className='tp-rnk d-flex justify-content-center'> 
                   <div className='rnk-card'>
                     <div className='rnkimg d-flex justify-content-center'>
                     <img src={bdge} className="a-icn" alt='/'/>
@@ -61,11 +65,11 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                      <p>Lear {data}</p>
+                          <p>Lear </p>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
-                        <span>2500 <b>Points</b></span>
-                      </div>
+                        <span>2500 <b></b></span>
+                      </div>  
                     </div>
                   </div>
                   <div className='rnk-card'>
@@ -98,10 +102,57 @@ export default function LeaderBoard() {
                       </div>
                     </div>
                   </div>
-                  {/* card is over */}
-
-                  {/* lists */}
                 </div>
+                
+                {/* <div className='tp-rnk d-flex justify-content-center'> 
+                  <div className='rnk-card'>
+                    <div className='rnkimg d-flex justify-content-center'>
+                    <img src={bdge} className="a-icn" alt='/'/>
+                    </div>
+                    <div className='rnk-usr d-flex justify-content-center'>
+                      <img src={User} className="usricn" alt='/'/>
+                    </div>
+                    <div className='rnk-txt'>
+                          <p>Lear </p>
+                      <div className='rnk-icn'>
+                        <StarFill className='starfill' color='#f46154'/>
+                        <span>2500 <b>Points</b></span>
+                      </div>  
+                    </div>
+                  </div>
+                  <div className='rnk-card'>
+                    <div className='rnkimg d-flex justify-content-center'>
+                    <img src={bdge} className="a-icn" alt='/'/>
+                    </div>
+                    <div className='rnk-usr d-flex justify-content-center'>
+                      <img src={User} className="usricn" alt='/'/>
+                    </div>
+                    <div className='rnk-txt'>
+                      <p></p>
+                      <div className='rnk-icn'>
+                        <StarFill className='starfill' color='#f46154'/>
+                        <span>2500 <b>Points</b></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='rnk-card'>
+                    <div className='rnkimg d-flex justify-content-center'>
+                    <img src={bdge} className="a-icn" alt='/'/>
+                    </div>
+                    <div className='rnk-usr d-flex justify-content-center'>
+                      <img src={User} className="usricn" alt='/'/>
+                    </div>
+                    <div className='rnk-txt'>
+                      <p>data</p>
+                      <div className='rnk-icn'>
+                        <StarFill className='starfill' color='#f46154'/>
+                        <span>2500 <b>Points</b></span>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+
+
                 <div className='listcards'>
                     <div className='listview d-flex justify-content-around mt-5 border-bottom'>
                       <div>

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 // Components
 import EmailVerify from '../Components/EmailVerifyComp/EmailVerify'
 import EventsComp from '../Components/EventsComponents/EventsComp.js'
+import WorkoutCompo from '../Components/WorkOutComponent/WorkoutCompo'
 import Footer from '../Components/footer'
 import AddonCarousels from '../Components/AddonCarousels'
 import MealsComp from '../Components/MealsComp'
@@ -211,7 +212,7 @@ export default function Dashboard() {
                           </div>
                           <div className='action-btn'>
                           <button className='action-btn'>
-                            <Link to='/'>View more</Link>
+                            <Link to='/'>Talk To Us</Link>
                             <div className='arrow-bg'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#fc5b4d" className="arrow-right" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
@@ -228,10 +229,11 @@ export default function Dashboard() {
                       </div>
                       <div className='ad-cd-mn'>
                         <AddonCarousels/>
+                        <WorkoutCompo />
                       
                       </div>
                       {/* calender section */}
-                      <EventsComp/>
+                      {/* <EventsComp/> */}
 
                     </div>
                     <div>
