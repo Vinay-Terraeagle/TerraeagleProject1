@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../../Styles/app.css'
 import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
 import { Col, Row } from 'react-bootstrap';
 
 export default function EmailVerify() {

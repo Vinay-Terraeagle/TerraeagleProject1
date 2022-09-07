@@ -7,7 +7,6 @@ import Breakfast from "../assets/images/blueberryToast.jpg";
 import H1 from "../assets/images/h1.png";
 import H2 from "../assets/images/h2.png";
 import H3 from "../assets/images/h3.jpg";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import MealTypeComponent from "../Components/RecipeFilterComponents/MealTypeComponent";
 import DietTypeComponent from "../Components/RecipeFilterComponents/DietTypeComponent";
