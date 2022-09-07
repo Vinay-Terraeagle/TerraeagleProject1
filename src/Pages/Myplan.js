@@ -13,6 +13,7 @@ import HabbitsComponent from '../Components/HabbitsComponent'
 import ExcerciseComponent from '../Components/ExcerciseComponent'
 import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
+import DatePicker from 'react-horizontal-datepicker';
 
 export default function Myplan() {
   const [activeTab, setActive] = useState('dietPlan');
@@ -23,6 +24,10 @@ export default function Myplan() {
         let path = '/BloodBiomarker'; 
         navigate(path);
     } 
+
+    const selectedDay = val => {
+      console.log(val);
+    };
 
   return (
     <React.Fragment>
@@ -41,136 +46,13 @@ export default function Myplan() {
             </div>
             {/* calender */}
             <div className='cals-col'>
-              <div className='arw-btns'>
-                <button className='lft-arw'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" className='arw-lf' viewBox="0 0 16 16">
-  <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-</svg>
-                </button>
-              </div>
-              <div className='cals-row'>
-                  <div className='cal'>
-                    <a href='/' className='cals-act'>
-                      <h1>1</h1>
-                      <span className='cals-act'>Mon</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                  <a href='/'>
-                      <h1>2</h1>
-                      <span>Tue</span>
-                    </a>
-                  </div>
-                  <div className='cal'>
-                  <a href='/'>
-                      <h1>3</h1>
-                      <span>Wed</span>
-                    </a>
-                  </div>
-                  <div className='cal'>
-                  <a href='/'>
-                      <h1>4</h1>
-                      <span>Thu</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                  <a href='/'>
-                      <h1>6</h1>
-                      <span>Fri</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>7</h1>
-                      <span>Sat</span>
-                    </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>8</h1>
-                      <span>Sun</span>
-                    </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>9</h1>
-                      <span>Mon</span>
-                    </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>10</h1>
-                      <span>Tue</span>
-                    </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>11</h1>
-                      <span>Wed</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>12</h1>
-                      <span>Thu</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>13</h1>
-                      <span>Fri</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>14</h1>
-                      <span>Sat</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>15</h1>
-                      <span>Sun</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>16</h1>
-                      <span>Mon</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>17</h1>
-                      <span>Tue</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>18</h1>
-                      <span>Web</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>19</h1>
-                      <span>Sat</span>
-                      </a>
-                  </div>
-                  <div className='cal'>
-                    <a href='/'>
-                      <h1>20</h1>
-                      <span>Sun</span>
-                      </a>
-                  </div>
-              </div>
-              <div className='arw-btns'>
-                <button className='rght-arw'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" className='arw-rght' viewBox="0 0 16 16">
-  <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg>
-                </button>
-              </div>
+              <DatePicker
+                getSelectedDay={selectedDay}
+                labelFormat={"MMMM yyyy"}
+                color={"#374e8c"}
+                selectDate={new Date()}
+                endDate = '90'
+              />
             </div>
           </div>
         </div>

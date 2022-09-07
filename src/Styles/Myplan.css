@@ -396,3 +396,25 @@
     margin: 10px auto;
     border-color: #ECE9E5;
 }
+.DatePicker_dateDayItem__qWXA7 {
+    width: 52px !important;
+    height: 50px !important;
+}
+
+.DatePicker_daysContainer__j4n2z {
+    gap: 4px;
+}
+
+.DatePicker_button__J6zwl {
+    width: 50px !important;
+    height: 50px !important;
+    margin-bottom: 2px !important;
+}
+
+.DatePicker_daysContainer__j4n2z {
+    margin-left: 55px !important;
+}
+
+.DatePicker_container__n0hE8 #container {
+    margin-right: 30px;
+}
