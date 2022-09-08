@@ -151,15 +151,18 @@ export default function RaiseTicket() {
 
 
 
-
-
             <Modal show={show} size="lg" onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Raise Your Ticket</Modal.Title>
             </Modal.Header>
+<<<<<<< HEAD
+            <Modal.Body>Need to add some editor
+               </Modal.Body>
+=======
             <Modal.Body>
             <TextEditor />
             </Modal.Body>
+>>>>>>> 9c027be61f703848484801066fbf2f897be95f56
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
