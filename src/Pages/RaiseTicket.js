@@ -10,7 +10,6 @@ import {PencilSquare}from 'react-bootstrap-icons';
 import {TicketDetailedFill}from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Trash3 } from 'react-bootstrap-icons'
 import TextEditor from '../Components/TextEditor'
 
 

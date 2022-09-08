@@ -49,18 +49,6 @@ export default function DailyHealthUpdate() {
     ]
     const [moodLabel, setMoodLabel] = useState('Happy')
     const handleMoodChange = (event) => {
-        console.log('qq')
-    
-        let emoticons=[
-            "mood",
-            "",
-            "sentiment_satisfied",
-            "sentiment_neutral",
-            "sentiment_very_dissatisfied",
-            "mood_bad",
-            "sentiment_very_satisfied", 
-        ];
-
         var mood = [
             "Happy",
             "Irritated",

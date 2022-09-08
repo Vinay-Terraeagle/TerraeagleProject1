@@ -15,7 +15,8 @@
 @import url('./Message.css');
 @import url('./Recipe.css');
 @import url('./DailyHealthUpdate.css');
-@import url('./excerciseComponent.css')
+@import url('./excerciseComponent.css');
+@import url('./TextEditor.css');
 
 
 *{
@@ -1902,3 +1903,6 @@ a.menus:hover {
     right: 3rem;
 }
 /* End CSS Dropdown */
+.modal-body {
+    padding: 44px;
+}

@@ -1,0 +1,16 @@
+.rdw-editor-toolbar.toolbarClassName {
+    padding: 10px;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 10%);
+}
+
+.rdw-option-wrapper {
+    padding: 15px;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 10%);
+}
+
+.editorClassName.rdw-editor-main {
+    min-height: 250px;
+    border: 1px solid #F1F1F1;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 10%);
+    padding: 15px;
+}
