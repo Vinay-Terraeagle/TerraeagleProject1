@@ -10,6 +10,8 @@ import {PencilSquare}from 'react-bootstrap-icons';
 import {TicketDetailedFill}from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Trash3 } from 'react-bootstrap-icons'
+import TextEditor from '../Components/TextEditor'
 
 
 export default function RaiseTicket() {
@@ -156,7 +158,9 @@ export default function RaiseTicket() {
             <Modal.Header closeButton>
               <Modal.Title>Raise Your Ticket</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Need to add some editor </Modal.Body>
+            <Modal.Body>
+            <TextEditor />
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
