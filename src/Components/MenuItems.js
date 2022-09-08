@@ -41,21 +41,21 @@ export const MenuItems = [
         Cname:'menuDropdown'
         // icnpath:
       },
-      {
-        title: 'Spaces',
-        url:'/Spaces',
-        Cname:'menuDropdown',
-        submenu: [
-          {
-            title: 'Events',
-            url: '/EventsView',
-          },
-          {
-            title: 'Challenges',
-            url: '/ChallengesView',
-          }
-        ]
-      },
+      // {
+      //   title: 'Spaces',
+      //   url:'/Spaces',
+      //   Cname:'menuDropdown',
+      //   submenu: [
+      //     {
+      //       title: 'Events',
+      //       url: '/EventsView',
+      //     },
+      //     {
+      //       title: 'Challenges',
+      //       url: '/ChallengesView',
+      //     }
+      //   ]
+      // },
       
 ];
 

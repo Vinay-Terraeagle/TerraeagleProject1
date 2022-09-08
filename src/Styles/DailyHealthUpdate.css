@@ -42,7 +42,7 @@ input.checkbox[type='checkbox'] {
     z-index: 1;
     background-color: #FDEBD0;
     line-height: 1;
-    color: var(--white);
+    color: #fff;
     transition: background-color 0.15s ease-out;
     border-radius: 2px;
     text-transform: uppercase;
@@ -91,7 +91,7 @@ input.checkbox[type='checkbox'] {
 }
 
 /* label */
-ul {
+/* ul {
     list-style-type: none;
 }
 
@@ -100,15 +100,15 @@ li {
     vertical-align: baseline;
 }
 
-input[type="radio"][id^="cb"] {
+*/ .daily-health-update-container input[type="radio"][id^="cb"] {
     display: none;
 }
 
-label b {
+.daily-health-update-container label b {
     cursor: pointer;
     padding: 4px 10px;
     font-size: 14px;
-    color: var(--white);
+    color: #fff;
     box-sizing: content-box;
     min-width: 100px;
     border: 2px solid var(--secondary);
@@ -119,9 +119,9 @@ label b {
 
 
 
-label:before {
+.daily-health-update-container label:before {
     background-color: #ea0030;
-    color: var(--white);
+    color: #fff;
 
     display: block;
     border-radius: 50%;
@@ -134,13 +134,13 @@ label:before {
 }
 
 
-:checked+label {
+.daily-health-update-container :checked+label {
     text-align: center;
 
 
     background-color: transparent;
     vertical-align: baseline;
-    color: var(--white);
+    color: #fff;
 
 }
 
@@ -149,13 +149,13 @@ label:before {
 
 }
 
-:checked+label b {
+.daily-health-update-container :checked+label b {
     border: none;
     padding: 10px;
     overflow: hidden;
 }
 
-:checked+.test ::before {
+.daily-health-update-container :checked+.test ::before {
     content: "✓";
     display: inline-block;
     background-color: #28a745;
@@ -168,7 +168,7 @@ label:before {
 
 
 
-:checked+label:before {
+.daily-health-update-container :checked+label:before {
     content: "✓";
     display: inline-block;
     background-color: #28a745;
@@ -179,7 +179,7 @@ label:before {
 
 }
 
-:checked+label {
+.daily-health-update-container :checked+label {
     transform: scale(1);
     vertical-align: baseline;
     padding: 0px;
@@ -188,7 +188,7 @@ label:before {
     z-index: -1;
 }
 
-:checked+img {
+.daily-health-update-container :checked+img {
     transform: scale(1);
     vertical-align: baseline;
     padding: 0px;
@@ -413,7 +413,7 @@ label:before {
     height: 20px;
     border-radius: 50%;
     background-color: var(--prim);
-    border: 5px solid var(--white);
+    border: 5px solid #fff;
     cursor: pointer;
 }
 
@@ -518,7 +518,7 @@ li.urine-color:nth-child(8) {
     height: 20px;
     text-align: center;
     transition-duration: 0.8s;
-    color: var(--white);
+    color: #fff;
     border-radius: 50%;
 }
 
@@ -565,8 +565,8 @@ input#number {
     transition: background 1s linear;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+.daily-health-update-container input[type=number]::-webkit-inner-spin-button,
+.daily-health-update-container input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }

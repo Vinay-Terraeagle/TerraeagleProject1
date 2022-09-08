@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
@@ -16,7 +17,10 @@ export default function AddonCarousels() {
     margin: 30,
     
   }
-
+  let navigateToSubscription = useNavigate()
+  const handleUpgradeClick = () => {
+    navigateToSubscription('/Subscriptionplan')
+  }
   return (
     <React.Fragment>
             <div className='main-carousels'>
@@ -35,7 +39,7 @@ export default function AddonCarousels() {
                               <button className='gbtn-gt'>Learn More</button>
                             </div> */}
                             <div className='btn-purch'>
-                              <button className='btn-lrn'>Purchase</button>
+                              <button className='btn-lrn' onClick={handleUpgradeClick}>Purchase</button>
                             </div>
                           </div>
                         </div>
@@ -54,7 +58,7 @@ export default function AddonCarousels() {
                               <button className='gbtn-gt'>Learn More</button>
                             </div> */}
                             <div className='btn-purch'>
-                              <button className='btn-lrn'>Purchase</button>
+                              <button className='btn-lrn' onClick={handleUpgradeClick} >Purchase</button>
                             </div>
                           </div>
                         </div>
