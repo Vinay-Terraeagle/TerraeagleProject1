@@ -1,19 +1,32 @@
 import React from 'react'
 import { Row, Col} from "react-bootstrap";
-import Yoga1 from "../assets/images/y6.jpg"
-import Yoga2 from "../assets/images/y7.jpg"
-import Yoga3 from "../assets/images/y8.jpg"
-import Yoga4 from "../assets/images/y9.jpg"
-import Yoga5 from "../assets/images/y10.jpg"
-import Yoga6 from "../assets/images/y11.png"
+import Yoga1 from "../../assets/images/y6.jpg"
+import Yoga2 from "../../assets/images/y7.jpg"
+import Yoga3 from "../../assets/images/y8.jpg"
+import Yoga4 from "../../assets/images/y9.jpg"
+import Yoga5 from "../../assets/images/y10.jpg"
+import Yoga6 from "../../assets/images/y11.png"
+// import '../../Styles/excerciseComponent.js';
+import '../../Styles/excerciseComponent.css'
+import { useNavigate } from 'react-router-dom';
 
-export default function excerciseComponent() {
+
+export default function ExcerciseComponent() {
+
+    let navigate = useNavigate();
+        function useNavigateToStrengthTraining(e) {
+            e.preventDefault();
+            let path ='/StrengthTraining';
+            navigate(path)
+        }
+
+
   return (
     <React.Fragment>
-        <div className='container exercise-container'>
+        <div className='container exercise-container' >
             <h4>Your Todays Workout Plan</h4>
             <Row>
-                <Col className='col-5 workout-card'>
+                <Col className='col-5 workout-card' onClick={useNavigateToStrengthTraining}>
                     <div className='wrk-imgs'>
                         <img src={Yoga1} className="yoga1" alt='/'/>
                     </div>
@@ -30,6 +43,7 @@ export default function excerciseComponent() {
                         </svg>
                     </div>
                 </Col>
+
                 <Col className='col-5 workout-card '>
                     <div className='wrk-imgs'>
                         <img src={Yoga2} className="yoga1" alt='/'/>

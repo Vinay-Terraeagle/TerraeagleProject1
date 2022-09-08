@@ -24,13 +24,13 @@
     position: relative;
 }
 
-.unread {
+/* .unread {
     position: absolute;
     left: 10.5em;
     right: 0px;
     top: 20em;
     color: #765ef3;
-}
+} */
 .sndmsg {
     background: #ffffff;
     padding: 1rem;

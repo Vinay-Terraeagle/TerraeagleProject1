@@ -4,6 +4,8 @@ import { Container, Col, Row } from 'react-bootstrap'
 import '../../Styles/Myprofile.css'
 // import {ExclamationTriangleFill} from 'react-bootstrap-icons'
 import errimg from '../../assets/images/error.png'
+import { Trash } from 'react-bootstrap-icons'
+
 
 export default function DeleteAccount() {
 
@@ -11,25 +13,24 @@ export default function DeleteAccount() {
     <React.Fragment>
         <Container>
             <Row>
-                <Col className='bg-white rounded-bottom col'>
-                <div>
-                  <div className='d-flex flex-column'>
+                <Col className='bg-white rounded-bottom d-flex justify-content-center'>
+                <div className='dltacc-wrap'>
+                  <div>
                     <div>
                     <h4>Delete your Account</h4>
                     </div>
-                    <div className='d-flex text-center justify-center align-content-center'>
+                    <div className='d-flex '>
                     <img src={errimg} className="erroralt" alt="error"/>
-                    <p>Deleting your account is permanent and cannot be undone.</p>
+                    <span>Deleting your account is permanent and cannot be undone.</span>
                     <img src={errimg} className="erroralt" alt="error"/>
                     </div>
-                    <div >
-                    <div class="col-3 d-flex">
+                    <div>
                       <input type="checkbox" className="custom-control-input" id="Breakfast" name="meal_type[]" value="1"/>
-                      <label class="custom-control-label" for="Breakfast">
+                      <label className="custom-control-label" for="Breakfast">
                         <span></span><div> Confirm Account Deletion</div></label></div>
-                     <div></div>
-                    </div>
-                    
+                     <div>
+                      <button className='dlttrash'> <Trash/>Delete My Account</button>
+                     </div>
                     <p></p>
                   </div>
                 </div>

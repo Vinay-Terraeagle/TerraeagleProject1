@@ -9,7 +9,7 @@ import Myaddonplans from '../Components/Myaddonplans'
 import Purchase from './Purchase'
 export default function Subscriptionplan() {
 
-  const [Tabactive, setact] = useState('Activeplan');
+  const [Tabactive, setAct] = useState('Activeplan');
 
   return (
     <React.Fragment>
@@ -28,10 +28,10 @@ export default function Subscriptionplan() {
               <Col>
                 {/* My plan tablist */}
                 <div className='myplantablist'>
-                  <button className={Tabactive === 'Activeplan' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setact("Activeplan")}>
+                  <button className={Tabactive === 'Activeplan' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Activeplan")}>
                     My Plans</button>
-                  <button className={Tabactive === 'Myaddonplans' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setact("Myaddonplans")}>Get addon Plans</button>
-                  <button className={Tabactive === 'Purchase' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setact("Purchase")}>Purchase Plan</button>
+                  <button className={Tabactive === 'Myaddonplans' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Myaddonplans")}>Get addon Plans</button>
+                  <button className={Tabactive === 'Purchase' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Purchase")}>Purchase Plan</button>
                 </div>
               </Col>
             </Row>

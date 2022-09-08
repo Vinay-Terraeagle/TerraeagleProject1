@@ -1,0 +1,56 @@
+.pg-bdy {
+    padding: 1rem;
+}
+
+.date-btn h4{
+    font-size: 1.4rem;
+}
+
+.startwrkout {
+    width: 100%;
+    height: 50px;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #e06358;
+    outline: none;
+    background: #e06358;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.unfin {
+    background: #e06358;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.startwrkout:hover {
+    background: transparent;
+    color: #e06358;
+    transition: all .3s ease-in-out;
+
+}
+
+.accordion-button{
+    margin: 1rem 0;
+}
+
+
+/* accordion */
+.accordion-button:not(.collapsed) {
+    background: transparent !important;
+}
+
+.accordion-button:focus{
+    border: transparent;
+    background-color: transparent;
+}
+.accordion {
+    transition: all .6s ease-in-out !important;
+}

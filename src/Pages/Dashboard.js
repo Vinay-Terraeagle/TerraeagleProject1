@@ -5,7 +5,7 @@ import '../Styles/app.css'
 import { Link } from 'react-router-dom'
 // Components
 import EmailVerify from '../Components/EmailVerifyComp/EmailVerify'
-import EventsComp from '../Components/EventsComponents/EventsComp.js'
+// import EventsComp from '../Components/EventsComponents/EventsComp.js'
 import WorkoutCompo from '../Components/WorkOutComponent/WorkoutCompo'
 import Footer from '../Components/footer'
 import AddonCarousels from '../Components/AddonCarousels'

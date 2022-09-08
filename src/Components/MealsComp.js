@@ -7,7 +7,7 @@ import Img2 from "../assets/images/h2.png"
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
-import WorkoutCompo from './WorkOutComponent/WorkoutCompo'
+// import WorkoutCompo from './WorkOutComponent/WorkoutCompo'
 
 export default function MealsComp() {
 

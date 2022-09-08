@@ -10,7 +10,6 @@ import {PencilSquare}from 'react-bootstrap-icons';
 import {TicketDetailedFill}from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Trash3 } from 'react-bootstrap-icons'
 
 
 export default function RaiseTicket() {
@@ -53,9 +52,6 @@ export default function RaiseTicket() {
                             <div className='tct-tm d-flex align-items-center'>
                               <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>11:20 AM</p>
-                                <div className='icn-wrap ml-2'>
-                                <Trash3 color='#ffffff'/>
-                                </div>
                             </div> 
                           </div>
                           <div className='body p-1 mt-3'>
@@ -90,9 +86,6 @@ export default function RaiseTicket() {
                             <div className='tct-tm d-flex align-items-center'>
                             <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>1:20 PM</p>
-                                <div className='icn-wrap ml-2'>
-                                <Trash3 color='#ffffff'/>
-                                </div>
                             </div> 
                           </div>
                           <div className='body p-1 mt-3'>
@@ -128,9 +121,6 @@ export default function RaiseTicket() {
                             <div className='tct-tm d-flex align-items-center'>
                             <span className='mr-1'>Created at: <b>2018-04-25 22:25:59</b></span>
                                 <p>1:20 PM</p>
-                                <div className='icn-wrap ml-2'>
-                                <Trash3 color='#ffffff'/>
-                                </div>
                             </div> 
                           </div>
                           <div className='body p-1 mt-3'>

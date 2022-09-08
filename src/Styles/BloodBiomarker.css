@@ -307,13 +307,38 @@ table td {
 /* button */
 .inf-ntr {
     padding: 5px;
-    background: #a1a1a1;
-    color: #fff;
-    outline: none;
-    border:  1px solid #b6b6b6;
-    border-radius: 10px;
     font-size: 15px;
-    font-weight: 400;
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    /* padding: 0.5rem 1rem; */
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    transition: all .3s ease-in-out;
+    color: #ccc;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.activeBio.inf-ntr {
+    padding: 5px;
+    font-size: 15px;
+    outline: none;
+    background: transparent;
+    margin-right: 2rem;
+    /* padding: 0.5rem 1rem; */
+    margin-bottom: -2px;
+    height: 100%;
+    color: rgb(140, 152, 171);
+    cursor: pointer;
+    border: none;
+    transition: all .3s ease-in-out;
+    color: #ff6f62;
+    font-weight: 600;
+    border-bottom: 2px solid #fc594a;
 }
 
 .inf-sym,.inf {

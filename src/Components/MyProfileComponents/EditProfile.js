@@ -3,7 +3,6 @@ import {Container, Row, Col} from 'react-bootstrap'
 import '../../Styles/Myprofile.css'
 import bgbckgr from '../../assets/images/background-bg.jpg'
 import Usericon from '../../assets/images/user.png'
-import {pencilSquare} from 'react-bootstrap-icons'
 
 export default function EditProfile() {
   return (

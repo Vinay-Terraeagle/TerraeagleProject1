@@ -24,7 +24,7 @@ export default function AccountAdmin() {
                 </Row>
             </Container>
         </section>
-
+        
         {account === "ChangePassComp" && <ChangePassComp/>}
         {account === "DeleteAccount" && <DeleteAccount/>}
   </React.Fragment>

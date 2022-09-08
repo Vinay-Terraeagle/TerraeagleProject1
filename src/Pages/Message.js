@@ -5,7 +5,7 @@ import {Container, Col, Row } from 'react-bootstrap'
 import Header from '../Components/Header'
 import { PencilSquare } from 'react-bootstrap-icons'
 import { Trash } from 'react-bootstrap-icons'
-import { CircleFill } from 'react-bootstrap-icons'
+// import { CircleFill } from 'react-bootstrap-icons'
 import UserIcon from '../assets/images/usericn.png'
 import { ThreeDots } from 'react-bootstrap-icons'
 import { SendFill } from 'react-bootstrap-icons'
@@ -35,7 +35,6 @@ export default function Message() {
                 <div className='mg-tx '>
                   <div className='useravt d-flex align-items-center justify-content-between'> 
                     <img src={UserIcon} className="usravth" alt='/'/>
-                    <CircleFill className='unread' style={{width:'10px'}}/>
                     <h6 className='mb-0'>Message Heading</h6>
                     <span className='text-secondary'>2:30 pm</span>
                     </div>
@@ -51,7 +50,7 @@ export default function Message() {
                 <div className='mg-tx '>
                   <div className='useravt d-flex align-items-center justify-content-between'> 
                     <img src={UserIcon} className="usravth" alt='/'/>
-                    <CircleFill className='unread' style={{width:'10px'}}/>
+                    {/* */}
                     <h6 className='mb-0'>Message Heading</h6>
                     <span className='text-secondary'>2:30 pm</span>
                     </div>
@@ -67,7 +66,7 @@ export default function Message() {
                 <div className='mg-tx '>
                   <div className='useravt d-flex align-items-center justify-content-between'> 
                     <img src={UserIcon} className="usravth" alt='/'/>
-                    <CircleFill className='unread' style={{width:'10px'}}/>
+                   
                     <h6 className='mb-0'>Message Heading</h6>
                     <span className='text-secondary'>2:30 pm</span>
                     </div>
@@ -83,7 +82,7 @@ export default function Message() {
                 <div className='mg-tx '>
                   <div className='useravt d-flex align-items-center justify-content-between'> 
                     <img src={UserIcon} className="usravth" alt='/'/>
-                    <CircleFill className='unread' style={{width:'10px'}}/>
+                   
                     <h6 className='mb-0'>Message Heading</h6>
                     <span className='text-secondary'>2:30 pm</span>
                     </div>
@@ -99,7 +98,7 @@ export default function Message() {
                 <div className='mg-tx '>
                   <div className='useravt d-flex align-items-center justify-content-between'> 
                     <img src={UserIcon} className="usravth" alt='/'/>
-                    <CircleFill className='unread' style={{width:'10px'}}/>
+                   
                     <h6 className='mb-0'>Message Heading</h6>
                     <span className='text-secondary'>2:30 pm</span>
                     </div>
@@ -115,7 +114,7 @@ export default function Message() {
                 <div className='mg-tx '>
                   <div className='useravt d-flex align-items-center justify-content-between'> 
                     <img src={UserIcon} className="usravth" alt='/'/>
-                    <CircleFill className='unread' style={{width:'10px'}}/>
+                   
                     <h6 className='mb-0'>Message Heading</h6>
                     <span className='text-secondary'>2:30 pm</span>
                     </div>
@@ -137,7 +136,7 @@ export default function Message() {
                    <img src={UserIcon} className="usravth" alt='/'/>
                     <h6 className='mb-0 ml-2 fs-5'>Jhon_Doe</h6>
                    </div>
-                      <CircleFill className='unread' style={{width:'10px'}}/>
+                     
                         <ThreeDots/>
                   </div>
               </div>

@@ -14,13 +14,14 @@
 @import url('./Subscription.css');
 @import url('./Message.css');
 @import url('./Recipe.css');
+@import url('./excerciseComponent.css');
 
 
 
 *{
     margin: 0;
     padding: 0;
-    --webkit-font-smoothing:antialiased
+    --webkit-font-smoothing:antialiased;
 }
 
 body{
@@ -1420,7 +1421,7 @@ position: relative;}
 .workout-plans {
     margin-top: 3.5em;
     background-color: #ffffff;
-    padding: 40px 35px;
+    padding: 48px 35px;
     width: 100%;
     border-radius: 10px;
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
@@ -1751,18 +1752,18 @@ input[type='checkbox']:checked+label>span:before {
     display: flex;
     background: #fff;
     padding: 1rem;
-    margin: 1rem;
+    /* margin: 1rem; */
     border-radius: 10px;
-    box-shadow: rgb(99 99 99 / 20%) 1px 2px 6px 2px;
+    /* box-shadow: rgb(99 99 99 / 20%) 1px 2px 6px 2px; */
     cursor: pointer;
     align-items: center;
     justify-content: space-between;
     transition: all .5s ease;
 }
 
-.workout-card:hover {
+/* .workout-card:hover {
     transform: scale(1.1);
-}
+} */
 
 .exercise-container .wrk-title {
     flex-direction: column;

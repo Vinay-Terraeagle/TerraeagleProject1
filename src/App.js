@@ -34,6 +34,8 @@ import Biodetails from './Components/Biodetails'
 import Discover from "./Pages/Discover";
 import ThreadsDetailedView from "./Pages/ThreadsDetailedView"
 import EventsView from "./Pages/EventsView";
+import StrengthTraining from './Components/Workout/StrengthTraining'
+
 
 function App() {
   return (
@@ -77,6 +79,7 @@ function App() {
         <Route path="/Discover" element={<Discover />} />
         <Route path="/ThreadsDetailedView" element={<ThreadsDetailedView />} />
         <Route path="/EventsView" element={<EventsView />} />
+        <Route path="/StrengthTraining" element={<StrengthTraining />} />
        </Routes>
 
     </Router>
