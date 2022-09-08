@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
 import { Link } from 'react-router-dom'
+import TextEditor from '../Components/TextEditor'
 
 export default function ThreadsDetailedView() {
   return (
@@ -17,7 +18,7 @@ export default function ThreadsDetailedView() {
                                 <button className="btn rounded-pill btn-sm btn-green mr-2">
                                     <span className="text-white fw-bold">Subscribe</span>
                                 </button> 
-                                <button className="btn rounded-pill btn-sm btn-blue mr-2"><span className="fw-bold text-white">Unlocked</span></button>
+                                {/* <button className="btn rounded-pill btn-sm btn-blue mr-2"><span className="fw-bold text-white">Unlocked</span></button> */}
                             </div>
                         </div>
 
@@ -57,11 +58,7 @@ export default function ThreadsDetailedView() {
                         </div>
 
                         <div className="card mt-5">
-                            <div className="card-header text-white">
-                                NEED TO ADD THE EDITOR 
-
-                            </div>
-                            <div className="card-body"> Do you have anything to say ? </div>
+                            <div className="card-body"> <TextEditor /></div>
                             <div className="card-footer pt-3 pb-3">
                                 <button className='btn rounded-pill btn-blue text-white'>
                                     Post

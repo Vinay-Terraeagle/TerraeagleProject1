@@ -12,6 +12,7 @@ import { SendFill } from 'react-bootstrap-icons'
 import { X } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import TextEditor from '../Components/TextEditor'
 
 
 
@@ -177,10 +178,11 @@ export default function Message() {
 
           <Modal show={open} size="lg" onHide={openHandle}>
             <Modal.Header closeButton>
-              <Modal.Title>Raise Your Ticket</Modal.Title>
+              <Modal.Title>Send Message</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Need to add some editor
-               </Modal.Body>
+            <Modal.Body>
+              <TextEditor />
+            </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={openHandle}>
                 Close
