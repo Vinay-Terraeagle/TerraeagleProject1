@@ -38,7 +38,14 @@ export default function Dashboard() {
         navigate(path);
     } 
 
-
+    let navigateDHU = useNavigate();
+    const showDailyHealthUpdateView = () => {
+      navigateDHU('/DailyHealthUpdate')
+    }
+    let navigateToSubscription = useNavigate()
+    const handleUpgradeClick = () => {
+      navigateToSubscription('/Subscriptionplan')
+    }
   return (
     <React.Fragment>
         <Header/>
@@ -159,7 +166,7 @@ export default function Dashboard() {
                                   {/* <span>70.0 Kgs</span> */}
                                 </div>
                                 <div className='upradebtn'>
-                                    <div><button className='btn-upgrade'>Upgrade Plan</button></div>
+                                    <div><button className='btn-upgrade' onClick={handleUpgradeClick}>Upgrade Plan</button></div>
                                     <div>
                                   {/* <button className='viewmore-btn'>
                                     <Link to='/'>View detais</Link>
@@ -187,7 +194,7 @@ export default function Dashboard() {
                             </div>
                           </div>
                             <div className='daily-up'>
-                              <button className='daily-check'>Daily check in</button>
+                              <button className='daily-check' onClick={showDailyHealthUpdateView}>Daily check in</button>
                             </div>
                           </div>
                       </div>
@@ -211,14 +218,14 @@ export default function Dashboard() {
                           <p>Talk to us for instant Support</p>
                           </div>
                           <div className='action-btn'>
-                          <button className='action-btn'>
-                            <Link to='/'>Talk To Us</Link>
+                          <Link to='/Message' className='action-btn'>
+                            <span >Talk To Us</span>
                             <div className='arrow-bg'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#fc5b4d" className="arrow-right" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
                             </svg>
                             </div>
-                          </button>
+                          </Link>
                         </div>
                         </div>
                         <div className='query-img'>

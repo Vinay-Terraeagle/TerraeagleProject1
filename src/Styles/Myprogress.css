@@ -125,12 +125,12 @@
 }
 
 .react-dropdown-select {
-    background: #E06357;
     /* color: #fff; */
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 40%);
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 40%);
     transition: all 0.15s ease 0s, filter 0.3s ease 0s;
     border-radius: 20px;
     padding: 10px 20px;
+    height: 44px;
 }
 
 .react-dropdown-select-dropdown {

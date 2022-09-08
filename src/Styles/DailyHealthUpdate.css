@@ -1,0 +1,588 @@
+.daily-health-update-container {
+    background: #fff;
+    margin-top: 50px;
+    box-shadow: rgb(159 159 193 / 55%) 0px 0px 50px;
+    margin-bottom: 100px;
+    padding: 70px;
+    border-top-right-radius: 100px;
+}
+
+.col-form-label {
+    font-size: 17px;
+    font-weight: 500;
+    color: #483d8b;
+}
+
+.checkbox-btn {
+    width: 100px;
+    height: 40px;
+    position: relative;
+}
+
+input.checkbox[type='checkbox'] {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: #ea0030;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-tap-highlight-color: #FDEBD0;
+}
+
+.toggler {
+    background: #ea0030;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #FDEBD0;
+    line-height: 1;
+    color: #fff;
+    transition: background-color 0.15s ease-out;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.checkbox-btn--rounded .toggler {
+    border-radius: 40px;
+}
+
+.toggler::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: #ea0030;
+    content: attr(data-label-unchecked);
+    transition: all 0.15s ease-out;
+    min-width: 32px;
+}
+
+.checkbox-btn--rounded .toggler::before {
+    border-radius: 40px;
+}
+
+.checkbox:hover+.toggler {
+    background-color: #FDEBD0;
+}
+
+.checkbox:active+.toggler::before {
+    padding: 0 20px;
+}
+
+.checkbox:checked+.toggler::before {
+    background-color: #28a745;
+    ;
+    content: attr(data-label-checked);
+    left: calc(100% - 4px);
+    transform: translateX(-100%);
+}
+
+/* label */
+/* ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+*/ .daily-health-update-container input[type="radio"][id^="cb"] {
+    display: none;
+}
+
+.daily-health-update-container label b {
+    cursor: pointer;
+    padding: 4px 10px;
+    font-size: 14px;
+    color: #fff;
+    box-sizing: content-box;
+    min-width: 100px;
+    border: 2px solid var(--secondary);
+    vertical-align: text-top;
+
+
+}
+
+
+
+.daily-health-update-container label:before {
+    background-color: #ea0030;
+    color: #fff;
+
+    display: block;
+    border-radius: 50%;
+    width: 19px;
+    height: 20px;
+    text-align: center;
+
+    transition-duration: 0.8s;
+    transform: scale(0);
+}
+
+
+.daily-health-update-container :checked+label {
+    text-align: center;
+
+
+    background-color: transparent;
+    vertical-align: baseline;
+    color: #fff;
+
+}
+
+.icons b {
+    display: none;
+
+}
+
+.daily-health-update-container :checked+label b {
+    border: none;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.daily-health-update-container :checked+.test ::before {
+    content: "✓";
+    display: inline-block;
+    background-color: #28a745;
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    transform: scale(1);
+}
+
+
+
+
+.daily-health-update-container :checked+label:before {
+    content: "✓";
+    display: inline-block;
+    background-color: #28a745;
+    position: absolute;
+    top: 1px;
+    left: -9px;
+    transform: scale(1);
+
+}
+
+.daily-health-update-container :checked+label {
+    transform: scale(1);
+    vertical-align: baseline;
+    padding: 0px;
+
+    border: 1px solid #28a745;
+    z-index: -1;
+}
+
+.daily-health-update-container :checked+img {
+    transform: scale(1);
+    vertical-align: baseline;
+    padding: 0px;
+    border: 1px solid #28a745;
+    z-index: -1;
+
+}
+
+
+.icons label {
+    border: none;
+}
+
+.emoj img {
+    width: 100%;
+    max-width: 30px;
+}
+
+/* CSS for Stress Level slider */
+.row.toggle_radio {
+    position: relative;
+    background: #FDEBD0;
+    margin: 4px 0px;
+    border-radius: 50px;
+}
+
+.toggle_radio label {
+    width: 100%;
+    /* height: 20px; */
+    margin: 3px 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.toggle_option_slider {
+    width: inherit;
+    /* height: 25px; */
+    position: absolute;
+    top: 0px;
+    /* left: 0px; */
+    border-radius: 50px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    display: none;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 2.1;
+}
+
+#cb1:checked~.toggle_option_slider,
+#cb4:checked~.toggle_option_slider {
+    display: inline-block;
+    background: #E85648;
+}
+
+#cb2:checked~.toggle_option_slider,
+#cb5:checked~.toggle_option_slider {
+    display: inline-block;
+    background: #EBBE11;
+}
+
+#cb3:checked~.toggle_option_slider,
+#cb6:checked~.toggle_option_slider {
+    display: inline-block;
+    background: #28a745;
+}
+
+#cb1:checked+label:before,
+#cb2:checked+label:before,
+#cb3:checked+label:before,
+#cb4:checked+label:before,
+#cb5:checked+label:before,
+#cb6:checked+label:before {
+    content: "";
+    display: inline-block;
+    background-color: #28a745;
+    position: absolute;
+    top: 1px;
+    left: -9px;
+    transform: scale(0);
+}
+
+#cb1:checked+label,
+#cb2:checked+label,
+#cb3:checked+label,
+#cb4:checked+label,
+#cb5:checked+label,
+#cb6:checked+label {
+    border: none;
+}
+
+.toggle_radio .col-lg-4 {
+    padding: 0;
+}
+
+/* End - CSS for Stress Level slider */
+
+.sleep-hrs {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 100%;
+    box-shadow: 0px 20px 10px -3px rgb(0 0 0 / 10%);
+    text-align: center;
+}
+
+.sleep-hrs-wrapper input:checked+label.sleep-hrs {
+    border: 1px solid #28a745;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #28a745;
+}
+
+.sleep-hrs-wrapper .col-lg-6 {
+    padding: 0px 5px;
+    margin-top: 10px;
+}
+
+/* CSS - Mood Tooltip */
+.mood-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 50px;
+}
+
+.mood-tooltip {
+    display: inline-flex;
+    background: #82E0AA;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    padding: 6px 18px;
+    position: absolute;
+    left: 38%;
+    top: 5px;
+    margin-left: 6px;
+}
+
+/* .mood-tooltip:after {
+    border-top: 10px solid transparent;
+    content: "";
+    left: -10px;
+    position: absolute;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #444;
+} */
+
+#moodSlider[type="range"] {
+    width: 99%;
+    height: 5px;
+    -webkit-appearance: none;
+    background-color: #C39BD3;
+    border-radius: 6px;
+    outline: none;
+    margin-top: 15px;
+}
+
+#moodSlider[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: 5px solid #C39BD3;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#emoji.material-icons {
+    font-size: 50px;
+    color: #f4b927;
+    position: absolute;
+    left: 35%;
+}
+
+/* End -  - Mood Tooltip */
+
+.energy-level-wrapper .checkbox-btn {
+    width: 200px;
+}
+
+.energy-level-wrapper span {
+    display: inline-flex;
+    height: 40px;
+    padding-left: 12px;
+    width: 50%;
+    line-height: 3.5;
+    color: #5D6D7E;
+}
+
+/* Sleep Quality Range CSS */
+.range .sleepRange {
+    width: 100%;
+    margin-top: 15px;
+    -webkit-appearance: none;
+    border-radius: 10px;
+    height: 5px;
+    background-color: #C39BD3;
+}
+
+.sleepRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #FFF;
+    border: 5px solid #C39BD3;
+    cursor: pointer;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sleepRange::-ms-thumb,
+.sleepRange::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--prim);
+    border: 5px solid #fff;
+    cursor: pointer;
+}
+
+/* .sleepRange::-ms-track,
+.sleepRange::-moz-range-track
+{
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #b2b2b2;
+  border-radius: 3px;
+  -webkit-appearance: none;
+}
+.sleepRange::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: #b2b2b2;
+  border-radius: 3px;
+  margin-top: 10px;
+} */
+.range-labels {
+    margin: 0px -25px 0px;
+    padding: 0;
+    list-style: none;
+}
+
+.range-labels li {
+    position: relative;
+    text-align: center;
+    color: #b2b2b2;
+    font-size: 14px;
+    cursor: pointer;
+    width: 15.5%;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.range-labels li.active {
+    color: #37adbf;
+}
+
+/* End - Sleep Quality Range CSS */
+
+.urine-color-wrapper {
+    margin-bottom: 0px;
+}
+
+li.urine-color {
+    height: 25px;
+    width: 25%;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+li.urine-color:nth-child(1) {
+    background: #FFFDF0;
+}
+
+li.urine-color:nth-child(2) {
+    background: #FDFBCA;
+}
+
+li.urine-color:nth-child(3) {
+    background: #F8F896;
+}
+
+li.urine-color:nth-child(4) {
+    background: #FBEF44;
+}
+
+li.urine-color:nth-child(5) {
+    background: #F0F111;
+}
+
+li.urine-color:nth-child(6) {
+    background: #DCDB04;
+}
+
+li.urine-color:nth-child(7) {
+    background: #FAD502;
+}
+
+li.urine-color:nth-child(8) {
+    background: #CFA610;
+}
+
+.urine-color.selected {
+    border: 1px solid #28a745;
+}
+
+.urine-color.selected:before {
+    content: "✓";
+    display: inline-block;
+    background-color: #28a745;
+    position: absolute;
+    top: 2px;
+    left: 40%;
+    transform: scale(1);
+    width: 19px;
+    height: 20px;
+    text-align: center;
+    transition-duration: 0.8s;
+    color: #fff;
+    border-radius: 50%;
+}
+
+/* Hydration Status CSS  */
+.value-button {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    border-radius: 30px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+#decrease {
+    margin-right: 10px;
+}
+
+#increase {
+    margin-left: 10px;
+}
+
+input#number {
+    text-align: center;
+    border: none;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    -o-transition: background 1s linear;
+    transition: background 1s linear;
+}
+
+.daily-health-update-container input[type=number]::-webkit-inner-spin-button,
+.daily-health-update-container input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input#hydration-number {
+    text-align: center;
+    border: none;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    -o-transition: background 1s linear;
+    transition: background 1s linear;
+}
+
+/* End - Hydration Status CSS  */
