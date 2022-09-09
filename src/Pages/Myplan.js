@@ -10,7 +10,7 @@ import goals from '../assets/images/goals.png'
 import DietPlanComponent from '../Components/DietPlanComponent'
 import GroceryListComponent from '../Components/GroceryListComponent'
 import HabbitsComponent from '../Components/HabbitsComponent'
-import ExcerciseComponentCopy from '../Components/WorkOutComponent/ExcerciseComponentCopy'
+import ExcerciseComponent from '../Components/WorkOutComponent/ExcerciseComponent'
 import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
 import DatePicker from 'react-horizontal-datepicker';
@@ -118,7 +118,7 @@ export default function Myplan() {
     {activeTab === "dietPlan" && <DietPlanComponent/>}
     {activeTab === "groceryList" && <GroceryListComponent/>}
     {activeTab === "habits" && <HabbitsComponent />}
-    {activeTab === "exercise" && <ExcerciseComponentCopy />}
+    {activeTab === "exercise" && <ExcerciseComponent />}
     {activeTab === "myprogress" && <MyprogressComponent />}
 
     

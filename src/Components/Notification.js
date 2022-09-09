@@ -6,8 +6,7 @@ import Header from './Header'
 export default function Notification() {
   return (
     <React.Fragment>
-      <Header/>
-      <section>
+      {/* <section>
         <Container>
           <Row>
             <Col>
@@ -22,7 +21,7 @@ export default function Notification() {
             </Col>
           </Row>
         </Container>            
-      </section>
+      </section> */}
 
       <section>
         <Container>

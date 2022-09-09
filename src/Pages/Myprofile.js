@@ -11,6 +11,7 @@ import { useState } from 'react'
 import MyprofileComp from '../Components/MyProfileComponents/MyprofileComp'
 import AccountAdmin from '../Components/MyProfileComponents/AccountAdmin'
 import EditProfile from '../Components/MyProfileComponents/EditProfile'
+import Notification from '../Components/Notification'
 // import { Link } from 'react-router-dom'
 
 
@@ -32,12 +33,14 @@ import EditProfile from '../Components/MyProfileComponents/EditProfile'
                 <button className={activeTab ==='MyprofileComp' ? 'activeTab activeplan' :'activeplan'} onClick={() => setActiveTab("MyprofileComp")}>My Profile</button>
                 <button className={activeTab ==='EditProfile' ? 'activeTab activeplan' :'activeplan'} onClick={() => setActiveTab("EditProfile")}>Edit Profile</button>
                 <button className={activeTab ==='AccountAdmin' ? 'activeTab activeplan' :'activeplan'} onClick={() => setActiveTab("AccountAdmin")}>Account Administrator</button>
+                <button className={activeTab ==='Notification' ? 'activeTab activeplan' :'activeplan'} onClick={() => setActiveTab("Notification")}>Notification</button>
                 </div>
               </div>
           </section>
            {activeTab === "MyprofileComp" && <MyprofileComp/>}
            {activeTab === "EditProfile" && <EditProfile/>}
            {activeTab === "AccountAdmin" && <AccountAdmin/>}
+           {activeTab === "Notification" && <Notification/>}
           <Footer/>
 
       </React.Fragment>

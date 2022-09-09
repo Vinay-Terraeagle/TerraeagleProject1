@@ -13,7 +13,8 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import TextEditor from '../Components/TextEditor'
-
+import { ChooseChannelDropdownMenu } from '../Components/ChooseChannelDropdownMenu';
+import Select from 'react-dropdown-select'
 
 export default function Discover() {
 
@@ -27,6 +28,10 @@ export default function Discover() {
         e.preventDefault();
         let path = '/ThreadsDetailedView'; 
         navigate(path);
+    }
+
+    const handleClick = (selectedOption) => {
+        console.log(selectedOption)
     }
 
   return (
@@ -334,6 +339,20 @@ export default function Discover() {
               <Modal.Title> Ask a Question</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+                <div>
+                    <div>
+                        <h5>Choose Channal</h5>
+                        <Select options={ChooseChannelDropdownMenu} onChange={handleClick}/>
+                        <span>Ask your question to specific community</span>
+                    </div>
+                    <div>
+                        <h5>Title :</h5>
+                        <form className=''>
+                            <input type="text" placeholder="Title here" id="title" className="Title"/>
+                            <span>Be specific and imagine you're asking a question to another person</span>
+                        </form>
+                    </div>
+                </div>
             <TextEditor />
             </Modal.Body>
             <Modal.Footer>
