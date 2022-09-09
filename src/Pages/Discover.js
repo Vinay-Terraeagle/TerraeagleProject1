@@ -9,9 +9,19 @@ import {Search} from 'react-bootstrap-icons'
 import {ArrowRight} from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom';
 import '../Styles/Discover.css'
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import TextEditor from '../Components/TextEditor'
 
 
 export default function Discover() {
+
+    const [btn, activeBtn] = useState(false);
+
+    const btnOpen = () => activeBtn(false);
+    const btnShow = () => activeBtn(true);
+
     let navigate = useNavigate(); 
     const renderThreadsDetailedView = (e) => {
         e.preventDefault();
@@ -281,9 +291,9 @@ export default function Discover() {
                             <span className="mr-2 fw-bold blink fs-20 trending-label">
                             🔥 Trending Threads
                             </span>
-                            <Link  to="/" className="btn btn-sm btn-primary text-white text-wrap ml-auto">
+                            <button className="btn btn-sm btn-primary text-white text-wrap ml-auto" onClick={btnShow}>
                                 Ask a Question
-                            </Link>
+                            </button>
                         </div>
                         <ul className="list-group mb-4">
                             <li className="list-group-item">
@@ -318,6 +328,24 @@ export default function Discover() {
             </div>
         </div>
         <Footer />  
+
+        <Modal show={btn} size="lg" onHide={btnOpen}>
+            <Modal.Header closeButton>
+              <Modal.Title> Ask a Question</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <TextEditor />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={btnOpen}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={btnOpen}>
+                Raise Ticket
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
     </>
   )
 }

@@ -28,8 +28,9 @@ export default class TextEditor extends Component {
           editorClassName="editorClassName"
           onEditorStateChange={this.onEditorStateChange}
         />
-        
+
       </div>
     );
   }
 }
+
