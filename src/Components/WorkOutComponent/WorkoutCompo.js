@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import '../../Styles/app.css'
 // images
 import Yoga1 from "../../assets/images/y6.jpg"
@@ -8,6 +9,11 @@ import Yoga4 from "../../assets/images/y9.jpg"
 import Yoga5 from "../../assets/images/y10.jpg"
 import Yoga6 from "../../assets/images/y11.png"
 export default function WorkoutCompo() {
+
+  const navigateToMyPlanExercise = useNavigate();
+  const showWorkoutView = () => {
+    navigateToMyPlanExercise("/MyPlan", { state: { showTab: "exercise" } })
+  }
   return (
     <>
       <div className='workout-plans'>
@@ -15,7 +21,7 @@ export default function WorkoutCompo() {
           <h1>WorkOut</h1>
         </div>
         <div className='wrk-col'>
-          <div className='wrk-row'>
+          <div className='wrk-row' onClick={showWorkoutView}>
             <div className='wrk-imgs'>
               <img src={Yoga1} className="yoga1" alt='/' />
             </div>

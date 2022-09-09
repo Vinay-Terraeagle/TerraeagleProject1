@@ -418,3 +418,21 @@
 .DatePicker_container__n0hE8 #container {
     margin-right: 30px;
 }
+.accordion-header {
+    display: flex;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: rgb(99 99 99 / 20%) 1px 2px 6px 2px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.accordion {
+    --bs-accordion-border-width: 0;
+}
+
+.accordion-collapse .accordion-body .row {
+    --bs-gutter-x: 0.5rem;
+    box-shadow: rgb(99 99 99 / 5%) 1px 2px 5px 2px;
+    padding: 20px 30px;
+}

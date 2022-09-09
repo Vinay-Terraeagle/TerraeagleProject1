@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Footer from '../Components/footer'
 import Header from '../Components/Header'
 // images
@@ -16,7 +16,12 @@ import '../Styles/app.css'
 import DatePicker from 'react-horizontal-datepicker';
 
 export default function Myplan() {
-  const [activeTab, setActive] = useState('dietPlan');
+  const location = useLocation();
+  let setDefaultActiveTab = 'dietPlan'
+  if(location.state !== null) {
+    setDefaultActiveTab = location.state.showTab
+  }
+  const [activeTab, setActive] = useState(setDefaultActiveTab);
 
   let navigate = useNavigate(); 
     function useNavigateToBloodBiomarker(e) {

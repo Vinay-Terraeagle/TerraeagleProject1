@@ -1415,7 +1415,7 @@ position: relative;}
 /* Workout */
 .yoga1{
     width: 130px;
-    height: auto;
+    height: 105px;
 }
 
 
@@ -1431,7 +1431,7 @@ position: relative;}
     display: flex;
     background: #fff;
     padding: 0rem;
-    margin: 2rem 0;
+    margin: 1rem;
     width: 96%;
     justify-content: space-between;
     border-radius: 10px;
@@ -1443,7 +1443,10 @@ position: relative;}
     background: #fbfbfb;
     transition: all .3s ease-in;
 }
-
+.wrk-imgs img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
 .wrk-title {
     display: flex;
 }
@@ -1751,12 +1754,6 @@ input[type='checkbox']:checked+label>span:before {
  */
 .workout-card {
     display: flex;
-    background: #fff;
-    padding: 1rem;
-    /* margin: 1rem; */
-    border-radius: 10px;
-    /* box-shadow: rgb(99 99 99 / 20%) 1px 2px 6px 2px; */
-    cursor: pointer;
     align-items: center;
     justify-content: space-between;
     transition: all .5s ease;
