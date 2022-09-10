@@ -1,5 +1,3 @@
-
-  
 import React from 'react'
 import '../Styles/Myprofile.css'
 import Header from '../Components/Header'

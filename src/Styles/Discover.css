@@ -182,3 +182,22 @@
     box-shadow: rgb(159 159 193 / 54%) 0px 10px 19px 0px;
     border-color: #7FB3D5;
 }
+
+.channalform .Title {
+    padding: 10px 10px;
+    display: inline;
+    background: #f9f8f6;
+    font-size: 13px;
+    outline: none;
+    font-weight: 500;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    margin: 8px 0;
+    font-family: 'Inter', sans-serif;
+    box-shadow: rgb(99 99 99 / 8%) 0px 2px 8px 0px;
+}
+
+.question-body {
+    padding:0 44px;
+    padding-top: 20px;
+}

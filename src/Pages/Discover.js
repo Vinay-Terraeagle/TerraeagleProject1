@@ -338,31 +338,40 @@ export default function Discover() {
             <Modal.Header closeButton>
               <Modal.Title> Ask a Question</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className='question-body'>
+                <form className='channalform' action='#'>
                 <div>
-                    <div>
+                    <div className='mb-4'>
                         <h5>Choose Channal</h5>
-                        <Select options={ChooseChannelDropdownMenu} onChange={handleClick}/>
-                        <span>Ask your question to specific community</span>
+                        <Select className='mb-2' options={ChooseChannelDropdownMenu} onChange={handleClick}/>
+                        <h6 className='text-sm'>Ask your question to specific community</h6>
                     </div>
-                    <div>
-                        <h5>Title :</h5>
-                        <form className=''>
-                            <input type="text" placeholder="Title here" id="title" className="Title"/>
-                            <span>Be specific and imagine you're asking a question to another person</span>
-                        </form>
+                    <div className='d-flex flex-column mb-4 '>
+                        <label>Title :</label>
+                        <input type="text" placeholder="Title here" id="title" className="Title"/>
+                        <h5>Be specific and imagine you're asking a question to another person</h5>
                     </div>
                 </div>
-            <TextEditor />
+                <TextEditor />
+                <Modal.Footer>
+              <Button variant="secondary" onClick={btnOpen}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={btnOpen}>
+                Publish
+              </Button>
+            </Modal.Footer>
+                </form>
+           
             </Modal.Body>
-            <Modal.Footer>
+            {/* <Modal.Footer>
               <Button variant="secondary" onClick={btnOpen}>
                 Close
               </Button>
               <Button variant="primary" onClick={btnOpen}>
                 Raise Ticket
               </Button>
-            </Modal.Footer>
+            </Modal.Footer> */}
           </Modal>
 
     </>
