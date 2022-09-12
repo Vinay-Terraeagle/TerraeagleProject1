@@ -94,58 +94,10 @@ export default function MyprogressComponent(data) {
           const weightLists = response.data.data.original.weight
 
 
-          const weightList = (props) => {(
-              <ul>
-                {props.weightLists.map((item,i) => 
-                            <tr data-id={item.id}>
-                                <td>
-                                  <Datetime timeFormat={false} 
-                                    closeOnSelect= 'true'
-                                    dateFormat="DD-MM-YYYY"
-                                    onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
-                                    inputProps={{
-                                      value: item.date,
-                                      className:'date form-control',
-                                      required: 'true', 
-                                    }}
-                                  />
-                                </td>
-                                <td>
-                                  <input className="value form-control" type="number" value={item.weight} readonly="" />
-                                </td>
-                                <td>
-                                  <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
-                                        ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
-                                        ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
-                                    }
-                                    }> 
-                                    <span className="btn-icon-left text-secondary">
-                                      <PencilSquare />
-                                    </span>
-                                    Edit 
-                                  </button>
-
-                                  <button type="button" className={`btn btn-xs 
-                                  rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
-                                    <span className="btn-icon-left text-success">
-                                      <Upload />
-                                    </span>
-                                    <span id="add-update" className="text-capitalize">Update</span>
-                                  </button>
-                                    <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue(props)}> 
-                                    <span className="btn-icon-left text-danger">
-                                      <Trash />
-                                    </span>Delete 
-                                  </button>
-
-                                </td>
-                              </tr>
-                )}
-              </ul>
-          )}
-
-          // const weightList = weightLists.map((item,i) => 
-          //                     <tr data-id={item.id}>
+          // const weightList = (props) => {(
+          //     <ul>
+          //       {props.weightLists.map((item,i) => 
+          //                   <tr data-id={item.id}>
           //                       <td>
           //                         <Datetime timeFormat={false} 
           //                           closeOnSelect= 'true'
@@ -188,7 +140,55 @@ export default function MyprogressComponent(data) {
 
           //                       </td>
           //                     </tr>
-          //                     )
+          //       )}
+          //     </ul>
+          // )}
+
+          const weightList = weightLists.map((item,i) => 
+                              <tr data-id={item.id}>
+                                <td>
+                                  <Datetime timeFormat={false} 
+                                    closeOnSelect= 'true'
+                                    dateFormat="DD-MM-YYYY"
+                                    onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
+                                    inputProps={{
+                                      value: item.date,
+                                      className:'date form-control',
+                                      required: 'true', 
+                                    }}
+                                  />
+                                </td>
+                                <td>
+                                  <input className="value form-control" type="number" value={item.weight} readonly="" />
+                                </td>
+                                <td>
+                                  <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
+                                        ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
+                                        ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
+                                    }
+                                    }> 
+                                    <span className="btn-icon-left text-secondary">
+                                      <PencilSquare />
+                                    </span>
+                                    Edit 
+                                  </button>
+
+                                  <button type="button" className={`btn btn-xs 
+                                  rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
+                                    <span className="btn-icon-left text-success">
+                                      <Upload />
+                                    </span>
+                                    <span id="add-update" className="text-capitalize">Update</span>
+                                  </button>
+                                    <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue(props)}> 
+                                    <span className="btn-icon-left text-danger">
+                                      <Trash />
+                                    </span>Delete 
+                                  </button>
+
+                                </td>
+                              </tr>
+                              )
           setWeightDetails(weightList)
 
       });
