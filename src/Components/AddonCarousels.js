@@ -47,10 +47,10 @@ export default function AddonCarousels() {
                 <div className='addon-plan'>
                     <div className='addon-txt'>
                         <div className='addponplan'>
-                        <span>Started at ₹540</span>
+                        <span>Started at ₹ 5000</span>
                     </div>
                         <div className='addon-txtbx'>
-                          <h1>Blood biomarkers</h1>
+                          <h1>Book Trainer</h1>
                           <p>Talk to us for instant Support</p>
                           </div>
                           <div className='bio-buttons'>

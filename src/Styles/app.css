@@ -707,6 +707,7 @@ position: relative;}
 
 .clock,.calendar {
     margin-right: 13px;
+    font-size: 20px;
 }
 
 .exp h3,.valid h3 {
@@ -889,6 +890,7 @@ position: relative;}
 }
 .arrow-right {
     color: #c4473c;
+    font-size: 30px;
 }
 .arrow-bg {
     margin-left: 1rem;

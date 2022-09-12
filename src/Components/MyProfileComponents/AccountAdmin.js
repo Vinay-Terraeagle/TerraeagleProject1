@@ -16,7 +16,7 @@ export default function AccountAdmin() {
         <section>
             <Container>
                 <Row>
-                    <Col className="bg-white rounded-top mt-5 p-5">
+                    <Col className="bg-white rounded-top mt-5 p-3">
                        <div className="btns">
                           <button className={account === 'ChangePassComp' ? 'account cngepass' :'cngepass'} onClick={() => setAccount("ChangePassComp")}>Change Password</button>
                           <button className={account === 'DeleteAccount' ? 'account cngepass' :'cngepass'} onClick={() => setAccount("DeleteAccount")}>Delete Account</button>

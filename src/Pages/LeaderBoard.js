@@ -19,21 +19,26 @@ import { BASE_URL, TOKEN } from '../Backend/config';
 export default function LeaderBoard() {
 
   const [data, setData] = useState();
+  const [points, setPoints] = useState();
+  const [fullname, setfullname] = useState();
+  const [name2, setname2] = useState();
 
-  useEffect(() => {
-    axios.get(`${BASE_URL}/leader_board`, {
-      headers: {
-        Authorization: TOKEN
-      }
-    })
-    .then((response) => {
-      console.log(response);
-      setData(response.data.data.leaders)
-      console.log(setData);
-    }).catch((error) => {
-      console.log(error)
-    })
-  },[]);
+    
+    useEffect(() => {
+      axios.get(`${BASE_URL}/leader_board`,{
+        headers: {
+          Authorization: TOKEN
+        }
+      }).then((response) => {
+        console.log(response.data.data)
+        setData(response.data.data.leaders[0].name)
+        setfullname(response.data.data.leaders[1].fullname)
+        setname2(response.data.data.leaders[1].fullname)
+        setPoints(response.data.data.leaders[1].points)
+      }).catch((error) => {
+        console.log(error)
+      })
+    },[]);
 
   return (
    <React.Fragment>
@@ -65,10 +70,10 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                          <p>Lear </p>
+                          <h5>{fullname} </h5>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
-                        <span>2500 <b></b></span>
+                        <span>25230 <b>Points</b></span>
                       </div>  
                     </div>
                   </div>
@@ -80,7 +85,7 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                      <p></p>
+                      <h5>{data}</h5>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
                         <span>2500 <b>Points</b></span>
@@ -95,7 +100,7 @@ export default function LeaderBoard() {
                       <img src={User} className="usricn" alt='/'/>
                     </div>
                     <div className='rnk-txt'>
-                      <p>data</p>
+                    <h5>{fullname}</h5>
                       <div className='rnk-icn'>
                         <StarFill className='starfill' color='#f46154'/>
                         <span>2500 <b>Points</b></span>
@@ -103,61 +108,9 @@ export default function LeaderBoard() {
                     </div>
                   </div>
                 </div>
-                
-                {/* <div className='tp-rnk d-flex justify-content-center'> 
-                  <div className='rnk-card'>
-                    <div className='rnkimg d-flex justify-content-center'>
-                    <img src={bdge} className="a-icn" alt='/'/>
-                    </div>
-                    <div className='rnk-usr d-flex justify-content-center'>
-                      <img src={User} className="usricn" alt='/'/>
-                    </div>
-                    <div className='rnk-txt'>
-                          <p>Lear </p>
-                      <div className='rnk-icn'>
-                        <StarFill className='starfill' color='#f46154'/>
-                        <span>2500 <b>Points</b></span>
-                      </div>  
-                    </div>
-                  </div>
-                  <div className='rnk-card'>
-                    <div className='rnkimg d-flex justify-content-center'>
-                    <img src={bdge} className="a-icn" alt='/'/>
-                    </div>
-                    <div className='rnk-usr d-flex justify-content-center'>
-                      <img src={User} className="usricn" alt='/'/>
-                    </div>
-                    <div className='rnk-txt'>
-                      <p></p>
-                      <div className='rnk-icn'>
-                        <StarFill className='starfill' color='#f46154'/>
-                        <span>2500 <b>Points</b></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='rnk-card'>
-                    <div className='rnkimg d-flex justify-content-center'>
-                    <img src={bdge} className="a-icn" alt='/'/>
-                    </div>
-                    <div className='rnk-usr d-flex justify-content-center'>
-                      <img src={User} className="usricn" alt='/'/>
-                    </div>
-                    <div className='rnk-txt'>
-                      <p>data</p>
-                      <div className='rnk-icn'>
-                        <StarFill className='starfill' color='#f46154'/>
-                        <span>2500 <b>Points</b></span>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-
-
+  
                 <div className='listcards'>
                     <div className='listview d-flex justify-content-around mt-5 border-bottom'>
-                      <div>
-                        <span>S.No</span>
-                      </div>
                       <div>
                         <span>User</span>
                       </div>
@@ -170,12 +123,9 @@ export default function LeaderBoard() {
                     </div>
                     <div className='ldr-cardmin'>
                       <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>1St</span>
-                        </div>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
-                            <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
+                            <h5 style={{margin:'0rem'}}>{fullname}</h5>
                             {/* <span>@ClientUserName</span> */}
                           </div>
                         <div className='pnts'>
@@ -185,14 +135,11 @@ export default function LeaderBoard() {
                           <img src={first} className="firstmed" alt='/'/>
                         </div>
                       </div>
-                      <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>2St</span>
-                        </div>
+                      {/* <div className='ldr-cards'>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
                             <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
-                            {/* <span>@ClientUserName</span> */}
+                            {/* <span>@ClientUserName</span> 
                           </div>
                         <div className='pnts'>
                         <h5>3000 <b>Points</b></h5>
@@ -200,15 +147,12 @@ export default function LeaderBoard() {
                         <div className='rating'>
                           <img src={second} className="firstmed" alt='/'/>
                         </div>
-                      </div>
-                      <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>3St</span>
-                        </div>
+                      </div> */}
+                      {/* <div className='ldr-cards'>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
                             <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
-                            {/* <span>@ClientUserName</span> */}
+                            {/* <span>@ClientUserName</span> 
                           </div>
                         <div className='pnts'>
                         <h5>2000 <b>Points</b></h5>
@@ -216,15 +160,12 @@ export default function LeaderBoard() {
                         <div className='rating'>
                           <img src={Third} className="firstmed" alt='/'/>
                         </div>
-                      </div>
-                      <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>4St</span>
-                        </div>
+                      </div> */}
+                      {/* <div className='ldr-cards'>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
                             <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
-                            {/* <span>@ClientUserName</span> */}
+                            {/* <span>@ClientUserName</span> 
                           </div>
                         <div className='pnts'>
                         <h5>1000 <b>Points</b></h5>
@@ -232,11 +173,8 @@ export default function LeaderBoard() {
                         <div className='rating'>
                           <img src={forth} className="firstmed" alt='/'/>
                         </div>
-                      </div>
+                      </div> */}
                       <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>5St</span>
-                        </div>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
                             <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
@@ -250,9 +188,6 @@ export default function LeaderBoard() {
                         </div>
                       </div>
                       <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>6St</span>
-                        </div>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
                             <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
@@ -266,9 +201,6 @@ export default function LeaderBoard() {
                         </div>
                       </div>
                       <div className='ldr-cards'>
-                        <div className='usic d-flex align-items-center justify-content-between'>
-                          <span className='SNo'>7St</span>
-                        </div>
                         <div className='d-flex align-items-center'>
                           <img src={User} className="crdicn mr-1" alt="/"/>
                             <h5 style={{margin:'0rem'}}>Jhone_Doe</h5>
