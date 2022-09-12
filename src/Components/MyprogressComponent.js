@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect } from 'react'
+import axios from 'axios';
 import '../Styles/Myprogress.css'
 import { Plus } from 'react-bootstrap-icons'
 import { Upload } from 'react-bootstrap-icons'
@@ -12,19 +13,260 @@ import { Link } from 'react-router-dom'
 
 import { MyProgressFilterMenus } from './MyprogressFilterMenus'
 import Select from 'react-dropdown-select'
+import { BASE_URL, TOKEN } from '../Backend/config';
+import '../../node_modules/react-datetime/css/react-datetime.css'
+import Datetime from "react-datetime";
+import { useForm } from "react-hook-form";
 
 
-export default function MyprogressComponent() {
+export default function MyprogressComponent(data) {
+  
 
   const [ShowUpdateInput, setUpdateInput] = useState('hide');
   const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
+  // Setting the filter value
+  const [filterOption, setFilterOption] = useState()
   const handleChange = (selectedOption) => {
-    console.log(selectedOption)
+    setFilterOption(selectedOption[0].label.toLowerCase())
   }
+
+  // Setting the date on change
+  const [dateChange, setDateChange] = useState()
+  const handleDateChange = (momentObj) => {
+    console.log('handleDateChange')
+    setDateChange(momentObj.format("MMMM DD YYYY"))
+  }
+
+  // Setting the value on change
+  const [valueChange, setValueChange] = useState()
+  const handleValueChange = (event) => {
+    setValueChange(event.target.value)
+  }
+
+
+  const [currentBackImg, setCurrentBackImg]=useState()
+  const [currentFrontImg, setCurrentFrontImg]=useState()
+  const [currentSideImg, setCurrentSideImg]=useState()
+
+  const [initialBackImg, setInitialBackImg]=useState()
+  const [initialFrontImg, setInitialFrontImg]=useState()
+  const [initialSideImg, setInitialSideImg]=useState()
+
+
+  useEffect(() => {
+  if(data.data !== null && data.data!== undefined) {
+    setCurrentBackImg(data.data.original.progress_photos_current.back)
+    setCurrentFrontImg(data.data.original.progress_photos_current.front)
+    setCurrentSideImg(data.data.original.progress_photos_current.side)
+
+    setInitialBackImg(data.data.original.progress_photos_initials.back)
+    setInitialFrontImg(data.data.original.progress_photos_initials.front)
+    setInitialSideImg(data.data.original.progress_photos_initials.side)
+
+
+
+  }
+  },[]);
+
+  // Add API Call
+  const [weightDetails, setWeightDetails] = useState()
+  const handleAddUpdate = (props) => {
+      const client_name = "Deepthi22 (9511938081)"
+      const config = {
+        headers:{
+          Authorization: TOKEN
+        }
+      }
+      const data = {
+        client_name: client_name,
+        type : filterOption, 
+        progress_date : dateChange,
+        new_value: valueChange,
+        code_type: "store"
+      }
+
+      axios.post(`${BASE_URL}/weekly_health_store`, data, config)
+      .then((response) => {
+          const weightLists = response.data.data.original.weight
+
+
+          // const weightList = (props) => {(
+          //     <ul>
+          //       {props.weightLists.map((item,i) => 
+          //                   <tr data-id={item.id}>
+          //                       <td>
+          //                         <Datetime timeFormat={false} 
+          //                           closeOnSelect= 'true'
+          //                           dateFormat="DD-MM-YYYY"
+          //                           onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
+          //                           inputProps={{
+          //                             value: item.date,
+          //                             className:'date form-control',
+          //                             required: 'true', 
+          //                           }}
+          //                         />
+          //                       </td>
+          //                       <td>
+          //                         <input className="value form-control" type="number" value={item.weight} readonly="" />
+          //                       </td>
+          //                       <td>
+          //                         <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
+          //                               ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
+          //                               ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
+          //                           }
+          //                           }> 
+          //                           <span className="btn-icon-left text-secondary">
+          //                             <PencilSquare />
+          //                           </span>
+          //                           Edit 
+          //                         </button>
+
+          //                         <button type="button" className={`btn btn-xs 
+          //                         rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
+          //                           <span className="btn-icon-left text-success">
+          //                             <Upload />
+          //                           </span>
+          //                           <span id="add-update" className="text-capitalize">Update</span>
+          //                         </button>
+          //                           <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue(props)}> 
+          //                           <span className="btn-icon-left text-danger">
+          //                             <Trash />
+          //                           </span>Delete 
+          //                         </button>
+
+          //                       </td>
+          //                     </tr>
+          //       )}
+          //     </ul>
+          // )}
+
+          const weightList = weightLists.map((item,i) => 
+                              <tr data-id={item.id}>
+                                <td>
+                                  <Datetime timeFormat={false} 
+                                    closeOnSelect= 'true'
+                                    dateFormat="DD-MM-YYYY"
+                                    onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
+                                    inputProps={{
+                                      value: item.date,
+                                      className:'date form-control',
+                                      required: 'true', 
+                                    }}
+                                  />
+                                </td>
+                                <td>
+                                  <input className="value form-control" type="number" value={item.weight} readonly="" />
+                                </td>
+                                <td>
+                                  <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
+                                        ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
+                                        ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
+                                    }
+                                    }> 
+                                    <span className="btn-icon-left text-secondary">
+                                      <PencilSquare />
+                                    </span>
+                                    Edit 
+                                  </button>
+
+                                  <button type="button" className={`btn btn-xs 
+                                  rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
+                                    <span className="btn-icon-left text-success">
+                                      <Upload />
+                                    </span>
+                                    <span id="add-update" className="text-capitalize">Update</span>
+                                  </button>
+                                    <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue(props)}> 
+                                    <span className="btn-icon-left text-danger">
+                                      <Trash />
+                                    </span>Delete 
+                                  </button>
+
+                                </td>
+                              </tr>
+                              )
+          setWeightDetails(weightList)
+
+      });
+    }
+
+  // Delete API Call
+
+  const handleDeleteValue = (props,event) => {
+    const config = {
+      headers:{
+        Authorization: TOKEN
+      }
+    }
+    const dataForDelete = {
+      id: event.target.getAttribute('data-id'),
+      type : 'delete', 
+    }
+    axios.post(`${BASE_URL}/weekly_health_delete`, dataForDelete, config)
+      .then((deletedResponse) => {
+          console.log("History Delete :::: "+deletedResponse);
+          props.removeItem(event.target.getAttribute('data-id'))
+
+      });
+  }
+
+  const [uploadImgFront, setUploadImgFront] = useState()
+  const [uploadImgSide, setUploadImgSide] = useState()
+  const [uploadImgBack, setUploadImgBack] = useState()
+
+  const frontImgChange = (event) => {
+    console.log(event.target);
+    setUploadImgFront(event.target.value)
+  }
+  const sideImgChange = (event) => {
+    console.log(event.target);
+    setUploadImgSide(event.target.value)
+  }
+  const backImgChange = (event) => {
+    console.log(event.target);
+    setUploadImgBack(event.target.value)
+  }
+
+  //Upload Images API Call
+  
+  const handleUpload = (event) => {
+    event.preventDefault()
+    // const dataForImageUpload = {
+    //   client_name: "Deepthi22 (9511938081)",
+    //   fileToUpload: uploadImgFront,
+    //   fileToUpload2: uploadImgSide,
+    //   fileToUpload3: uploadImgBack
+    // }
+    const formData = new FormData();
+    formData.append("client_name", "Deepthi22 (9511938081)");
+    formData.append("fileToUpload",uploadImgFront);
+    formData.append("fileToUpload2", uploadImgSide);
+    formData.append("fileToUpload3", uploadImgBack);
+
+    const config = {
+      headers:{
+        Authorization: TOKEN,
+        enctype: "multipart/form-data",
+        "Content-Type": "multipart/form-data",
+        body: formData,
+      }
+    }
+    
+    try {
+        axios.post(`${BASE_URL}/uploadfile`,formData,config)
+          .then((imgUploadResponse) => {
+              console.log("Upload :::: "+imgUploadResponse);
+          });
+      } catch(error) {
+        console.log(error)
+      }
+  }
+
+
 
   return (
     <React.Fragment>
@@ -79,12 +321,22 @@ export default function MyprogressComponent() {
                     </button>
                   </div>
                   <div id="get_new_value_section" className={` form-inline align-items-center ${ShowUpdateInput} `}>
-                      <input type="text" id="progress_date" className="date form-control m-2" placeholder="Progress Date" autocomplete="off" required data-dtp="" />
+                      {/* <input type="text" id="progress_date" className="date form-control m-2" placeholder="Progress Date" autocomplete="off" required data-dtp="" /> */}
 
-                      <input type="text" id="new_value" className="form-control" placeholder="new value" autocomplete="off" required />
+                      <Datetime timeFormat={false} 
+                      closeOnSelect= 'true'
+                      dateFormat="DD-MM-YYYY"
+                      onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
+                      inputProps={ 
+                        {placeholder: 'Progress Date',
+                        className:'date form-control m-2',
+                        required: 'true', 
+                        }}/>
+
+                      <input type="number" id="new_value" className="form-control" placeholder="" autocomplete="off" required onChange={handleValueChange}/>
 
                       <button type="button" className="btn btn-xs 
-                      rounded-pill btn-success update_button d-inline-flex align-items-center" id="update_button" data-value="body_fat_percentage">
+                      rounded-pill btn-success update_button d-inline-flex align-items-center" id="update_button" data-value="body_fat_percentage" onClick={handleAddUpdate}>
                         <span className="btn-icon-left text-success">
                           <Upload />
                         </span>
@@ -102,62 +354,11 @@ export default function MyprogressComponent() {
                             </tr>
                           </thead>
                           <tbody id="tbody-weight">
-                            <tr>
-                              <td>
-                                <input className="date form-control" type="text" value="August 21 2022" readonly="" />
-                                </td>
-                              <td>
-                                <input className="value form-control" type="text" value="69" readonly="" />
-                              </td>
-                              <td>
-                                <input type="text" className="edit_previous_section1" data-id="284" style={{display:'none'}}/> 
+                          
+                            
+                              {weightDetails}
 
-                                <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
-                                      ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
-                                      ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
-                                  }
-                                  }> 
-                                  <span className="btn-icon-left text-secondary">
-                                    <PencilSquare />
-                                  </span>
-                                  Edit 
-                                </button>
-
-                                
-
-                                <button type="button" className={`btn btn-xs 
-                                rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="body_fat_percentage">
-                                  <span className="btn-icon-left text-success">
-                                    <Upload />
-                                  </span>
-                                  <span id="add-update" className="text-capitalize">Update</span>
-                                </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <input className="date form-control" type="text" value="August 11 2022" readonly=""  />
-                              </td>
-                              <td>
-                                <input className="value form-control" type="text" value="70.55" readonly="" />
-                              </td>
-                              <td>
-                                <input type="text" className="edit_previous_section1" style={{width:'80px', display:'none'}} data-id="268" /> 
-                                <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn'> 
-                                  <span className="btn-icon-left text-secondary">
-                                      <PencilSquare />
-                                  </span>
-                                  Edit 
-                                </button>
-                                <span>&nbsp;&nbsp;</span>
-                                <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn'> 
-                                  <span className="btn-icon-left text-danger">
-                                    <Trash />
-                                  </span>Delete 
-                                </button>
-                              </td>
-                            </tr>
+                            
                           </tbody>
                     </table>
                 </div>
@@ -227,7 +428,8 @@ export default function MyprogressComponent() {
                             <tr>
                                 <td className='text-center'>
                                   <Link to="#" className="pop">
-                                    <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" alt="" />
+                                    <img id="current_front_image" 
+                                    src={currentBackImg} className="img-responsive" alt="" />
                                   </Link>
                                 </td>
                                 <td className='text-center'>
@@ -256,80 +458,38 @@ export default function MyprogressComponent() {
             </Modal.Header>
             <Modal.Body>
               
-            <form action="https://wellness.revibe.in/uploadfile" className="fileUploadForm" method="post" enctype="multipart/form-data" novalidate="novalidate">
+            <form className="fileUploadForm" novalidate="novalidate" method="post" onSubmit={handleUpload} >
                             <input type="hidden" name="_token" value="" />                    
                             <input type="hidden" name="client_name" value="" id="upload_image_client" />
                             <div className="form-group row">
-                                <div className="form-group">
-                                    <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                <div className="form-group mb-3">
+                                    <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={frontImgChange} />
                                     <small id="fileHelp" className="form-text text-muted">Front View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
-                                <div className="form-group">
-                                    <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                <div className="form-group mb-3">
+                                    <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={sideImgChange}/>
                                     <small id="fileHelp2" className="form-text text-muted">Side View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
-                                <div className="form-group">
-                                    <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
+                                <div className="form-group mb-3">
+                                    <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={backImgChange}/>
                                     <small id="fileHelp3" className="form-text text-muted">Back View. Size of image should not be
                                         more than 2MB.</small>
                                 </div>
                               </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <Button variant="secondary" onClick={handleClose}>
+                              Close
+                            </Button>
+                            <Button variant="primary" type="submit">
+                              Upload
+                            </Button>
                         </form>
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Raise Ticket
-              </Button>
+            {/* <Modal.Footer>
 
-            </Modal.Footer>
+            </Modal.Footer> */}
           </Modal>
-
-
-
-
-        <div className="modal fade show" id="uploadModal" tabindex="-1" role="dialog" aria-modal="true">
-            <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <h4 className="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4>
-                    </div>
-                    <div className="modal-body">
-
-                        <form action="https://wellness.revibe.in/uploadfile" className="fileUploadForm" method="post" enctype="multipart/form-data" novalidate="novalidate">
-                            <input type="hidden" name="_token" value="" />                    
-                            <input type="hidden" name="client_name" value="" id="upload_image_client" />
-                            <div className="form-group row">
-                                <div className="form-group">
-                                    <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp" className="form-text text-muted">Front View. Size of image should not be
-                                        more than 2MB.</small>
-                                </div>
-                                <div className="form-group">
-                                    <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp2" className="form-text text-muted">Side View. Size of image should not be
-                                        more than 2MB.</small>
-                                </div>
-                                <div className="form-group">
-                                    <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" />
-                                    <small id="fileHelp3" className="form-text text-muted">Back View. Size of image should not be
-                                        more than 2MB.</small>
-                                </div>
-                              </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </React.Fragment>
   )

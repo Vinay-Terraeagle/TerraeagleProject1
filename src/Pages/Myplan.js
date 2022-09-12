@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import axios from 'axios';
 import { useNavigate, useLocation } from "react-router-dom";
 import Footer from '../Components/footer'
 import Header from '../Components/Header'
@@ -14,6 +15,7 @@ import ExcerciseComponent from '../Components/WorkOutComponent/ExcerciseComponen
 import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
 import DatePicker from 'react-horizontal-datepicker';
+import { BASE_URL, TOKEN } from '../Backend/config';
 
 export default function Myplan() {
   const location = useLocation();
@@ -33,6 +35,28 @@ export default function Myplan() {
     const selectedDay = val => {
       console.log(val);
     };
+
+    
+    const [myprogressData, setMyprogressData]=useState()
+    const handleMyProgress = (event) => {
+      event.preventDefault()
+      setActive("myprogress")
+      const config = {
+        headers:{
+          Authorization: TOKEN,
+        }
+      }
+      const data = {
+        client_name: "Deepthi22 (9511938081)" 
+      }
+      axios.post(`${BASE_URL}/body_measures_client`, data, config)
+        .then((myprogressResponse) => {
+            console.log("Upload :::: "+myprogressResponse);
+            setMyprogressData(myprogressResponse.data.data)
+
+
+        });
+    }
 
   return (
     <React.Fragment>
@@ -108,7 +132,7 @@ export default function Myplan() {
                   <h1>Grocery plan</h1>
                 </div>
               </div>
-              <div className={activeTab==='myprogress'?'activeTab calo-crd' : 'calo-crd'} onClick={() => setActive("myprogress")}>
+              <div className={activeTab==='myprogress'?'activeTab calo-crd' : 'calo-crd'} onClick={handleMyProgress}>
                 <div className='cl-icn'>
                   <img src={Mount} className="Mounimg" alt='/'/>
                 </div>
@@ -124,7 +148,7 @@ export default function Myplan() {
     {activeTab === "groceryList" && <GroceryListComponent/>}
     {activeTab === "habits" && <HabbitsComponent />}
     {activeTab === "exercise" && <ExcerciseComponent />}
-    {activeTab === "myprogress" && <MyprogressComponent />}
+    {activeTab === "myprogress" && <MyprogressComponent data={myprogressData}/>}
 
     
 
