@@ -230,12 +230,12 @@
     flex-direction: column;
 }
 
-table {
+.bio-detail-wrapper table {
     border-collapse: collapse;
     max-width: 100%;
 }
 
-table td {
+.bio-detail-wrapper table td {
     padding: 12px 30px;
     border-bottom: 1px solid #a1a1a1;
 }
