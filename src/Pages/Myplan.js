@@ -129,7 +129,7 @@ export default function Myplan() {
                 <img src={groce} className="groce" alt="/"/>
                 </div>
                 <div className='cl-txt'>
-                  <h1>Grocery plan</h1>
+                  <h1>Grocery</h1>
                 </div>
               </div>
               <div className={activeTab==='myprogress'?'activeTab calo-crd' : 'calo-crd'} onClick={handleMyProgress}>

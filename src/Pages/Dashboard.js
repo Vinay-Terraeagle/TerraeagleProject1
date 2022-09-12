@@ -58,8 +58,8 @@ export default function Dashboard() {
             <div className='wrapper'>
               <div className='user-row'>
                 <div className='user-svg d-flex justify-content-center align-items-center'>
-                  <span className='score' title='Profile Score'>Score</span>
-                  <Link to='/' className='badge' title='Profile Score'>10</Link>
+                  {/* <span className='score' title='Profile Score'>Score</span> */}
+                  {/* <Link to='/' className='badge' title='Profile Score'>10</Link> */}
                 <svg className='usericon' width="35" height="43" fill="none"><path fill="#e06358" d="M33.35 35.392c0-2.08-1.06-3.973-2.72-4.774-2.078-1.002-5.494-2.036-10.752-2.036s-8.673 1.034-10.752 2.036c-1.659.8-2.72 2.694-2.72 4.774v6.163H33.35v-6.163z"></path><path stroke="#2D3D54" strokeLinecap="square" strokeMiterlimit="10" strokeWidth="2" d="M33.35 35.233c0-2.132-1.258-4.074-3.224-4.895-2.463-1.029-6.512-2.089-12.743-2.089-6.23 0-10.28 1.06-12.743 2.09-1.966.82-3.224 2.761-3.224 4.894v6.322H33.35v-6.322z"></path><path fill="#FFDE9E" d="M18.88 22.594c-4.134 0-7.484-4.105-7.484-9.17v-2.619c0-5.064 3.35-9.169 7.484-9.169s7.484 4.105 7.484 9.17v2.619c0 5.064-3.35 9.169-7.484 9.169z"></path><path stroke="#2D3D54" strokeLinecap="square" strokeMiterlimit="10" strokeWidth="2" d="M17.383 22.926a9.314 9.314 0 01-9.314-9.314v-2.661a9.314 9.314 0 1118.628 0v2.661a9.314 9.314 0 01-9.314 9.314z"></path></svg>
                 </div>
                 <div className='text-row-bx'>
@@ -182,8 +182,8 @@ export default function Dashboard() {
                                 <div className="fill"></div>
                                 </div>
                                 <div className="inside-circle"> 
-                                <p>75%</p>
-                                <span>Compliance</span>
+                                <p>0%</p>
+                                <span>HealthScore</span>
                                 </div>
                             </div>
                           </div>
