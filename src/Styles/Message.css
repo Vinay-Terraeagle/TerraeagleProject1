@@ -46,7 +46,7 @@ textarea {
 }
 .trash {
     background: #f2f2f2; 
-    width: 16px;
+    width: 20px;
     height: auto;
     border-radius: 10px;
 }
@@ -116,4 +116,22 @@ textarea {
 .txicn {
     width: 30px;
     height: 30px;
+}
+.border-color {
+    border-color: #F1F1F1
+}
+
+.Toastify__toast-container.Toastify__toast-container--top-center {
+    width: 400px;
+    text-align: center;
+    top: 9.5em
+}
+
+.message-wrapper.show-no-msgs,
+.no-message-wrapper {
+    display: none;
+}
+
+.no-message-wrapper.show-no-msgs {
+    display: flex;
 }

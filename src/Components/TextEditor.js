@@ -1,36 +1,41 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
 
-export default class TextEditor extends Component {
-  state = {
-    editorState: EditorState.createEmpty(),
-  };
+export default function TextEditor() {
 
-  onEditorStateChange = (editorState) => {
-    this.setState({
-      editorState,
-    });
-  };
-
-  render() {
-    const { editorState } = this.state;
+  const [editorState, setEditorState] = useState(
+    () => EditorState.createEmpty()
+    );
+  const  [convertedContent, setConvertedContent] = useState(null);
+  const handleEditorChange = (state) => {
+    setEditorState(state);
+    convertContentToHTML();
+  }
+  const convertContentToHTML = () => {
+    let currentContentAsHTML = draftToHtml(editorState.getCurrentContent());
+    setConvertedContent(currentContentAsHTML);
+    console.log(currentContentAsHTML)
     console.log(draftToHtml(convertToRaw(editorState.getCurrentContent())));
-    return (
+
+  }
+    
+  return (
       <div>
         <Editor
           editorState={editorState}
           toolbarClassName="toolbarClassName"
           wrapperClassName="wrapperClassName"
           editorClassName="editorClassName"
-          onEditorStateChange={this.onEditorStateChange}
+          onEditorStateChange={handleEditorChange}
+          
         />
 
       </div>
     );
-  }
 }
+
 
