@@ -161,12 +161,15 @@ footer {
     height: 80px;
     line-height: 80px;
 position: relative;}
-.score {
+
+/* .score {
     position: absolute;
     left: 83px;
     top: -48px;
     color: #fe1818;
-}
+    background: #000;
+} */
+
 .badge {
     position: absolute;
     top: -4px;
@@ -223,6 +226,11 @@ position: relative;}
     border-radius: 50px;
     box-shadow: rgb(0 0 0 / 10%) 0px 3px 3px;
     margin-right: 1.5rem;
+}
+
+.badgeimages {
+    width: 20px;
+    height: 20px;
 }
 
 .staricn {
@@ -659,9 +667,9 @@ position: relative;}
   
   .mask.full,
   .circle .fill {
-    animation: fill ease-in-out 3s;
+    /* animation: fill ease-in-out 3s; */
     /* transform: rotate(135deg); */
-    transform: rotate(135deg);
+    /* transform: rotate(135deg); */
   }
   
   @keyframes fill{
@@ -701,7 +709,7 @@ position: relative;}
   .inside-circle p {
     position: relative;
     top: -11px;
-    left: 3px;
+    left: 0px;
     font-size: 27px;
   }
 
@@ -772,7 +780,13 @@ position: relative;}
 } 
 
 .crd-img {
-    max-width: 50%;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.owl-carousel .owl-item img {
+    width: auto !important;
 }
 
 .crd-row ,.lnch-row{
@@ -781,6 +795,7 @@ position: relative;}
     margin: 0 1rem;
     border-radius: 10px;
     width: 90%;
+    height: 20em;
     background: linear-gradient(to bottom, #ffd3b663 0%, #ffa467a6 90%);
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
     display: flex;
@@ -848,6 +863,7 @@ position: relative;}
 .cml-img {
     display: flex;
     justify-content: center;
+    padding-top: 1rem;
     /* width:100%; */
 }
 /* queries */
@@ -1433,7 +1449,7 @@ position: relative;}
 .wrk-row {
     display: flex;
     background: #fff;
-    padding: 0rem;
+    padding: .8rem;
     margin: 1rem;
     width: 96%;
     justify-content: space-between;
@@ -1463,11 +1479,12 @@ position: relative;}
 .wrk-ttl h1 {
     font-size: 15px;
     font-weight: 500;
+    margin: 0;
 }
 
 .wrk-ttl {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -1905,4 +1922,26 @@ a.menus:hover {
 /* End CSS Dropdown */
 .modal-body {
     padding: 44px;
+}
+
+.healthicons {
+    width: 70% !important;
+    margin-left: 0rem !important;
+}
+.crad-svg {
+    display: flex;
+    justify-content: flex-end;
+}
+.workouts-wrapper.no-workouts-toshow,
+.meal-data-wrapper.no-meals-data-toshow,
+.no-data-wrapper {
+    display: none;
+}
+.no-data-wrapper.no-workouts-toshow,
+.no-data-wrapper.no-meals-data-toshow {
+    display: inline-flex;
+}
+.wrk-imgs {
+    height: 100px;
+    width: 100px;
 }

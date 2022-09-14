@@ -4,6 +4,7 @@ import '../Styles/app.css'
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
+// import Trainer from '../../assets/images'
 
 
 export default function AddonCarousels() {
@@ -14,9 +15,9 @@ export default function AddonCarousels() {
     autoplayHoverPause:true,
     items:1,
     loop:false,
-    margin: 30,
-    
+    margin: 30
   }
+
   let navigateToSubscription = useNavigate()
   const handleUpgradeClick = () => {
     navigateToSubscription('/Subscriptionplan')

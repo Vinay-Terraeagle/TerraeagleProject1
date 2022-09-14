@@ -16,10 +16,10 @@ export default function ChangePassComp() {
 
     const formSchema = Yup.object().shape({
         password: Yup.string()
-          .required('Password is mendatory')
+          .required('Password is Mandatory')
           .min(3, 'Password must be at 3 char long'),
         password_confirmation: Yup.string()
-          .required('Password is mendatory')
+          .required('Password is Mandatory')
           .oneOf([Yup.ref('password')], 'Passwords does not match'),
       })
       const formOptions = { resolver: yupResolver(formSchema) }

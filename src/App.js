@@ -37,6 +37,7 @@ import StrengthTraining from './Components/Workout/StrengthTraining'
 import EventsView from "./Pages/EventsView"
 import DailyHealthUpdate from "./Pages/DailyHealthUpdate";
 
+
 function App() {
   return (
     <>

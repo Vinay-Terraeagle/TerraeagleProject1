@@ -88,15 +88,16 @@ export default function EditProfile() {
                 <div>
                 <img src={bgbckgr} id="avatar_status" className="ProfileBg  pt-3" alt="/" />
                 <div className='bgbackgroundbtn'>
-                  <button className='pencilsqbtn' onClick={showbgBox}> <PencilSquare className='pencilsq'/></button> 
+                 
                     </div>
                 </div>
                 <div className='proflie'>
                   <img src={Usericon} alt="/" className='usericn' />
                   <div className='editbtn'>
-                    <button className='editbtnbtn ' onClick={showBox}>
+                    {/* <button className='editbtnbtn ' onClick={showBox}>
                       <PencilSquare className='pencilsq'/>
-                    </button>
+                    </button> */}
+                     <button className='editbtnbtn' onClick={showbgBox}> <PencilSquare className='pencilsq'/></button> 
                     </div>
                 </div>
               </div>
@@ -111,7 +112,7 @@ export default function EditProfile() {
                         <input type="text" style={{cursor:'not-allowed'}} className='editemail' value={editname} disabled/>
                       </div>
                       <div className='username'>
-                        <label>Name </label>
+                        <label>FirstName </label>
                         <input type="text" id="editfirst_name" name="editfirst_name"  value={editfirst_name} />
                       </div>
                       <div className='username'>

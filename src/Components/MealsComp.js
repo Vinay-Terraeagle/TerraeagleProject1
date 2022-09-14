@@ -1,20 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/app.css'
 import Images from "../assets/images/h1.png"
-import Img2 from "../assets/images/h2.png"
-
 // carousels
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
+import NoDataFound from './NoDataFound/NoDataFound'
+import { keyboard } from '@testing-library/user-event/dist/keyboard'
 // import WorkoutCompo from './WorkOutComponent/WorkoutCompo'
 
-export default function MealsComp() {
+export default function MealsComp(mealDetails) {
 
     const MealSlider = {
-        // autoplay: true,
-        // autoplayTimeout: 3000,
-        // autoplayHoverPause:true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause:true,
         items:1,
         loop:true,
         // margin:50,
@@ -32,137 +32,252 @@ export default function MealsComp() {
                 items: 1.8,
             },
         }
+    } 
+
+    const [breakfastData, setBreakfastData] = useState()
+    const [snacksData, setSnacksData] = useState()
+    const [lunchData, setLunchData] = useState()
+    const [dinnerData, setDinnerData] = useState()
+    const [midEveningData, setMidEveningData] = useState()
+    const [midMorningData, setMidMorningData] = useState()
+    const [noMealsData, setNoMealsData] = useState()
+
+  useEffect(() => {
+    if(mealDetails.mealData !== undefined) {
+
+      if(mealDetails.mealData.breakfast_details.length  === 0 && mealDetails.mealData.lunch_details.length === 0 &&
+        mealDetails.mealData.snacks_details.length === 0 && mealDetails.mealData.dinner_details.length === 0 &&
+        mealDetails.mealData.mid_evening_details.length === 0 && mealDetails.mealData.mid_morning_details.length === 0 ) {
+          setNoMealsData('no-meals-data-toshow')
+      } else {
+        setNoMealsData('meals-toshow')
+        if(mealDetails.mealData.breakfast_details.length > 0) {
+          const breakfastList = mealDetails.mealData.breakfast_details.map((item,i) => 
+              <div className='crd-row' data-id={item.recipe_id}>
+                <div className='cml-img'>
+                  <img src={item.image} className="crd-img" alt='/' />
+                </div>
+                <div className='txtrws'>
+                  <h5>Breakfast</h5>
+                  <p>{item.name}</p>
+                </div>
+                <div className='kols'>
+                  <h4>{item.total_cals}</h4>
+                  <p>kcal</p>
+                </div>
+                <div className='carbs-wrp'>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_carbs}G</p>
+                  <h4>Carbs</h4>
+                </div>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_fats} G</p>
+                  <h4>Fat</h4>
+                </div>
+                <div className='carbs-col'>
+                <p>{item.total_cals_protein} G</p>
+                  <h4>Protein</h4>
+                </div>
+                </div>
+              </div>
+          )
+          setBreakfastData(breakfastList)
+        }
+
+        if(mealDetails.mealData.lunch_details.length > 0) {
+          const LunchList = mealDetails.mealData.lunch_details.map((item,i) => 
+              <div className='crd-row'  data-id={item.recipe_id}>
+                <div className='cml-img'>
+                  <img src={item.image} className="crd-img" alt='/' />
+                </div>
+                <div className='txtrws'>
+                  <h5>Lunch</h5>
+                  <p>{item.name}</p>
+                </div>
+                <div className='kols'>
+                  <h4>{item.total_cals}</h4>
+                  <p>kcal</p>
+                </div>
+                <div className='carbs-wrp'>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_carbs}G</p>
+                  <h4>Carbs</h4>
+                </div>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_fats} G</p>
+                  <h4>Fat</h4>
+                </div>
+                <div className='carbs-col'>
+                <p>{item.total_cals_protein} G</p>
+                  <h4>Protein</h4>
+                </div>
+                </div>
+              </div>
+          )
+          setLunchData(LunchList)
+        }
         
-    }
+        if(mealDetails.mealData.snacks_details.length > 0) {
+          const snacksList = mealDetails.mealData.snacks_details.map((item,i) => 
+              <div className='crd-row'>
+                <div className='cml-img'>
+                  <img src={item.image} className="crd-img" alt='/' />
+                </div>
+                <div className='txtrws'>
+                  <h5>Snacks</h5>
+                  <p>{item.name}</p>
+                </div>
+                <div className='kols'>
+                  <h4>{item.total_cals}</h4>
+                  <p>kcal</p>
+                </div>
+                <div className='carbs-wrp'>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_carbs}G</p>
+                  <h4>Carbs</h4>
+                </div>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_fats} G</p>
+                  <h4>Fat</h4>
+                </div>
+                <div className='carbs-col'>
+                <p>{item.total_cals_protein} G</p>
+                  <h4>Protein</h4>
+                </div>
+                </div>
+              </div>
+          )
+          setSnacksData(snacksList)
+        }
+
+        if(mealDetails.mealData.dinner_details.length > 0) {
+          const dinnerList = mealDetails.mealData.dinner_details.map((item,i) => 
+              <div className='crd-row'>
+                <div className='cml-img'>
+                  <img src={item.image} className="crd-img" alt='/' />
+                </div>
+                <div className='txtrws'>
+                  <h5>Dinner</h5>
+                  <p>{item.name}</p>
+                </div>
+                <div className='kols'>
+                  <h4>{item.total_cals}</h4>
+                  <p>kcal</p>
+                </div>
+                <div className='carbs-wrp'>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_carbs}G</p>
+                  <h4>Carbs</h4>
+                </div>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_fats} G</p>
+                  <h4>Fat</h4>
+                </div>
+                <div className='carbs-col'>
+                <p>{item.total_cals_protein} G</p>
+                  <h4>Protein</h4>
+                </div>
+                </div>
+              </div>
+          )
+          setDinnerData(dinnerList)
+        }
+        if(mealDetails.mealData.mid_evening_details.length > 0) {
+          const midEveningList = mealDetails.mealData.mid_evening_details
+          .map((item,i) => 
+              <div className='crd-row'>
+                <div className='cml-img'>
+                  <img src={item.image} className="crd-img" alt='/' />
+                </div>
+                <div className='txtrws'>
+                  <h5>Mid Evening</h5>
+                  <p>{item.name}</p>
+                </div>
+                <div className='kols'>
+                  <h4>{item.total_cals}</h4>
+                  <p>kcal</p>
+                </div>
+                <div className='carbs-wrp'>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_carbs}G</p>
+                  <h4>Carbs</h4>
+                </div>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_fats} G</p>
+                  <h4>Fat</h4>
+                </div>
+                <div className='carbs-col'>
+                <p>{item.total_cals_protein} G</p>
+                  <h4>Protein</h4>
+                </div>
+                </div>
+              </div>
+          )
+          setMidEveningData(midEveningList)
+        }
+        
+        if(mealDetails.mealData.mid_morning_details.length > 0){
+          const midMorningList = mealDetails.mealData.mid_morning_details
+          .map((item,i) => 
+              <div className='crd-row'>
+                <div className='cml-img'>
+                  <img src={item.image} className="crd-img" alt='/' />
+                </div>
+                <div className='txtrws'>
+                  <h5>Mid Morning</h5>
+                  <p>{item.name}</p>
+                </div>
+                <div className='kols'>
+                  <h4>{item.total_cals}</h4>
+                  <p>kcal</p>
+                </div>
+                <div className='carbs-wrp'>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_carbs}G</p>
+                  <h4>Carbs</h4>
+                </div>
+                <div className='carbs-col'>
+                  <p>{item.total_cals_fats} G</p>
+                  <h4>Fat</h4>
+                </div>
+                <div className='carbs-col'>
+                <p>{item.total_cals_protein} G</p>
+                  <h4>Protein</h4>
+                </div>
+                </div>
+              </div>
+          )
+          setMidEveningData(midMorningList)
+        }
+      }
+
+    } 
+  },[mealDetails.mealData])
+
 
   return (
     <>
       <section>
         <div className='meals-card'>
           <div className='headpart'>
-            <h1>Meals Toady.</h1>
+            <h1>Today Meals</h1>
           </div>
-          <div className='cml-carm'>
-            <div className='cml-cards'>
+          <div className="cml-carm">
+            <div className={`cml-cards meal-data-wrapper ${noMealsData}`}>
               <OwlCarousel {...MealSlider}>
-                <div className='crd-row'>
-                  <div className='cml-img'>
-                    <img src={Images} className="crd-img" alt='/' />
-                  </div>
-                  <div className='txtrws'>
-                    <h5>BreakFast</h5>
-                    <p>Bread, Peanut butter, apple</p>
-                  </div>
-                  <div className='kols'>
-                    <h4>12.47</h4>
-                    <p>kcal</p>
-                  </div>
-                  <div className='carbs-wrp'>
-                  <div className='carbs-col'>
-                    <p>156G</p>
-                    <h4>Carbs</h4>
-                  </div>
-                  <div className='carbs-col'>
-                    <p>56G</p>
-                    <h4>Fat</h4>
-                  </div>
-                  <div className='carbs-col'>
-                  <p>16G</p>
-                    <h4>Protein</h4>
-                  </div>
-                  </div>
-                </div>
-                <div className='crd-row'>
-                  <div className='cml-img'>
-                    <img src={Images} className="crd-img" alt='/' />
-                  </div>
-                  <div className='txtrws'>
-                    <h5>BreakFast</h5>
-                    <p>Bread, Peanut butter, apple</p>
-                  </div>
-                  <div className='kols'>
-                    <h4>12.47</h4>
-                    <p>kcal</p>
-                  </div>
-                  <div className='carbs-wrp'>
-                  <div className='carbs-col'>
-                    <p>156G</p>
-                    <h4>Carbs</h4>
-                  </div>
-                  <div className='carbs-col'>
-                    <p>56G</p>
-                    <h4>Fat</h4>
-                  </div>
-                  <div className='carbs-col'>
-                  <p>16G</p>
-                    <h4>Protein</h4>
-                  </div>
-                  </div>
-                </div>
-
-                <div className='lnch-row'>
-                  <div className='cml-img'>
-                    <img src={Img2} className="crd-img" alt='/' />
-                  </div>
-                  <div className='txtrws'>
-                    <h5>Lunch</h5>
-                    <p>Salmon, Mixed Veggies, Avacado</p>
-                  </div>
-                  <div className='kols'>
-                    <h4>12.47</h4>
-                    <p>kcal</p>
-                  </div>
-                  <div className='carbs-wrp'>
-                  <div className='carbs-col'>
-                    <p>156G</p>
-                    <h4>Carbs</h4>
-                  </div>
-                  <div className='carbs-col'>
-                    <p>56G</p>
-                    <h4>Fat</h4>
-                  </div>
-                  <div className='carbs-col'>
-                  <p>16G</p>
-                    <h4>Protein</h4>
-                  </div>
-                  </div>
-                </div>
-                <div className='lnch-row'>
-                  <div className='cml-img'>
-                    <img src={Img2} className="crd-img" alt='/' />
-                  </div>
-                  <div className='txtrws'>
-                    <h5>Lunch</h5>
-                    <p>Salmon, Mixed Veggies, Avacado</p>
-                  </div>
-                  <div className='kols'>
-                    <h4>525</h4>
-                    <p>kcal</p>
-                  </div>
-                  <div className='carbs-wrp'>
-                  <div className='carbs-col'>
-                    <p>156G</p>
-                    <h4>Carbs</h4>
-                  </div>
-                  <div className='carbs-col'>
-                    <p>56G</p>
-                    <h4>Fat</h4>
-                  </div>
-                  <div className='carbs-col'>
-                  <p>16G</p>
-                    <h4>Protein</h4>
-                  </div>
-                  </div>
-                </div>
+                {breakfastData}
+                {lunchData}
+                {dinnerData}
+                {snacksData}
+                {midEveningData}
+                {midMorningData}
+                
               </OwlCarousel>
             </div>
+            <NoDataFound className={`no-data-wrapper ${noMealsData}`}/>
           </div>
-
-          {/* workout */}
-          {/* <WorkoutCompo /> */}
         </div>
       </section>
-    
     </>
   )
 }
