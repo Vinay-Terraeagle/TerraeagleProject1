@@ -16,7 +16,7 @@ import Select from 'react-dropdown-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
-import { useForm } from "react-hook-form";
+import ImageUploader from "react-images-upload";
 
 
 export default function MyprogressComponent(data) {
@@ -74,7 +74,7 @@ export default function MyprogressComponent(data) {
 
   // Add API Call
   const [weightDetails, setWeightDetails] = useState()
-  const handleAddUpdate = (props) => {
+  const handleAddUpdate = () => {
       const client_name = "Deepthi22 (9511938081)"
       const config = {
         headers:{
@@ -180,7 +180,7 @@ export default function MyprogressComponent(data) {
                                     </span>
                                     <span id="add-update" className="text-capitalize">Update</span>
                                   </button>
-                                    <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue(props)}> 
+                                    <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue}> 
                                     <span className="btn-icon-left text-danger">
                                       <Trash />
                                     </span>Delete 
@@ -267,6 +267,10 @@ export default function MyprogressComponent(data) {
   }
 
 
+  const [images, setImages] = useState()
+  const onDrop = (pictureFiles, pictureDataURLs) => {
+    console.log("sdfsdfsdfsdf"+ pictureFiles)
+  }
 
   return (
     <React.Fragment>
@@ -386,19 +390,42 @@ export default function MyprogressComponent(data) {
                         <tbody>
                             <tr>
                                 <td className='text-center'>
-                                  <Link to="#" className="pop">
                                     <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" alt="" />
-                                  </Link>
+
+                                    <ImageUploader
+                                      withIcon={false}
+                                      withPreview={true}
+                                      label=""
+                                      buttonText="Upload Front Image"
+                                      onChange={onDrop}
+                                      imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg"]}
+                                      maxFileSize={1048576}
+                                      fileSizeError=" file size is too big"
+                                    />
                                 </td>
                                 <td className='text-center'>
-                                  <Link to="#" className="pop">
-                                    <img id="current_side_image" src="https://wellness.revibe.in/images/side.png" className="img-responsive" alt="" />
-                                  </Link>
+                                    <ImageUploader
+                                      withIcon={false}
+                                      withPreview={true}
+                                      label=""
+                                      buttonText="Upload Side Image"
+                                      onChange={onDrop}
+                                      imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg", ".jpeg"]}
+                                      maxFileSize={1048576}
+                                      fileSizeError=" file size is too big"
+                                    />
                                 </td>
                                 <td className='text-center'>
-                                  <Link to="#" className="pop">
-                                    <img id="current_back_image" src="https://wellness.revibe.in/images/back.png" className="img-responsive" alt="" />
-                                  </Link>
+                                <ImageUploader
+                                      withIcon={false}
+                                      withPreview={true}
+                                      label=""
+                                      buttonText="Upload Back Image"
+                                      onChange={onDrop}
+                                      imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg"]}
+                                      maxFileSize={1048576}
+                                      fileSizeError=" file size is too big"
+                                    />
                                 </td>
                             </tr>
                         </tbody>
