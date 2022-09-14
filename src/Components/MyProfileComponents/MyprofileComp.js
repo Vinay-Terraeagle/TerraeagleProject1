@@ -24,7 +24,7 @@ export default function MyprofileComp() {
         Authorization: TOKEN
       }
     }).then((response) => {
-      console.log(response)
+      // console.log(response)
       setUserData(response.data.data.user)
       setname(response.data.data.user.name)
       setEmail(response.data.data.user.email)

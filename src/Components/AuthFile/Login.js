@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <>
-    <section className='login-sec'>
+    <section className='login-sec' style={{background:'#f2f5ff'}}>
       <div className='container'>
         <div className='login-hero'>
         <div className='login_logo'>
