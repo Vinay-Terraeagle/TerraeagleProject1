@@ -57,6 +57,7 @@ export default function Dashboard() {
 
     setWorkouts(response.data.data.workout_details)
     setNotificationData(response.data.data.user_details.unread_notification_count)
+    //setNotificationToggle(response.data.data.user_details.unread_notification_count)
     setMealDetails(response.data.data.meal_details)
     setHealthMatrixDetails(response.data.data.health_metrics_details)
     setVerificationDetails(response.data.data.verification_details)

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/app.css'
-import Images from "../assets/images/h1.png"
 // carousels
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
 import NoDataFound from './NoDataFound/NoDataFound'
-// import WorkoutCompo from './WorkOutComponent/WorkoutCompo'
 
 export default function MealsComp(mealDetails) {
 

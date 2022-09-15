@@ -586,3 +586,8 @@ input#hydration-number {
 }
 
 /* End - Hydration Status CSS  */
+.daily-health-update-btn {
+    background: #7FB3D5;
+    border-color: #7FB3D5;
+    width: 200px;
+}

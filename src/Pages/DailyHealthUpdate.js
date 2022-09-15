@@ -68,7 +68,7 @@ export default function DailyHealthUpdate() {
     <React.Fragment>
          <Header />
         <div className="container">
-            <h4 className="pt-5">Edit Daily Health Update</h4>
+            <h4 className="pt-5">Daily Health Update</h4>
             <div className="daily-health-update-container row">
                 <div className="card-body">
                 <div className="basic-form">
@@ -81,7 +81,7 @@ export default function DailyHealthUpdate() {
                     >
                     <div className="row">
                         <input type="hidden" name="_token" defaultValue="" />
-                        <div className="col-lg-6 mb-4">
+                        {/* <div className="col-lg-6 mb-4">
                         <div className="form-group row">
                             <div className="col-lg-4">
                             <label className="col-form-label">Name</label>
@@ -97,7 +97,7 @@ export default function DailyHealthUpdate() {
                             />
                             </div>
                         </div>
-                        </div>
+                        </div> */}
                         <div className="col-lg-6 mb-4">
                         <div className="form-group row">
                             <div className="col-lg-4">
@@ -252,19 +252,7 @@ export default function DailyHealthUpdate() {
                             </div>
                         </div>
                         </div>
-                        <div className="col-lg-6 mb-4">
-                        <div className="form-group row">
-                            <div className="col-lg-4">
-                            <label className="col-form-label">
-                                Physical Activity<span className="text-danger">*</span>
-                            </label>
-                            </div>
-                            <div className="col-lg-8">
-
-                            <Select options={PhysicalActivityFilterOptions} onChange=''></Select>
-                            </div>
-                        </div>
-                        </div>
+                        
                         <div className="col-lg-6 mb-4">
                         <div className="form-group row">
                             <div className="col-lg-4">
@@ -341,6 +329,7 @@ export default function DailyHealthUpdate() {
                             </div>
                         </div>
                         </div>
+                       
                         <div className="col-lg-6 mb-4">
                             <div className="form-group row">
                                 <div className="col-lg-4">
@@ -372,11 +361,25 @@ export default function DailyHealthUpdate() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6 mb-4">
+
+                        <div className="col-lg-6 mb-4 mt-2">
+                        <div className="form-group row">
+                            <div className="col-lg-4">
+                            <label className="col-form-label">
+                                Physical Activity<span className="text-danger">*</span>
+                            </label>
+                            </div>
+                            <div className="col-lg-8">
+
+                            <Select options={PhysicalActivityFilterOptions} onChange=''></Select>
+                            </div>
+                        </div>
+                        </div>
+                        <div className="col-lg-6 mb-4 mt-2">
                             <div className="form-group row energy-level-wrapper">
                             <div className="col-lg-6">
-                                <label className="col-form-label">
-                                Energy Level<span className="text-danger">*</span>
+                                <label className="col-form-label d-flex">
+                                Energy Level<p className="text-danger">*</p>
                                 </label>
                             </div>
                             <div className="form-group col-lg-6">
@@ -554,7 +557,7 @@ export default function DailyHealthUpdate() {
                         </div>
                         <div className="form-group row mt-5 text-center">
                             <div className="col-12">
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className="daily-health-update-btn btn btn-primary">
                                 Update
                             </button>
                             </div>
