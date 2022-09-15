@@ -15,6 +15,7 @@ import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
 import ImageUploader from "react-images-upload";
+import ImageUploading from "react-images-uploading"
 
 
 export default function MyprogressComponent(data) {
@@ -265,11 +266,27 @@ export default function MyprogressComponent(data) {
   }
 
 
-  const [images, setImages] = useState()
+  const [images1, setImages1] = useState()
   const onDrop = (pictureFiles, pictureDataURLs) => {
     console.log("sdfsdfsdfsdf"+ pictureFiles)
   }
 
+
+  const maxNumber = 69;
+  const [frontImage, setFrontImage] = React.useState([]);
+  const onFrontImgChange = (imageList, addUpdateIndex) => {
+    setFrontImage(imageList);
+  };
+  
+  const [backImage, setBackImage] = React.useState([]);
+  const onBackImgChange = (imageList, addUpdateIndex) => {
+    setBackImage(imageList);
+  };
+  
+  const [sideImage, setSideImage] = React.useState([]);
+  const onSideImgChange = (imageList, addUpdateIndex) => {
+    setSideImage(imageList);
+  };
   return (
     <React.Fragment>
 
@@ -388,42 +405,101 @@ export default function MyprogressComponent(data) {
                         <tbody>
                             <tr>
                                 <td className='text-center'>
-                                    <img id="current_front_image" src="https://wellness.revibe.in/images/front.png" className="img-responsive" alt="" />
-
-                                    <ImageUploader
-                                      withIcon={false}
-                                      withPreview={true}
-                                      label=""
-                                      buttonText="Upload Front Image"
-                                      onChange={onDrop}
-                                      imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg"]}
-                                      maxFileSize={1048576}
-                                      fileSizeError=" file size is too big"
-                                    />
+                                    <ImageUploading
+                                      multiple={false}
+                                      value={frontImage}
+                                      onChange={onFrontImgChange}
+                                      maxNumber={maxNumber}
+                                      dataURLKey="data_url"
+                                      acceptType={["jpg","jpeg","png"]}
+                                    > 
+                                      {({
+                                          imageList,
+                                          onImageUpload,
+                                          isDragging,
+                                          dragProps
+                                        }) => (
+                                          <div className="upload__image-wrapper">
+                                            {imageList.map((image, index) => (
+                                              <div key={index} className="image-item">
+                                                <img src={image.data_url} alt="" width="100" />
+                                              </div>
+                                            ))}
+                                            <button className='uploadImgBtn'
+                                              style={isDragging ? { color: "red" } : null}
+                                              onClick={onImageUpload}
+                                              {...dragProps}
+                                            >
+                                              Upload Back Image
+                                            </button>
+                                          </div>
+                                      )}
+                                    </ImageUploading>
                                 </td>
                                 <td className='text-center'>
-                                    <ImageUploader
-                                      withIcon={false}
-                                      withPreview={true}
-                                      label=""
-                                      buttonText="Upload Side Image"
-                                      onChange={onDrop}
-                                      imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg", ".jpeg"]}
-                                      maxFileSize={1048576}
-                                      fileSizeError=" file size is too big"
-                                    />
+                                  <ImageUploading
+                                    multiple={false}
+                                    value={backImage}
+                                    onChange={onBackImgChange}
+                                    maxNumber={maxNumber}
+                                    dataURLKey="data_url"
+                                    acceptType={["jpg","jpeg","png"]}
+                                  > 
+                                    {({
+                                        imageList,
+                                        onImageUpload,
+                                        isDragging,
+                                        dragProps
+                                      }) => (
+                                        <div className="upload__image-wrapper">
+                                          {imageList.map((image, index) => (
+                                            <div key={index} className="image-item">
+                                              <img src={image.data_url} alt="" width="100" />
+                                            </div>
+                                          ))}
+                                          <button className='uploadImgBtn'
+                                            style={isDragging ? { color: "red" } : null}
+                                            onClick={onImageUpload}
+                                            {...dragProps}
+                                          >
+                                            Upload Front Image
+                                          </button>
+                                        </div>
+                                      )}
+                                    </ImageUploading>
+                                    
                                 </td>
                                 <td className='text-center'>
-                                <ImageUploader
-                                      withIcon={false}
-                                      withPreview={true}
-                                      label=""
-                                      buttonText="Upload Back Image"
-                                      onChange={onDrop}
-                                      imgExtension={[".jpg", ".gif", ".png", ".gif", ".svg"]}
-                                      maxFileSize={1048576}
-                                      fileSizeError=" file size is too big"
-                                    />
+                                  <ImageUploading
+                                    multiple={false}
+                                    value={sideImage}
+                                    onChange={onSideImgChange}
+                                    maxNumber={maxNumber}
+                                    dataURLKey="data_url"
+                                    acceptType={["jpg","jpeg","png"]}
+                                  > 
+                                    {({
+                                        imageList,
+                                        onImageUpload,
+                                        isDragging,
+                                        dragProps
+                                      }) => (
+                                        <div className="upload__image-wrapper">
+                                          {imageList.map((image, index) => (
+                                            <div key={index} className="image-item">
+                                              <img src={image.data_url} alt="" width="100" />
+                                            </div>
+                                          ))}
+                                          <button className='uploadImgBtn'
+                                            style={isDragging ? { color: "red" } : null}
+                                            onClick={onImageUpload}
+                                            {...dragProps}
+                                          >
+                                            Upload Front Image
+                                          </button>
+                                        </div>
+                                      )}
+                                    </ImageUploading>
                                 </td>
                             </tr>
                         </tbody>

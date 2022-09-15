@@ -3,14 +3,10 @@ import '../Styles/app.css'
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
-import blood2 from '../assets/images/B2.png'
 import bmiCal from '../assets/images/BMIMeter.png'
 import blood from '../assets/images/Blood.png'
 import Heart from '../assets/images/Heart.png'
 import bodysv from '../assets/images/Body.png'
-import { BASE_URL, TOKEN } from '../Backend/config';
-import axios from 'axios'
-
 
 export default function HealthMatrix(healthMatrixDetails) {
 

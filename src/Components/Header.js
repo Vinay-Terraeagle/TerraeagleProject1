@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
@@ -24,8 +24,6 @@ export default function Header() {
         let path = '/'; 
         navigatetoHome(path);
     } 
-
-
 
   return (
     <React.Fragment>
