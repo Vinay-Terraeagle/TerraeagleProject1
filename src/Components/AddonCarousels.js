@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import '../Styles/app.css'
 import OwlCarousel from 'react-owl-carousel'
 import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css'
+import { useState } from 'react';
 // import Trainer from '../../assets/images'
 
 
-export default function AddonCarousels() {
+export default function AddonCarousels(subscriptionLists) {
 
+  const [purchaseinfo, setpurchaseinfo] = useState();
+  
   const AddonC = {
     autoplay: true,
     autoplayTimeout: 4100,
@@ -20,8 +23,23 @@ export default function AddonCarousels() {
 
   let navigateToSubscription = useNavigate()
   const handleUpgradeClick = () => {
-    navigateToSubscription('/Subscriptionplan')
+    navigateToSubscription('/BloodBiomarker')
   }
+  useEffect(() => {
+    const subscriptioninfo = JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
+    if(subscriptioninfo.biomarkers === "biomarkers") {
+      const link = <button className='gbtn-gt' onClick={handleUpgradeClick}>View Details</button>
+      setpurchaseinfo(link)
+    } else {
+      const purchaseBtn = <button className='btn-lrn'  onClick={handleUpgradeClick}>Purchase</button>
+      setpurchaseinfo(purchaseBtn)
+    }
+  },[])
+
+
+  JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
+  // console.log(JSON.parse(localStorage.getItem('subscriptionBasedVisibility')))
+  
   return (
     <React.Fragment>
             <div className='main-carousels'>
@@ -40,7 +58,8 @@ export default function AddonCarousels() {
                               <button className='gbtn-gt'>Learn More</button>
                             </div> */}
                             <div className='btn-purch'>
-                              <button className='btn-lrn' onClick={handleUpgradeClick}>Purchase</button>
+                              {purchaseinfo}
+                              {/* <button className='btn-lrn'  onClick={handleUpgradeClick}>Purchase</button> */}
                             </div>
                           </div>
                         </div>

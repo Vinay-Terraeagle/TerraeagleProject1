@@ -4,8 +4,6 @@ import {Container, Row, Col} from 'react-bootstrap'
 import '../../Styles/Myprofile.css'
 import ChangePassComp from "./ChangePassComp";
 import DeleteAccount from "./DeleteAccount";
-// import axios from "axios";
-
 
 export default function AccountAdmin() {
 

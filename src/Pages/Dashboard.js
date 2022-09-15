@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 // Components
 import EmailVerify from '../Components/EmailVerifyComp/EmailVerify'
 // import EventsComp from '../Components/EventsComponents/EventsComp.js'
+import { CircularProgressbar } from 'react-circular-progressbar';
 import WorkoutCompo from '../Components/WorkOutComponent/WorkoutCompo'
 import Footer from '../Components/footer'
 import AddonCarousels from '../Components/AddonCarousels'
@@ -24,12 +25,15 @@ import NoDataFound from  '../Components/NoDataFound/NoDataFound';
 
 
 export default function Dashboard() {
+
+
   const [coachname, setcoachname] = useState(); 
   const [UserDetails, setUserDetails] = useState()
   const [image, setimage] = useState();
   const [weight, setcurrentweight] = useState();
   const [goalweight, setgoalweight] = useState();
   const [activeplans, setactiveplans] = useState();
+  const [health_score, sethealth_score] = useState();
   // badge
   // const [badgeimage, setbadgeimage] = useState();
   const [plandetails ,setplandetails] = useState();
@@ -37,11 +41,11 @@ export default function Dashboard() {
 
 
   const [workouts, setWorkouts] = useState();
-  const [NotificationToggle, setNotificationToggle] = useState();
+  const [notificationData, setNotificationData] = useState();
   const [mealDetails, setMealDetails] = useState();
   const [healthMatrixDetails, setHealthMatrixDetails] = useState();
   const [verificationDetails, setVerificationDetails] = useState();
-  const [subscriptionDetails, setSubscriptionDetails] = useState()
+  const [subscriptionDetail, setSubscriptionDetail] = useState()
 
   useEffect(() => {
     axios.get(`${BASE_URL}/home`, {
@@ -52,11 +56,12 @@ export default function Dashboard() {
     .then((response) => {
 
     setWorkouts(response.data.data.workout_details)
-    setNotificationToggle(response.data.data.user_details.unread_notification_count)
+    setNotificationData(response.data.data.user_details.unread_notification_count)
     setMealDetails(response.data.data.meal_details)
     setHealthMatrixDetails(response.data.data.health_metrics_details)
     setVerificationDetails(response.data.data.verification_details)
-    setSubscriptionDetails(response.data.subscription_based_visibility)
+    setSubscriptionDetail(response.data.data.subscription_based_visibility)
+    sethealth_score(response.data.data.user_details.health_score)
      
     setUserDetails(response.data.data.user_details.user_name)
     setimage(response.data.data.user_details.image)
@@ -70,7 +75,8 @@ export default function Dashboard() {
     // setbadgeimage(response.data.data.badge_details.badge_details.image);
 
       //Setting the Subscription details in the localstorage so that we can access this thorught the application and show the data
-      localStorage.setItem("subscriptionBasedVisibility",{subscriptionDetails})
+      // localStorage.setItem("subscriptionBasedVisibility",{subscriptionDetails})
+      localStorage.setItem('subscriptionBasedVisibility', JSON.stringify(response.data.data.subscription_based_visibility));
       
     })
   },[]);
@@ -93,7 +99,7 @@ export default function Dashboard() {
   }
   return (
     <React.Fragment>
-      <Header  notificationbadge={NotificationToggle}/>
+      <Header  unreadNotification={notificationData}/>
       <section>
         <div className='container'>
           <div className='wrapper'>
@@ -218,7 +224,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div className='iner-logo'>
-                    <div className="circle-wrap">
+                    {/* <div className="circle-wrap">
                       <div className="circle">
                         <div className="mask half">
                           <div className="fill"></div>
@@ -227,10 +233,18 @@ export default function Dashboard() {
                           <div className="fill"></div>
                         </div>
                         <div className="inside-circle">
-                          <p>N/A</p>
+                          <p>0</p>
                           <span>HealthScore</span>
                         </div>
                       </div>
+                    </div> */}
+                     <div style={{ width: 100, height: 100 }}>
+                    <CircularProgressbar value={health_score} text={`${health_score}`}>
+                    <div style={{ fontSize: 12, marginTop: -5 }}>
+                       <strong>HealthScore</strong> 
+                     </div>
+                    </CircularProgressbar>
+                    <span className='p-1 text-center'>HealthScore</span>
                     </div>
                     <div className='daily-up'>
                       <button className='daily-check' onClick={showDailyHealthUpdateView}>Daily check in</button>
@@ -272,10 +286,13 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className='ad-cd-mn'>
-                  <AddonCarousels />
-                    { workouts
-                      ? <WorkoutCompo WorkoutCompo={workouts}/>
-                      : <div className='workout-plans'>
+                  <AddonCarousels subscriptionLists={subscriptionDetail}/>
+                  
+                  
+                   {/* {subscriptionDetail ? <AddonCarousels AddonCarousels={subscriptionDetail}/> :  */}
+                   {/* console.log(subscriptionDetail)} */}
+                 
+                    { workouts ? <WorkoutCompo WorkoutCompo={workouts}/> : <div className='workout-plans'>
                       <div className='wrk-txt'>
                         <h5>WorkOut</h5>
                       </div>
