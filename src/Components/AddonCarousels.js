@@ -26,19 +26,18 @@ export default function AddonCarousels(subscriptionLists) {
     navigateToSubscription('/BloodBiomarker')
   }
   useEffect(() => {
-    const subscriptioninfo = JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
-    if(subscriptioninfo.biomarkers === "biomarkers") {
-      const link = <button className='gbtn-gt' onClick={handleUpgradeClick}>View Details</button>
-      setpurchaseinfo(link)
-    } else {
-      const purchaseBtn = <button className='btn-lrn'  onClick={handleUpgradeClick}>Purchase</button>
-      setpurchaseinfo(purchaseBtn)
+    if(localStorage.getItem('subscriptionBasedVisibility') !== undefined) {
+      const subscriptioninfo = JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
+      if(subscriptioninfo.biomarkers === "biomarkers") {
+        const link = <button className='gbtn-gt' onClick={handleUpgradeClick}>View Details</button>
+        setpurchaseinfo(link)
+      } else {
+        const purchaseBtn = <button className='btn-lrn'  onClick={handleUpgradeClick}>Purchase</button>
+        setpurchaseinfo(purchaseBtn)
+      }
     }
   },[])
 
-
-  JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
-  // console.log(JSON.parse(localStorage.getItem('subscriptionBasedVisibility')))
   
   return (
     <React.Fragment>
