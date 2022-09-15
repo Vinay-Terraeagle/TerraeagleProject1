@@ -10,21 +10,16 @@ import bdge from '../assets/images/badge.png'
 import { StarFill } from 'react-bootstrap-icons'
 // medals
 import first from '../assets/images/G1.png'
-// import second from '../assets/images/G2.png'
-// import Third from '../assets/images/G3.png'
 import forth from '../assets/images/G4.png'
 import axios from 'axios'
 import { BASE_URL, TOKEN } from '../Backend/config';
 
 export default function LeaderBoard() {
 
-  // const [data, setData] = useState();
-  // const [points, setPoints] = useState();
   const [fullname, setfullname] = useState();
   const [fullname1, setfullname1] = useState();
   const [images, setimages] = useState();
   const [images1, setimages1] = useState();
-  // const [name2, setname2] = useState();
 
     
     useEffect(() => {

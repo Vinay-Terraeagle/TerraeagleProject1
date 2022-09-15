@@ -1,14 +1,11 @@
 import React from 'react'
-import { useState } from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import '../../Styles/Myprofile.css'
-import { UseEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL, TOKEN } from '../../Backend/config';
-import { useEffect } from 'react'
 import {CheckCircleFill} from "react-bootstrap-icons"
 
 

@@ -1,11 +1,6 @@
 import React from 'react'
-import { Container, Col, Row, Modal } from 'react-bootstrap'
-// import {Link} from 'react-router-dom'
+import { Container, Col, Row } from 'react-bootstrap'
 import '../../Styles/Myprofile.css'
-import {ExclamationTriangleFill} from 'react-bootstrap-icons'
-import {CheckCircleFill} from 'react-bootstrap-icons'
-// import errimg from '../../assets/images/error.png'
-// import { Trash } from 'react-bootstrap-icons'
 import { useNavigate } from 'react-router-dom'
 
 

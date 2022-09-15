@@ -5,7 +5,7 @@ import Header from '../Components/Header'
 import Footer from '../Components/footer'
 // import { ArrowRightShort } from 'react-bootstrap-icons'
 import Activeplan from '../Components/activeplan'
-import Myaddonplans from '../Components/Myaddonplans'
+// import Myaddonplans from '../Components/Myaddonplans'
 import Purchase from './Purchase'
 export default function Subscriptionplan() {
 
@@ -14,7 +14,7 @@ export default function Subscriptionplan() {
   return (
     <React.Fragment>
       <Header/>
-      <section className='mb-5'>
+      <section className='mb-2'>
         <Container>
             <Row>
             <div className='leader-section d-flex justify-content-between pt-5' style={{alignItems: 'center'}}>
@@ -30,7 +30,7 @@ export default function Subscriptionplan() {
                 <div className='myplantablist'>
                   <button className={Tabactive === 'Activeplan' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Activeplan")}>
                     My Plans</button>
-                  <button className={Tabactive === 'Myaddonplans' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Myaddonplans")}>Get addon Plans</button>
+                  {/* <button className={Tabactive === 'Myaddonplans' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Myaddonplans")}>Get addon Plans</button> */}
                   <button className={Tabactive === 'Purchase' ? 'Tabactive activeplan' : 'activeplan'} onClick={() => setAct("Purchase")}>Purchase Plan</button>
                 </div>
               </Col>
@@ -38,7 +38,7 @@ export default function Subscriptionplan() {
         </Container>
       </section>
       {Tabactive === "Activeplan" && <Activeplan/>}
-      {Tabactive === "Myaddonplans" && <Myaddonplans/>}
+      {/* {Tabactive === "Myaddonplans" && <Myaddonplans/>} */}
       {Tabactive === "Purchase" && <Purchase/>}
 
       <Footer/>

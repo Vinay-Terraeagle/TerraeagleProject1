@@ -11,11 +11,10 @@ import { BASE_URL, TOKEN } from '../../Backend/config';
 
 export default function MyprofileComp() {
 
-  const [userData, setUserData] = useState();
   const [name, setname] = useState();
   const [userlastname, setlastname] = useState();
   const [usermame, setusername] = useState();
-  const [email, setEmail] = useState();
+  // const [email, setEmail] = useState();
   const [mob, setMob] = useState()
 
   useEffect(() => {
@@ -24,10 +23,8 @@ export default function MyprofileComp() {
         Authorization: TOKEN
       }
     }).then((response) => {
-      // console.log(response)
-      setUserData(response.data.data.user)
       setname(response.data.data.user.name)
-      setEmail(response.data.data.user.email)
+      // setEmail(response.data.data.user.email)
       setMob(response.data.data.user.mobile_number)
       setusername(response.data.data.user.first_name)
       setlastname(response.data.data.user.last_name)

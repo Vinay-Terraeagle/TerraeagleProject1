@@ -32,10 +32,12 @@
 }
 
 .adtxt {
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
+    margin: 25px 0;
     color: #e06358;
     font-size: 12px;
     font-weight: 300;
+    border-bottom: 1px solid #cdcdcd;
 }
 
 .activeplan {
@@ -116,6 +118,7 @@
     min-width: 275px;
     position: relative;
     overflow: hidden;
+    margin-top: 1.2rem;
 }
 
 .nxtcd {

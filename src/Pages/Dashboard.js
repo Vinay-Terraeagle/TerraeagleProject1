@@ -67,7 +67,7 @@ export default function Dashboard() {
     setcoachname(response.data.data.plan_details.coach_name)
     setexpires_in(response.data.data.plan_details.active_plans[0].interval)
     // badge
-    setbadgeimage(response.data.data.badge_details.badge_details.image);
+    // setbadgeimage(response.data.data.badge_details.badge_details.image);
 
       //Setting the Subscription details in the localstorage so that we can access this thorught the application and show the data
       localStorage.setItem("subscriptionBasedVisibility",{subscriptionDetails})
