@@ -4,10 +4,7 @@ import {Container, Col, Row } from 'react-bootstrap'
 import Header from '../Components/Header'
 import { PencilSquare } from 'react-bootstrap-icons'
 import { Trash } from 'react-bootstrap-icons'
-import UserIcon from '../assets/images/usericn.png'
-import { ThreeDots } from 'react-bootstrap-icons'
 import { SendFill } from 'react-bootstrap-icons'
-import { X } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 // import TextEditor from '../Components/TextEditor'
@@ -20,16 +17,22 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-// import nomsgsimg from "../../assets/images/no-message-img"
 import nomsgsimg from '../assets/images/no-message-img.png'
 
 
 export default function Message() {
   const [open, setOpen] = useState(false);
   
-  const openHandle = () => setOpen(false);
-  const showHandle = () => setOpen(true);
-  
+  const openHandle = () => {
+    setOpen(false);
+    
+
+  }
+  const showHandle = () => {
+    setMsgSubject('')
+    setEditorState(EditorState.createEmpty())
+    setOpen(true);
+  }
   const [show, setShow] = useState(false);
   const hideConfirmPopup = () => setShow(false);
   
@@ -52,16 +55,15 @@ export default function Message() {
   //API call to send the msg
   const handleSendMessage = (event) => {
     event.preventDefault();
-    setOpen(false)
-   
     const msgSubjectText = msgSubject
     const  msgTextData =  msgText
 
     //Validation for the empty text message
-    if(msgTextData === '' ) {
+    if(msgTextData === '' || msgSubjectText === '') {
 
       return
     }
+    setOpen(false)
     const config = {
       headers:{
         Authorization: TOKEN
@@ -125,7 +127,7 @@ export default function Message() {
         setShowNoMessagesInfo('show-msgs')
         const messagesList = messages.map((item,i) => 
         
-          <div className='message-card msg-top rounded mb-4'  data-id={item.id} data-msgid={item.id} onClick={renderAllMessageReplies}>
+          <div className='message-card msg-top rounded mb-4'  key={i} data-id={item.id} data-msgid={item.id} onClick={renderAllMessageReplies}>
             <div className='mg-tx '>
               <div className='useravt d-flex align-items-center justify-content-between'> 
                 <img src={item.profile_image} className="usravth" alt='/'/>
@@ -158,43 +160,75 @@ export default function Message() {
     });
   }
 
+  //Render all the replies for a message
   const [msgReplies, setMsgReplies] = useState()
-  const renderAllMessageReplies = () => {
-    const id = 109; 
+  const renderAllMessageReplies = (event) => {
+    const id = event.currentTarget.getAttribute("data-msgid")
+    const config = {
+      headers:{
+        Authorization: TOKEN
+      }
+    }
+    axios.get(`${BASE_URL}/messages/${id}`, config)
+    .then((msgResponse) => {
+      console.log(msgResponse)
+      const leftMsgContainer = <Col className='readmsg'>
+              <div className='sndmsg rounded'>
+                {/* <div className='snd-top p-1'>
+                  <div className='useravt d-flex align-items-center justify-content-between'> 
+                    <div className='d-flex align-items-center'>
+                    <img src={UserIcon} className="usravth" alt='/'/>
+                      <h6 className='mb-0 ml-2 fs-5'> 
+                      Rahul</h6>
+                    </div><ThreeDots/></div>
+                </div> */}
+                  { 
+                    msgResponse.data.data.message_details.map((item,i) =>
+                      <div className='dmo-msg'  key={i}>
+                        <div className='msgdte'>
+                          <span>
+                            { moment(item.created_at).format("DD-MM-YYYY HH:mm A") }
+                          </span>
+                        </div>
+                        <div className='msg-mbx'>
+                          <img src={item.profile_image} className="txicn" alt='/' />
+                          <div className='mg-bx'>
+                            <p>{item.message}</p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  }
+                <div>
+                  <form action='#' className='mt-5'>
+                      <div className='txtrea'>
+                          <textarea className='textarea_editor form-control ' rows="15" placeholder="Enter message ..." name="message" required=""/>
+                      </div>
+                      <div className='editorbtn'>
+                        {/* <button  className='discard mr-1'> <X className='mr-1'/> Discard</button> */}
+                        <button className='send' onClick={replyToMessage}> <SendFill className='mr-1' data-msgid=""/> Send</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </Col>
+      setMsgReplies(leftMsgContainer)
+    })
+  }
+
+  const replyToMessage = (e) => {
+    e.preventDefault()
+    const id = 109 
     const msgTextData = "qwerty"
     const dataToMsgReply = {
       message :msgTextData, 
     }
-    axios.get(`${BASE_URL}/messages/${id}`,dataToMsgReply, {
+    axios.put(`${BASE_URL}/messages/${id}`,dataToMsgReply, {
       headers: {
           Authorization: TOKEN
       }
     })
     .then((msgResponse) => {
-      console.log(msgResponse)
-      
-      const msgs = msgResponse.data.data.message_details.map((item,i) =>
-        <div className='msg-mbx' key={id}>
-          <img src={item.profile_image} className="txicn" alt='/' />
-          <div className='mg-bx'>
-            <p>{item.message}</p>
-          </div>
-        </div>
-      )
-      setMsgReplies(msgs)
-        
-    })
-  }
-
-  const replyToMessage = () => {
-    const id = 109 
-    axios.put(`${BASE_URL}/messages/${id}`,{ }, {
-      headers: {
-          Authorization: TOKEN
-      }
-    })
-    .then((msgResponse) => {
-
       console.log(msgResponse)
     })
   }
@@ -222,35 +256,7 @@ export default function Message() {
                   {messageDetails}
                 </Col>
                 {/* left */}
-                <Col className='readmsg'>
-                  <div className='sndmsg rounded'>
-                    <div className='snd-top p-1'>
-                      <div className='useravt d-flex align-items-center justify-content-between'> 
-                        <div className='d-flex align-items-center'>
-                        <img src={UserIcon} className="usravth" alt='/'/>
-                          <h6 className='mb-0 ml-2 fs-5'>Jhon_Doe</h6>
-                        </div><ThreeDots/></div>
-                    </div>
-                    <div className='dmo-msg'>
-                      <div className='msgdte'>
-                          <span>August 20</span>
-                      </div>
-                      {msgReplies}
-                    </div>
-                    <div>
-                      <form action='#' className='mt-5'>
-                          <div className='txtrea'>
-                              <textarea className='textarea_editor form-control ' rows="15" placeholder="Enter message ..." name="message" required=""/>
-                          </div>
-                          <div className='editorbtn'>
-                            <button  className='discard mr-1'> <X className='mr-1'/> Discard</button>
-                            <button className='send' onClick={replyToMessage}> <SendFill className='mr-1'/> Send</button>
-                          </div>
-                      </form>
-                    </div>
-
-                  </div>
-                </Col>
+                {msgReplies}
               </Row>
               <div className={`no-message-wrapper ${showNoMessagesInfo} justify-content-center`}>
                 <img src={nomsgsimg} alt='' />
