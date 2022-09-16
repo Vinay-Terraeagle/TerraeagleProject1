@@ -28,7 +28,7 @@ export default function AddonCarousels(subscriptionLists) {
   useEffect(() => {
     if(localStorage.getItem('subscriptionBasedVisibility') !== undefined) {
       const subscriptioninfo = JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
-      if(subscriptioninfo.biomarkers !== 'biomarkers') {
+      if(subscriptioninfo!== undefined && subscriptioninfo.biomarkers !== 'biomarkers') {
         const purchaseBtn = <button className='btn-lrn'  onClick={handleUpgradeClick}>Purchase</button>
         setpurchaseinfo(purchaseBtn)
       } else {
@@ -65,7 +65,7 @@ export default function AddonCarousels(subscriptionLists) {
                         </div>
                       </div>
                 <div className='addon-plan'>
-                    <div className='addon-txt'>
+                    <div className='addon-txt' id="booktrainer">
                         <div className='addponplan'>
                         <span>Started at ₹ 5000</span>
                     </div>

@@ -102,7 +102,10 @@ export default function Discover() {
             )
             setThreadsList(threadsData)
         }
-    })
+    },[threadsDataList]);
+
+    // workout
+
 
 
 

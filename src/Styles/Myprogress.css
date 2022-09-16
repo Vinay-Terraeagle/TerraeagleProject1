@@ -153,3 +153,8 @@
     cursor: pointer;
     border: none;
 }
+/* dropdownweek */
+.weekdropdown {
+    display: flex;
+    justify-content: flex-end;
+}

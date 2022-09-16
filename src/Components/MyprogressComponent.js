@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import '../Styles/Myprogress.css'
 import { Plus } from 'react-bootstrap-icons'
@@ -10,15 +10,29 @@ import Modal from 'react-bootstrap/Modal'
 import LineChart from './LineChart'
 import { Link } from 'react-router-dom'
 import { MyProgressFilterMenus } from './MyprogressFilterMenus'
+import { weekDropdown } from './weekDropdown'
 import Select from 'react-dropdown-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
 // import ImageUploader from "react-images-upload";
 import ImageUploading from "react-images-uploading"
+import ReactBeforeSliderComponent from 'react-before-after-slider-component';
+import 'react-before-after-slider-component/dist/build.css';
+
+import NoRecipeFoundimage from '../assets/images/recipesnotfound.png'
+import NoWorkoutsFoundimage from '../assets/images/no-wrokouts-img.png'
 
 export default function MyprogressComponent(data) {
-  
+
+  //  react-before-after-slider-component
+  const FirstImage = {
+    imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
+  }
+  const SecondImage = {
+    imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
+  };
+
 
   const [ShowUpdateInput, setUpdateInput] = useState('hide');
   const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
@@ -32,6 +46,7 @@ export default function MyprogressComponent(data) {
   const [graphValues, setGraphValues] = useState()
   const handleChange = (selectedOption) => {
     setFilterOption(selectedOption[0].label.toLowerCase())
+  }
 
 
     
@@ -55,6 +70,10 @@ export default function MyprogressComponent(data) {
     });
 
 
+  // week dropdown
+  const [weekFilterDropdown, setweekFilterDropdown] = useState();
+  const WeekhandleChange = (WeekselectedOption) => {
+    setweekFilterDropdown(WeekselectedOption[0].label.toLowerCase())
   }
 
   // Setting the date on change
@@ -74,47 +93,47 @@ export default function MyprogressComponent(data) {
   }
 
 
-  const [currentBackImg, setCurrentBackImg]=useState()
-  const [currentFrontImg, setCurrentFrontImg]=useState()
-  const [currentSideImg, setCurrentSideImg]=useState()
+  const [currentBackImg, setCurrentBackImg] = useState()
+  const [currentFrontImg, setCurrentFrontImg] = useState()
+  const [currentSideImg, setCurrentSideImg] = useState()
 
-  const [initialBackImg, setInitialBackImg]=useState()
-  const [initialFrontImg, setInitialFrontImg]=useState()
-  const [initialSideImg, setInitialSideImg]=useState()
+  const [initialBackImg, setInitialBackImg] = useState()
+  const [initialFrontImg, setInitialFrontImg] = useState()
+  const [initialSideImg, setInitialSideImg] = useState()
 
 
   useEffect(() => {
-  if(data.data !== null && data.data!== undefined) {
-    setCurrentBackImg(data.data.original.progress_photos_current.back)
-    setCurrentFrontImg(data.data.original.progress_photos_current.front)
-    setCurrentSideImg(data.data.original.progress_photos_current.side)
-
-    setInitialBackImg(data.data.original.progress_photos_initials.back)
-    setInitialFrontImg(data.data.original.progress_photos_initials.front)
-    setInitialSideImg(data.data.original.progress_photos_initials.side)
+    if (data.data !== null && data.data !== undefined) {
+      setCurrentBackImg(data.data.original.progress_photos_current.back)
+      setCurrentFrontImg(data.data.original.progress_photos_current.front)
+      setCurrentSideImg(data.data.original.progress_photos_current.side)
 
 
-  }
-  },[]);
+      setInitialBackImg(data.data.original.progress_photos_initials.back)
+      setInitialFrontImg(data.data.original.progress_photos_initials.front)
+      setInitialSideImg(data.data.original.progress_photos_initials.side)
+
+    }
+  }, []);
 
   // Add API Call
   const [weightDetails, setWeightDetails] = useState()
   const handleAddUpdate = () => {
-      const client_name = "Deepthi22 (9511938081)"
-      const config = {
-        headers:{
-          Authorization: TOKEN
-        }
+    const client_name = "Deepthi22 (9511938081)"
+    const config = {
+      headers: {
+        Authorization: TOKEN
       }
-      const data = {
-        client_name: client_name,
-        type : filterOption, 
-        progress_date : dateChange,
-        new_value: valueChange,
-        code_type: "store"
-      }
+    }
+    const data = {
+      client_name: client_name,
+      type: filterOption,
+      progress_date: dateChange,
+      new_value: valueChange,
+      code_type: "store"
+    }
 
-      axios.post(`${BASE_URL}/weekly_health_store`, data, config)
+    axios.post(`${BASE_URL}/weekly_health_store`, data, config)
       .then((response) => {
           const weightLists = response.data.data.original.weight
           const weightList = weightLists.map((item,i) => 
@@ -159,30 +178,43 @@ export default function MyprogressComponent(data) {
                                     </span>Delete 
                                   </button>
 
-                                </td>
-                              </tr>
-                              )
-          setWeightDetails(weightList)
+              <button type="button" className={`btn btn-xs 
+                                  rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
+                <span className="btn-icon-left text-success">
+                  <Upload />
+                </span>
+                <span id="add-update" className="text-capitalize">Update</span>
+              </button>
+              <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue}>
+                <span className="btn-icon-left text-danger">
+                  <Trash />
+                </span>Delete
+              </button>
+
+            </td>
+          </tr>
+        )
+        setWeightDetails(weightList)
 
       });
-    }
+  }
 
   // Delete API Call
 
-  const handleDeleteValue = (props,event) => {
+  const handleDeleteValue = (props, event) => {
     const config = {
-      headers:{
+      headers: {
         Authorization: TOKEN
       }
     }
     const dataForDelete = {
       id: event.target.getAttribute('data-id'),
-      type : 'delete', 
+      type: 'delete',
     }
     axios.post(`${BASE_URL}/weekly_health_delete`, dataForDelete, config)
       .then((deletedResponse) => {
-          console.log("History Delete :::: "+deletedResponse);
-          props.removeItem(event.target.getAttribute('data-id'))
+        console.log("History Delete :::: " + deletedResponse);
+        props.removeItem(event.target.getAttribute('data-id'))
 
       });
   }
@@ -205,7 +237,7 @@ export default function MyprogressComponent(data) {
   }
 
   //Upload Images API Call
-  
+
   const handleUpload = (event) => {
     event.preventDefault()
     // const dataForImageUpload = {
@@ -216,33 +248,33 @@ export default function MyprogressComponent(data) {
     // }
     const formData = new FormData();
     formData.append("client_name", "Deepthi22 (9511938081)");
-    formData.append("fileToUpload",uploadImgFront);
+    formData.append("fileToUpload", uploadImgFront);
     formData.append("fileToUpload2", uploadImgSide);
     formData.append("fileToUpload3", uploadImgBack);
 
     const config = {
-      headers:{
+      headers: {
         Authorization: TOKEN,
         enctype: "multipart/form-data",
         "Content-Type": "multipart/form-data",
         body: formData,
       }
     }
-    
+
     try {
-        axios.post(`${BASE_URL}/uploadfile`,formData,config)
-          .then((imgUploadResponse) => {
-              console.log("Upload :::: "+imgUploadResponse);
-          });
-      } catch(error) {
-        console.log(error)
-      }
+      axios.post(`${BASE_URL}/uploadfile`, formData, config)
+        .then((imgUploadResponse) => {
+          console.log("Upload :::: " + imgUploadResponse);
+        });
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 
   const [images1, setImages1] = useState()
   const onDrop = (pictureFiles, pictureDataURLs) => {
-    console.log("sdfsdfsdfsdf"+ pictureFiles)
+    console.log("sdfsdfsdfsdf" + pictureFiles)
   }
 
 
@@ -251,12 +283,12 @@ export default function MyprogressComponent(data) {
   const onFrontImgChange = (imageList, addUpdateIndex) => {
     setFrontImage(imageList);
   };
-  
+
   const [backImage, setBackImage] = React.useState([]);
   const onBackImgChange = (imageList, addUpdateIndex) => {
     setBackImage(imageList);
   };
-  
+
   const [sideImage, setSideImage] = React.useState([]);
   const onSideImgChange = (imageList, addUpdateIndex) => {
     setSideImage(imageList);
@@ -266,22 +298,22 @@ export default function MyprogressComponent(data) {
 
   const graphUpdate = () => {
 
-    
-    
+
+
   }
 
 
-    // useEffect(() => {
-    //   axios.post(`${BASE_URL}/measurements/filter`,params1,params2,{
-    //     headers: {
-    //       Authorization: TOKEN
-    //     }
-    //   }).then((response) => {
-    //     console.log(response)
-    //   }).catch((error) => {
-    //     console.log(error)
-    //   })
-    // },[]);
+  // useEffect(() => {
+  //   axios.post(`${BASE_URL}/measurements/filter`,params1,params2,{
+  //     headers: {
+  //       Authorization: TOKEN
+  //     }
+  //   }).then((response) => {
+  //     console.log(response)
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   })
+  // },[]);
 
 
 
@@ -289,230 +321,233 @@ export default function MyprogressComponent(data) {
     <React.Fragment>
 
 
-        <div className='container myprogress-container p-0'>
-          <div className='myprogress-filter-wrapper p-5'>
-            <div className="row mb-5 mt-3 search-filter-wrapper">
-              <div className="col-3 fs-18 filter-wrapper">Filter By:
-                <span className="arrow-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" className="arrow-icon">
-                    <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg>
-                </span>
-              </div>
+      <div className='container myprogress-container p-0'>
+        <div className='myprogress-filter-wrapper p-5'>
+          <div className="row mb-5 mt-3 search-filter-wrapper ">
+            <div className="col-3 fs-18 filter-wrapper">Filter By:
+              <span className="arrow-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" className="arrow-icon">
+                  <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                </svg>
+              </span>
+            </div>
 
-              <div className='progress-filter-wrapper col-3'>
-                <Select options={MyProgressFilterMenus} onChange={handleChange}></Select>
+            <div className='progress-filter-wrapper col-3 d-flex justify-content-between'>
+              <Select options={MyProgressFilterMenus} onChange={handleChange}></Select>
+            </div>
+          </div>
+        </div>
+
+        <div className='my-progress-wrapper p-5'>
+          <div className='my-progress-history-section'>
+            <div className='weekdropdown'>
+              <Select options={weekDropdown} onChange={handleChange}></Select>
+            </div>
+            <div className='d-flex justify-content-between align-items-center'>
+              <h4>Graph Data</h4>
+              {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
+            </div>
+
+            <div className='graph-wrapper my-progress-section'>
+              <LineChart />
+            </div>
+          </div>
+
+          <div className='my-progress-history-section'>
+            <div className='d-flex justify-content-between align-items-center'>
+              <h4>History</h4>
+            </div>
+            <div className='history my-progress-section p-5'>
+              <div className="d-inline-flex">
+                <button type="button" className="btn btn-xs rounded-pill btn-info" id="add_value_button" onClick={() => {
+                  ShowUpdateInput === 'hide' && setUpdateInput('show');
+                  ShowUpdateInput === 'show' && setUpdateInput('hide');
+
+                }
+                }>
+                  <span className="btn-icon-left text-info">
+                    <Plus />
+                  </span>
+                  <span id="add-name" className="text-capitalize">Add Weight</span>
+                </button>
+              </div>
+              <div id="get_new_value_section" className={` form-inline align-items-center ${ShowUpdateInput} `}>
+                {/* <input type="text" id="progress_date" className="date form-control m-2" placeholder="Progress Date" autocomplete="off" required data-dtp="" /> */}
+
+                <Datetime timeFormat={false}
+                  closeOnSelect='true'
+                  dateFormat="DD-MM-YYYY"
+                  onChange={(momentObj, e) => { handleDateChange(momentObj, e) }}
+                  inputProps={
+                    {
+                      placeholder: 'Progress Date',
+                      className: 'date form-control m-2',
+                      required: 'true',
+                    }} />
+
+                <input type="number" id="new_value" className="form-control" placeholder="" autocomplete="off" required onChange={handleValueChange} />
+
+                <button type="button" className="btn btn-xs 
+                      rounded-pill btn-success update_button d-inline-flex align-items-center" id="update_button" data-value="body_fat_percentage" onClick={handleAddUpdate}>
+                  <span className="btn-icon-left text-success">
+                    <Upload />
+                  </span>
+                  <span id="add-update" className="text-capitalize">Update</span>
+                </button>
+
+              </div>
+              <div className="table-responsive mt-5">
+                <table className="table table-history" data-value="weight">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Values</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody-weight">
+
+                    {weightDetails}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <div className='my-progress-initial-section'>
+            <div className='d-flex justify-content-between align-items-center'>
+              <h4>Before</h4>
+              {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
+            </div>
+            <div className='initial-shape my-progress-section'>
+              <div className="table-responsive">
+                <table className="table header-border">
+                  <thead>
+                    <tr>
+                      <th className='text-center'>FRONT</th>
+                      <th className='text-center'>SIDE</th>
+                      <th className='text-center'>BACK</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className='text-center'>
+                        <ImageUploading
+                          multiple={false}
+                          value={frontImage}
+                          onChange={onFrontImgChange}
+                          maxNumber={maxNumber}
+                          dataURLKey="data_url"
+                          acceptType={["jpg", "jpeg", "png"]}
+                        >
+                          {({
+                            imageList,
+                            onImageUpload,
+                            isDragging,
+                            dragProps
+                          }) => (
+                            <div className="upload__image-wrapper">
+                              {imageList.map((image, index) => (
+                                <div key={index} className="image-item">
+                                  <img src={image.data_url} alt="" width="100" />
+                                </div>
+                              ))}
+                              <button className='uploadImgBtn'
+                                style={isDragging ? { color: "red" } : null}
+                                onClick={onImageUpload}
+                                {...dragProps}
+                              >
+                                Upload Back Image
+                              </button>
+                            </div>
+                          )}
+                        </ImageUploading>
+                      </td>
+                      <td className='text-center'>
+                        <ImageUploading
+                          multiple={false}
+                          value={backImage}
+                          onChange={onBackImgChange}
+                          maxNumber={maxNumber}
+                          dataURLKey="data_url"
+                          acceptType={["jpg", "jpeg", "png"]}
+                        >
+                          {({
+                            imageList,
+                            onImageUpload,
+                            isDragging,
+                            dragProps
+                          }) => (
+                            <div className="upload__image-wrapper">
+                              {imageList.map((image, index) => (
+                                <div key={index} className="image-item">
+                                  <img src={image.data_url} alt="" width="100" />
+                                </div>
+                              ))}
+                              <button className='uploadImgBtn'
+                                style={isDragging ? { color: "red" } : null}
+                                onClick={onImageUpload}
+                                {...dragProps}
+                              >
+                                Upload Front Image
+                              </button>
+                            </div>
+                          )}
+                        </ImageUploading>
+
+                      </td>
+                      <td className='text-center'>
+                        <ImageUploading
+                          multiple={false}
+                          value={sideImage}
+                          onChange={onSideImgChange}
+                          maxNumber={maxNumber}
+                          dataURLKey="data_url"
+                          acceptType={["jpg", "jpeg", "png"]}
+                        >
+                          {({
+                            imageList,
+                            onImageUpload,
+                            isDragging,
+                            dragProps
+                          }) => (
+                            <div className="upload__image-wrapper">
+                              {imageList.map((image, index) => (
+                                <div key={index} className="image-item">
+                                  <img src={image.data_url} alt="" width="100" />
+                                </div>
+                              ))}
+                              <button className='uploadImgBtn'
+                                style={isDragging ? { color: "red" } : null}
+                                onClick={onImageUpload}
+                                {...dragProps}
+                              >
+                                Upload Front Image
+                              </button>
+                            </div>
+                          )}
+                        </ImageUploading>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-            
-            <div className='my-progress-wrapper p-5'> 
-              <div className='my-progress-history-section'>
-                <div className='d-flex justify-content-between align-items-center'>
-                    <h4>Initial Shape</h4>
-                    {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
-                </div>
-                    
-              <div className='graph-wrapper my-progress-section'>
-                  <LineChart graphLabel={graphLabel} graphValues={graphValues} />
-              </div>
+
+
+          <div className='my-progress-current-section'>
+            <div className='d-flex justify-content-between align-items-center'>
+              <h4>After</h4>
+              {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
             </div>
+            <div className='current-shape my-progress-section'>
 
-            <div className='my-progress-history-section'>
-              <div className='d-flex justify-content-between align-items-center'>
-                <h4>History</h4>
-              </div>
-              <div className='history my-progress-section p-5'>
-                  <div className="d-inline-flex"> 
-                    <button type="button" className="btn btn-xs rounded-pill btn-info" id="add_value_button" onClick={() => 
-                      { 
-                        ShowUpdateInput === 'hide' && setUpdateInput('show');
-                        ShowUpdateInput === 'show' && setUpdateInput('hide');
-
-                      }
-                    }>
-                      <span className="btn-icon-left text-info">
-                        <Plus />
-                      </span>
-                      <span id="add-name" className="text-capitalize">Add Weight</span>
-                    </button>
-                  </div>
-                  <div id="get_new_value_section" className={` form-inline align-items-center ${ShowUpdateInput} `}>
-                      {/* <input type="text" id="progress_date" className="date form-control m-2" placeholder="Progress Date" autocomplete="off" required data-dtp="" /> */}
-
-                      <Datetime timeFormat={false} 
-                      closeOnSelect= 'true'
-                      dateFormat="DD-MM-YYYY"
-                      onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
-                      inputProps={ 
-                        {placeholder: 'Progress Date',
-                        className:'date form-control m-2',
-                        required: 'true', 
-                        }}/>
-
-                      <input type="number" id="new_value" className="form-control" placeholder="" autocomplete="off" required onChange={handleValueChange}/>
-
-                      <button type="button" className="btn btn-xs 
-                      rounded-pill btn-success update_button d-inline-flex align-items-center" id="update_button" data-value="body_fat_percentage" onClick={handleAddUpdate}>
-                        <span className="btn-icon-left text-success">
-                          <Upload />
-                        </span>
-                        <span id="add-update" className="text-capitalize">Update</span>
-                      </button>
-
-                  </div>
-                <div className="table-responsive mt-5">
-                  <table className="table table-history" data-value="weight">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Values</th>
-                                <th></th>
-                            </tr>
-                          </thead>
-                          <tbody id="tbody-weight">
-                          
-                              {weightDetails}
-
-                          </tbody>
-                    </table>
-                </div>
-              </div> 
-
-
-
-            </div>
-
-            <div className='my-progress-initial-section'>
-              <div className='d-flex justify-content-between align-items-center'>
-                <h4>Initial Shape</h4>
-                <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button>
-              </div>
-              <div className='initial-shape my-progress-section'>
-                <div className="table-responsive">
-                    <table className="table header-border">
-                        <thead>
-                            <tr>
-                                <th className='text-center'>FRONT</th>
-                                <th className='text-center'>SIDE</th>
-                                <th className='text-center'>BACK</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className='text-center'>
-                                    <ImageUploading
-                                      multiple={false}
-                                      value={frontImage}
-                                      onChange={onFrontImgChange}
-                                      maxNumber={maxNumber}
-                                      dataURLKey="data_url"
-                                      acceptType={["jpg","jpeg","png"]}
-                                    > 
-                                      {({
-                                          imageList,
-                                          onImageUpload,
-                                          isDragging,
-                                          dragProps
-                                        }) => (
-                                          <div className="upload__image-wrapper">
-                                            {imageList.map((image, index) => (
-                                              <div key={index} className="image-item">
-                                                <img src={image.data_url} alt="" width="100" />
-                                              </div>
-                                            ))}
-                                            <button className='uploadImgBtn'
-                                              style={isDragging ? { color: "red" } : null}
-                                              onClick={onImageUpload}
-                                              {...dragProps}
-                                            >
-                                              Upload Back Image
-                                            </button>
-                                          </div>
-                                      )}
-                                    </ImageUploading>
-                                </td>
-                                <td className='text-center'>
-                                  <ImageUploading
-                                    multiple={false}
-                                    value={backImage}
-                                    onChange={onBackImgChange}
-                                    maxNumber={maxNumber}
-                                    dataURLKey="data_url"
-                                    acceptType={["jpg","jpeg","png"]}
-                                  > 
-                                    {({
-                                        imageList,
-                                        onImageUpload,
-                                        isDragging,
-                                        dragProps
-                                      }) => (
-                                        <div className="upload__image-wrapper">
-                                          {imageList.map((image, index) => (
-                                            <div key={index} className="image-item">
-                                              <img src={image.data_url} alt="" width="100" />
-                                            </div>
-                                          ))}
-                                          <button className='uploadImgBtn'
-                                            style={isDragging ? { color: "red" } : null}
-                                            onClick={onImageUpload}
-                                            {...dragProps}
-                                          >
-                                            Upload Front Image
-                                          </button>
-                                        </div>
-                                      )}
-                                    </ImageUploading>
-                                    
-                                </td>
-                                <td className='text-center'>
-                                  <ImageUploading
-                                    multiple={false}
-                                    value={sideImage}
-                                    onChange={onSideImgChange}
-                                    maxNumber={maxNumber}
-                                    dataURLKey="data_url"
-                                    acceptType={["jpg","jpeg","png"]}
-                                  > 
-                                    {({
-                                        imageList,
-                                        onImageUpload,
-                                        isDragging,
-                                        dragProps
-                                      }) => (
-                                        <div className="upload__image-wrapper">
-                                          {imageList.map((image, index) => (
-                                            <div key={index} className="image-item">
-                                              <img src={image.data_url} alt="" width="100" />
-                                            </div>
-                                          ))}
-                                          <button className='uploadImgBtn'
-                                            style={isDragging ? { color: "red" } : null}
-                                            onClick={onImageUpload}
-                                            {...dragProps}
-                                          >
-                                            Upload Front Image
-                                          </button>
-                                        </div>
-                                      )}
-                                    </ImageUploading>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-              </div>
-            </div>
-
-
-            <div className='my-progress-current-section'>
-              <div className='d-flex justify-content-between align-items-center'>
-                <h4>Current Shape</h4>
-                <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button>
-              </div>
-              <div className='current-shape my-progress-section'>
-
-              <div className="table-responsive">
+              {/* <div className="table-responsive">
                     <table className="table header-border">
                         <thead>
                             <tr>
@@ -542,51 +577,54 @@ export default function MyprogressComponent(data) {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
+              <ReactBeforeSliderComponent
+                firstImage={FirstImage}
+                secondImage={SecondImage} />
 
-              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <Modal show={show} size="lg" onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title><h4 className="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4></Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              
-            <form className="fileUploadForm" novalidate="novalidate" method="post" onSubmit={handleUpload} >
-                            <input type="hidden" name="_token" value="" />                    
-                            <input type="hidden" name="client_name" value="" id="upload_image_client" />
-                            <div className="form-group row">
-                                <div className="form-group mb-3">
-                                    <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={frontImgChange} />
-                                    <small id="fileHelp" className="form-text text-muted">Front View. Size of image should not be
-                                        more than 2MB.</small>
-                                </div>
-                                <div className="form-group mb-3">
-                                    <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={sideImgChange}/>
-                                    <small id="fileHelp2" className="form-text text-muted">Side View. Size of image should not be
-                                        more than 2MB.</small>
-                                </div>
-                                <div className="form-group mb-3">
-                                    <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={backImgChange}/>
-                                    <small id="fileHelp3" className="form-text text-muted">Back View. Size of image should not be
-                                        more than 2MB.</small>
-                                </div>
-                              </div>
-                            <Button variant="secondary" onClick={handleClose}>
-                              Close
-                            </Button>
-                            <Button variant="primary" type="submit">
-                              Upload
-                            </Button>
-                        </form>
-            </Modal.Body>
-            {/* <Modal.Footer>
+      <Modal show={show} size="lg" onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title><h4 className="modal-title" id="uploadModalLabel">Upload Your Progress Photos</h4></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+          <form className="fileUploadForm" novalidate="novalidate" method="post" onSubmit={handleUpload} >
+            <input type="hidden" name="_token" value="" />
+            <input type="hidden" name="client_name" value="" id="upload_image_client" />
+            <div className="form-group row">
+              <div className="form-group mb-3">
+                <input type="file" className="form-control-file" name="fileToUpload" id="exampleInputFile" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={frontImgChange} />
+                <small id="fileHelp" className="form-text text-muted">Front View. Size of image should not be
+                  more than 2MB.</small>
+              </div>
+              <div className="form-group mb-3">
+                <input type="file" className="form-control-file" name="fileToUpload2" id="exampleInputFile2" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={sideImgChange} />
+                <small id="fileHelp2" className="form-text text-muted">Side View. Size of image should not be
+                  more than 2MB.</small>
+              </div>
+              <div className="form-group mb-3">
+                <input type="file" className="form-control-file" name="fileToUpload3" id="exampleInputFile3" aria-describedby="fileHelp" accept=".jpg, .jpeg, .png" onChange={backImgChange} />
+                <small id="fileHelp3" className="form-text text-muted">Back View. Size of image should not be
+                  more than 2MB.</small>
+              </div>
+            </div>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" type="submit">
+              Upload
+            </Button>
+          </form>
+        </Modal.Body>
+        {/* <Modal.Footer>
 
             </Modal.Footer> */}
-          </Modal>
+      </Modal>
 
     </React.Fragment>
   )
