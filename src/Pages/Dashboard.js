@@ -269,7 +269,7 @@ export default function Dashboard() {
                 <div className='query-row'>
                 <div className='query-txt'>
                     <div className='query-txtbx'>
-                      <h5>Talk To Export</h5>
+                      <h5>Talk To Experts</h5>
                       <p>Doctor, Trainer, Therapist</p>
                     </div>
                     <div className='action-btn'>
