@@ -28,8 +28,31 @@ export default function MyprogressComponent(data) {
 
   // Setting the filter value
   const [filterOption, setFilterOption] = useState()
+  const [graphLabel, setGraphLabel] = useState()
+  const [graphValues, setGraphValues] = useState()
   const handleChange = (selectedOption) => {
     setFilterOption(selectedOption[0].label.toLowerCase())
+
+
+    
+    const client_name = "Deepthi22 (9511938081)"
+    const config = {
+      headers:{
+        Authorization: TOKEN
+      }
+    }
+    const data = {
+      client_name: client_name,
+      total_days : 30, 
+      measure_type : 'weight'
+    }
+
+    axios.post(`${BASE_URL}/measurements/filter`, data, config)
+    .then((response) => {
+        console.log(response)
+        setGraphLabel(response.data.data.original.weight.labels)
+        setGraphValues(response.data.data.original.weight.values)
+    });
 
 
   }
@@ -45,6 +68,9 @@ export default function MyprogressComponent(data) {
   const [valueChange, setValueChange] = useState()
   const handleValueChange = (event) => {
     setValueChange(event.target.value)
+
+    
+
   }
 
 
@@ -66,7 +92,6 @@ export default function MyprogressComponent(data) {
     setInitialBackImg(data.data.original.progress_photos_initials.back)
     setInitialFrontImg(data.data.original.progress_photos_initials.front)
     setInitialSideImg(data.data.original.progress_photos_initials.side)
-
 
 
   }
@@ -92,58 +117,6 @@ export default function MyprogressComponent(data) {
       axios.post(`${BASE_URL}/weekly_health_store`, data, config)
       .then((response) => {
           const weightLists = response.data.data.original.weight
-
-
-          // const weightList = (props) => {(
-          //     <ul>
-          //       {props.weightLists.map((item,i) => 
-          //                   <tr data-id={item.id}>
-          //                       <td>
-          //                         <Datetime timeFormat={false} 
-          //                           closeOnSelect= 'true'
-          //                           dateFormat="DD-MM-YYYY"
-          //                           onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
-          //                           inputProps={{
-          //                             value: item.date,
-          //                             className:'date form-control',
-          //                             required: 'true', 
-          //                           }}
-          //                         />
-          //                       </td>
-          //                       <td>
-          //                         <input className="value form-control" type="number" value={item.weight} readonly="" />
-          //                       </td>
-          //                       <td>
-          //                         <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
-          //                               ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
-          //                               ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
-          //                           }
-          //                           }> 
-          //                           <span className="btn-icon-left text-secondary">
-          //                             <PencilSquare />
-          //                           </span>
-          //                           Edit 
-          //                         </button>
-
-          //                         <button type="button" className={`btn btn-xs 
-          //                         rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
-          //                           <span className="btn-icon-left text-success">
-          //                             <Upload />
-          //                           </span>
-          //                           <span id="add-update" className="text-capitalize">Update</span>
-          //                         </button>
-          //                           <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue(props)}> 
-          //                           <span className="btn-icon-left text-danger">
-          //                             <Trash />
-          //                           </span>Delete 
-          //                         </button>
-
-          //                       </td>
-          //                     </tr>
-          //       )}
-          //     </ul>
-          // )}
-
           const weightList = weightLists.map((item,i) => 
                               <tr data-id={item.id}>
                                 <td>
@@ -341,7 +314,7 @@ export default function MyprogressComponent(data) {
                 </div>
                     
               <div className='graph-wrapper my-progress-section'>
-                  <LineChart  />
+                  <LineChart graphLabel={graphLabel} graphValues={graphValues} />
               </div>
             </div>
 

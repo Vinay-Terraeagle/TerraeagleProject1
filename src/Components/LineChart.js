@@ -12,7 +12,7 @@ import {
 } from 'chart.js';
 
 
-export default function LineChart() {
+export default function LineChart(graphLabel, graphValues) {
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -22,13 +22,14 @@ export default function LineChart() {
         Tooltip,
         Legend
       );
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const labels = graphLabel.graphLabel
+    const graph_values=graphValues.graphValues;
     const data = {
       labels,
       datasets: [
         {
           label: 'Weight Data',
-          data: [20, 30, 40, 50, 60, 70, 80],
+          data: [53, 3, 3, 3, 3, 3, 3, 3],
           borderColor: 'rgb(255, 99, 132)',
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
         },
@@ -40,6 +41,7 @@ export default function LineChart() {
         scales: {
             yAxes: [
                 {
+                  
                     ticks: {
                         beginAtZero: true
                     }
