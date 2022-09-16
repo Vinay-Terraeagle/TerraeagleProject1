@@ -2,6 +2,7 @@
 @import url('./utilities.css');
 /* Pages */
 @import url('./Dashboard.css');
+@import url('../Components/TalkToUs/TalkToUs.css');
 @import url('./Login.css');
 @import url('./Myplan.css');
 @import url('./Dietplan.css');

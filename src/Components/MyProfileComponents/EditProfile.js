@@ -64,7 +64,7 @@ export default function EditProfile() {
       formData.append('set_gitinfo', editgitinfo)
 
 
-      await axios.patch(`$={BASE_URL}/profile/Deepti22`,formData,{
+      await axios.patch(`$={BASE_URL}/profile/{username}`,formData,{
         headers:{
           Authorization: TOKEN
         }
@@ -76,7 +76,7 @@ export default function EditProfile() {
     }
     
     
-
+   
 
   return (
     <React.Fragment>

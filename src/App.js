@@ -36,6 +36,7 @@ import ThreadsDetailedView from "./Pages/ThreadsDetailedView"
 import StrengthTraining from './Components/Workout/StrengthTraining'
 import EventsView from "./Pages/EventsView"
 import DailyHealthUpdate from "./Pages/DailyHealthUpdate";
+import Talk_to_us from './Components/TalkToUs/Talk_to_us'
 
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
         <Route path="/EventsView" element={<EventsView />} />
         <Route path="/StrengthTraining" element={<StrengthTraining />} />
         <Route path="/DailyHealthUpdate" element={<DailyHealthUpdate />} />
+        <Route path="/Talk_to_us" element={<Talk_to_us/>} />
        </Routes>
 
     </Router>

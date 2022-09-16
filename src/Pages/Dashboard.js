@@ -22,6 +22,7 @@ import { Calendar3 } from 'react-bootstrap-icons'
 import { ArrowRightShort } from 'react-bootstrap-icons'
 import { ClockHistory } from 'react-bootstrap-icons'
 import NoDataFound from  '../Components/NoDataFound/NoDataFound';
+import Addon from './Addon'
 
 
 export default function Dashboard() {
@@ -266,14 +267,14 @@ export default function Dashboard() {
                   <h1> Instant support</h1>
                 </div>
                 <div className='query-row'>
-                  <div className='query-txt'>
+                <div className='query-txt'>
                     <div className='query-txtbx'>
-                      <h5>Queries or claims?</h5>
-                      <p>Talk to us for instant Support</p>
+                      <h5>Talk To Export</h5>
+                      <p>Doctor, Trainer, Therapist</p>
                     </div>
                     <div className='action-btn'>
-                      <Link to='/Message' className='action-btn'>
-                        <span >Talk To Us</span>
+                      <Link to='/Talk_to_us' className='action-btn'>
+                        <span >Talk to us for instant Support</span>
                         <div className='arrow-bg'>
                           <ArrowRightShort className="arrow-right" />
                         </div>
@@ -288,6 +289,7 @@ export default function Dashboard() {
                 </div>
                 <div className='ad-cd-mn'>
                   <AddonCarousels subscriptionLists={subscriptionDetail}/>
+                  {/* <Addon/> */}
                   
                   
                    {/* {subscriptionDetail ? <AddonCarousels AddonCarousels={subscriptionDetail}/> :  */}

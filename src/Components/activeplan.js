@@ -100,7 +100,7 @@ export default function Activeplan() {
                 </div>
 
                 {/* Addonplan */}
-                <div className='addonplans'>
+                {/* <div className='addonplans'>
                   <div className='adtxt'>
                       <h5>My Addon plans</h5>
                   </div>
@@ -144,10 +144,10 @@ export default function Activeplan() {
                       </div>
                       {/* <div className='viewmore'>
                           <button className='more'>View More <ArrowRightShort/></button>
-                      </div> */}
+                      </div> 
                     </div>
                   </div>
-                </div>
+                </div> */}
               </Col>
             </Row>
         </Container>

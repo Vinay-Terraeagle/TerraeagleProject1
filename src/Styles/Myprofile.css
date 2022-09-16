@@ -513,9 +513,10 @@ input.editemail:focus {
 .uploadimage {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 3rem;
+    align-items: end;
+    padding: 0rem 1rem;
 }
+
 .boxbody {
     padding: 0rem !important;
 }

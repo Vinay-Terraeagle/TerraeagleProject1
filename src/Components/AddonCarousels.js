@@ -28,12 +28,13 @@ export default function AddonCarousels(subscriptionLists) {
   useEffect(() => {
     if(localStorage.getItem('subscriptionBasedVisibility') !== undefined) {
       const subscriptioninfo = JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))
-      if(subscriptioninfo.biomarkers === "biomarkers") {
-        const link = <button className='gbtn-gt' onClick={handleUpgradeClick}>View Details</button>
-        setpurchaseinfo(link)
-      } else {
+      if(subscriptioninfo.biomarkers !== 'biomarkers') {
         const purchaseBtn = <button className='btn-lrn'  onClick={handleUpgradeClick}>Purchase</button>
         setpurchaseinfo(purchaseBtn)
+      } else {
+        const link = <button className='gbtn-gt' onClick={handleUpgradeClick}>View Details</button>
+        setpurchaseinfo(link)
+       
       }
     }
   },[])

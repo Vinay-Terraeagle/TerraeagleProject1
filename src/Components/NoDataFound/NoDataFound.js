@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {Container, Row, Col} from 'react-bootstrap'
 import '../NoDataFound/NoDataFound.moudle.css'
 import NoDataFoundimage from '../../assets/images/recipesnotfound.png'

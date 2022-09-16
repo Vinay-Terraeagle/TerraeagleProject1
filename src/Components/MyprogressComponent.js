@@ -14,9 +14,8 @@ import Select from 'react-dropdown-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
-import ImageUploader from "react-images-upload";
+// import ImageUploader from "react-images-upload";
 import ImageUploading from "react-images-uploading"
-
 
 export default function MyprogressComponent(data) {
   
@@ -31,6 +30,8 @@ export default function MyprogressComponent(data) {
   const [filterOption, setFilterOption] = useState()
   const handleChange = (selectedOption) => {
     setFilterOption(selectedOption[0].label.toLowerCase())
+
+
   }
 
   // Setting the date on change
@@ -287,6 +288,30 @@ export default function MyprogressComponent(data) {
   const onSideImgChange = (imageList, addUpdateIndex) => {
     setSideImage(imageList);
   };
+
+  // Graph Update onclick
+
+  const graphUpdate = () => {
+
+    
+    
+  }
+
+
+    // useEffect(() => {
+    //   axios.post(`${BASE_URL}/measurements/filter`,params1,params2,{
+    //     headers: {
+    //       Authorization: TOKEN
+    //     }
+    //   }).then((response) => {
+    //     console.log(response)
+    //   }).catch((error) => {
+    //     console.log(error)
+    //   })
+    // },[]);
+
+
+
   return (
     <React.Fragment>
 
@@ -316,7 +341,7 @@ export default function MyprogressComponent(data) {
                 </div>
                     
               <div className='graph-wrapper my-progress-section'>
-                  <LineChart />
+                  <LineChart  />
               </div>
             </div>
 
@@ -374,10 +399,8 @@ export default function MyprogressComponent(data) {
                           </thead>
                           <tbody id="tbody-weight">
                           
-                            
                               {weightDetails}
 
-                            
                           </tbody>
                     </table>
                 </div>
