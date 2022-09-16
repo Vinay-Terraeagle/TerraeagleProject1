@@ -7,7 +7,10 @@ import bmiCal from '../assets/images/BMIMeter.png'
 import blood from '../assets/images/Blood.png'
 import Heart from '../assets/images/Heart.png'
 import bodysv from '../assets/images/Body.png'
-
+import bodyfat from '../assets/images/body-fat.png'
+import dailytasks from '../assets/images/daily-tasks.png'
+import slim from '../assets/images/slim.png'
+import Bmi2 from '../assets/images/Bmi2.png'
 
 export default function HealthMatrix(healthMatrixDetails) {
 
@@ -84,7 +87,7 @@ if (healthMatrixDetails !== undefined && healthMatrixDetails.healthMatrixData !=
                   <p>Last Update : N/A</p>
                 </div>
                 <div className='crad-svg'>
-                  <img src={bodysv} className="healthicons" alt="/"/>
+                  <img src={bodyfat} className="healthicons" style={{width:'20px'}} alt="/"/>
                 </div>
               </div>
               <div className='main-card-col'>
@@ -126,7 +129,7 @@ if (healthMatrixDetails !== undefined && healthMatrixDetails.healthMatrixData !=
                   <p>Last Update : N/A</p>
                 </div>
                 <div className='crad-svg'>
-                <img src={bmiCal} className="healthicons" alt="/"/>
+                <img src={Bmi2} className="healthicons" alt="/"/>
                 </div>
               </div>
               <div className='main-card-col'>
@@ -136,7 +139,7 @@ if (healthMatrixDetails !== undefined && healthMatrixDetails.healthMatrixData !=
                   <p>Last Update : N/A</p>
                 </div>
                 <div className='crad-svg'>
-                <img src={bmiCal} className="healthicons" alt="/"/>
+                <img src={slim} className="healthicons" alt="/"/>
                 </div>
               </div>
               <div className='main-card-col'>
@@ -146,7 +149,7 @@ if (healthMatrixDetails !== undefined && healthMatrixDetails.healthMatrixData !=
                   <p>Last Update : N/A</p>
                 </div>
                 <div className='crad-svg'>
-                <img src={bmiCal} className="healthicons" alt="/"/>
+                <img src={dailytasks} className="healthicons" alt="/"/>
                 </div>
               </div>
               <div className='main-card-col'>

@@ -52,6 +52,11 @@ nav{
     align-items: center;
 }
 
+.careimg {
+    width: 40px;
+    padding-right: 10px;
+}
+
 .main-logo {
     width: 60%;
 }
@@ -471,6 +476,7 @@ position: relative;}
     margin-top: 3.5rem;
 }
 
+
 .dash-inner-txt {
     padding-bottom: 5px;
 }
@@ -538,7 +544,7 @@ position: relative;}
     display: flex;
     align-items: center;
     padding: 1rem 0;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .coch-name h1 {
@@ -551,6 +557,7 @@ position: relative;}
 .dash-txt h1 {
     font-size: 25px;
     font-weight: 400;
+    margin: 0 auto;
 }
 
 .health {
@@ -667,12 +674,12 @@ position: relative;}
     clip: rect(0px, 150px, 150px, 73px);
   }
   
-  .mask.full,
+  /* .mask.full,
   .circle .fill {
     /* animation: fill ease-in-out 3s; */
-    /* transform: rotate(135deg); */
-    /* transform: rotate(135deg); */
-  }
+    /* transform: rotate(135deg); 
+    /* transform: rotate(135deg); 
+  } */
   
   @keyframes fill{
     0% {
@@ -788,7 +795,7 @@ position: relative;}
 }
 
 .owl-carousel .owl-item img {
-    width: auto !important;
+    width: 60px !important;
 }
 
 .crd-row ,.lnch-row{
@@ -873,6 +880,57 @@ position: relative;}
     display: flex;
     justify-content: space-evenly;
 }
+
+
+.btn-Tommar{
+    padding: 9px 18px;
+    margin: 1rem 1.4rem;
+    outline: none;
+    border: 1px solid #c4473c;
+    color: #fff;
+    background: #e06358;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn-today {
+    padding: 9px 18px;
+    margin: 1rem 1.4rem;
+    outline: none;
+    border: 1px solid #c4473c;
+    color: #fff;
+    background: #c4473c;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn-yesta {
+    padding: 9px 18px;
+    margin: 1rem 1.4rem;
+    outline: none;
+    border: 1px solid #c4473c;
+    color: #000;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn-Tommar {
+    padding: 9px 18px;
+    margin: 1rem 1.4rem;
+    outline: none;
+    border: 1px solid #c4473c;
+    color: #000;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.btn-Tommar:hover,.btn-yesta:hover{
+    background: #fc5b4d;
+    color: #fff;
+    transition: all .3s ease-out;
+}
+
 
 .dash-right-col {
     /* flex: 0 0 452px;  */
@@ -1927,7 +1985,7 @@ a.menus:hover {
 }
 
 .healthicons {
-    width: 70% !important;
+    width: 60% !important;
     margin-left: 0rem !important;
 }
 .crad-svg {

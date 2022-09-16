@@ -14,7 +14,7 @@ import HabbitsComponent from '../Components/HabbitsComponent'
 import ExcerciseComponent from '../Components/WorkOutComponent/ExcerciseComponent'
 import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
-import DatePicker from 'react-horizontal-datepicker';
+// import DatePicker from 'react-horizontal-datepicker';
 import { BASE_URL, TOKEN } from '../Backend/config';
 import { useEffect } from 'react';
 import moment from 'moment';
@@ -106,15 +106,26 @@ export default function Myplan() {
               </div>
             </div>
             {/* calender */}
-            <div className='cals-col'>
+            {/* <div className='cals-col'>
               <DatePicker
                 getSelectedDay={selectedDay}
                 labelFormat={"MMMM yyyy"}
                 color={"#374e8c"}
                 selectDate={new Date()}
                 endDate = '90'
-              />
-            </div>
+              />            
+            </div> */}
+            <div className='dates d-flex justify-content-center'>
+                <div>
+                  <button className='btn-yesta'>Yestarday</button>
+                </div>
+                <div>
+                  <button className='btn-today'>Today</button>
+                </div>
+                <div>
+                  <button className='btn-Tommar'>Tommarow</button>
+                </div>
+              </div>
           </div>
         </div>
       </section>

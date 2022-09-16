@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import Footer from '../Components/footer'
 import Header from '../Components/Header'
@@ -15,6 +15,8 @@ import Modal from 'react-bootstrap/Modal';
 import TextEditor from '../Components/TextEditor'
 import { ChooseChannelDropdownMenu } from '../Components/ChooseChannelDropdownMenu';
 import Select from 'react-dropdown-select'
+import axios from 'axios';
+import { BASE_URL, TOKEN } from '../Backend/config';
 
 export default function Discover() {
 
@@ -33,6 +35,14 @@ export default function Discover() {
     const handleClick = (selectedOption) => {
         console.log(selectedOption)
     }
+
+
+    // disciver api
+    
+
+
+    
+
 
   return (
     <>
