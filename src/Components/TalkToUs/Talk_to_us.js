@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import './TalkToUs.css'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -7,12 +7,15 @@ import Footer from '../footer'
 import trainer from '../../assets/images/trainer.png'
 import Doctor from '../../assets/images/doctor.png'
 import therapist from '../../assets/images/therapist.png'
-import BookDoctor from './BookDoctor'
-
+// import BookTrainer from './BookTrainer'
 
 
 
 export default function Talk_to_us() {
+
+  const [activelist, setactivelist] = useState('trainer')
+  
+
   return (
     <React.Fragment>
       <Header />
@@ -61,7 +64,7 @@ export default function Talk_to_us() {
                   </div>
                 </div>
               </section>
-              <BookDoctor />
+              
             </Col>
           </Row>
         </Container>

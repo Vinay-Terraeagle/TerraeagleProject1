@@ -39,23 +39,22 @@ export const MenuItems = [
         title: 'Discover',
         url:'/Discover',
         Cname:'menuDropdown'
-        // icnpath:
       },
-      // {
-      //   title: 'Spaces',
-      //   url:'/Spaces',
-      //   Cname:'menuDropdown',
-      //   submenu: [
-      //     {
-      //       title: 'Events',
-      //       url: '/EventsView',
-      //     },
-      //     {
-      //       title: 'Challenges',
-      //       url: '/ChallengesView',
-      //     }
-      //   ]
-      // },
+      {
+        title: 'Spaces',
+        url:'/Spaces',
+        Cname:'menuDropdown',
+        submenu: [
+          {
+            title: 'Events',
+            url: '/EventsView',
+          },
+          // {
+          //   title: 'Challenges',
+          //   url: '/ChallengesView',
+          // }
+        ]
+      },
       
 ];
 
