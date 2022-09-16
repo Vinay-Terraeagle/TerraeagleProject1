@@ -259,7 +259,7 @@ export default function MealsComp(mealDetails) {
           <div className='headpart'>
             <h1>Today Meals</h1>
           </div>
-          <div className="cml-carm">
+          <div className="cml-carm d-flex justify-content-center  align-items-center h-100">
             <div className={`cml-cards meal-data-wrapper ${noMealsData}`}>
               <OwlCarousel {...MealSlider}>
                 {breakfastData}
