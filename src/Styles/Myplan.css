@@ -443,3 +443,24 @@
 #new_value {
     width: 12%;
 }
+.ln-clb.no-meals-data-toshow,
+.kcl.no-meals-data-toshow,
+.dn-clb.no-meals-data-toshow,
+.diet-cl.no-meals-data-toshow,
+.no-data-wrapper,
+.brk-cl.no-meals-data-toshow {
+    display: none;
+}
+
+.exercise-container .no-data-found-img {
+    transform: scale(1.5);
+}
+
+.myplan-recipe .no-data-found-img {
+    transform: scale(2.2);
+}
+
+.exercise-container .no-data-found-wrapper {
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}

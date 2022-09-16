@@ -1941,9 +1941,19 @@ a.menus:hover {
 }
 .no-data-wrapper.no-workouts-toshow,
 .no-data-wrapper.no-meals-data-toshow {
-    display: inline-flex;
+    display: flex;
+        justify-content: space-around;
+        align-items: center;
 }
 .wrk-imgs {
     height: 100px;
     width: 100px;
+}
+
+.myplan-recipe.no-meals-data-toshow {
+    min-height: 345px;
+}
+
+.dash-left-row .no-data-found-img {
+    transform: scale(1.8);
 }

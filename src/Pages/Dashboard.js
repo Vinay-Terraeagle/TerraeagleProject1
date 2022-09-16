@@ -77,8 +77,8 @@ export default function Dashboard() {
     // setbadgeimage(response.data.data.badge_details.badge_details.image);
 
       //Setting the Subscription details in the localstorage so that we can access this thorught the application and show the data
-      // localStorage.setItem("subscriptionBasedVisibility",{subscriptionDetails})
       localStorage.setItem('subscriptionBasedVisibility', JSON.stringify(response.data.data.subscription_based_visibility));
+      localStorage.setItem('userDetails', JSON.stringify(response.data.data.user_details));
       
     })
   },[]);
@@ -295,15 +295,7 @@ export default function Dashboard() {
                    {/* {subscriptionDetail ? <AddonCarousels AddonCarousels={subscriptionDetail}/> :  */}
                    {/* console.log(subscriptionDetail)} */}
                  
-                    { workouts ? <WorkoutCompo WorkoutCompo={workouts}/> : <div className='workout-plans'>
-                      <div className='wrk-txt'>
-                        <h5>WorkOut</h5>
-                      </div>
-                      <div className="wrk-col">
-                        <NoDataFound />
-                        </div>
-                      </div>
-                    }
+                    { workouts ? <WorkoutCompo WorkoutCompo={workouts}/> : ''}
                 </div>
               </div>
               <div>
