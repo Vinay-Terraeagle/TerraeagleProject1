@@ -17,6 +17,7 @@ import { ChooseChannelDropdownMenu } from '../Components/ChooseChannelDropdownMe
 import Select from 'react-dropdown-select'
 import axios from 'axios';
 import { BASE_URL, TOKEN } from '../Backend/config';
+import moment from 'moment';
 
 export default function Discover() {
 
@@ -87,7 +88,10 @@ export default function Discover() {
                                 <div className="d-flex flex-column ml-2">
                                     {item.creator.first_name}
                                     <small className="text-capitalize font-weight-bold text-muted">
-                                        {item.created_at}...</small>
+                                        {
+                                            moment(item.created_at).fromNow()
+                                        
+                                        }...</small>
                                 </div>
                             </div>
                             <div className="ml-auto">
