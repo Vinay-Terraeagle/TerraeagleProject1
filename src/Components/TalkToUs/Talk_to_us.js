@@ -15,58 +15,58 @@ import BookDoctor from './BookDoctor'
 export default function Talk_to_us() {
   return (
     <React.Fragment>
-   <Header/>
-    <section>
+      <Header />
+      <section>
         <Container>
-            <Row>
-                <Col>
-                <section>
-        <div className='container'>
-          <div className='main-col'>
-            <div className='cal-box'>
-              <div className='tdy-dte'>
-                  <div className='tdy-col'>
-                    <h1>01</h1>
-                      <span>August</span>
-                      <p>2022</p>
+          <Row>
+            <Col>
+              <section>
+                <div className='container'>
+                  <div className='main-col'>
+                    <div className='cal-box'>
+                      <div className='tdy-dte'>
+                        <div className='tdy-col'>
+                          <h1>01</h1>
+                          <span>August</span>
+                          <p>2022</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='dctr-book'>
+                      <div className='dietPlan'>
+                        <div className='cl-icn'>
+                          <img src={trainer} className="trainericon" alt='/' />
+                        </div>
+                        <div className='dct-txt'>
+                          <h1>Trainer</h1>
+                        </div>
+                      </div>
+                      <div className="calo-crd">
+                        <div className='cl-icn'>
+                          <img src={Doctor} className="doctoricon" alt='/' />
+                        </div>
+                        <div className='dct-txt'>
+                          <h1>Doctor</h1>
+                        </div>
+                      </div>
+                      <div className="calo-crd">
+                        <div className='cl-icn'>
+                          <img src={therapist} className="therapist" alt='/' />
+                        </div>
+                        <div className='dct-txt'>
+                          <h1>Therapist</h1>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-              </div>
-            </div>
-            <div className='dctr-book'>
-              <div className='dietPlan'>
-                <div className='cl-icn'>
-                  <img src={trainer} className="trainericon" alt='/'/>
                 </div>
-                <div className='dct-txt'>
-                  <h1>Trainer</h1>
-                </div>
-              </div>
-              <div className="calo-crd">
-                <div className='cl-icn'>
-                <img src={Doctor} className="doctoricon" alt='/'/>
-                </div>
-                <div className='dct-txt'>
-                  <h1>Doctor</h1>
-                </div>
-              </div>
-              <div className="calo-crd">
-                <div className='cl-icn'>
-                <img src={therapist} className="therapist" alt='/'/>
-                </div>
-                <div className='dct-txt'>
-                  <h1>Therapist</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <BookDoctor/>
-      </Col>
-            </Row>
+              </section>
+              <BookDoctor />
+            </Col>
+          </Row>
         </Container>
-    </section>
-    <Footer/>
+      </section>
+      <Footer />
     </React.Fragment>
   )
 }

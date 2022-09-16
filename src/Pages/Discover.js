@@ -88,10 +88,7 @@ export default function Discover() {
                                 <div className="d-flex flex-column ml-2">
                                     {item.creator.first_name}
                                     <small className="text-capitalize font-weight-bold text-muted">
-                                        {
-                                            moment(item.created_at).fromNow()
-                                        
-                                        }...</small>
+                                        </small>
                                 </div>
                             </div>
                             <div className="ml-auto">

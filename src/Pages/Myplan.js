@@ -117,13 +117,13 @@ export default function Myplan() {
             </div> */}
             <div className='dates d-flex justify-content-center'>
                 <div>
-                  <button className='btn-yesta'>Yestarday</button>
+                  <button className='btn-yesta'>Yesterday</button>
                 </div>
                 <div>
                   <button className='btn-today'>Today</button>
                 </div>
                 <div>
-                  <button className='btn-Tommar'>Tommarow</button>
+                  <button className='btn-Tommar'>Tomorrow</button>
                 </div>
               </div>
           </div>
