@@ -900,7 +900,7 @@ position: relative;}
     outline: none;
     border: 1px solid #c4473c;
     color: #fff;
-    background: #c4473c;
+    background: #e06358;
     cursor: pointer;
     border-radius: 10px;
 }
@@ -926,8 +926,8 @@ position: relative;}
     cursor: pointer;
     border-radius: 10px;
 }
-.btn-Tommar:hover,.btn-yesta:hover{
-    background: #fc5b4d;
+.btn-Tommar:hover,.btn-yesta:hover,.btn-today:hover{
+    background: #c4473c;
     color: #fff;
     transition: all .3s ease-out;
 }

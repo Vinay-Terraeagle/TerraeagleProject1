@@ -1,5 +1,5 @@
 .thread-view-comment-wrapper>span {
-    background: #7FB3D5;
+    background: #E06358;
     color: #fff;
     padding: 5px 10px;
     font-size: 16px;
@@ -50,18 +50,19 @@
 }
 
 .threads-container .search-filter-wrapper .rounded-pill {
-    background-color: #7FB3D5;
+    background-color: #ff7777;
+    border: 1px solid #ff5151;
 }
 
 .search-menu {
-    border: 1px solid #7FB3D5;
+    border: 1px solid #FA8072;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     padding: 0.9rem 0.9rem;
 }
 
 .search-menu-icon {
-    background: #7FB3D5;
+    background: #ff5151;
     color: #fff;
     border-radius: 0px;
     border-top-right-radius: 30px;
@@ -71,7 +72,7 @@
 }
 
 .filter-wrapper {
-    color: #5499C7;
+    color: #E06358;
 }
 
 .arrow-wrapper {
@@ -81,7 +82,7 @@
 .arrow-icon {
     -webkit-animation: bounceRight 2s infinite;
     animation: bounceRight 2s infinite;
-    fill: #5499C7;
+    fill: #E06358;
 }
 
 /* right bounce */
