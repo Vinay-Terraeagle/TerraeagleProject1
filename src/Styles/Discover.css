@@ -50,8 +50,8 @@
 }
 
 .threads-container .search-filter-wrapper .rounded-pill {
-    background-color: #ff7777;
-    border: 1px solid #ff5151;
+    background-color: #E06358;
+    border: 1px solid #E06358;
 }
 
 .search-menu {
@@ -62,7 +62,7 @@
 }
 
 .search-menu-icon {
-    background: #ff5151;
+    background: #E06358;
     color: #fff;
     border-radius: 0px;
     border-top-right-radius: 30px;
