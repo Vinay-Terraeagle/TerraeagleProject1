@@ -1,20 +1,34 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
 import {Container, Row, Col} from 'react-bootstrap'
 import '../NoDataFound/NoDataFound.moudle.css'
-import NoDataFoundimage from '../../assets/images/recipesnotfound.png'
+import NoRecipeFoundimage from '../../assets/images/recipesnotfound.png'
+import NoWorkoutsFoundimage from '../../assets/images/no-wrokouts-img.png'
 
-export default function NoDataFound() {
+
+export default function NoDataFound(type) {
+    const [noDataFoundimage, setNoDataFoundimage] = useState()
+    const [noDataFoundLabel, setNoDataFoundLabel] = useState()
+    useEffect(() => {
+        if(type.type === "workout") {
+            setNoDataFoundimage(NoWorkoutsFoundimage)
+            setNoDataFoundLabel("No Workouts Assigned For Today")
+        } else if(type.type === "recipe") {
+            setNoDataFoundimage(NoRecipeFoundimage)
+            setNoDataFoundLabel("No Recipe To Show")
+        } else {
+
+        }
+    },[])
   return (
     <section>
         <Container>
             <Row>
-                <Col>
-                <div className='d-flex justify-content-center'>
-                    <img src={NoDataFoundimage} width="180px" alt="/"/>
+                <Col className='no-data-found-wrapper'>
+                <div className='d-flex justify-content-center no-data-found-img'>
+                    <img src={noDataFoundimage} width="180px" alt="/"/>
                 </div>
-                <div className='text-center'>
-                    <h5>No Recipe To Show</h5>
+                <div className='text-center mt-4'>
+                    <h5>{noDataFoundLabel}</h5>
                 </div>
                 </Col>
             </Row>

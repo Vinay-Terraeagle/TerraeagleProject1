@@ -91,7 +91,6 @@ export default function Message() {
       .then((deleteMsgResponse) => {
           setShow(false)
           if(deleteMsgResponse.data.success){
-            console.log("sdfsd fs")
             renderAllMessages()
             toast.success(deleteMsgResponse.data.message, {
               position: "top-center",
@@ -126,10 +125,10 @@ export default function Message() {
         setShowNoMessagesInfo('show-msgs')
         const messagesList = messages.map((item,i) => 
         
-          <div className='msg-top rounded mb-4'  data-id={item.id} data-msgid={item.id}>
+          <div className='message-card msg-top rounded mb-4'  data-id={item.id} data-msgid={item.id} onClick={renderAllMessageReplies}>
             <div className='mg-tx '>
               <div className='useravt d-flex align-items-center justify-content-between'> 
-                <img src={UserIcon} className="usravth" alt='/'/>
+                <img src={item.profile_image} className="usravth" alt='/'/>
                 <h6 className='mb-0'>{item.subject}</h6>
                 <span className='text-secondary'>
                   {
@@ -138,7 +137,7 @@ export default function Message() {
                   </span>
                 </div>
                 <div className='d-flex justify-content-center'>
-                  <span className='text-secondary fst-italic'>Msg body</span>
+                  <span className='text-secondary fst-italic'>{item.body}</span>
                 </div>
                 <div className='d-flex justify-content-end'>
                     <Trash className='trash' data-id={item.id} onClick={()=>{
@@ -157,6 +156,47 @@ export default function Message() {
         setShowNoMessagesInfo('show-no-msgs')
       }
     });
+  }
+
+  const [msgReplies, setMsgReplies] = useState()
+  const renderAllMessageReplies = () => {
+    const id = 109; 
+    const msgTextData = "qwerty"
+    const dataToMsgReply = {
+      message :msgTextData, 
+    }
+    axios.get(`${BASE_URL}/messages/${id}`,dataToMsgReply, {
+      headers: {
+          Authorization: TOKEN
+      }
+    })
+    .then((msgResponse) => {
+      console.log(msgResponse)
+      
+      const msgs = msgResponse.data.data.message_details.map((item,i) =>
+        <div className='msg-mbx' key={id}>
+          <img src={item.profile_image} className="txicn" alt='/' />
+          <div className='mg-bx'>
+            <p>{item.message}</p>
+          </div>
+        </div>
+      )
+      setMsgReplies(msgs)
+        
+    })
+  }
+
+  const replyToMessage = () => {
+    const id = 109 
+    axios.put(`${BASE_URL}/messages/${id}`,{ }, {
+      headers: {
+          Authorization: TOKEN
+      }
+    })
+    .then((msgResponse) => {
+
+      console.log(msgResponse)
+    })
   }
 
   return (
@@ -189,21 +229,13 @@ export default function Message() {
                         <div className='d-flex align-items-center'>
                         <img src={UserIcon} className="usravth" alt='/'/>
                           <h6 className='mb-0 ml-2 fs-5'>Jhon_Doe</h6>
-                        </div>
-                          
-                              <ThreeDots/>
-                        </div>
+                        </div><ThreeDots/></div>
                     </div>
                     <div className='dmo-msg'>
                       <div className='msgdte'>
                           <span>August 20</span>
                       </div>
-                      <div className='msg-mbx'>
-                        <img src={UserIcon} className="txicn" alt='/' />
-                        <div className='mg-bx'>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                      </div>
+                      {msgReplies}
                     </div>
                     <div>
                       <form action='#' className='mt-5'>
@@ -212,7 +244,7 @@ export default function Message() {
                           </div>
                           <div className='editorbtn'>
                             <button  className='discard mr-1'> <X className='mr-1'/> Discard</button>
-                            <button className='send '> <SendFill className='mr-1'/> Send</button>
+                            <button className='send' onClick={replyToMessage}> <SendFill className='mr-1'/> Send</button>
                           </div>
                       </form>
                     </div>

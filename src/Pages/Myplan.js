@@ -16,6 +16,8 @@ import MyprogressComponent from '../Components/MyprogressComponent';
 import '../Styles/app.css'
 import DatePicker from 'react-horizontal-datepicker';
 import { BASE_URL, TOKEN } from '../Backend/config';
+import { useEffect } from 'react';
+import moment from 'moment';
 
 export default function Myplan() {
   const location = useLocation();
@@ -58,6 +60,36 @@ export default function Myplan() {
         });
     }
 
+    const [dietPlan, setDietPlan] = useState()
+    const [todaysDate, setTodaysDate] = useState()
+    const [assignedWorkouts, setAssignedWorkouts] = useState()
+    const [habitsAssigned, setHabitsAssigned] = useState()
+    const [date, setDate] = useState()
+    const [month, setMonth] = useState()
+    const [year, setYear] = useState()
+    
+
+    useEffect(() => { 
+      axios.get(`${BASE_URL}/my_plan_section`, {
+        headers: {
+            Authorization: TOKEN
+        }
+      })
+      .then((myplanResponse) => {
+
+        setDietPlan(myplanResponse.data.data.my_plan_section_details.diet_plan)
+        setTodaysDate(myplanResponse.data.data.my_plan_section_details.date)
+        setAssignedWorkouts(myplanResponse.data.data.my_plan_section_details.workout_details)
+        setHabitsAssigned(myplanResponse.data.data.my_plan_section_details.habit_details)
+       
+        setDate(moment(todaysDate).format("DD"))
+        setMonth(moment(todaysDate).format("MMMM"))
+        setYear(moment(todaysDate).format("YYYY"))
+
+      })
+
+    },[]);
+
   return (
     <React.Fragment>
       <Header/>
@@ -93,9 +125,9 @@ export default function Myplan() {
             <div className='cal-box'>
               <div className='tdy-dte'>
                   <div className='tdy-col'>
-                    <h1>01</h1>
-                      <span>August</span>
-                      <p>2022</p>
+                    <h1>{date}</h1>
+                      <span>{month}</span>
+                      <p>{year}</p>
                   </div>
               </div>
             </div>
@@ -144,10 +176,10 @@ export default function Myplan() {
           </div>
         </div>
       </section>
-    {activeTab === "dietPlan" && <DietPlanComponent/>}
+    {activeTab === "dietPlan" && dietPlan ? <DietPlanComponent myDietPlan={dietPlan}/> : ""}
     {activeTab === "groceryList" && <GroceryListComponent/>}
-    {activeTab === "habits" && <HabbitsComponent />}
-    {activeTab === "exercise" && <ExcerciseComponent />}
+    {activeTab === "habits" && habitsAssigned ? <HabbitsComponent habitsAssigned={habitsAssigned} /> : ""}
+    {activeTab === "exercise" && assignedWorkouts ? <ExcerciseComponent assignedWorkouts={assignedWorkouts} /> : ""}
     {activeTab === "myprogress" && <MyprogressComponent data={myprogressData}/>}
 
     

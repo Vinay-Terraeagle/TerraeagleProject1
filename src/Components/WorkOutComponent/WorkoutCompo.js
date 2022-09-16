@@ -2,12 +2,14 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../../Styles/app.css'
+import NoDataFound from '../NoDataFound/NoDataFound';
 
 export default function WorkoutCompo(workoutList) {
   const [workoutDataList, setWorkoutDataList] = useState()
   useEffect(() => {
+    if(workoutList.WorkoutCompo.length > 0) {
       const workouts = workoutList.WorkoutCompo.map((item,i) => 
-        <div className='wrk-row' onClick={showWorkoutView}>
+        <div className='wrk-row' onClick={showWorkoutView} key={i}>
           <div className='wrk-imgs'>
             <img src={item.image} className="yoga1" alt='/' />
           </div>
@@ -31,7 +33,11 @@ export default function WorkoutCompo(workoutList) {
           </div>
         </div>
       )
-      setWorkoutDataList(workouts)  
+      setWorkoutDataList(workouts)
+    } else {
+      setWorkoutDataList(<NoDataFound type="workout"/>)
+    }
+
   },[]);
 
   const navigateToMyPlanExercise = useNavigate();

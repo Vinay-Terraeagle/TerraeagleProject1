@@ -244,7 +244,7 @@ export default function MealsComp(mealDetails) {
                 </div>
               </div>
           )
-          setMidEveningData(midMorningList)
+          setMidMorningData(midMorningList)
         }
       }
 
@@ -271,7 +271,7 @@ export default function MealsComp(mealDetails) {
                 
               </OwlCarousel>
             </div>
-            <NoDataFound className={`no-data-wrapper ${noMealsData}`}/>
+            <NoDataFound className={`no-data-wrapper ${noMealsData}`} type="recipe"/>
           </div>
         </div>
       </section>

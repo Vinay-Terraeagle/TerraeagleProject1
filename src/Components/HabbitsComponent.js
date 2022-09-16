@@ -1,13 +1,10 @@
 import React , { useState } from 'react';
 // import ReactDOM from "react-dom";
 
-export default function HabbitsComponent() {
+export default function HabbitsComponent(habitsAssigned) {
+    console.log(habitsAssigned.habits)
     // State with list of all checked item
     const [checked, setChecked] = useState([]);
-    const checkList = [ "Drink water in the morning", 
-                        "Eat more vegetables and fruits daily", 
-                        "Increase Non-Exercise Activity", 
-                        "Picking foods that are fewer in calories, fat, sugar and salt"];
 
     // Add/Remove checked item from list
     const handleCheck = (event) => {
@@ -31,12 +28,12 @@ export default function HabbitsComponent() {
             <div className="checkList">
                 <h4>Your Todays Habits !!!</h4>
                 <div className="list-container d-flex fs-22">
-                {checkList.map((item, index) => (
+                {habitsAssigned.habitsAssigned.habits.map((item, index) => (
                     <div key={index}>
-                        <input id={item}  value={item} type="checkbox" onChange={handleCheck} />
-                        <label for={item}> 
+                        <input id={item.id}  value={item.habit} type="checkbox" onChange={handleCheck} />
+                        <label for={item.id}> 
                             <span></span>
-                            <div className='habits-label'   >{item}</div>
+                            <div className='habits-label'>{item.habit}</div>
                         </label>
                     </div>
                 ))}
