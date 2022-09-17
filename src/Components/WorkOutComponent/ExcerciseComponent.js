@@ -123,6 +123,11 @@ useEffect(() => {
             <Accordion >
              {assignedWorkoutsList}
             </Accordion>
+            <div className='d-flex'>
+              <button className='Assignworkout'>
+              Assign Workout
+              </button>
+            </div>
         </div>
     </React.Fragment>
   )
