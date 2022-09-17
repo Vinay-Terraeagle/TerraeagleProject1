@@ -8,6 +8,9 @@ export default function EventsView() {
     <React.Fragment>
       <Header />
       <div className="container">
+        <div className=''>
+
+        </div>
         <h2 className="mt-4"> Events </h2>
         <div className="events-container w-100 row justify-content-center pt-5 pb-5">
 
