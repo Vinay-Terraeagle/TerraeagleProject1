@@ -7,7 +7,6 @@ import { Eye } from 'react-bootstrap-icons'
 import { ChatText } from 'react-bootstrap-icons'
 import { Search } from 'react-bootstrap-icons'
 import { ArrowRight } from 'react-bootstrap-icons'
-import { Link } from 'react-router-dom';
 import '../Styles/Discover.css'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -20,13 +19,15 @@ import moment from 'moment';
 export default function Discover() {
 
     const [threadsList, setThreadsList] = useState();
+    const [trendingThreadsList, setTrendingThreadsList] = useState();
+    const [channelList, setChannelList] = useState();
+
     const [btn, activeBtn] = useState(false);
 
     const btnOpen = () => activeBtn(false);
 
     const [selectOptions, setSelectOptions] = useState();
     const showModalPopupToAskQuestion = () => {
-
         activeBtn(true);
         axios.get(`${BASE_URL}/threads/create`, {
             headers: {
@@ -42,14 +43,8 @@ export default function Discover() {
         }).catch((error) => {
             console.log(error)
         })
-
-        
     }
     
-
-    const handleClick = (selectedOption) => {
-        console.log(selectedOption)
-    }
 
     // Rendering the Threads on loading the threads page
     useEffect(() => {
@@ -58,8 +53,8 @@ export default function Discover() {
                 Authorization: TOKEN
             }
         }).then((response) => {
-            console.log(response.data);
-            const threadsData = response.data.data
+            console.log(response.data.channels);
+            const threadsData = response.data.data.threads
             if (threadsData !== undefined && threadsData.length > 0) {
                 const threadsLists = threadsData.map((item, i) => 
                 <div className='threads-left-section-wrapper p-4 mb-5' key={i} onClick={renderThreadsDetailedView} data-threadid={item.id} data-thread-slug={item.slug} data-channel-slug={item.channel.slug}>
@@ -105,6 +100,31 @@ export default function Discover() {
             )
             setThreadsList(threadsLists)
             }
+
+            const trendingThreadsData = response.data.data.trendings
+            if (trendingThreadsData !== undefined && trendingThreadsData.length > 0) {
+                const trendingThreadsLists = trendingThreadsData.map((item, i) => 
+                    <li className="list-group-item" key={i}>
+                        <div data-thread-slug={item.slug} data-channel-slug={item.channel.slug}>
+                            {item.title}
+                        </div>
+                    </li>
+                )
+                setTrendingThreadsList(trendingThreadsLists)
+            }
+
+            const channelData = response.data.data.channels
+            if (channelData !== undefined && channelData.length > 0) {
+                const channelDataLists = channelData.map((item, i) => 
+                <div className="col-2 text-center" onClick={filterThreads} data-channel-slug={item.slug} key={i}>
+                    <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
+                        {item.name}
+                    </div>
+                </div>
+                )
+                setChannelList(channelDataLists)
+            }
+
         }).catch((error) => {
             console.log(error)
         })
@@ -131,7 +151,6 @@ export default function Discover() {
     let navigate = useNavigate();
     const renderThreadsDetailedView = (event) => {
         event.preventDefault();
-       
 
         const channel = event.currentTarget.getAttribute('data-channel-slug')
         const thread = event.currentTarget.getAttribute('data-thread-slug')
@@ -151,10 +170,29 @@ export default function Discover() {
         
     }
 
+    const [channelOption, setChannelOption] = useState()
+    const channelChange = (event) => {
+        setChannelOption(event.currentTarget)
+    }
+    // Ask question related to thread
+    const handleAskThreadQuestions = () => {
 
-
-
-
+        const dataToThreadsQuestion = {
+            channel_id: '',
+            title : '', 
+            body : ''
+          }
+        
+        axios.post(`${BASE_URL}/threads/store`,dataToThreadsQuestion, {
+            headers: {
+                Authorization: TOKEN
+            }
+        }).then((response) => { 
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
 
     return (
         <>
@@ -162,7 +200,6 @@ export default function Discover() {
             <div className='container'>
                 <h2 className="mt-4"> Threads</h2>
                 <div className='threads-container w-100'>
-
                     <div className='row mt-3'>
                         <form method="GET" action="" className="d-inline order-md-1">
                             <div className="sidebar-item sidebar-search col-6">
@@ -184,31 +221,7 @@ export default function Discover() {
                                 <ArrowRight className='arrow-icon' />
                             </span>
                         </div>
-                        <div className="col-2 text-center" onClick={filterThreads} data-channel-slug="workout">
-                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
-                                Workouts
-                            </div>
-                        </div>
-                        <div className="col-2 text-center" onClick={filterThreads} >
-                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
-                                Mental Wellness
-                            </div>
-                        </div>
-                        <div className="col-2 text-center" onClick={filterThreads} >
-                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
-                                Kids Nutrition
-                            </div>
-                        </div>
-                        <div className="col-2 text-center" onClick={filterThreads} >
-                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
-                                General
-                            </div>
-                        </div>
-                        <div className="col-2 text-center" onClick={filterThreads} >
-                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
-                                Nutrition
-                            </div>
-                        </div>
+                        {channelList}
                     </div>
                     <div className='row'>
                         <div className="col-8 p-4">
@@ -224,33 +237,8 @@ export default function Discover() {
                                 </button>
                             </div>
                             <ul className="list-group mb-4">
-                                <li className="list-group-item">
-                                    <Link to="/" >
-                                        How to handle overeating?
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/" >
-                                        How long should i perform an HIIT workout?
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/" >
-                                        Can lose fat in an area of the body by strength training or exercising that specific body part.Any exercise that decreases body fat percentage will help lose fat on their arms,Doing triceps p
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/" >
-                                        What kind of foods can be consumed in PCOS?
-                                    </Link>
-                                </li>
-                                <li className="list-group-item">
-                                    <Link to="/" >
-                                        Can beans and lentils alone fulfil my daily protein requirement?
-                                    </Link>
-                                </li>
+                                {trendingThreadsList}
                             </ul>
-
                         </div>
                     </div>
                 </div>
@@ -265,18 +253,19 @@ export default function Discover() {
                     <form className='channalform' action='#'>
                         <div>
                             <div className='mb-4'>
-                                <h5>Choose Channal</h5>
+                                <h5>Choose Channel:</h5>
                                 {/* <Select className='mb-2' options={channelListOption} onChange={handleClick} /> */}
-
-                                <select className='mb-2 channel-names'>
-                                    {selectOptions}
-                                </select>
-                                <h6 className='text-sm'>Ask your question to specific community</h6>
+                                <div>
+                                    <select className='mb-2 channel-names' onChange={channelChange}>
+                                        {selectOptions}
+                                    </select>
+                                </div>
+                                <small className='text-sm'>Ask your question to specific community</small>
                             </div>
                             <div className='d-flex flex-column mb-4 '>
-                                <label>Title :</label>
+                                <h5>Title :</h5>
                                 <input type="text" placeholder="Title here" id="title" className="Title" />
-                                <h5>Be specific and imagine you're asking a question to another person</h5>
+                                <small>Be specific and imagine you're asking a question to another person</small>
                             </div>
                         </div>
                         <TextEditor />
@@ -284,7 +273,7 @@ export default function Discover() {
                             <Button variant="secondary" onClick={btnOpen}>
                                 Close
                             </Button>
-                            <Button variant="primary" onClick={btnOpen}>
+                            <Button variant="primary" onClick={handleAskThreadQuestions}>
                                 Publish
                             </Button>
                         </Modal.Footer>

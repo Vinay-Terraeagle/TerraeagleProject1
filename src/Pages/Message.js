@@ -25,8 +25,6 @@ export default function Message() {
   
   const openHandle = () => {
     setOpen(false);
-    
-
   }
   const showHandle = () => {
     setMsgSubject('')
@@ -37,10 +35,10 @@ export default function Message() {
   const hideConfirmPopup = () => setShow(false);
   
   const [deleteMsgId, setDeleteMsgId] = useState();
-
+  const [replyToMsgText, setReplyToMsgText] = useState();
   const [msgSubject, setMsgSubject] = useState('');
   const handleMsgSubjectChange = (event) => {
-    setMsgSubject(event.target.value);
+    setMsgSubject(event.currentTarget.value);
   }
 
   const [msgText, setMsgText] = useState('');
@@ -51,7 +49,12 @@ export default function Message() {
     setEditorState(state);
     setMsgText(draftToHtml(convertToRaw(editorState.getCurrentContent())))
   }
+
   
+  const replyOnChange = (event) => {
+    setReplyToMsgText(event.currentTarget.value)
+  }
+
   //API call to send the msg
   const handleSendMessage = (event) => {
     event.preventDefault();
@@ -78,7 +81,6 @@ export default function Message() {
           renderAllMessages()
       });
   }
-
   
   //API call to send the msg
   const handleDeleteMessage = (event) => {
@@ -174,14 +176,6 @@ export default function Message() {
       console.log(msgResponse)
       const leftMsgContainer = <Col className='readmsg'>
               <div className='sndmsg rounded'>
-                {/* <div className='snd-top p-1'>
-                  <div className='useravt d-flex align-items-center justify-content-between'> 
-                    <div className='d-flex align-items-center'>
-                    <img src={UserIcon} className="usravth" alt='/'/>
-                      <h6 className='mb-0 ml-2 fs-5'> 
-                      Rahul</h6>
-                    </div><ThreeDots/></div>
-                </div> */}
                   { 
                     msgResponse.data.data.message_details.map((item,i) =>
                       <div className='dmo-msg'  key={i}>
@@ -199,16 +193,21 @@ export default function Message() {
                       </div>
                     )
                   }
-                <div>
-                  <form action='#' className='mt-5'>
-                      <div className='txtrea'>
-                          <textarea className='textarea_editor form-control ' rows="15" placeholder="Enter message ..." name="message" required=""/>
-                      </div>
-                      <div className='editorbtn'>
-                        {/* <button  className='discard mr-1'> <X className='mr-1'/> Discard</button> */}
-                        <button className='send' onClick={replyToMessage}> <SendFill className='mr-1' data-msgid=""/> Send</button>
-                      </div>
-                  </form>
+                <div className='mt-5'>
+                    <div className='form-group'>
+                        <input 
+                        type="text" 
+                        name="message"  
+                        className='form-control' 
+                        placeholder="Enter message ..." 
+                        required="" 
+                        value={replyToMsgText}
+                        onChange={replyOnChange} />
+                    </div>
+                    <div className='editorbtn'>
+                      {/* <button  className='discard mr-1'> <X className='mr-1'/> Discard</button> */}
+                      <button className='send' onClick={replyToMessage} data-msgid={id}> <SendFill className='mr-1' /> Send</button>
+                    </div>
                 </div>
               </div>
             </Col>
@@ -217,11 +216,11 @@ export default function Message() {
   }
 
   const replyToMessage = (e) => {
-    e.preventDefault()
-    const id = 109 
-    const msgTextData = "qwerty"
+    // e.preventDefault()
+    const id = e.currentTarget.getAttribute("data-msgid") 
+    const msgTextData = {replyToMsgText}
     const dataToMsgReply = {
-      message :msgTextData, 
+      message :replyToMsgText, 
     }
     axios.put(`${BASE_URL}/messages/${id}`,dataToMsgReply, {
       headers: {
