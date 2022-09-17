@@ -1,10 +1,13 @@
 import React from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import TextEditor from '../Components/TextEditor'
 
 export default function ThreadsDetailedView() {
+    const threadResponse = useLocation();
+    console.log(threadResponse)
+    
   return (
     <React.Fragment>
         <Header/>
