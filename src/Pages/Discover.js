@@ -34,13 +34,20 @@ export default function Discover() {
         e.preventDefault();
         let path = '/ThreadsDetailedView';
         navigate(path);
+
+
+        
     }
 
     const handleClick = (selectedOption) => {
         console.log(selectedOption)
     }
 
-
+    //Filter based threads
+    const filterThreads = () => {
+        
+    }
+    
     // disciver api
 
     useEffect(() => {
@@ -60,7 +67,7 @@ export default function Discover() {
     useEffect(() => {
         if (threadsDataList !== undefined && threadsDataList.length > 0) {
             const threadsData = threadsDataList.map((item, i) => 
-                <div className='threads-left-section-wrapper p-4 mb-5' key={i} onClick={renderThreadsDetailedView} data-threadid={item.id}>
+                <div className='threads-left-section-wrapper p-4 mb-5' key={i} onClick={renderThreadsDetailedView} data-threadid={item.id} data-thread-slug={item.slug} data-channel-slug={item.channel.slug}>
                     <div className="row">
                         <div className="col-12 d-flex align-items-center">
                             <div className="mr-2" title="How do millet affect your metabolism?" >
@@ -138,30 +145,30 @@ export default function Discover() {
                                 <ArrowRight className='arrow-icon' />
                             </span>
                         </div>
-                        <div className="col-2 text-center">
-                            <Link to="/" className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
+                        <div className="col-2 text-center" onClick={filterThreads} >
+                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
                                 Workouts
-                            </Link>
+                            </div>
                         </div>
-                        <div className="col-2 text-center">
-                            <Link to="/" className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
+                        <div className="col-2 text-center" onClick={filterThreads} >
+                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
                                 Mental Wellness
-                            </Link>
+                            </div>
                         </div>
-                        <div className="col-2 text-center">
-                            <Link to="/" className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
+                        <div className="col-2 text-center" onClick={filterThreads} >
+                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
                                 Kids Nutrition
-                            </Link>
+                            </div>
                         </div>
-                        <div className="col-2 text-center">
-                            <Link to="/" className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
+                        <div className="col-2 text-center" onClick={filterThreads} >
+                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
                                 General
-                            </Link>
+                            </div>
                         </div>
-                        <div className="col-2 text-center">
-                            <Link to="/" className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
+                        <div className="col-2 text-center" onClick={filterThreads} >
+                            <div className="btn btn-sm rounded-pill btn-primary w-100 text-uppercase font-weight-bold" >
                                 Nutrition
-                            </Link>
+                            </div>
                         </div>
                     </div>
                     <div className='row'>

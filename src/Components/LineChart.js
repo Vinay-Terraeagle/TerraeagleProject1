@@ -12,7 +12,7 @@ import {
 } from 'chart.js';
 
 
-export default function LineChart(graphLabel, graphValues) {
+export default function LineChart(graphLabel) {
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -23,13 +23,13 @@ export default function LineChart(graphLabel, graphValues) {
         Legend
       );
     const labels = graphLabel.graphLabel
-    const graph_values=graphValues.graphValues;
+    const graph_values = graphLabel.graphValues;
     const data = {
       labels,
       datasets: [
         {
           label: 'Weight Data',
-          data: [53, 3, 3, 3, 3, 3, 3, 3],
+          data: graph_values,
           borderColor: 'rgb(255, 99, 132)',
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
         },

@@ -8,7 +8,6 @@ import { Trash } from 'react-bootstrap-icons'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import LineChart from './LineChart'
-import { Link } from 'react-router-dom'
 import { MyProgressFilterMenus } from './MyprogressFilterMenus'
 import { weekDropdown } from './weekDropdown'
 import Select from 'react-dropdown-select'
@@ -19,9 +18,6 @@ import Datetime from "react-datetime";
 import ImageUploading from "react-images-uploading"
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
-
-import NoRecipeFoundimage from '../assets/images/recipesnotfound.png'
-import NoWorkoutsFoundimage from '../assets/images/no-wrokouts-img.png'
 
 export default function MyprogressComponent(data) {
 
@@ -44,12 +40,11 @@ export default function MyprogressComponent(data) {
   const [filterOption, setFilterOption] = useState()
   const [graphLabel, setGraphLabel] = useState()
   const [graphValues, setGraphValues] = useState()
+
+
   const handleChange = (selectedOption) => {
     setFilterOption(selectedOption[0].label.toLowerCase())
-  }
-
-
-    
+    const selectedOption1 = selectedOption[0].label.toLowerCase()
     const client_name = "Deepthi22 (9511938081)"
     const config = {
       headers:{
@@ -59,20 +54,73 @@ export default function MyprogressComponent(data) {
     const data = {
       client_name: client_name,
       total_days : 30, 
-      measure_type : 'weight'
+      measure_type : selectedOption1
     }
 
     axios.post(`${BASE_URL}/measurements/filter`, data, config)
     .then((response) => {
         console.log(response)
-        setGraphLabel(response.data.data.original.weight.labels)
-        setGraphValues(response.data.data.original.weight.values)
+        switch(selectedOption1) {
+          case 'thighs':
+            setGraphLabel(response.data.data.original.thighs.labels)
+            setGraphValues(response.data.data.original.thighs.values)
+            return
+          case 'arms':
+            setGraphLabel(response.data.data.original.arms.labels)
+            setGraphValues(response.data.data.original.arms.values)
+            return
+          case 'hips':
+            setGraphLabel(response.data.data.original.hips.labels)
+            setGraphValues(response.data.data.original.hips.values)
+            return
+          case 'neck':
+            setGraphLabel(response.data.data.original.neck.labels)
+            setGraphValues(response.data.data.original.neck.values)
+            return
+          case 'vf':
+            setGraphLabel(response.data.data.original.vf.labels)
+            setGraphValues(response.data.data.original.vf.values)
+            return
+          case 'wrist':
+            setGraphLabel(response.data.data.original.wrist.labels)
+            setGraphValues(response.data.data.original.wrist.values)
+            return
+          case 'chest':
+            setGraphLabel(response.data.data.original.chest.labels)
+            setGraphValues(response.data.data.original.chest.values)
+            return
+          case 'biceps':
+            setGraphLabel(response.data.data.original.biceps.labels)
+            setGraphValues(response.data.data.original.biceps.values)
+            return
+          case 'body_age':
+            setGraphLabel(response.data.data.original.body_age.labels)
+            setGraphValues(response.data.data.original.body_age.values)
+            return
+          case 'waist':
+            setGraphLabel(response.data.data.original.waist.labels)
+            setGraphValues(response.data.data.original.waist.values)
+            return
+          case 'body_fat':
+            setGraphLabel(response.data.data.original.body_fat.labels)
+            setGraphValues(response.data.data.original.body_fat.values)
+            return
+          case 'muscle_mass':
+            setGraphLabel(response.data.data.original.muscle_mass.labels)
+            setGraphValues(response.data.data.original.muscle_mass.values)
+            return
+          default:
+            setGraphLabel(response.data.data.original.weight.labels)
+            setGraphValues(response.data.data.original.weight.values)
+            return
+        }
+       
     });
-
+  }
 
   // week dropdown
   const [weekFilterDropdown, setweekFilterDropdown] = useState();
-  const WeekhandleChange = (WeekselectedOption) => {
+  const weekHandleChange = (WeekselectedOption) => {
     setweekFilterDropdown(WeekselectedOption[0].label.toLowerCase())
   }
 
@@ -277,7 +325,6 @@ export default function MyprogressComponent(data) {
     console.log("sdfsdfsdfsdf" + pictureFiles)
   }
 
-
   const maxNumber = 69;
   const [frontImage, setFrontImage] = React.useState([]);
   const onFrontImgChange = (imageList, addUpdateIndex) => {
@@ -294,35 +341,10 @@ export default function MyprogressComponent(data) {
     setSideImage(imageList);
   };
 
-  // Graph Update onclick
-
-  const graphUpdate = () => {
-
-
-
-  }
-
-
-  // useEffect(() => {
-  //   axios.post(`${BASE_URL}/measurements/filter`,params1,params2,{
-  //     headers: {
-  //       Authorization: TOKEN
-  //     }
-  //   }).then((response) => {
-  //     console.log(response)
-  //   }).catch((error) => {
-  //     console.log(error)
-  //   })
-  // },[]);
-
-
-
   return (
     <React.Fragment>
-
-
       <div className='container myprogress-container p-0'>
-        <div className='myprogress-filter-wrapper p-5'>
+        <div className='myprogress-filter-wrapper p-5 pb-0'>
           <div className="row mb-5 mt-3 search-filter-wrapper ">
             <div className="col-3 fs-18 filter-wrapper">Filter By:
               <span className="arrow-wrapper">
@@ -333,15 +355,15 @@ export default function MyprogressComponent(data) {
             </div>
 
             <div className='progress-filter-wrapper col-3 d-flex justify-content-between'>
-              <Select options={MyProgressFilterMenus} onChange={handleChange}></Select>
+              <Select options={MyProgressFilterMenus} value={MyProgressFilterMenus.value} onChange={handleChange}></Select>
             </div>
           </div>
         </div>
 
-        <div className='my-progress-wrapper p-5'>
+        <div className='my-progress-wrapper p-5 pt-0'>
           <div className='my-progress-history-section'>
             <div className='weekdropdown'>
-              <Select options={weekDropdown} onChange={handleChange}></Select>
+              <Select options={weekDropdown} onChange={weekHandleChange}></Select>
             </div>
             <div className='d-flex justify-content-between align-items-center'>
               <h4>Graph Data</h4>
@@ -349,7 +371,7 @@ export default function MyprogressComponent(data) {
             </div>
 
             <div className='graph-wrapper my-progress-section'>
-              <LineChart />
+              <LineChart graphLabel={graphLabel} graphValues={graphValues}/>
             </div>
           </div>
 
