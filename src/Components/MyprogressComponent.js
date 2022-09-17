@@ -452,7 +452,7 @@ export default function MyprogressComponent(data) {
                     <tr>
                       <th className='text-center'>FRONT</th>
                       <th className='text-center'>SIDE</th>
-                      <th className='text-center'>BACK</th>
+                      {/* <th className='text-center'>BACK</th> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -522,7 +522,7 @@ export default function MyprogressComponent(data) {
                         </ImageUploading>
 
                       </td>
-                      <td className='text-center'>
+                      {/* <td className='text-center'>
                         <ImageUploading
                           multiple={false}
                           value={sideImage}
@@ -553,7 +553,7 @@ export default function MyprogressComponent(data) {
                             </div>
                           )}
                         </ImageUploading>
-                      </td>
+                      </td> */}
                     </tr>
                   </tbody>
                 </table>

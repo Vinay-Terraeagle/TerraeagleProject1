@@ -13,7 +13,6 @@ export default function EventsView() {
         </div>
         <h2 className="mt-4"> Events </h2>
         <div className="events-container w-100 row justify-content-center pt-5 pb-5">
-
           <div
             className="events_card_wrapper m-4 col-4">
             <div className="event_img_wrapper">
