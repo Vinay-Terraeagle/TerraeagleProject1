@@ -44,7 +44,7 @@ export default function Talk_to_us() {
                           <h1>Trainer</h1>
                         </div>
                       </div>
-                      <div className="calo-crd">
+                      <div className={activelist === 'trainer' ? 'activeList calo-crd' : 'calo-crd'} onClick={() => setactivelist("activeList")}>
                         <div className='cl-icn'>
                           <img src={Doctor} className="doctoricon" alt='/' />
                         </div>
@@ -64,7 +64,6 @@ export default function Talk_to_us() {
                   </div>
                 </div>
               </section>
-              
             </Col>
           </Row>
         </Container>
