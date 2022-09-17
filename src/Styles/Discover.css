@@ -202,3 +202,9 @@
     padding:0 44px;
     padding-top: 20px;
 }
+.channel-names {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #f9f8f6;
+    border-radius: 6px;
+}
