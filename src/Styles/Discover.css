@@ -206,3 +206,7 @@
     border: 1px solid #f9f8f6;
     border-radius: 6px;
 }
+.trending-threads-question {
+    cursor: pointer;
+    color: #E06358;
+}
