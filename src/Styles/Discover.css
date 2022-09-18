@@ -187,7 +187,6 @@
 .channalform .Title {
     padding: 10px 10px;
     display: inline;
-    background: #f9f8f6;
     font-size: 13px;
     outline: none;
     font-weight: 500;
@@ -195,7 +194,6 @@
     border-radius: 10px;
     margin: 8px 0;
     font-family: 'Inter', sans-serif;
-    box-shadow: rgb(99 99 99 / 8%) 0px 2px 8px 0px;
 }
 
 .question-body {
