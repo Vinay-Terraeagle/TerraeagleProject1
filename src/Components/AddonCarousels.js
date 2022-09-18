@@ -25,6 +25,7 @@ export default function AddonCarousels(subscriptionLists) {
   const handleUpgradeClick = () => {
     navigateToSubscription('/BloodBiomarker')
   }
+  
   useEffect(() => {
     if(localStorage.getItem('subscriptionBasedVisibility') !== undefined) {
       const subscriptioninfo = JSON.parse(localStorage.getItem('subscriptionBasedVisibility'))

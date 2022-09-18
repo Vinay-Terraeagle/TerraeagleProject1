@@ -14,9 +14,9 @@ import Select from 'react-dropdown-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
-
+// import ImageUploader from "react-images-upload";
 import ImageUploading from "react-images-uploading"
-import ReactBeforeSliderComponent from 'react-before-after-slider-component';currentFrontImg
+import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 
 export default function MyprogressComponent(data) {
@@ -141,13 +141,13 @@ export default function MyprogressComponent(data) {
   }
 
 
-  // const [currentBackImg, setCurrentBackImg] = useState()
-  // const [currentFrontImg, setCurrentFrontImg] = useState()
-  // const [currentSideImg, setCurrentSideImg] = useState()
+  const [currentBackImg, setCurrentBackImg] = useState()
+  const [currentFrontImg, setCurrentFrontImg] = useState()
+  const [currentSideImg, setCurrentSideImg] = useState()
 
-  // const [initialBackImg, setInitialBackImg] = useState()
-  // const [initialFrontImg, setInitialFrontImg] = useState()
-  // const [initialSideImg, setInitialSideImg] = useState()
+  const [initialBackImg, setInitialBackImg] = useState()
+  const [initialFrontImg, setInitialFrontImg] = useState()
+  const [initialSideImg, setInitialSideImg] = useState()
 
 
   useEffect(() => {
@@ -320,10 +320,10 @@ export default function MyprogressComponent(data) {
   }
 
 
-  // const [images1, setImages1] = useState()
-  // const onDrop = (pictureFiles, pictureDataURLs) => {
-  //   console.log("sdfsdfsdfsdf" + pictureFiles)
-  // }
+  const [images1, setImages1] = useState()
+  const onDrop = (pictureFiles, pictureDataURLs) => {
+    console.log("sdfsdfsdfsdf" + pictureFiles)
+  }
 
   const maxNumber = 69;
   const [frontImage, setFrontImage] = React.useState([]);
@@ -571,12 +571,12 @@ export default function MyprogressComponent(data) {
               {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
             </div>
             <div className='current-shape my-progress-section'>
-            <div className="body-shapde">
-              <div className='p-1'>
+            <div className='comparebodyshape-wrapper'>
+              <div>
               <h4>Compare Your body Shape</h4>
               </div>
               <div className='d-flex justify-content-between comparecontainer'>
-              <h4>Before</h4>
+              <h4>before</h4>
               <h4>After</h4>
               </div>
                 <ReactBeforeSliderComponent
