@@ -14,9 +14,9 @@ import Select from 'react-dropdown-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
-// import ImageUploader from "react-images-upload";
+
 import ImageUploading from "react-images-uploading"
-import ReactBeforeSliderComponent from 'react-before-after-slider-component';
+import ReactBeforeSliderComponent from 'react-before-after-slider-component';currentFrontImg
 import 'react-before-after-slider-component/dist/build.css';
 
 export default function MyprogressComponent(data) {
@@ -141,13 +141,13 @@ export default function MyprogressComponent(data) {
   }
 
 
-  const [currentBackImg, setCurrentBackImg] = useState()
-  const [currentFrontImg, setCurrentFrontImg] = useState()
-  const [currentSideImg, setCurrentSideImg] = useState()
+  // const [currentBackImg, setCurrentBackImg] = useState()
+  // const [currentFrontImg, setCurrentFrontImg] = useState()
+  // const [currentSideImg, setCurrentSideImg] = useState()
 
-  const [initialBackImg, setInitialBackImg] = useState()
-  const [initialFrontImg, setInitialFrontImg] = useState()
-  const [initialSideImg, setInitialSideImg] = useState()
+  // const [initialBackImg, setInitialBackImg] = useState()
+  // const [initialFrontImg, setInitialFrontImg] = useState()
+  // const [initialSideImg, setInitialSideImg] = useState()
 
 
   useEffect(() => {
@@ -320,10 +320,10 @@ export default function MyprogressComponent(data) {
   }
 
 
-  const [images1, setImages1] = useState()
-  const onDrop = (pictureFiles, pictureDataURLs) => {
-    console.log("sdfsdfsdfsdf" + pictureFiles)
-  }
+  // const [images1, setImages1] = useState()
+  // const onDrop = (pictureFiles, pictureDataURLs) => {
+  //   console.log("sdfsdfsdfsdf" + pictureFiles)
+  // }
 
   const maxNumber = 69;
   const [frontImage, setFrontImage] = React.useState([]);
@@ -442,7 +442,7 @@ export default function MyprogressComponent(data) {
 
           <div className='my-progress-initial-section'>
             <div className='d-flex justify-content-between align-items-center'>
-              <h4>Before</h4>
+              <h4>Upload Your Images</h4>
               {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
             </div>
             <div className='initial-shape my-progress-section'>
@@ -483,7 +483,7 @@ export default function MyprogressComponent(data) {
                                 onClick={onImageUpload}
                                 {...dragProps}
                               >
-                                Upload Back Image
+                                Upload Front Image
                               </button>
                             </div>
                           )}
@@ -515,7 +515,7 @@ export default function MyprogressComponent(data) {
                                 onClick={onImageUpload}
                                 {...dragProps}
                               >
-                                Upload Front Image
+                                Upload Side Image
                               </button>
                             </div>
                           )}
@@ -557,6 +557,9 @@ export default function MyprogressComponent(data) {
                     </tr>
                   </tbody>
                 </table>
+                <div className='d-flex justify-content-center'>
+                      <button className='btn-compare'>Compare</button>
+                  </div>
               </div>
             </div>
           </div>
@@ -564,10 +567,22 @@ export default function MyprogressComponent(data) {
 
           <div className='my-progress-current-section'>
             <div className='d-flex justify-content-between align-items-center'>
-              <h4>After</h4>
+          
               {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
             </div>
             <div className='current-shape my-progress-section'>
+            <div className="body-shapde">
+              <div className='p-1'>
+              <h4>Compare Your body Shape</h4>
+              </div>
+              <div className='d-flex justify-content-between comparecontainer'>
+              <h4>Before</h4>
+              <h4>After</h4>
+              </div>
+                <ReactBeforeSliderComponent
+                firstImage={FirstImage}
+                secondImage={SecondImage} />
+                </div>
 
               {/* <div className="table-responsive">
                     <table className="table header-border">
@@ -600,10 +615,7 @@ export default function MyprogressComponent(data) {
                         </tbody>
                     </table>
                 </div> */}
-              <ReactBeforeSliderComponent
-                firstImage={FirstImage}
-                secondImage={SecondImage} />
-
+                
             </div>
           </div>
         </div>

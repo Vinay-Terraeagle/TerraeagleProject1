@@ -158,3 +158,29 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.comparecontainer {
+    padding: 10px;
+}
+
+.btn-compare {
+    margin: 1rem;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    border-radius: 10px;
+    background: #fc5b4d;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-compare:hover {
+    background-color: #fc5b4d;
+}
+
+/* .body-shapde {
+    display: none;
+} */
+/* 
+current-shape my-progress-section */
