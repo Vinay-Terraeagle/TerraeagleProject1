@@ -442,7 +442,7 @@ export default function MyprogressComponent(data) {
 
           <div className='my-progress-initial-section'>
             <div className='d-flex justify-content-between align-items-center'>
-              <h4>Before</h4>
+              <h4>Upload Your Images</h4>
               {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
             </div>
             <div className='initial-shape my-progress-section'>
@@ -483,7 +483,7 @@ export default function MyprogressComponent(data) {
                                 onClick={onImageUpload}
                                 {...dragProps}
                               >
-                                Upload Back Image
+                                Upload Front Image
                               </button>
                             </div>
                           )}
@@ -515,7 +515,7 @@ export default function MyprogressComponent(data) {
                                 onClick={onImageUpload}
                                 {...dragProps}
                               >
-                                Upload Front Image
+                                Upload Side Image
                               </button>
                             </div>
                           )}
@@ -557,6 +557,9 @@ export default function MyprogressComponent(data) {
                     </tr>
                   </tbody>
                 </table>
+                <div className='d-flex justify-content-center'>
+                      <button className='btn-compare'>Compare</button>
+                  </div>
               </div>
             </div>
           </div>
@@ -564,10 +567,22 @@ export default function MyprogressComponent(data) {
 
           <div className='my-progress-current-section'>
             <div className='d-flex justify-content-between align-items-center'>
-              <h4>After</h4>
+          
               {/* <button type="button" className="btn btn-red btn-md mb-3" data-toggle="modal" data-target="#uploadModal" onClick={handleShow} >Upload Image</button> */}
             </div>
             <div className='current-shape my-progress-section'>
+            <div className='comparebodyshape-wrapper'>
+              <div>
+              <h4>Compare Your body Shape</h4>
+              </div>
+              <div className='d-flex justify-content-between comparecontainer'>
+              <h4>before</h4>
+              <h4>After</h4>
+              </div>
+                <ReactBeforeSliderComponent
+                firstImage={FirstImage}
+                secondImage={SecondImage} />
+                </div>
 
               {/* <div className="table-responsive">
                     <table className="table header-border">
@@ -600,10 +615,7 @@ export default function MyprogressComponent(data) {
                         </tbody>
                     </table>
                 </div> */}
-              <ReactBeforeSliderComponent
-                firstImage={FirstImage}
-                secondImage={SecondImage} />
-
+                
             </div>
           </div>
         </div>

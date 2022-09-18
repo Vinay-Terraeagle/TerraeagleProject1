@@ -95,7 +95,7 @@ export default function Myplan() {
       <Header/>
       <section className='myplan'>
         <div className='container'>
-          <div></div>
+          
           <div className='plan-col'>
             <div className='plan-txtrow'>
               <div className='plans-txts'>
