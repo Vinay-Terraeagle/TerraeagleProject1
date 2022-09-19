@@ -224,6 +224,25 @@ export default function Discover() {
         })
     }
 
+
+    // Search thread by text
+    const handleSearchBtnClick = () => {
+        const dataToSearchThreads = {
+            q: "",
+            page: ""
+        }
+        axios.get(`${BASE_URL}/threads`,dataToSearchThreads, {
+            headers: {
+                Authorization: TOKEN
+            }
+        }).then((response) => { 
+            console.log(response)
+            
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
     return (
         <>
             <Header />
@@ -231,18 +250,19 @@ export default function Discover() {
                 <h2 className="mt-4"> Threads</h2>
                 <div className='threads-container w-100'>
                     <div className='row mt-3'>
-                        <form method="GET" action="" className="d-inline order-md-1">
+                        {/* <form method="GET" action="" className="d-inline order-md-1"> */}
                             <div className="sidebar-item sidebar-search col-6">
                                 <div className="input-group">
                                     <input type="text" name="q" id="q" required="" className="form-control search-menu" placeholder="Search Wellness..." autoComplete="off" />
                                     <div className="input-group-append">
-                                        <button type="submit" className="input-group-text search-menu-icon">
+                                        <button type="button" className="input-group-text search-menu-icon" 
+                                        onClick={handleSearchBtnClick}>
                                             <Search />
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {/* </form> */}
                     </div>
                     <div className='row mb-5 mt-3 search-filter-wrapper'>
                         <div className="col-2 fs-18 filter-wrapper">
