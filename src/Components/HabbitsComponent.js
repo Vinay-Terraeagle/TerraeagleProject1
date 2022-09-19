@@ -3,7 +3,7 @@ import NoDataFound from './NoDataFound/NoDataFound';
 // import ReactDOM from "react-dom";
 
 export default function HabbitsComponent(habitsAssigned) {
-    console.log(habitsAssigned.habitsAssigned.habits_done_today)
+    // console.log(habitsAssigned.habitsAssigned.habits_done_today)
     // State with list of all checked item
     const [checked, setChecked] = useState([]);
 

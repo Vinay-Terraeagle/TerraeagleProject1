@@ -280,7 +280,7 @@
     border: 1px solid;
     margin: 10px auto;
     border-color: #ECE9E5;
-    box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
+    box-shadow: rgb(159 159 193 / 20%) 0px 0px 20px;
 }
 
 .tdy-ln-mn{
@@ -296,7 +296,7 @@
     margin-top: 3rem !important;
     border-color: #ECE9E5;
     border-top-right-radius: 100px;
-        box-shadow: rgb(159 159 193 / 55%) 0px 0px 20px;
+        box-shadow: rgb(159 159 193 / 20%) 0px 0px 20px;
 }
 
 .ln-txb, .dn-txb {
