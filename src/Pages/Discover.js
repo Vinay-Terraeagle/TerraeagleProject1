@@ -11,10 +11,15 @@ import '../Styles/Discover.css'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import TextEditor from '../Components/TextEditor'
+// import TextEditor from '../Components/TextEditor'
 import axios from 'axios';
 import { BASE_URL, TOKEN } from '../Backend/config';
 import moment from 'moment';
+
+import { Editor } from "react-draft-wysiwyg"
+import { EditorState, convertToRaw } from "draft-js"
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
+import draftToHtml from "draftjs-to-html"
 
 export default function Discover() {
 
@@ -36,7 +41,8 @@ export default function Discover() {
         }).then((response) => {
             console.log(response.data.data.channels)
             const optionsList = response.data.data.channels.map((item, i) => 
-                <option id={item.id} slug={item.slug} >{item.name} </option>
+                <option id={item.id} slug={item.slug} name="{item.slug}" 
+                value={item.id} >{item.name} </option>
             )
             setSelectOptions(optionsList)
 
@@ -44,17 +50,42 @@ export default function Discover() {
             console.log(error)
         })
     }
-    
 
     // Rendering the Threads on loading the threads page
     useEffect(() => {
+        requestToGetAllThreads()
+    },[]);
+
+    const requestToGetAllThreads = () => {
         axios.get(`${BASE_URL}/threads`, {
             headers: {
                 Authorization: TOKEN
             }
         }).then((response) => {
             console.log(response.data.channels);
-            const threadsData = response.data.data.threads
+            renderAllThreads(response)
+
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+    // Rendering the threads based on the filter/Channel
+    const filterThreads = (event) => {
+        const channel = event.currentTarget.getAttribute('data-channel-slug')
+        axios.get(`${BASE_URL}/threads/${channel}`, {
+            headers: {
+                Authorization: TOKEN
+            }
+        }).then((response) => { 
+            console.log(response)
+            renderAllThreads(response)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const renderAllThreads = (response) => {
+        const threadsData = response.data.data.threads
             if (threadsData !== undefined && threadsData.length > 0) {
                 const threadsLists = threadsData.map((item, i) => 
                 <div className='threads-left-section-wrapper p-4 mb-5' key={i} onClick={renderThreadsDetailedView} data-threadid={item.id} data-thread-slug={item.slug} data-channel-slug={item.channel.slug}>
@@ -85,7 +116,7 @@ export default function Discover() {
                                 <div className="d-flex flex-column ml-2">
                                     {item.creator.first_name}
                                     <small className="text-capitalize font-weight-bold text-muted">
-                                    {moment(item.creator.created_at).fromNow()}
+                                    {moment(item.created_at).fromNow()}
                                     </small>
                                 </div>
                             </div>
@@ -105,7 +136,7 @@ export default function Discover() {
             if (trendingThreadsData !== undefined && trendingThreadsData.length > 0) {
                 const trendingThreadsLists = trendingThreadsData.map((item, i) => 
                     <li className="list-group-item" key={i}>
-                        <div data-thread-slug={item.slug} data-channel-slug={item.channel.slug}>
+                        <div data-thread-slug={item.slug} data-channel-slug={item.channel.slug} onClick={renderThreadsDetailedView} className="trending-threads-question">
                             {item.title}
                         </div>
                     </li>
@@ -124,27 +155,6 @@ export default function Discover() {
                 )
                 setChannelList(channelDataLists)
             }
-
-        }).catch((error) => {
-            console.log(error)
-        })
-    },[]);
-
-
-    // Rendering the threads based on the filter/Channel
-    const filterThreads = (event) => {
-        const channel = event.currentTarget.getAttribute('data-channel-slug')
-        axios.get(`${BASE_URL}/threads/${channel}`, {
-            headers: {
-                Authorization: TOKEN
-            }
-        }).then((response) => { 
-            console.log(response)
-
-
-        }).catch((error) => {
-            console.log(error)
-        })
     }
 
     // Render the threads in detail
@@ -159,36 +169,75 @@ export default function Discover() {
                 Authorization: TOKEN
             }
         }).then((response) => { 
-            console.log(response)
-            let path = '/ThreadsDetailedView';
-            navigate(path, { threadResponse:response });
-            
+            navigate("/ThreadsDetailedView",{
+                state:{
+                    id:JSON.stringify(response),
+                    thread:thread.toString(),
+                    channel:channel.toString()
+                }
+            })
         }).catch((error) => {
             console.log(error)
         })
 
         
     }
+   
+    const [threadTitle, setThreadTitle] = useState()
+    const [threadBody, setThreadBody] = useState('')
+    const [selectedElement, setSelectedElement] = useState([])
+    const handleChannelChange = (event) => {
+        setSelectedElement(event.target.value)
+    }
+    
+    const threadTitleOnchange = (event) => {
+        setThreadTitle(event.currentTarget.value)
+    }
 
-    const [channelOption, setChannelOption] = useState()
-    const channelChange = (event) => {
-        setChannelOption(event.currentTarget)
+    const [editorState, setEditorState] = useState(
+        () => EditorState.createEmpty()
+    )
+
+    const handleEditorChange = (state) => {
+        setEditorState(state);
+        setThreadBody(draftToHtml(convertToRaw(editorState.getCurrentContent())))
     }
     // Ask question related to thread
     const handleAskThreadQuestions = () => {
-
         const dataToThreadsQuestion = {
-            channel_id: '',
-            title : '', 
-            body : ''
-          }
+            channel_id: selectedElement,
+            title : threadTitle, 
+            body : threadBody
+        }
         
         axios.post(`${BASE_URL}/threads/store`,dataToThreadsQuestion, {
             headers: {
                 Authorization: TOKEN
             }
         }).then((response) => { 
+            
+            activeBtn(false) 
+            requestToGetAllThreads()
+
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+
+    // Search thread by text
+    const handleSearchBtnClick = () => {
+        const dataToSearchThreads = {
+            q: "",
+            page: ""
+        }
+        axios.get(`${BASE_URL}/threads`,dataToSearchThreads, {
+            headers: {
+                Authorization: TOKEN
+            }
+        }).then((response) => { 
             console.log(response)
+            
         }).catch((error) => {
             console.log(error)
         })
@@ -201,18 +250,19 @@ export default function Discover() {
                 <h2 className="mt-4"> Threads</h2>
                 <div className='threads-container w-100'>
                     <div className='row mt-3'>
-                        <form method="GET" action="" className="d-inline order-md-1">
+                        {/* <form method="GET" action="" className="d-inline order-md-1"> */}
                             <div className="sidebar-item sidebar-search col-6">
                                 <div className="input-group">
                                     <input type="text" name="q" id="q" required="" className="form-control search-menu" placeholder="Search Wellness..." autoComplete="off" />
                                     <div className="input-group-append">
-                                        <button type="submit" className="input-group-text search-menu-icon">
+                                        <button type="button" className="input-group-text search-menu-icon" 
+                                        onClick={handleSearchBtnClick}>
                                             <Search />
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        {/* </form> */}
                     </div>
                     <div className='row mb-5 mt-3 search-filter-wrapper'>
                         <div className="col-2 fs-18 filter-wrapper">
@@ -256,7 +306,8 @@ export default function Discover() {
                                 <h5>Choose Channel:</h5>
                                 {/* <Select className='mb-2' options={channelListOption} onChange={handleClick} /> */}
                                 <div>
-                                    <select className='mb-2 channel-names' onChange={channelChange}>
+                                    <select className='mb-2 channel-names' onChange={handleChannelChange}
+                                    value={selectedElement}>
                                         {selectOptions}
                                     </select>
                                 </div>
@@ -264,11 +315,16 @@ export default function Discover() {
                             </div>
                             <div className='d-flex flex-column mb-4 '>
                                 <h5>Title :</h5>
-                                <input type="text" placeholder="Title here" id="title" className="Title" />
+                                <input type="text" placeholder="Title here" id="title" className="Title" onChange={threadTitleOnchange} value={threadTitle}/>
                                 <small>Be specific and imagine you're asking a question to another person</small>
                             </div>
                         </div>
-                        <TextEditor />
+                        <Editor 
+                            editorState={editorState}
+                            toolbarClassName="toolbarClassName"
+                            wrapperClassName="wrapperClassName"
+                            editorClassName="editorClassName"
+                            onEditorStateChange={handleEditorChange} />
                         <Modal.Footer>
                             <Button variant="secondary" onClick={btnOpen}>
                                 Close
@@ -280,14 +336,6 @@ export default function Discover() {
                     </form>
 
                 </Modal.Body>
-                {/* <Modal.Footer>
-              <Button variant="secondary" onClick={btnOpen}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={btnOpen}>
-                Raise Ticket
-              </Button>
-            </Modal.Footer> */}
             </Modal>
 
         </>

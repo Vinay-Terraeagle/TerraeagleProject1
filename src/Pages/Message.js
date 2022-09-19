@@ -50,10 +50,13 @@ export default function Message() {
     setMsgText(draftToHtml(convertToRaw(editorState.getCurrentContent())))
   }
 
-  
-  const replyOnChange = (event) => {
-    setReplyToMsgText(event.currentTarget.value)
-  }
+  const [rplyToMsg,setRplyToMsg] = useState();
+  // const replyOnChange = (event) => {
+    
+  //   console.log(replyToMsgText);
+  //   setReplyToMsgText(5)
+  //   console.log(replyToMsgText);
+  // }
 
   //API call to send the msg
   const handleSendMessage = (event) => {
@@ -159,6 +162,7 @@ export default function Message() {
         setMessageDetails('')
         setShowNoMessagesInfo('show-no-msgs')
       }
+
     });
   }
 
@@ -201,8 +205,12 @@ export default function Message() {
                         className='form-control' 
                         placeholder="Enter message ..." 
                         required="" 
-                        value={replyToMsgText}
-                        onChange={replyOnChange} />
+                        value={rplyToMsg}
+                        onChange = {(event) => {
+                          setRplyToMsg(event.target.value)
+                          console.log({rplyToMsg})
+                        }}
+                          />
                     </div>
                     <div className='editorbtn'>
                       {/* <button  className='discard mr-1'> <X className='mr-1'/> Discard</button> */}

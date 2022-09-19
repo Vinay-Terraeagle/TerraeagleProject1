@@ -187,3 +187,6 @@
 } */
 /* 
 current-shape my-progress-section */
+.habits-container .no-data-found-img {
+    transform: scale(1.5);
+}

@@ -1,12 +1,106 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
-import { Link, useLocation } from 'react-router-dom'
-import TextEditor from '../Components/TextEditor'
+import { useLocation } from 'react-router-dom'
+// import TextEditor from '../Components/TextEditor'
+import moment from 'moment'
+import axios from 'axios';
+import { BASE_URL, TOKEN } from '../Backend/config';
+import { Editor } from "react-draft-wysiwyg"
+import { EditorState, convertToRaw } from "draft-js"
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
+import draftToHtml from "draftjs-to-html"
 
 export default function ThreadsDetailedView() {
-    const threadResponse = useLocation();
-    console.log(threadResponse)
+
+    const [threadsReply, setThreadsReply] = useState()
+    const location =  useLocation();
+    const [channelSlug, setChannelSlug] = useState()
+    const [threadSlug, setThreadSlug] = useState()
+    useEffect(() => {
+        const threadResponse=JSON.parse(location.state.id);
+        setChannelSlug(location.state.channel)
+        setThreadSlug(location.state.thread)
+        renderAllThreadsReply(threadResponse)
+        
+    },[location]);
+
+    const renderAllThreadsReply = (threadResponse) => {
+        if(threadResponse.data.data.replies !== undefined && threadResponse.data.data.replies.length > 0) {
+            const threadsReplyList = threadResponse.data.data.replies.map((item, i) =>
+                <div className="card mb-4" key={i}>
+                    <div className="card-header p-3">
+                        <div className='row align-items-center'>
+                            <div  className="col-6 d-flex align-items-center">
+                                <div className="d-flex flex-column">
+                                    <div className="mr-2 fs-22 text-white">{item.owner.name}</div> 
+                                    <small  className="mr-2 text-capitalize fw-bold text-white">said {
+                                    moment(item.created_at).fromNow()
+                                    }...</small>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <button type="submit" className="btn btn-sm bg-white rounded-pill">
+                                        <span className="">{item.favouritesCount}</span> 
+                                        <span className="fa fa-heart"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-body p-5">
+                        {item.body}
+                    </div>
+                    <div className="card-footer p-4">
+                        <div>
+                            This thread was published {moment(item.thread.created_at).fromNow()} by {item.thread.creator.name} and currently has <span>{item.thread.replies_count} reply</span>
+                        </div>
+                    </div>
+                </div>
+            )
+            setThreadsReply(threadsReplyList)
+        } else {
+            setThreadsReply('')
+        }
+    }
+    const [threadReply, setThreadReply] = useState('')
+    const [editorState, setEditorState] = useState(
+        () => EditorState.createEmpty()
+    )
+
+    const handleEditorChange = (state) => {
+        setEditorState(state);
+        setThreadReply(draftToHtml(convertToRaw(editorState.getCurrentContent())))
+    }
+    const handleReplyToThread = () => {
+        console.log(threadReply)
+        const replyData = {
+            body: threadReply
+        }
+        const channel = channelSlug
+        const thread = threadSlug
+
+        axios.post(`${BASE_URL}/threads/${channel}/${thread}/replies`, replyData, {
+            headers: {
+                Authorization: TOKEN
+            }
+        }).then((response) => { 
+            console.log("qweqweqwe " +response)
+
+            axios.get(`${BASE_URL}/threads/${channel}/${thread}`, {
+                headers: {
+                    Authorization: TOKEN
+                }
+            }).then((response) => { 
+                renderAllThreadsReply(response)
+            }).catch((error) => {
+                console.log(error)
+            })
+
+
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
     
   return (
     <React.Fragment>
@@ -18,52 +112,29 @@ export default function ThreadsDetailedView() {
                     <div className="col-10 mt-4">
                         <div className='row mb-4'>
                             <div className="col-12 d-flex justify-content-end">
-                                <button className="btn rounded-pill btn-sm btn-green mr-2">
+                                {/* <button className="btn rounded-pill btn-sm btn-green mr-2">
                                     <span className="text-white fw-bold">Subscribe</span>
-                                </button> 
+                                </button>  */}
                                 {/* <button className="btn rounded-pill btn-sm btn-blue mr-2"><span className="fw-bold text-white">Unlocked</span></button> */}
                             </div>
                         </div>
 
-                        <div className="card mb-4">
-                            <div className="card-header p-3">
-
-                                <div className='row align-items-center'>
-                                    <div  className="col-6 d-flex align-items-center">
-                                        <div className="d-flex flex-column">
-                                            <Link to="/" className="mr-2 fs-22 text-white">Sanjana</Link> 
-                                            <small  className="mr-2 text-capitalize fw-bold text-white">said 2 days ago...</small>
-                                        </div>
-                                        <div className="d-flex align-items-center">
-                                            <button type="submit" className="btn btn-sm bg-white rounded-pill">
-                                                <span className="">0</span> 
-                                                <span className="fa fa-heart"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-
-                            </div>
-                            <div className="card-body p-5">
-                                <div>
-                                    Phosphorus, iron, calcium, zinc, and potassium are essential elements needed for the body to operate properly and are abundant in millets. Eating a balanced diet makes you energized naturally and motivate you to burn fat.
-                                </div>
-                                <div>
-                                    Magnesium is abundant in millet, which helps to prevent cardiac disorders. Additionally, it is essential for controlling blood pressure and avoiding heart attacks. Since there are so many antioxidants present, it also helps the body get rid of free radicals and manage oxidative stress. Millets are advised for diabetics as well because they are low in calories and can be useful in lowering high blood sugar levels. Therefore, it can be inferred that consuming this extremely nutritious food regularly can raise your health quotient.
-                                </div>
-                            </div>
-                            <div className="card-footer p-4">
-                                <div>
-                                     This thread was published 2 days ago by sanjana and currently has <span>1 reply</span>
-                                </div>
-                            </div>
-                        </div>
+                        {threadsReply}
 
                         <div className="card mt-5">
-                            <div className="card-body"> <TextEditor /></div>
+                            <div className="card-body"> 
+                                <Editor 
+                                editorState={editorState}
+                                toolbarClassName="toolbarClassName"
+                                wrapperClassName="wrapperClassName"
+                                editorClassName="editorClassName"
+                                onEditorStateChange={handleEditorChange} />
+                            </div>
                             <div className="card-footer pt-3 pb-3">
-                                <button className='btn rounded-pill btn-blue text-white'>
+                                <button className='btn rounded-pill btn-blue text-white' 
+                                onClick={handleReplyToThread} 
+                                data-thread-slug={threadSlug}
+                                data-channel-slug={channelSlug} >
                                     Post
                                 </button>
                             </div>
