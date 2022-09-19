@@ -167,16 +167,19 @@
     margin: 1rem;
     padding: 5px 15px;
     outline: none;
-    border: none;
+    border: 2px solid transparent;
     font-size: 17px;
     border-radius: 10px;
     background: #fc5b4d;
     color: #fff;
     cursor: pointer;
+    transition: all .3s ease-in-out;
 }
 
 .btn-compare:hover {
-    background-color: #fc5b4d;
+    background-color: transparent;
+    color: #fc5b4d;
+    border: 2px solid #fc5b4d;
 }
 
 /* .body-shapde {

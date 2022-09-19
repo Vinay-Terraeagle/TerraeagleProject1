@@ -11,7 +11,7 @@ export default function Purchase() {
             <Row>
                
                 {/* myplan */}
-                <div className='mpln row'>
+                <div className='mpln row mt-5'>
                   <div className='plncrd col-4'>
                     <div className='plns d-flex justify-content-between align-items-center'>
                     <div className='pln-info'>
