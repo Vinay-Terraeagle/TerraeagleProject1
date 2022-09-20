@@ -49,9 +49,6 @@ export default function Activeplan() {
                           <span className='expl d-flex justify-content-between'>87</span>
                         </div>
                       </div>
-                      {/* <div className='viewmore'>
-                          <button className='more'>View More <ArrowRightShort/></button>
-                      </div> */}
                     </div>
                   </div>
                   <div className='nxtcd ml-5'>

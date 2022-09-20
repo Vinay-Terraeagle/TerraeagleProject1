@@ -1,0 +1,131 @@
+.card-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+}
+
+.card-left {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 10px;
+}
+.card-name,
+.card-num,
+.voucher-num {
+    display: flex;
+    flex-direction: column;
+}
+.formsdata {
+    width: 30em;
+}
+
+.card-exp {
+    display: flex;
+    justify-content: space-between;
+}
+.card-exp label{
+    display: flex;
+}
+
+.discount span,
+.total span,
+.price span,
+.qty span {
+    color: gray;
+}
+
+.card-qty span{
+    font-size: 14px;
+}
+
+.total-price,
+.qty{
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 16px;
+}
+
+
+.cardform input {
+    padding: 15px 10px;
+    display: inline;
+    background: #f9f8f6;
+    font-size: 13px;
+    outline: none;
+    font-weight: 500;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    margin: 8px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.vouchers-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qty p {
+    max-width: 100px;
+}
+
+.total {
+    border-top: 1px solid #cfcfcf;
+    padding-top: 10px ;
+}
+
+.voucher {
+    display: flex;
+    width:max-content;
+    display: inline-flex;
+    padding:  8px 10px; 
+    height: 15% !important;
+    font-weight: 500;
+    align-items: center;
+    padding: 8px 40px;
+    border: 2px solid transparent;
+    outline: none;
+    background: #e06358;
+    color: var(--white-bg);
+    border-radius: 10px;
+    font-size: normal;
+    transition: all .3s ease-in-out;     
+}
+
+
+.voucher:hover {
+    border: 2px solid #e06358;
+    background: transparent;
+    color: #e06358;
+}
+
+.card-qty {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 24px;
+    cursor: pointer;
+    width: 50% !important;
+    min-height: auto;
+    min-width: 275px;
+    position: relative;
+    overflow: hidden;
+}
+
+.changeplan {
+    background: transparent;
+    padding: 8px 9px;
+    color: #e06358;
+    border: 2px solid #e06358;
+    outline: none;
+    border-radius: 8px;
+}
+
+.nxt {
+    background: #ffebda;
+    color: #ee9b8c;
+    padding: 8px 30px;
+    border: 2px solid #ee9b8c;
+    outline: none;
+    border-radius: 9px;
+}

@@ -37,6 +37,7 @@ import StrengthTraining from './Components/Workout/StrengthTraining'
 import EventsView from "./Pages/EventsView"
 import DailyHealthUpdate from "./Pages/DailyHealthUpdate";
 import Talk_to_us from './Components/TalkToUs/Talk_to_us'
+import Payment from "./Components/PaymentsPage/Payment";
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
         <Route path="/RaiseTicket" element={<RaiseTicket/>}/>
         <Route path="/Message" element={<Message/>}/>
         <Route path="/LeaderBoard" element={<LeaderBoard/>}/>
+        <Route path="/Payment" element={<Payment/>}/>
         {/* plans and Subscriptions section */}
         {/* <Route path="/MySubscriptions" element={<MySubscriptions/>}/> */}
         {/* Recipe Instructions */}
