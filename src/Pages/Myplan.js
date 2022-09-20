@@ -79,6 +79,7 @@ export default function Myplan() {
     const [todaysDate, setTodaysDate] = useState()
     const [assignedWorkouts, setAssignedWorkouts] = useState()
     const [habitsAssigned, setHabitsAssigned] = useState()
+    const [groceryList, setGroceryList] = useState()
     const [date, setDate] = useState()
     const [month, setMonth] = useState()
     const [year, setYear] = useState()
@@ -94,8 +95,14 @@ export default function Myplan() {
 
         setDietPlan(myplanResponse.data.data.my_plan_section_details.diet_plan)
         setTodaysDate(myplanResponse.data.data.my_plan_section_details.date)
+
         setAssignedWorkouts(myplanResponse.data.data.my_plan_section_details.workout_details)
+
         setHabitsAssigned(myplanResponse.data.data.my_plan_section_details.habit_details)
+
+        setGroceryList(myplanResponse.data.data.my_plan_section_details.grocery_list)
+        
+
        
         setDate(moment(todaysDate).format("DD"))
         setMonth(moment(todaysDate).format("MMMM"))
@@ -203,7 +210,7 @@ export default function Myplan() {
         </div>
       </section>
     {activeTab === "dietPlan" && dietPlan ? <DietPlanComponent myDietPlan={dietPlan}/> : ""}
-    {activeTab === "groceryList" && <GroceryListComponent/>}
+    {activeTab === "groceryList" && groceryList ? <GroceryListComponent groceryList={groceryList} /> : ""}
     {activeTab === "habits" && habitsAssigned ? <HabbitsComponent habitsAssigned={habitsAssigned} /> : ""}
     {activeTab === "exercise" && assignedWorkouts ? <ExcerciseComponent assignedWorkouts={assignedWorkouts} /> : ""}
     {activeTab === "myprogress" && <MyprogressComponent data={myprogressData}/>}

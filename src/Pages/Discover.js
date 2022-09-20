@@ -230,11 +230,12 @@ export default function Discover() {
     const handleOnChangeSearchText = (event) => {
         setSearchText(event.target.value)
     }
-    const handleSearchBtnClick = () => {
+    const handleSearchBtnClick = (event) => {
+        event.stopPropagation()
         const dataToSearchThreads = {
             q: searchText,
         }
-        axios.get(`${BASE_URL}/threads/search`,dataToSearchThreads, {
+        axios.get(`${BASE_URL}/thread_search`,dataToSearchThreads, {
             headers: {
                 Authorization: TOKEN
             }

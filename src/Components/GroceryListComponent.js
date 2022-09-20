@@ -1,107 +1,53 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Row, Col} from "react-bootstrap";
+import NoDataFound from './NoDataFound/NoDataFound';
 
 
-export default function GroceryListComponent() {
+export default function GroceryListComponent(groceryList) {
+  console.log(groceryList)
+
+  const [noGroceryList, setNoGroceryList] = useState(false)
+
+  if(groceryList.groceryList !== undefined && 
+    Array.isArray(groceryList.groceryList) && groceryList.groceryList.length === 0) {
+      setNoGroceryList(true)
+  }
+
   return (
     <React.Fragment>
       <div className="container grocery-list-container">
-        <h4 className='pb-5 grocery-list-label'>Your Grocery List !!!</h4>
+        <h4 className='pb-5 grocery-list-label'>Your Grocery List for {groceryList.groceryList?.week}</h4>
         <Row className='justify-content-center'>
           <Col className='col-6'>
-            <table className='fs-18'>
-              <thead>
-                <tr>
-                  <th scope="col">Vegetables</th>
-                  <th scope="col">3 items</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Onion</td>
-                  <td>30g</td>
-                </tr>
-                <tr>
-                  <td>Carrot</td>
-                  <td>10g</td>
-                </tr>
-                <tr>
-                  <td>Capsicum</td>
-                  <td>20g</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <table className='mt-4'>
-              <thead>
-                <tr>
-                  <th scope="col">Meat</th>
-                  <th scope="col">1 items</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-
-            <table className='mt-4'>
-              <thead>
-                <tr>
-                  <th scope="col">Grains</th>
-                  <th scope="col">3 items</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Rice</td>
-                  <td>30g</td>
-                </tr>
-                <tr>
-                  <td>Wheat</td>
-                  <td>10g</td>
-                </tr>
-                <tr>
-                  <td>Ragi</td>
-                  <td>20g</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <table className='mt-4'>
-              <thead>
-                <tr>
-                  <th scope="col">Dairy</th>
-                  <th scope="col">1 items</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-
-            <table className='mt-4'>
-              <thead>
-                <tr>
-                  <th scope="col">Others</th>
-                  <th scope="col">3 items</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Salt</td>
-                  <td>30g</td>
-                </tr>
-                <tr>
-                  <td>Apple</td>
-                  <td>10g</td>
-                </tr>
-                <tr>
-                  <td>Barbeque Sauce</td>
-                  <td>20g</td>
-                </tr>
-              </tbody>
-            </table>
+            {
+               Object.entries(groceryList.groceryList?.items).map((item,i) => {
+                  return (
+                    <table className='fs-18' key={i}>
+                      <thead>
+                        <tr>
+                          <th scope="col">{item[0]}</th>
+                          <th scope="col" className='text-align-right'>{item[1].length} Items</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {
+                          item[1].map((obj,i) => 
+                            <tr key={i}>
+                              <td scope="col">{obj.ingredient}</td>
+                              <td scope="col" className='text-align-right'>{obj.quantity}{obj.unit}</td>
+                            </tr>
+                          )
+                        }
+                      </tbody>
+                    </table>
+                  )
+               })
+            }
           </Col>
         </Row>
       </div>
+
+      {noGroceryList && <NoDataFound type="grocery"/>}
     </React.Fragment>
 
   )
