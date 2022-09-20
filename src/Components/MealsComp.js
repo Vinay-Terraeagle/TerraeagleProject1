@@ -9,11 +9,11 @@ import NoDataFound from './NoDataFound/NoDataFound'
 export default function MealsComp(mealDetails) {
 
     const MealSlider = {
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause:true,
+        // autoplay: true,
+        // autoplayTimeout: 3000,
+        // autoplayHoverPause:true,
         items:1,
-        loop:true,
+        // loop:true,
         // margin:50,
         responsive: {
             0: {
@@ -26,7 +26,7 @@ export default function MealsComp(mealDetails) {
                 items: 2,
             },
             1000: {
-                items: 1.8,
+                items: 2,
             },
         }
     } 
@@ -259,7 +259,7 @@ export default function MealsComp(mealDetails) {
           <div className='headpart'>
             <h1>Today Meals</h1>
           </div>
-          <div className="cml-carm d-flex justify-content-center  align-items-center h-100">
+          <div className="cml-carm">
             <div className={`cml-cards meal-data-wrapper ${noMealsData}`}>
               <OwlCarousel {...MealSlider}>
                 {breakfastData}
@@ -271,7 +271,11 @@ export default function MealsComp(mealDetails) {
                 
               </OwlCarousel>
             </div>
-            <NoDataFound className={`no-data-wrapper ${noMealsData}`} type="recipe"/>
+            <div className={` no-data-wrapper ${noMealsData}`}>
+              <div className='d-flex justify-content-center align-items-center h-100'>
+                <NoDataFound type="recipe"/>
+              </div>
+            </div>
           </div>
         </div>
       </section>

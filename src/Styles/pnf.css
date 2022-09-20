@@ -45,7 +45,7 @@
 
 .rnk-card {
     width: 25%;
-    height:19em;
+    height:15em;
     margin: 2rem;
     color: var(--white-bg);
     padding: 20px;
@@ -54,7 +54,14 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 .a-icn {
-    width: 100px;
+    width: 80px;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.rnk-icn {
+    color: black;
+    text-align: center;
 }
 .usricn {
     width: 60px;
@@ -72,7 +79,7 @@
     align-items: center;
 }
 .rnk-txt {
-    padding: 1rem;
+    padding: 0rem;
     color: black;
 }
 
@@ -105,6 +112,7 @@
 .crdicn {
     width: 40px;
     height: auto;
+    border-radius: 30px;
 }
 .firstmed {
     width: 40px;

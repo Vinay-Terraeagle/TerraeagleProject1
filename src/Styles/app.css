@@ -18,6 +18,7 @@
 @import url('./DailyHealthUpdate.css');
 @import url('./excerciseComponent.css');
 @import url('./TextEditor.css');
+@import url('../Components/PaymentsPage/Payment.moudle.css');
 
 
 *{
@@ -2007,6 +2008,7 @@ a.menus:hover {
     display: flex;
     justify-content: flex-end;
 }
+.no-data-wrapper.meals-toshow,
 .workouts-wrapper.no-workouts-toshow,
 .meal-data-wrapper.no-meals-data-toshow,
 .no-data-wrapper {
