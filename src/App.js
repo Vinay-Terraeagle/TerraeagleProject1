@@ -9,7 +9,7 @@ import Passwordchanged from "./Components/AuthFile/Passwordchanged"
 import EmailReq from "./Components/AuthFile/EmailReq"
 import Login from "./Components/AuthFile/Login"
 import Register from "./Components/AuthFile/Register"
-// import Logout from "./Components/AuthFile/Logout"
+import Logout from "./Components/AuthFile/Logout"
 
 // Dashboard Links
 import Dashboard from "./Pages/Dashboard"
@@ -48,6 +48,9 @@ function App() {
         {/* Login and Reg Part */}
         <Route path='/'  element={<Login/>}/>
         <Route path='/Dashboard'  element={<Dashboard/>}/>
+        <Route path='/Logout'  element={<Logout/>}/>
+        <Route path='/Login'  element={<Login/>}/>
+        
         <Route path='/Register' element={<Register/>}/>
          {/* <Route path="/Resetpassword" element={<Resetpassword/>}/> */}
         <Route path="/Checkemail" element={<Checkemail/>}/>

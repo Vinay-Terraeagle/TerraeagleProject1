@@ -87,3 +87,37 @@
 }
 
 /*  */
+.topsearchbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.filter-ul {
+    padding: 2rem;
+}
+
+.filter-item {
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee; }
+.filter-attribute-item {
+    display: flex;
+    justify-content: space-around;
+}
+.filter-attribute-item {
+    display: flex;
+}
+.filter-item-inner {
+    padding: 2rem;
+}
+
+.filter-attribute-list {
+    padding: 0 !important;
+}
+
+
+
+.filter-attribute-checkbox {
+    width: auto !important;
+    height: auto !important;
+}

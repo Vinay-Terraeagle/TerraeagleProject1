@@ -2,18 +2,143 @@ import React from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'
 import '../Styles/EventsView.css'
+import {Container, Col, Row } from 'react-bootstrap'
 
 export default function EventsView() {
   return (
     <React.Fragment>
       <Header />
-      <div className="container">
-        <div className=''>
+      <section>
+        <Container>
+          <Row>
+          <Col>
+            <div className='m-3'>
+              <h1>Events</h1>
+            </div>
+            {/* slider */}
+            <div className='slider'>
+              <div></div>
+            </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col className='d-flex justify-content-arround w-100 bg-white  mt-3 h-100 rounded-2'>
+            <div>
+              <div>
+              <aside className="sidebar">
+        <h4 className="sidebar-heading mt-4">
+            Filter by
+        </h4>
+        <ul className="filter-ul">
+            <li className="filter-item">
+                <section className="filter-item-inner">
+                    <h4 className="filter-item-inner-heading minus">
+                        Categories
+                    </h4>
+                    <ul className="filter-attribute-list ul-reset">
+                        <div className="filter-attribute-list-inner">
+                            <li className="filter-attribute-item justify-content-arround">
+                                <input type="checkbox" id="colour-attribute-1" className="filter-attribute-checkbox event-category ib-m" data-cat-id="1" data-value="Fitness" />
+                                <label for="colour-attribute-1" className="filter-attribute-label ib-m text-capitalize">
+                                    Fitness
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="colour-attribute-2" className="filter-attribute-checkbox event-category ib-m" data-cat-id="2" data-value="Health" />
+                                <label for="colour-attribute-2" className="filter-attribute-label ib-m text-capitalize">
+                                    Health
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="colour-attribute-3" className="filter-attribute-checkbox event-category ib-m" data-cat-id="3" data-value="mental wellness" />
+                                <label for="colour-attribute-3" className="filter-attribute-label ib-m text-capitalize">
+                                    mental wellness
+                                </label>
+                            </li>
+                        </div>
+                    </ul>
+                </section>
+            </li>
 
-        </div>
-        <h2 className="mt-4"> Events </h2>
-        <div className="events-container w-100 row justify-content-center pt-5 pb-5">
-          <div
+            <li className="filter-item">
+                <section className="filter-item-inner">
+                    <h5 className="filter-item-inner-heading minus">
+                        Timing
+                    </h5>
+                    <ul className="filter-attribute-list ul-reset">
+                        <div className="filter-attribute-list-inner">
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="size-attribute-1" className="filter-attribute-checkbox event-timing ib-m" data-value="morning" />
+                                <label for="size-attribute-1" className="filter-attribute-label ib-m">
+                                    Morning
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="size-attribute-2" className="filter-attribute-checkbox event-timing ib-m" data-value="afternoon" />
+                                <label for="size-attribute-2" className="filter-attribute-label ib-m">
+                                    Afternoon
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="size-attribute-3" className="filter-attribute-checkbox event-timing ib-m" data-value="evening" />
+                                <label for="size-attribute-3" className="filter-attribute-label ib-m">
+                                    Evening
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="size-attribute-4" className="filter-attribute-checkbox event-timing ib-m" data-value="night" />
+                                <label for="size-attribute-4" className="filter-attribute-label ib-m">
+                                    Night
+                                </label>
+                            </li>
+                        </div>
+                    </ul>
+                </section>
+            </li>
+
+            <li className="filter-item">
+                <section className="filter-item-inner">
+                    <h5 className="filter-item-inner-heading minus">
+                        Level
+                    </h5>
+                    <ul className="filter-attribute-list ul-reset">
+                        <div className="filter-attribute-list-inner">
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="material-attribute-12" className="filter-attribute-checkbox event-level ib-m" data-value="general" />
+                                <label for="material-attribute-13" className="filter-attribute-label ib-m">
+                                    General
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="material-attribute-13" className="filter-attribute-checkbox event-level ib-m" data-value="beginner" />
+                                <label for="material-attribute-13" className="filter-attribute-label ib-m">
+                                    Beginner
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="material-attribute-14" className="filter-attribute-checkbox event-level ib-m" data-value="intermediate" />
+                                <label for="material-attribute-14" className="filter-attribute-label ib-m">
+                                    Intermediate
+                                </label>
+                            </li>
+                            <li className="filter-attribute-item">
+                                <input type="checkbox" id="material-attribute-15" className="filter-attribute-checkbox event-level a-btn-warningib-m" data-value="advanced" />
+                                <label for="material-attribute-15" className="filter-attribute-label ib-m">
+                                    Advanced
+                                </label>
+                            </li>
+                        </div>
+                    </ul>
+                </section>
+            </li>
+        </ul>
+    </aside>
+                
+              </div>
+            </div>
+            <div>
+            <div className='w-100 row justify-content-center pt-5 pb-5'>
+            <div
             className="events_card_wrapper m-4 col-4">
             <div className="event_img_wrapper">
               <img
@@ -27,14 +152,12 @@ export default function EventsView() {
 
             <div className="event_details">
               <div className="mb-3 event_name">
-                {' '}
                 <h4>Endurance Challenge - 100 km in a Month Challenge </h4>
               </div>
               <div className="mb-3">
-                {' '}
                 Link will be shared along with booking confirmation email
               </div>
-              <div className="mb-4 ml-2">
+              {/* <div className="mb-4 ml-2">
                 <span className="firstletter_of_interrested_user justify-content-center align-items-center">
                   A
                 </span>
@@ -51,10 +174,10 @@ export default function EventsView() {
                   E
                 </span>
                 <span>+46 going</span>
-              </div>
+              </div> */}
 
               <div className="event_date_time">
-                {' '}
+
                 10 Apr . 12:00 AM to 10 May . 11.59 PM
               </div>
 
@@ -307,8 +430,12 @@ export default function EventsView() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+            </div>
+          </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
       <Footer />
     </React.Fragment>
   )

@@ -20,12 +20,29 @@ import { useEffect } from 'react';
 import moment from 'moment';
 
 export default function Myplan() {
+
+  // const [dietplanshow, setDietPlanshow] = useState(false);
+  // const [dietplanhide, setdietplanhide] = useState();
+
+  // const dietplanDatashow = {};
+
+  // useEffect(() => {
+  //   if(setDietPlanshow == true) {
+
+  //   }else if() {
+
+  //   }
+  // })
+
+
   const location = useLocation();
   let setDefaultActiveTab = 'dietPlan'
   if(location.state !== null) {
     setDefaultActiveTab = location.state.showTab
   }
   const [activeTab, setActive] = useState(setDefaultActiveTab);
+
+  
 
   let navigate = useNavigate(); 
     function useNavigateToBloodBiomarker(e) {
@@ -55,8 +72,6 @@ export default function Myplan() {
         .then((myprogressResponse) => {
             console.log("Upload :::: "+myprogressResponse);
             setMyprogressData(myprogressResponse.data.data)
-
-
         });
     }
 
@@ -171,7 +186,7 @@ export default function Myplan() {
                 <div className='cl-icn'>
                 <img src={groce} className="groce" alt="/"/>
                 </div>
-                <div className='cl-txt'>
+                <div className='cl-txt' >
                   <h1>Grocery</h1>
                 </div>
               </div>
