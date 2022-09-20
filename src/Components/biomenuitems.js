@@ -7,8 +7,9 @@ export const biomenuitems = [
         title: 'My Subscriptions',
         url:'/SubscriptionsPlan',
     },
-    {
-        title: 'Logout',
-        url:'/Logout',
-    }
+    // {
+    //     title: 'Logout',
+    //     url:'/Logout',
+    // }
+
 ]

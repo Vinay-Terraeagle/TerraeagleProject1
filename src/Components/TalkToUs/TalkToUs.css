@@ -32,8 +32,7 @@
     margin-bottom: 6rem;
     padding-bottom: 6rem;
     box-shadow: rgb(159 159 193 / 35%) 0px 0px 50px;
-    border-top-right-radius: 30px !important;
-    border-top-left-radius: 30px !important;
+    border-radius: 10px;
 }
 
 .book-doctor {

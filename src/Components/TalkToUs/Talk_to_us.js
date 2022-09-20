@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-
 import './TalkToUs.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import Header from '../Header'
@@ -7,15 +6,16 @@ import Footer from '../footer'
 import trainer from '../../assets/images/trainer.png'
 import Doctor from '../../assets/images/doctor.png'
 import therapist from '../../assets/images/therapist.png'
-// import BookTrainer from './BookTrainer'
+import BookDoctor from './BookDoctor'
+import BookTherapist from './BookTherapist'
+import Trainer from './BookTrainer'
 
 
 
 export default function Talk_to_us() {
 
-  const [activelist, setactivelist] = useState('trainer')
+  // const [activelist, setactivelist] = useState('trainer')
   
-
   return (
     <React.Fragment>
       <Header />
@@ -36,7 +36,7 @@ export default function Talk_to_us() {
                       </div>
                     </div>
                     <div className='dctr-book'>
-                      <div className='dietPlan'>
+                      <div className="calo-crd">
                         <div className='cl-icn'>
                           <img src={trainer} className="trainericon" alt='/' />
                         </div>
@@ -44,7 +44,7 @@ export default function Talk_to_us() {
                           <h1>Trainer</h1>
                         </div>
                       </div>
-                      <div className={activelist === 'trainer' ? 'activeList calo-crd' : 'calo-crd'} onClick={() => setactivelist("activeList")}>
+                      <div className="calo-crd">
                         <div className='cl-icn'>
                           <img src={Doctor} className="doctoricon" alt='/' />
                         </div>
@@ -68,6 +68,7 @@ export default function Talk_to_us() {
           </Row>
         </Container>
       </section>
+      <BookDoctor/>
       <Footer />
     </React.Fragment>
   )

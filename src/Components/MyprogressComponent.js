@@ -22,14 +22,32 @@ import 'react-before-after-slider-component/dist/build.css';
 export default function MyprogressComponent(data) {
 
   //  react-before-after-slider-component
-  const FirstImage = {
-    imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
+  let FirstImage = {
+    // imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
   }
-  const SecondImage = {
-    imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
+  let SecondImage = {
+    // imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
   };
 
+  const setCompareData = () => {
+    alert("dynt")
+    setFirstImage({
+      imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
+    })
+    setSecondImage({
+      imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
+    })
+    console.log(firstImage, secondImage);
+    // FirstImage = {
+      
+    // }
+    // SecondImage = {
+    //   imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
+    // };
+  }
 
+  const [firstImage, setFirstImage] = useState('');
+  const [secondImage, setSecondImage] = useState('');
   const [ShowUpdateInput, setUpdateInput] = useState('hide');
   const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
   const [show, setShow] = useState(false);
@@ -558,7 +576,7 @@ export default function MyprogressComponent(data) {
                   </tbody>
                 </table>
                 <div className='d-flex justify-content-center'>
-                      <button className='btn-compare'>Compare</button>
+                      <button className='btn-compare' onClick={setCompareData}>Compare</button>
                   </div>
               </div>
             </div>
@@ -580,8 +598,8 @@ export default function MyprogressComponent(data) {
               <h4>After</h4>
               </div>
                 <ReactBeforeSliderComponent
-                firstImage={FirstImage}
-                secondImage={SecondImage} />
+                firstImage={firstImage}
+                secondImage={secondImage} />
                 </div>
 
               {/* <div className="table-responsive">

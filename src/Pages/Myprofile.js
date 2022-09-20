@@ -20,7 +20,6 @@ import Notification from '../Components/Notification'
     return (
       <React.Fragment>
         <Header/>
-       
         {/* myprofile page */}
           <section className='prof-section'>
               <div className='container'>
