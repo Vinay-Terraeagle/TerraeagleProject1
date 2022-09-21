@@ -4,14 +4,14 @@ import NoDataFound from './NoDataFound/NoDataFound';
 
 
 export default function GroceryListComponent(groceryList) {
-  console.log(groceryList)
 
   const [noGroceryList, setNoGroceryList] = useState(false)
-
-  if(groceryList.groceryList !== undefined && 
-    Array.isArray(groceryList.groceryList) && groceryList.groceryList.length === 0) {
-      setNoGroceryList(true)
-  }
+  useEffect(() => {
+    if(groceryList.groceryList !== undefined && 
+      Array.isArray(groceryList.groceryList) && groceryList.groceryList.length === 0) {
+        setNoGroceryList(true)
+    }
+  },[])
 
   return (
     <React.Fragment>
@@ -33,8 +33,8 @@ export default function GroceryListComponent(groceryList) {
                         {
                           item[1].map((obj,i) => 
                             <tr key={i}>
-                              <td scope="col">{obj.ingredient}</td>
-                              <td scope="col" className='text-align-right'>{obj.quantity}{obj.unit}</td>
+                              <td>{obj.ingredient}</td>
+                              <td className='text-align-right'>{obj.quantity}{obj.unit}</td>
                             </tr>
                           )
                         }
