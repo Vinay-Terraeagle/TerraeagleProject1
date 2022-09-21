@@ -16,9 +16,7 @@ const Logout = () => {
                 // console.log(response);
                 localStorage.clear();
                 navigate("/Login");
-                alert(response.data.message);  
             }).catch((error) => {
-                alert("Logout failed. Please try refreshing")
                 console.log(error)
             })
         }
