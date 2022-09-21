@@ -15,7 +15,7 @@ export default function EditProfile() {
   const [box, setBox] = useState(false);
   const [bgBox, setbgBox] = useState(false);
   const openBox = () => setBox(false);
-  const showBox = () => setBox(true);
+  // const showBox = () => setBox(true);
   const openbgBox = () => setbgBox(false);
   const showbgBox = () => setbgBox(true);
 
