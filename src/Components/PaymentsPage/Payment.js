@@ -19,7 +19,7 @@ export default function Payment() {
                             <h2>Payments</h2>
                         </div>
 
-                        <div className='card-wrapper'>
+                        <div className='paymentscard-wrapper'>
                             <div className='card-left'>
                                 <div className='formsdata'>
                                     <form className='cardform'>

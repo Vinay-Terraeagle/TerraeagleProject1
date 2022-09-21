@@ -21,6 +21,7 @@ export default function HealthMatrix(healthMatrixDetails) {
     items:3,
     loop:true,
     margin:10,
+    dots:false,
     responsive: {
         0: {
             items: 1,
@@ -42,7 +43,7 @@ const [body_fat_percentage, setbodyfat] = useState();
 const [hip_to_waist, sethip_to_waist] = useState();
 const [metobolic_age, setmetabolic_age] = useState();
 const [blood_age, setblood_age] = useState();
-// const [wis_score, setwis_score] = useState();
+const [wis_score, setwis_score] = useState();
 const [healthscore, sethealth_age] = useState()
 const [weightlost, setweight_lost] = useState()
 
@@ -54,7 +55,7 @@ if (healthMatrixDetails !== undefined && healthMatrixDetails.healthMatrixData !=
     sethip_to_waist(healthMatrixData.hip_to_waist);
     setmetabolic_age(healthMatrixData.metobolic_age);
     setblood_age(healthMatrixData.blood_age);
-    // setwis_score(healthMatrixData.health_score);
+    setwis_score(healthMatrixData.health_score);
     setweight_lost(healthMatrixData.weight_lost);
 }
 },[healthMatrixDetails.healthMatrixData])
