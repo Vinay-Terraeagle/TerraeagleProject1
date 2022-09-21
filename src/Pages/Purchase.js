@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import '../Styles/Subscription.css'
 import { Check } from 'react-bootstrap-icons'
 import { X } from 'react-bootstrap-icons'
+import { useNavigate } from 'react-router-dom'
 
 export default function Purchase() {
+
+  let navigateToPayment = useNavigate()
+  const handlePaymentClick = () => {
+    navigateToPayment('/Payment')
+  } 
+
   return (
     <React.Fragment>
         <Container>
@@ -14,9 +21,9 @@ export default function Purchase() {
                 <div className='mpln row mt-5'>
                   <div className='plncrd col-4'>
                     <div className='plns d-flex justify-content-between align-items-center'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='viewmore'>
                           <button className='more'>₹<b>4999.00</b><span>/Month</span></button>
                       </div>
@@ -110,14 +117,14 @@ export default function Purchase() {
                         </div>
                       </div>
                     </div>
-                    <button className='bynw'>Buy Now</button>
+                    <button className='bynw' onClick={handlePaymentClick} >Buy Now</button>
                   </div>
                   {/* second card */}
                   <div className='plnsecrd col-4 ml-2'>
                     <div className='plns d-flex justify-content-between align-items-center'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='viewmore'>
                           <button className='more'>₹<b>4999.00</b><span>/Month</span></button>
                       </div>
@@ -211,14 +218,14 @@ export default function Purchase() {
                         </div>
                       </div>
                     </div>
-                    <button className='bynw'>Buy Now</button>
+                    <button className='bynw' onClick={handlePaymentClick}>Buy Now</button>
                   </div>
                   {/* thrd card */}
                   <div className='plnsecrd col-4 ml-2'>
                     <div className='plns d-flex justify-content-between align-items-center'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='viewmore'>
                           <button className='more'>₹<b>4999.00</b><span>/Month</span></button>
                       </div>
@@ -312,14 +319,14 @@ export default function Purchase() {
                         </div>
                       </div>
                     </div>
-                    <button className='bynw'>Buy Now</button>
+                    <button className='bynw' onClick={handlePaymentClick}>Buy Now</button>
                   </div>
                   {/* frthcrd */}
                   <div className='plnsecrd col-4 mt-4'>
                     <div className='plns d-flex justify-content-between align-items-center'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='viewmore'>
                           <button className='more'>₹<b>4999.00</b><span>/Month</span></button>
                       </div>
@@ -413,14 +420,14 @@ export default function Purchase() {
                         </div>
                       </div>
                     </div>
-                    <button className='bynw'>Buy Now</button>
+                    <button className='bynw' onClick={handlePaymentClick}>Buy Now</button>
                   </div>
                   {/* ffth */}
                   <div className='plnsecrd col-4 ml-2 mt-4'>
                     <div className='plns d-flex justify-content-between align-items-center'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='viewmore'>
                           <button className='more'>₹<b>4999.00</b><span>/Month</span></button>
                       </div>
@@ -514,7 +521,7 @@ export default function Purchase() {
                         </div>
                       </div>
                     </div>
-                    <button className='bynw'>Buy Now</button>
+                    <button className='bynw' onClick={handlePaymentClick}>Buy Now</button>
                   </div>
                  
                 </div>

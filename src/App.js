@@ -1,7 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 // Auth
 import Forgotpassword from "./Components/AuthFile/Forgotpassword";
 import Checkemail from "./Components/AuthFile/Checkemail"
@@ -10,7 +9,6 @@ import EmailReq from "./Components/AuthFile/EmailReq"
 import Login from "./Components/AuthFile/Login"
 import Register from "./Components/AuthFile/Register"
 import Logout from "./Components/AuthFile/Logout"
-
 // Dashboard Links
 import Dashboard from "./Pages/Dashboard"
 import Myplan from "./Pages/Myplan"

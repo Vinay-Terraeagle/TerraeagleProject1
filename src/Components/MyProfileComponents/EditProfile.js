@@ -74,8 +74,6 @@ export default function EditProfile() {
         console.log(error)
       })
     }
-    
-    
    
 
   return (
@@ -248,8 +246,6 @@ export default function EditProfile() {
               </Button>
             </Modal.Footer>
           </Modal>
-
-
     </React.Fragment>
   )
 }
