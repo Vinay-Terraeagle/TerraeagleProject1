@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import Header from "../Components/Header";
 import Footer from "../Components/footer";
 import Select from 'react-dropdown-select'
+import { BASE_URL, TOKEN } from '../Backend/config';
+import axios from 'axios';
 
 export default function DailyHealthUpdate() {
     const [selectedUrineColor, setSelectedUrineColor] = useState('')
@@ -32,19 +34,19 @@ export default function DailyHealthUpdate() {
         },
         {
             label: 'Brisk Walk',
-            value:1,
+            value:2,
         },
         {
             label: 'Jogging',
-            value:1,
+            value:3,
         },
         {
             label: 'Weight Training',
-            value:1,
+            value:4,
         },
         {
             label: 'Other Physical Activity',
-            value:1,
+            value:5,
         }
     ]
     const [moodLabel, setMoodLabel] = useState('Happy')
@@ -62,6 +64,38 @@ export default function DailyHealthUpdate() {
         // $('.mood-tooltip').text(mood[event.target.value]);
 
         setMoodLabel(mood[event.target.value])
+    }
+    const handlePhysicalActivityFilterChange = () => {
+        console.log("handlePhysicalActivityFilterChange")
+    }
+    const handleDailyHealthBtnClick = () => {
+        const id = ''
+        const params = {
+            client_name: "Deepthi22 (9511938081)",
+            user_id: '',
+            hunger_level: '', 
+            stress_level: '', 
+            hydration_status: '', 
+            urine_color: '', 
+            physical_activity: 'brisk_walk', 
+            sleep_quality: '4_hrs', 
+            mood: 'happy', 
+            stool_type: 'normal', 
+            foot_steps_count: '',
+             mobile_number: '', 
+             energy_level: 'energetic', 
+             alcohol: 'yes',
+             smoking: 'yes', 
+             any_other_concerns: ''
+        }
+        const headerConfig = {
+            headers: {
+                Authorization: TOKEN
+            }
+        }
+        axios.get(`${BASE_URL}/update_daily_health/${id} `, params, headerConfig).then((DailyHealthUpdatedResponse) => {
+            console.log(DailyHealthUpdatedResponse)
+        })
     }
     
   return (
@@ -371,7 +405,7 @@ export default function DailyHealthUpdate() {
                             </div>
                             <div className="col-lg-8">
 
-                            <Select options={PhysicalActivityFilterOptions} onChange=''></Select>
+                            <Select options={PhysicalActivityFilterOptions} onChange={handlePhysicalActivityFilterChange}></Select>
                             </div>
                         </div>
                         </div>
@@ -557,7 +591,7 @@ export default function DailyHealthUpdate() {
                         </div>
                         <div className="form-group row mt-5 text-center">
                             <div className="col-12">
-                            <button type="submit" className="daily-health-update-btn btn btn-primary">
+                            <button type="submit" className="daily-health-update-btn btn btn-primary" onClick={handleDailyHealthBtnClick}>
                                 Update
                             </button>
                             </div>

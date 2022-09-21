@@ -25,6 +25,7 @@ import NoDataFound from  '../Components/NoDataFound/NoDataFound';
 import Addon from './Addon'
 import stethoscope from '../assets/images/stethoscope.png'
 import careicon from '../assets/images/tricn.png'
+import { Rating } from 'react-simple-star-rating'
 
 
 export default function Dashboard() {
@@ -48,6 +49,8 @@ export default function Dashboard() {
   const [healthMatrixDetails, setHealthMatrixDetails] = useState();
   const [verificationDetails, setVerificationDetails] = useState();
   const [subscriptionDetail, setSubscriptionDetail] = useState()
+  const [consultantRating, setConsultantRating] = useState()
+  const [dailyHealthUpdateStatus, setDailyHealthUpdateStatus] = useState({})
 
   useEffect(() => {
     axios.get(`${BASE_URL}/home`, {
@@ -73,6 +76,9 @@ export default function Dashboard() {
     setplandetails(response.data.data.plan_details.active_plans[0].name)
     setcoachname(response.data.data.plan_details.coach_name)
     setexpires_in(response.data.data.plan_details.active_plans[0].interval)
+
+    setConsultantRating(response.data.data.rating_details.rating)
+    setDailyHealthUpdateStatus(response.data.data.daily_checkin_details)
     // badge
     // setbadgeimage(response.data.data.badge_details.badge_details.image);
 
@@ -92,11 +98,40 @@ export default function Dashboard() {
 
   let navigateDHU = useNavigate();
   const showDailyHealthUpdateView = () => {
-    navigateDHU('/DailyHealthUpdate')
+    const status = dailyHealthUpdateStatus.isUpdated
+
+    // Based on the status [false: value means Daily health update is not created by the user, true: Daily health update has been created so we need to call the different API to fetch the details whhich has been created before. ]
+    if(!status) {
+      navigateDHU('/DailyHealthUpdate')
+    } else {
+      const id = ''
+      axios.get(`${BASE_URL}/edit_daily_health/${id} `, {
+        headers: {
+            Authorization: TOKEN
+        }
+      }).then((response) => {
+
+       })
+    }
+
   }
   let navigateToSubscription = useNavigate()
   const handleUpgradeClick = () => {
     navigateToSubscription('/Subscriptionplan')
+  }
+
+  
+  const handleRating = (rate) => {
+    const ratingData = {
+      rating: rate,
+    }
+    axios.post(`${BASE_URL}/rate_consultant`, ratingData, {
+      headers: {
+          Authorization: TOKEN
+      }
+    }).then((ratingResponse) => {
+
+    })
   }
   return (
     <React.Fragment>
@@ -167,16 +202,9 @@ export default function Dashboard() {
 
                         <div className='rate-coch'>
                           <div className='rate-main'>
-                            <input type="radio" id="star5" name="rate" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="rate" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="rate" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="rate" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="rate" value="1" />
-                            <label for="star1" title="text">1 star</label>
+                            <Rating 
+                            onClick={handleRating} 
+                            ratingValue={consultantRating} allowHalfIcon="true" size="25"/>
                           </div>
                         </div>
                       </div>
