@@ -12,9 +12,9 @@ export default function Activeplan() {
                 {/* myplan */}
                 <div className='myplan d-flex'>
                   <div className='plncrd'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='plantitle'>
                       <h4>3 Month Comprehensive Plan</h4>
                     </div>
@@ -52,9 +52,9 @@ export default function Activeplan() {
                     </div>
                   </div>
                   <div className='nxtcd ml-5'>
-                    <div className='pln-info'>
+                    {/* <div className='pln-info'>
                       <span>Diet Consultation</span>
-                    </div>
+                    </div> */}
                     <div className='plantitle'>
                       <h4>3 Month Comprehensive Plan</h4>
                     </div>

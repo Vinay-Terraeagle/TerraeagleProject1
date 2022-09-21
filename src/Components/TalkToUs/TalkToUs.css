@@ -42,6 +42,11 @@
     box-shadow: rgb(99 99 99 / 8%) 0px 2px 8px 0px;
     /* margin-top: 2.2rem; */
 }
+.dctrimg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .trainnerimgs {
     width: 100px;

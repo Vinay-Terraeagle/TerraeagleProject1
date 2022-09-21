@@ -18,7 +18,7 @@ import '../Styles/app.css'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import { useEffect } from 'react';
 import moment from 'moment';
-import Payment from '../Components/PaymentsPage/Payment';
+// import Payment from '../Components/PaymentsPage/Payment';
 
 export default function Myplan() {
 

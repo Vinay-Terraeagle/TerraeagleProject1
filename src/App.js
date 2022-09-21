@@ -1,7 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 // Auth
 import Forgotpassword from "./Components/AuthFile/Forgotpassword";
 import Checkemail from "./Components/AuthFile/Checkemail"
@@ -10,7 +9,6 @@ import EmailReq from "./Components/AuthFile/EmailReq"
 import Login from "./Components/AuthFile/Login"
 import Register from "./Components/AuthFile/Register"
 import Logout from "./Components/AuthFile/Logout"
-
 // Dashboard Links
 import Dashboard from "./Pages/Dashboard"
 import Myplan from "./Pages/Myplan"
@@ -34,7 +32,7 @@ import ThreadsDetailedView from "./Pages/ThreadsDetailedView"
 import StrengthTraining from './Components/Workout/StrengthTraining'
 import EventsView from "./Pages/EventsView"
 import DailyHealthUpdate from "./Pages/DailyHealthUpdate";
-import Talk_to_us from './Components/TalkToUs/Talk_to_us'
+import Talktous from './Components/TalkToUs/Talktous'
 import Payment from "./Components/PaymentsPage/Payment";
 
 
@@ -83,7 +81,7 @@ function App() {
         <Route path="/EventsView" element={<EventsView />} />
         <Route path="/StrengthTraining" element={<StrengthTraining />} />
         <Route path="/DailyHealthUpdate" element={<DailyHealthUpdate />} />
-        <Route path="/Talk_to_us" element={<Talk_to_us/>} />
+        <Route path="/Talktous" element={<Talktous/>} />
        </Routes>
 
     </Router>

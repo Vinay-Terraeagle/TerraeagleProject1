@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Header from '../Header'
 import Footer from '../footer'
 import { CreditCard, Ladder } from 'react-bootstrap-icons'
+import {ClipboardCheck} from 'react-bootstrap-icons'
 
 export default function Payment() {
     return (
@@ -45,6 +46,20 @@ export default function Payment() {
                                             <div className='vouchers-cards'>
                                             <input className='vouchers' placeholder='apply Vouchers Code...' required/>
                                             <button type="submit" className='voucher'>Apply Vouchers</button>
+                                            </div>
+                                            <div className='voacherlist'>
+                                                <div className='vocherbody'>
+                                                    <div className='vochername'>
+                                                        <h5>Get 10% Off Diet Plan</h5>
+                                                    </div>
+                                                    <div claass="voacard">
+                                                        <input id='copyClip' type="text" className='copyClip' value="ZXDEVR*****"/>
+                                                        <button id="copybtn" className='copybtn'><ClipboardCheck/></button>
+                                                    </div>
+                                                    <div className='apply'>
+                                                    <button className='applyvoc'>Apply Voucher</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>

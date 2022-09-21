@@ -30,7 +30,6 @@ import { Rating } from 'react-simple-star-rating'
 
 export default function Dashboard() {
 
-
   const [coachname, setcoachname] = useState(); 
   const [UserDetails, setUserDetails] = useState()
   const [image, setimage] = useState();
@@ -60,7 +59,6 @@ export default function Dashboard() {
         }
     })
     .then((response) => {
-
     setWorkouts(response.data.data.workout_details)
     setNotificationData(response.data.data.user_details.unread_notification_count)
     //setNotificationToggle(response.data.data.user_details.unread_notification_count)
@@ -87,7 +85,6 @@ export default function Dashboard() {
       //Setting the Subscription details in the localstorage so that we can access this thorught the application and show the data
       localStorage.setItem('subscriptionBasedVisibility', JSON.stringify(response.data.data.subscription_based_visibility));
       localStorage.setItem('userDetails', JSON.stringify(response.data.data.user_details));
-      
     })
   },[]);
   

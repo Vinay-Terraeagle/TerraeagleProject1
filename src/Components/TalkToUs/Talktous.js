@@ -12,7 +12,7 @@ import Trainer from './BookTrainer'
 
 
 
-export default function Talk_to_us() {
+export default function Talktous() {
 
   // const [activelist, setactivelist] = useState('trainer')
   
