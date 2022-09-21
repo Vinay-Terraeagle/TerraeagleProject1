@@ -4,6 +4,7 @@ import '../NoDataFound/NoDataFound.moudle.css'
 import NoRecipeFoundimage from '../../assets/images/recipesnotfound.png'
 import NoWorkoutsFoundimage from '../../assets/images/no-wrokouts-img.png'
 import NoHabitFoundimage from '../../assets/images/no-habit-img.png'
+import NoGroceryFoundimage from '../../assets/images/no-habit-img.png'
 
 
 
@@ -20,6 +21,9 @@ export default function NoDataFound(type) {
         } else if (type.type === "habit") {
             setNoDataFoundimage(NoHabitFoundimage)
             setNoDataFoundLabel("No Habits To Show")
+        } else if (type.type === "grocery") {
+            setNoDataFoundimage(NoGroceryFoundimage)
+            setNoDataFoundLabel("No Gorcery List To Show")
         } else {
 
         }

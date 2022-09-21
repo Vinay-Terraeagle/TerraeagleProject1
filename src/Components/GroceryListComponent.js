@@ -16,11 +16,11 @@ export default function GroceryListComponent(groceryList) {
   return (
     <React.Fragment>
       <div className="container grocery-list-container">
-        <h4 className='pb-5 grocery-list-label'>Your Grocery List for {groceryList.groceryList?.week}</h4>
+        <h4 className='pb-5 grocery-list-label'>Your Grocery List for {groceryList.groceryList??groceryList.groceryList?.week}</h4>
         <Row className='justify-content-center'>
           <Col className='col-6'>
             {
-               Object.entries(groceryList.groceryList?.items).map((item,i) => {
+               Object.entries(groceryList.groceryList??groceryList.groceryList?.items).map((item,i) => {
                   return (
                     <table className='fs-18' key={i}>
                       <thead>
@@ -45,9 +45,10 @@ export default function GroceryListComponent(groceryList) {
             }
           </Col>
         </Row>
+        {noGroceryList && <NoDataFound type="grocery"/>}
       </div>
 
-      {noGroceryList && <NoDataFound type="grocery"/>}
+      
     </React.Fragment>
 
   )
