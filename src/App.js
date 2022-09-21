@@ -17,12 +17,10 @@ import Dietplan from "./Pages/Dietplan";
 import RecipeView from "./Pages/Recipe"
 import RecipeInstructionsView from "./Pages/RecipeInstructions"
 import Subscriptionplan from './Pages/Subscriptionplan'
-import MySubscriptions from './Pages/MySubscriptions'
 import Notification from './Components/Notification'
 import RaiseTicket from './Pages/RaiseTicket'
 import Message from "./Pages/Message";
 import LeaderBoard from './Pages/LeaderBoard'
-// import MySubscriptions from './Components/MySubscriptions'
 // Pages
 import BloodBiomarker from './Pages/BloodBiomarker'
 // error Pages
@@ -65,13 +63,10 @@ function App() {
         <Route path="/Dietplan" element={<Dietplan/>}/>
         <Route path="/RecipeView" element={<RecipeView/>}/>
         <Route path="/Subscriptionplan" element={<Subscriptionplan/>}/>
-        <Route path="/MySubscriptions" element={<MySubscriptions/>}/>
         <Route path="/RaiseTicket" element={<RaiseTicket/>}/>
         <Route path="/Message" element={<Message/>}/>
         <Route path="/LeaderBoard" element={<LeaderBoard/>}/>
         <Route path="/Payment" element={<Payment/>}/>
-        {/* plans and Subscriptions section */}
-        {/* <Route path="/MySubscriptions" element={<MySubscriptions/>}/> */}
         {/* Recipe Instructions */}
         <Route path="/RecipeInstructionsView" element={<RecipeInstructionsView/>}/>
         {/* Add-on Pages */}

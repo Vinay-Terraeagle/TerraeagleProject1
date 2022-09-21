@@ -1,18 +1,8 @@
 import React, {useEffect} from 'react'
-// import { Row, Col} from "react-bootstrap";
-import Yoga1 from "../../assets/images/y6.jpg"
-import Yoga2 from "../../assets/images/y7.jpg"
-import Yoga3 from "../../assets/images/y8.jpg"
-// import Yoga4 from "../../assets/images/y9.jpg"
-// import Yoga5 from "../../assets/images/y10.jpg"
-// import Yoga6 from "../../assets/images/y11.png"
 import '../../Styles/excerciseComponent.css'
 import ReactPlayer from 'react-player'
 import { useState } from 'react'
-
-// import '../../Styles/excerciseComponent.js';
 import '../../Styles/excerciseComponent.css'
-// import { useNavigate } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import NoDataFound from '../NoDataFound/NoDataFound'
 
@@ -28,7 +18,6 @@ export default function ExcerciseComponent(assignedWorkouts) {
     //         navigate(path)
     //     }
 
-console.log(assignedWorkouts)
 const [assignedWorkoutsList, setAssignedWorkoutsList] = useState()
 useEffect(() => {
   if(assignedWorkouts.assignedWorkouts.length > 0) {

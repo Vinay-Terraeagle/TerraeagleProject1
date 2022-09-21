@@ -50,7 +50,8 @@ export default function Message() {
     setMsgText(draftToHtml(convertToRaw(editorState.getCurrentContent())))
   }
 
-  const [rplyToMsg,setRplyToMsg] = useState();
+  const [rplyToMsg,setRplyToMsg] = useState('');
+
   // const replyOnChange = (event) => {
     
   //   console.log(replyToMsgText);
@@ -168,6 +169,7 @@ export default function Message() {
 
   //Render all the replies for a message
   const [msgReplies, setMsgReplies] = useState()
+  const [msgData,setMsgData] = useState({})
   const renderAllMessageReplies = (event) => {
     const id = event.currentTarget.getAttribute("data-msgid")
     const config = {
@@ -177,7 +179,9 @@ export default function Message() {
     }
     axios.get(`${BASE_URL}/messages/${id}`, config)
     .then((msgResponse) => {
-      console.log(msgResponse)
+      const messageData = {...msgResponse.data.data,message1:""}
+        
+      setMsgData(messageData)
       const leftMsgContainer = <Col className='readmsg'>
               <div className='sndmsg rounded'>
                   { 
@@ -208,7 +212,7 @@ export default function Message() {
                         value={rplyToMsg}
                         onChange = {(event) => {
                           setRplyToMsg(event.target.value)
-                          console.log({rplyToMsg})
+                          setMsgData({...msgData , message1 : event.target.value}) 
                         }}
                           />
                     </div>
