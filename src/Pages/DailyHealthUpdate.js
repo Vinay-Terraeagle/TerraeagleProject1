@@ -239,7 +239,6 @@ export default function DailyHealthUpdate() {
                                 type="number"
                                 id="hydration-number"
                                 name="hydration_status"
-                                defaultValue={waterMeasure}
                                 value={waterMeasure}
                                 readOnly
                                 style={{
@@ -584,7 +583,6 @@ export default function DailyHealthUpdate() {
                                 name="any_other_concerns"
                                 value=""
                                 placeholder="Other Concerns"
-                                defaultValue={""}
                                 />
                             </div>
                             </div>

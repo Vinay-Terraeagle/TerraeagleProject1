@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import '../Styles/Message.css'
 import {Container, Col, Row } from 'react-bootstrap'
 import Header from '../Components/Header'
@@ -21,6 +21,8 @@ import nomsgsimg from '../assets/images/no-message-img.png'
 
 
 export default function Message() {
+  const [activeMsgCard, setActiveMsgCard] = useState()
+  
   const [open, setOpen] = useState(false);
   
   const openHandle = () => {
@@ -35,7 +37,6 @@ export default function Message() {
   const hideConfirmPopup = () => setShow(false);
   
   const [deleteMsgId, setDeleteMsgId] = useState();
-  const [replyToMsgText, setReplyToMsgText] = useState();
   const [msgSubject, setMsgSubject] = useState('');
   const handleMsgSubjectChange = (event) => {
     setMsgSubject(event.currentTarget.value);
@@ -50,14 +51,7 @@ export default function Message() {
     setMsgText(draftToHtml(convertToRaw(editorState.getCurrentContent())))
   }
 
-  const [rplyToMsg,setRplyToMsg] = useState('');
-
-  // const replyOnChange = (event) => {
-    
-  //   console.log(replyToMsgText);
-  //   setReplyToMsgText(5)
-  //   console.log(replyToMsgText);
-  // }
+  
 
   //API call to send the msg
   const handleSendMessage = (event) => {
@@ -121,6 +115,7 @@ export default function Message() {
     renderAllMessages()
   },[]);
 
+  const msgCardRef = useRef(null);
   const renderAllMessages = () => {
     axios.get(`${BASE_URL}/messages`, {
       headers: {
@@ -133,7 +128,12 @@ export default function Message() {
         setShowNoMessagesInfo('show-msgs')
         const messagesList = messages.map((item,i) => 
         
-          <div className='message-card msg-top rounded mb-4'  key={i} data-id={item.id} data-msgid={item.id} onClick={renderAllMessageReplies}>
+          <div className='message-card msg-top rounded mb-4'  
+          key={i} 
+          data-id={item.id} 
+          data-msgid={item.id} 
+          onClick={renderAllMessageReplies} 
+          ref={msgCardRef}>
             <div className='mg-tx '>
               <div className='useravt d-flex align-items-center justify-content-between'> 
                 <img src={item.profile_image} className="usravth" alt='/'/>
@@ -159,6 +159,8 @@ export default function Message() {
           
         )
         setMessageDetails(messagesList)
+        getRightContainerMessageData(messages[0].id)
+        setActiveMsgCard('active')
       } else {
         setMessageDetails('')
         setShowNoMessagesInfo('show-no-msgs')
@@ -169,19 +171,41 @@ export default function Message() {
 
   //Render all the replies for a message
   const [msgReplies, setMsgReplies] = useState()
-  const [msgData,setMsgData] = useState({})
+  const inputRef = useRef();
+  
   const renderAllMessageReplies = (event) => {
+    
+    event.currentTarget.setAttribute("data-active", "active")
     const id = event.currentTarget.getAttribute("data-msgid")
-    const config = {
+    getRightContainerMessageData(id)
+    
+  }
+
+  const replyToMessage = (e) => {
+    const id = e.currentTarget.getAttribute("data-msgid") 
+    const dataToMsgReply = {
+      message : inputRef.current.value, 
+    }
+    axios.put(`${BASE_URL}/messages/${id}`,dataToMsgReply, {
+      headers: {
+          Authorization: TOKEN
+      }
+    })
+    .then((msgResponse) => {
+      console.log(msgResponse)
+      inputRef.current.value = ''
+      getRightContainerMessageData(id)
+    })
+  }
+
+  const getRightContainerMessageData = (msgid) => {
+    const id = msgid
+    axios.get(`${BASE_URL}/messages/${id}`, {
       headers:{
         Authorization: TOKEN
       }
-    }
-    axios.get(`${BASE_URL}/messages/${id}`, config)
+    })
     .then((msgResponse) => {
-      const messageData = {...msgResponse.data.data,message1:""}
-        
-      setMsgData(messageData)
       const leftMsgContainer = <Col className='readmsg'>
               <div className='sndmsg rounded'>
                   { 
@@ -209,11 +233,7 @@ export default function Message() {
                         className='form-control' 
                         placeholder="Enter message ..." 
                         required="" 
-                        value={rplyToMsg}
-                        onChange = {(event) => {
-                          setRplyToMsg(event.target.value)
-                          setMsgData({...msgData , message1 : event.target.value}) 
-                        }}
+                        ref={inputRef}
                           />
                     </div>
                     <div className='editorbtn'>
@@ -227,22 +247,6 @@ export default function Message() {
     })
   }
 
-  const replyToMessage = (e) => {
-    // e.preventDefault()
-    const id = e.currentTarget.getAttribute("data-msgid") 
-    const msgTextData = {replyToMsgText}
-    const dataToMsgReply = {
-      message :replyToMsgText, 
-    }
-    axios.put(`${BASE_URL}/messages/${id}`,dataToMsgReply, {
-      headers: {
-          Authorization: TOKEN
-      }
-    })
-    .then((msgResponse) => {
-      console.log(msgResponse)
-    })
-  }
 
   return (
     <React.Fragment>
