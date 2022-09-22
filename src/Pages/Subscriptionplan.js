@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { Container, Row , Col } from 'react-bootstrap'
 import '../Styles/Subscription.css'
 import Header from '../Components/Header'
@@ -7,9 +7,34 @@ import Footer from '../Components/footer'
 import Activeplan from '../Components/activeplan'
 // import Myaddonplans from '../Components/Myaddonplans'
 import Purchase from './Purchase'
+import axios from 'axios'
+import { BASE_URL, TOKEN } from '../Backend/config';
+
 export default function Subscriptionplan() {
 
   const [Tabactive, setAct] = useState('Activeplan');
+
+  // axios
+  const [subscriptionData, setsubscriptionData] = useState();
+  const [planDetails, setplanDetails] = useState();
+
+  
+  useEffect(() => {
+    axios.get(`${BASE_URL}/client/plan`, {
+      headers: {
+        Authorization: TOKEN
+      }
+    }).then((response) => {
+      setsubscriptionData(response.data.data.subscriptions)
+      setplanDetails(response.data.data.plans)
+      console.log(response.data.data.plans)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }, []);
+
+
+
 
   return (
     <React.Fragment>
@@ -37,9 +62,9 @@ export default function Subscriptionplan() {
             </Row>
         </Container>
       </section>
-      {Tabactive === "Activeplan" && <Activeplan/>}
+      {Tabactive === "Activeplan" && <Activeplan activeplans={subscriptionData}/>}
       {/* {Tabactive === "Myaddonplans" && <Myaddonplans/>} */}
-      {Tabactive === "Purchase" && <Purchase/>}
+      {Tabactive === "Purchase" && <Purchase purcheseplans={planDetails}/>}
 
       <Footer/>
     </React.Fragment>

@@ -73,9 +73,6 @@ export default function AddonCarousels(subscriptionLists) {
                           <p>Talk to us for instant Support</p>
                           </div>
                           <div className='bio-buttons'>
-                            {/* <div  className="btn-purch">
-                              <button className='gbtn-gt'>Learn More</button>
-                            </div> */}
                             <div className='btn-purch'>
                               <button className='btn-lrn' onClick={handleUpgradeClick} >Purchase</button>
                             </div>

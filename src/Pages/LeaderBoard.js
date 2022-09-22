@@ -80,7 +80,7 @@ export default function LeaderBoard() {
                 <h1>LeaderBoard</h1>
               </div>
             </div>
-            <Col className='bg-white rounded-3 p-5 mt-5'>
+            <Col className='bg-white rounded-3 p-5 mt-5 leader-col'>
               <div className='tp-rnk d-flex justify-content-center'>
                 {LeaderBoarddata}
               </div>

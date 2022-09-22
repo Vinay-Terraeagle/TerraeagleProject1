@@ -4,7 +4,8 @@
    justify-content: center;
     margin: 15rem;
 }
-
+.leader-col {
+    border-top-right-radius: 100px !important;}
 /* leaderboardcssss */
 .mnth {
     padding: 10px 24px;

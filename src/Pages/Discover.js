@@ -62,7 +62,6 @@ export default function Discover() {
                 Authorization: TOKEN
             }
         }).then((response) => {
-            console.log(response.data.channels);
             renderAllThreads(response)
 
         }).catch((error) => {

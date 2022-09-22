@@ -301,7 +301,7 @@ export default function Dashboard() {
                       <p>Doctor, Trainer, Therapist</p>
                     </div>
                     <div className='action-btn'>
-                      <Link to='/Talk_to_us' className='action-btn'>
+                      <Link to='/Talktous' className='action-btn'>
                         <span >Talk to us for instant Support</span>
                         <div className='arrow-bg'>
                           <ArrowRightShort className="arrow-right" />

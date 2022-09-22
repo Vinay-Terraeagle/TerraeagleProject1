@@ -452,13 +452,6 @@
     display: none;
 }
 
-.exercise-container .no-data-found-img {
-    transform: scale(1.5);
-}
-
-.myplan-recipe .no-data-found-img {
-    transform: scale(2.2);
-}
 
 .exercise-container .no-data-found-wrapper {
     margin-bottom: 3rem;

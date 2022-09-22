@@ -30,7 +30,6 @@ export default function MyprogressComponent(data) {
   };
 
   const setCompareData = () => {
-    alert("dynt")
     setFirstImage({
       imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
     })
@@ -373,7 +372,8 @@ export default function MyprogressComponent(data) {
             </div>
 
             <div className='progress-filter-wrapper col-3 d-flex justify-content-between'>
-              <Select options={MyProgressFilterMenus} value={MyProgressFilterMenus.value} onChange={handleChange}></Select>
+              <Select options={MyProgressFilterMenus} value={MyProgressFilterMenus.value} onChange={handleChange}
+               defaultValue={{ label: 'weight', value: 11 }}/>
             </div>
           </div>
         </div>

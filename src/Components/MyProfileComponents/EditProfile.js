@@ -8,6 +8,7 @@ import axios from 'axios'
 import { BASE_URL, TOKEN } from '../../Backend/config';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import coverimg from '../../assets/images/backgroundimg.jpg'
 
  
 export default function EditProfile() {
@@ -64,7 +65,7 @@ export default function EditProfile() {
       formData.append('set_gitinfo', editgitinfo)
 
 
-      await axios.patch(`$={BASE_URL}/profile/{username}`,formData,{
+      await axios.post(`$={BASE_URL}/profile/{username}`,formData,{
         headers:{
           Authorization: TOKEN
         }
@@ -84,7 +85,7 @@ export default function EditProfile() {
             <Col className='prof-p-bg  rounded'>
               <div className='prof-dwn'>
                 <div>
-                <img src={bgbckgr} id="avatar_status" className="ProfileBg  pt-3" alt="/" />
+                <img src={coverimg} id="avatar_status" className="ProfileBg  pt-3" alt="/" />
                 <div className='bgbackgroundbtn'>
                  
                     </div>

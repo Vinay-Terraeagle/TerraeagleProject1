@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { Row, Col} from "react-bootstrap";
 import NoDataFound from './NoDataFound/NoDataFound';
 
-
 export default function GroceryListComponent(groceryList) {
 
   const [noGroceryList, setNoGroceryList] = useState(false)

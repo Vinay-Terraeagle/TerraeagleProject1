@@ -13,7 +13,7 @@ const Logout = () => {
                     Authorization: TOKEN
                 }
             }).then((response) => {
-                // console.log(response);
+                console.log(response);
                 localStorage.clear();
                 navigate("/Login");
             }).catch((error) => {

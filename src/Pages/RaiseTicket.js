@@ -145,7 +145,7 @@ export default function RaiseTicket() {
                 <PencilSquare className='mr-1 square' />RaiseTicket</button>
             </div>
           </div>
-          <Col className='bg-white rounded-3 mt-5 p-5'>
+          <Col className='bg-white rounded-3 mt-5 p-5 '>
             <div className='ticketmenu'>
               {showtickets}
             </div>

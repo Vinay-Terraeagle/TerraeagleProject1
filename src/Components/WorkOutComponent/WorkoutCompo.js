@@ -6,6 +6,7 @@ import NoDataFound from '../NoDataFound/NoDataFound';
 
 export default function WorkoutCompo(workoutList) {
   const [workoutDataList, setWorkoutDataList] = useState()
+  
   useEffect(() => {
     if(workoutList.WorkoutCompo.length > 0) {
       const workouts = workoutList.WorkoutCompo.map((item,i) => 
