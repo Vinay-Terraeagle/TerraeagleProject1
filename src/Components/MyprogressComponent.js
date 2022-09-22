@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios';
 import '../Styles/Myprogress.css'
 import { Plus } from 'react-bootstrap-icons'
@@ -10,7 +10,7 @@ import Modal from 'react-bootstrap/Modal'
 import LineChart from './LineChart'
 import { MyProgressFilterMenus } from './MyprogressFilterMenus'
 import { weekDropdown } from './weekDropdown'
-import Select from 'react-dropdown-select'
+import Select from 'react-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import '../../node_modules/react-datetime/css/react-datetime.css'
 import Datetime from "react-datetime";
@@ -19,16 +19,45 @@ import ImageUploading from "react-images-uploading"
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 
-export default function MyprogressComponent(data) {
+export default function MyprogressComponent(myprogressData) {
+  const userInfo = JSON.parse(localStorage.getItem("userDetails"))
+  const client_name = `${userInfo.user_name} (${userInfo.mobile_number})`
+
+  const [firstImage, setFirstImage] = useState('');
+  const [secondImage, setSecondImage] = useState('');
+  const [ShowUpdateInput, setUpdateInput] = useState('hide');
+  const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
+  const weekDD = useRef()
+  const bodyMeasureDD = useRef()
+
+  useEffect(() => {
+    console.log(myprogressData.data?.data?.graph_details)
+    if(myprogressData !== undefined &&  myprogressData.data !== undefined) {
+
+      Object.entries(myprogressData.data.graph_details[0]).filter(keys => {
+        if(keys[0] === "weight") { 
+          setGraphLabel(keys[1].labels)
+          setGraphValues(keys[1].values)
+        } 
+      })
+
+      Object.entries(myprogressData.data.body_measure_details[0]).filter(keys => {
+        if(keys[0] === "weight_c") { 
+          renderHistory(keys[1])
+        } 
+      })
+
+
+    }
+
+
+  },[myprogressData])
+
 
   //  react-before-after-slider-component
-  let FirstImage = {
-    // imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
-  }
-  let SecondImage = {
-    // imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
-  };
-
   const setCompareData = () => {
     setFirstImage({
       imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg'
@@ -37,47 +66,41 @@ export default function MyprogressComponent(data) {
       imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
     })
     console.log(firstImage, secondImage);
-    // FirstImage = {
-      
-    // }
-    // SecondImage = {
-    //   imageUrl: 'https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg'
-    // };
   }
 
-  const [firstImage, setFirstImage] = useState('');
-  const [secondImage, setSecondImage] = useState('');
-  const [ShowUpdateInput, setUpdateInput] = useState('hide');
-  const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
 
   // Setting the filter value
-  const [filterOption, setFilterOption] = useState()
+  const [filterOption, setFilterOption] = useState('weight')
   const [graphLabel, setGraphLabel] = useState()
   const [graphValues, setGraphValues] = useState()
 
 
   const handleChange = (selectedOption) => {
-    setFilterOption(selectedOption[0].label.toLowerCase())
-    const selectedOption1 = selectedOption[0].label.toLowerCase()
-    const client_name = "Deepthi22 (9511938081)"
+    // const userInfo = JSON.parse(localStorage.getItem("userDetails"))
+    setFilterOption(selectedOption.label)
+    const selectedOptionVal = selectedOption.label.toLowerCase()
+    // const client_name = `${userInfo.user_name} (${userInfo.mobile_number})`
+    
+    const data = {
+      client_name: client_name,
+      total_days : weekDD.current.getValue()[0].value, 
+      measure_type : selectedOptionVal
+    }
+
+    renderFilteredData(data,selectedOptionVal)
+    
+  }
+
+  const renderFilteredData = (params,selectedOptionVal) => {
     const config = {
       headers:{
         Authorization: TOKEN
       }
     }
-    const data = {
-      client_name: client_name,
-      total_days : 30, 
-      measure_type : selectedOption1
-    }
-
-    axios.post(`${BASE_URL}/measurements/filter`, data, config)
+    axios.post(`${BASE_URL}/measurements/filter`, params, config)
     .then((response) => {
-        console.log(response)
-        switch(selectedOption1) {
+        switch(selectedOptionVal) {
           case 'thighs':
             setGraphLabel(response.data.data.original.thighs.labels)
             setGraphValues(response.data.data.original.thighs.values)
@@ -136,9 +159,19 @@ export default function MyprogressComponent(data) {
   }
 
   // week dropdown
-  const [weekFilterDropdown, setweekFilterDropdown] = useState();
+  const [weekFilterDropdown, setweekFilterDropdown] = useState(7);
   const weekHandleChange = (WeekselectedOption) => {
-    setweekFilterDropdown(WeekselectedOption[0].label.toLowerCase())
+    setweekFilterDropdown(WeekselectedOption.label.toLowerCase())
+    
+    const bodyFilterOption = bodyMeasureDD.current.getValue()[0].label.toLowerCase()
+    const data = {
+      client_name: client_name,
+      total_days : WeekselectedOption.value, 
+      measure_type : bodyFilterOption
+    }
+
+    renderFilteredData(data,bodyMeasureDD.current.getValue()[0].value)
+
   }
 
   // Setting the date on change
@@ -157,34 +190,9 @@ export default function MyprogressComponent(data) {
 
   }
 
-
-  const [currentBackImg, setCurrentBackImg] = useState()
-  const [currentFrontImg, setCurrentFrontImg] = useState()
-  const [currentSideImg, setCurrentSideImg] = useState()
-
-  const [initialBackImg, setInitialBackImg] = useState()
-  const [initialFrontImg, setInitialFrontImg] = useState()
-  const [initialSideImg, setInitialSideImg] = useState()
-
-
-  useEffect(() => {
-    if (data.data !== null && data.data !== undefined) {
-      setCurrentBackImg(data.data.original.progress_photos_current.back)
-      setCurrentFrontImg(data.data.original.progress_photos_current.front)
-      setCurrentSideImg(data.data.original.progress_photos_current.side)
-
-
-      setInitialBackImg(data.data.original.progress_photos_initials.back)
-      setInitialFrontImg(data.data.original.progress_photos_initials.front)
-      setInitialSideImg(data.data.original.progress_photos_initials.side)
-
-    }
-  }, []);
-
   // Add API Call
   const [weightDetails, setWeightDetails] = useState()
   const handleAddUpdate = () => {
-    const client_name = "Deepthi22 (9511938081)"
     const config = {
       headers: {
         Authorization: TOKEN
@@ -192,7 +200,7 @@ export default function MyprogressComponent(data) {
     }
     const data = {
       client_name: client_name,
-      type: filterOption,
+      type: filterOption.toLowerCase(),
       progress_date: dateChange,
       new_value: valueChange,
       code_type: "store"
@@ -201,25 +209,33 @@ export default function MyprogressComponent(data) {
     axios.post(`${BASE_URL}/weekly_health_store`, data, config)
       .then((response) => {
           const weightLists = response.data.data.original.weight
-          const weightList = weightLists.map((item,i) => 
+          renderHistory(weightLists)
+
+      });
+  }
+
+  const renderHistory = (historyData) => {
+    const historyDataList = historyData.map((item,i) => 
                               <tr data-id={item.id}>
                                 <td>
                                   <Datetime timeFormat={false} 
                                     closeOnSelect= 'true'
                                     dateFormat="DD-MM-YYYY"
-                                    onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
+                                    // onChange = {(momentObj, e ) => {handleDateChange(momentObj, e)} }
                                     inputProps={{
                                       value: item.date,
                                       className:'date form-control',
-                                      required: 'true', 
+                                      required: 'true',
+                                      readonly: 'true' ,
+                                      disabled: true,
                                     }}
                                   />
                                 </td>
                                 <td>
-                                  <input className="value form-control" type="number" value={item.weight} readonly="" />
+                                  <input className="value form-control" type="number" value={item.weight} />
                                 </td>
                                 <td>
-                                  <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
+                                  {/* <button type="button" className="btn btn-xs rounded-pill btn-secondary disp_1" id='edit-btn' onClick={ () => {
                                         ShowUpdateBtn === 'hide' && setUpdateBtnState('show');
                                         ShowUpdateBtn === 'show' && setUpdateBtnState('hide');
                                     }
@@ -228,10 +244,11 @@ export default function MyprogressComponent(data) {
                                       <PencilSquare />
                                     </span>
                                     Edit 
-                                  </button>
+                                  </button> */}
 
                                   <button type="button" className={`btn btn-xs 
-                                  rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
+                                  rounded-pill btn-success update_button align-items-center `} id="update_button" data-value=""> 
+                                  {/* ${ShowUpdateBtn} */}
                                     <span className="btn-icon-left text-success">
                                       <Upload />
                                     </span>
@@ -243,25 +260,11 @@ export default function MyprogressComponent(data) {
                                     </span>Delete 
                                   </button>
 
-              <button type="button" className={`btn btn-xs 
-                                  rounded-pill btn-success update_button align-items-center ${ShowUpdateBtn} `} id="update_button" data-value="">
-                <span className="btn-icon-left text-success">
-                  <Upload />
-                </span>
-                <span id="add-update" className="text-capitalize">Update</span>
-              </button>
-              <button type="button" className="btn btn-xs rounded-pill btn-danger delete_row" id='delete-btn' data-id={item.id} onClick={handleDeleteValue}>
-                <span className="btn-icon-left text-danger">
-                  <Trash />
-                </span>Delete
-              </button>
 
             </td>
           </tr>
         )
-        setWeightDetails(weightList)
-
-      });
+        setWeightDetails(historyDataList)
   }
 
   // Delete API Call
@@ -302,15 +305,9 @@ export default function MyprogressComponent(data) {
   }
 
   //Upload Images API Call
-
   const handleUpload = (event) => {
     event.preventDefault()
-    // const dataForImageUpload = {
-    //   client_name: "Deepthi22 (9511938081)",
-    //   fileToUpload: uploadImgFront,
-    //   fileToUpload2: uploadImgSide,
-    //   fileToUpload3: uploadImgBack
-    // }
+    
     const formData = new FormData();
     formData.append("client_name", "Deepthi22 (9511938081)");
     formData.append("fileToUpload", uploadImgFront);
@@ -336,28 +333,6 @@ export default function MyprogressComponent(data) {
     }
   }
 
-
-  const [images1, setImages1] = useState()
-  const onDrop = (pictureFiles, pictureDataURLs) => {
-    console.log("sdfsdfsdfsdf" + pictureFiles)
-  }
-
-  const maxNumber = 69;
-  const [frontImage, setFrontImage] = React.useState([]);
-  const onFrontImgChange = (imageList, addUpdateIndex) => {
-    setFrontImage(imageList);
-  };
-
-  const [backImage, setBackImage] = React.useState([]);
-  const onBackImgChange = (imageList, addUpdateIndex) => {
-    setBackImage(imageList);
-  };
-
-  const [sideImage, setSideImage] = React.useState([]);
-  const onSideImgChange = (imageList, addUpdateIndex) => {
-    setSideImage(imageList);
-  };
-
   return (
     <React.Fragment>
       <div className='container myprogress-container p-0'>
@@ -374,6 +349,10 @@ export default function MyprogressComponent(data) {
             <div className='progress-filter-wrapper col-3 d-flex justify-content-between'>
               <Select options={MyProgressFilterMenus} value={MyProgressFilterMenus.value} onChange={handleChange}
                defaultValue={{ label: 'weight', value: 11 }}/>
+              <Select options={MyProgressFilterMenus} 
+              onChange={handleChange}
+              defaultValue={MyProgressFilterMenus[0]}
+              ref={bodyMeasureDD}></Select>
             </div>
           </div>
         </div>
@@ -381,7 +360,11 @@ export default function MyprogressComponent(data) {
         <div className='my-progress-wrapper p-5 pt-0'>
           <div className='my-progress-history-section'>
             <div className='weekdropdown'>
-              <Select options={weekDropdown} onChange={weekHandleChange}></Select>
+              <Select 
+              options={weekDropdown} 
+              onChange={weekHandleChange}
+              defaultValue={weekDropdown[0]}
+              ref={weekDD}></Select>
             </div>
             <div className='d-flex justify-content-between align-items-center'>
               <h4>Graph Data</h4>
@@ -434,7 +417,6 @@ export default function MyprogressComponent(data) {
                   </span>
                   <span id="add-update" className="text-capitalize">Update</span>
                 </button>
-
               </div>
               <div className="table-responsive mt-5">
                 <table className="table table-history" data-value="weight">
@@ -446,16 +428,11 @@ export default function MyprogressComponent(data) {
                     </tr>
                   </thead>
                   <tbody id="tbody-weight">
-
                     {weightDetails}
-
                   </tbody>
                 </table>
               </div>
             </div>
-
-
-
           </div>
 
           <div className='my-progress-initial-section'>
@@ -478,9 +455,9 @@ export default function MyprogressComponent(data) {
                       <td className='text-center'>
                         <ImageUploading
                           multiple={false}
-                          value={frontImage}
-                          onChange={onFrontImgChange}
-                          maxNumber={maxNumber}
+                          value=""
+                          onChange=""
+                          maxNumber="68"
                           dataURLKey="data_url"
                           acceptType={["jpg", "jpeg", "png"]}
                         >
@@ -510,9 +487,9 @@ export default function MyprogressComponent(data) {
                       <td className='text-center'>
                         <ImageUploading
                           multiple={false}
-                          value={backImage}
-                          onChange={onBackImgChange}
-                          maxNumber={maxNumber}
+                          value=""
+                          onChange=""
+                          maxNumber="68"
                           dataURLKey="data_url"
                           acceptType={["jpg", "jpeg", "png"]}
                         >

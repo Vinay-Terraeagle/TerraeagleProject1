@@ -102,16 +102,26 @@ export default function Dashboard() {
 
     // Based on the status [false: value means Daily health update is not created by the user, true: Daily health update has been created so we need to call the different API to fetch the details whhich has been created before. ]
     if(!status) {
-      navigateDHU('/DailyHealthUpdate')
+      navigateDHU('/DailyHealthUpdate', {
+        state:{ 
+          updatedStatus:status.toString(),
+        } 
+      })
     } else {
-      const id = ''
+      const id = dailyHealthUpdateStatus.daily_health_update_id
       axios.get(`${BASE_URL}/edit_daily_health/${id} `, {
         headers: {
             Authorization: TOKEN
         }
-      }).then((response) => {
-
-       })
+      }).then((dailyHealthUpdateResponse) => {
+        console.log(dailyHealthUpdateResponse)
+        navigateDHU('/DailyHealthUpdate', {
+          state:{ 
+            updatedStatus:status.toString(),
+            responseData:JSON.stringify(dailyHealthUpdateResponse),
+          } 
+        })
+      })
     }
 
   }

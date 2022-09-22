@@ -41,7 +41,7 @@ export default function Discover() {
         }).then((response) => {
             console.log(response.data.data.channels)
             const optionsList = response.data.data.channels.map((item, i) => 
-                <option id={item.id} slug={item.slug} name="{item.slug}" 
+                <option id={item.id} slug={item.slug} name={item.slug} 
                 value={item.id} >{item.name} </option>
             )
             setSelectOptions(optionsList)

@@ -1,14 +1,14 @@
 export const weekDropdown = [
     {
         label: '1 Week',
-        value:1,
+        value:7,
     },
     {
         label: '2 Month',
-        value:2,
+        value:60,
     },
     {
         label: '3 month',
-        value:3,
+        value:90,
     },
 ]
