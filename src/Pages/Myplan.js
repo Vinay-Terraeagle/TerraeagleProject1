@@ -61,17 +61,18 @@ export default function Myplan() {
     const handleMyProgress = (event) => {
       event.preventDefault()
       setActive("myprogress")
+      const userInfo = JSON.parse(localStorage.getItem("userDetails"))
       const config = {
         headers:{
           Authorization: TOKEN,
         }
       }
       const data = {
-        client_name: "Deepthi22 (9511938081)" 
+        client_name: `${userInfo.user_name} (${userInfo.mobile_number})` 
       }
-      axios.post(`${BASE_URL}/body_measures_client`, data, config)
+      axios.get(`${BASE_URL}/client/progress`, config)
         .then((myprogressResponse) => {
-            console.log("Upload :::: "+myprogressResponse);
+            console.log(myprogressResponse);
             setMyprogressData(myprogressResponse.data.data)
         });
     }

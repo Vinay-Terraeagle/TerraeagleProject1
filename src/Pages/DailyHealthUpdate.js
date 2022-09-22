@@ -1,11 +1,23 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import Header from "../Components/Header";
 import Footer from "../Components/footer";
-import Select from 'react-dropdown-select'
+import { useLocation, useNavigate } from 'react-router-dom'
+import Select from 'react-select'
 import { BASE_URL, TOKEN } from '../Backend/config';
 import axios from 'axios';
 
 export default function DailyHealthUpdate() {
+    const location =  useLocation();
+    const [status, setStatus] = useState()
+    useEffect(() => {
+        if(location.state !== undefined && location.state !== null) {
+            const statusDHU=location.state.id;
+            console.log(statusDHU)
+            setStatus(statusDHU)
+        }
+        
+    },[location]);
+
     const [selectedUrineColor, setSelectedUrineColor] = useState('')
     let [waterMeasure, setWaterMeasure] = useState(0)
     let [gradientPercentage, setgradientPercentage] = useState('')
@@ -30,26 +42,23 @@ export default function DailyHealthUpdate() {
     const PhysicalActivityFilterOptions = [
         {
             label: 'No Activity',
-            value:1,
-        },
-        {
+            value:'no_activity'
+        },{
             label: 'Brisk Walk',
-            value:2,
-        },
-        {
+            value:'brisk_walk'
+        },{
             label: 'Jogging',
-            value:3,
-        },
-        {
+            value:'jogging'
+        },{
             label: 'Weight Training',
-            value:4,
-        },
-        {
+            value:'weight_training'
+        },{
             label: 'Other Physical Activity',
-            value:5,
+            value:'other_physical_activity',
         }
     ]
     const [moodLabel, setMoodLabel] = useState('Happy')
+    const [moodStatus, setMoodStatus] = useState()
     const handleMoodChange = (event) => {
         var mood = [
             "Happy",
@@ -64,37 +73,89 @@ export default function DailyHealthUpdate() {
         // $('.mood-tooltip').text(mood[event.target.value]);
 
         setMoodLabel(mood[event.target.value])
+        setMoodStatus(event.target.value)
+
     }
-    const handlePhysicalActivityFilterChange = () => {
-        console.log("handlePhysicalActivityFilterChange")
+    const [physicalActivityStatus, setPhysicalActivityStatus] = useState()
+    const handlePhysicalActivityFilterChange = (event) => {
+        console.log(event.target.value)
+        setPhysicalActivityStatus(event.target.value)
     }
-    const handleDailyHealthBtnClick = () => {
-        const id = ''
+    const [hungerLevelStatus, setHungerLevelStatus] = useState()
+    const hungerLevelChange = (event) => {
+        setHungerLevelStatus(event.target.value)
+    }
+    const [stressLevelStatus, setStressLevelStatus] = useState()
+    const stressLevelChange = (event) => {
+        setStressLevelStatus(event.target.value)
+    }
+    const [sleepStatus, setSleepStatus] = useState()
+    const [sleepValChange, setSleepValChange] = useState()
+    const HandleSleepValChange = (event) => {
+        setSleepValChange(event.target.value)
+        const arrLength = event.target.value - 1;
+        setSleepStatus(event.currentTarget.parentElement.parentElement.getElementsByClassName('sleep_quality')[arrLength].getAttribute("data-value"))
+    }
+    const [energyLevelStatus, setEnergyLevelStatus] = useState('')
+    const energyLevelChange = (event) => {
+        (event.target.checked) ? setEnergyLevelStatus('energetic'):setEnergyLevelStatus('lethargy')
+    }
+    const [alcoholStatus, setAlcoholStatus] = useState('no')
+    const alcoholValueChange = (event) => {
+        (event.target.checked)?setAlcoholStatus('yes'):setAlcoholStatus('no')
+    }
+    const [smokingStatus, setSmokingStatus] = useState('no')
+    const smokingValueChange = (event) => {
+        (event.target.checked)?setSmokingStatus('yes'):setSmokingStatus('no')
+    }
+    const [stoolTypeStatus, setStoolTypeStatus] = useState()
+    const handleStoolTypeChange = (event) => {
+        setStoolTypeStatus(event.target.value)
+    }
+    const [footStepCount, setFootStepCount] = useState()
+    const handleFootStepChange = (event) => {
+        setFootStepCount(event.target.value)
+    }
+    const [concernText, setConcernText] = useState()
+    const handleConcernsTextChange = (event) => {
+        console.log(event.target.value)
+        setConcernText(event.target.value)
+    }
+    let navigate = useNavigate(); 
+    const handleDailyHealthBtnClick = (e) => {
+        e.preventDefault()
+        const userInfo = JSON.parse(localStorage.getItem("userDetails"))
+        let dailyHealthUpdateURL = ''
         const params = {
-            client_name: "Deepthi22 (9511938081)",
-            user_id: '',
-            hunger_level: '', 
-            stress_level: '', 
-            hydration_status: '', 
-            urine_color: '', 
-            physical_activity: 'brisk_walk', 
-            sleep_quality: '4_hrs', 
-            mood: 'happy', 
-            stool_type: 'normal', 
-            foot_steps_count: '',
-             mobile_number: '', 
-             energy_level: 'energetic', 
-             alcohol: 'yes',
-             smoking: 'yes', 
-             any_other_concerns: ''
+            client_name: `${userInfo.user_name} (${userInfo.mobile_number})`,
+            hunger_level: hungerLevelStatus, 
+            stress_level: stressLevelStatus, 
+            hydration_status: waterMeasure, 
+            urine_color: selectedUrineColor, 
+            physical_activity: physicalActivityStatus, 
+            sleep_quality: sleepStatus, 
+            mood: moodLabel.toLowerCase(), 
+            energy_level: energyLevelStatus, 
+            alcohol: alcoholStatus,
+            smoking: smokingStatus, 
+            stool_type: stoolTypeStatus, 
+            foot_steps_count: footStepCount,
+            any_other_concerns: concernText,
         }
         const headerConfig = {
             headers: {
                 Authorization: TOKEN
             }
         }
-        axios.get(`${BASE_URL}/update_daily_health/${id} `, params, headerConfig).then((DailyHealthUpdatedResponse) => {
-            console.log(DailyHealthUpdatedResponse)
+        if(status === "true") {
+            const id = ''
+            dailyHealthUpdateURL = `${BASE_URL}/update_daily_health/${id} `
+        } else {
+            dailyHealthUpdateURL = `${BASE_URL}/add_daily_health `
+        }
+        axios.post(dailyHealthUpdateURL, params, headerConfig).then((dailyHealthUpdatedResponse) => {
+            console.log(dailyHealthUpdatedResponse)
+            navigate('/Dashboard');
         })
     }
     
@@ -107,11 +168,12 @@ export default function DailyHealthUpdate() {
                 <div className="card-body">
                 <div className="basic-form">
                     <form
-                    method="POST"
-                    action=""
+                    // method="POST"
+                    // action=""
                     id="daily_healthForm"
                     className="container"
                     noValidate="novalidate"
+                    onSubmit={handleDailyHealthBtnClick}
                     >
                     <div className="row">
                         <input type="hidden" name="_token" defaultValue="" />
@@ -146,8 +208,9 @@ export default function DailyHealthUpdate() {
                                     type="radio"
                                     name="hunger_level"
                                     id="cb1"
-                                    defaultValue="over filled"
-                                    
+                                    value="overFilled"
+                                    onChange={hungerLevelChange}
+                                    checked={hungerLevelStatus === 'overFilled'}
                                 />
                                 <label htmlFor="cb1">OverFilled </label>
                                 <div className="toggle_option_slider">OverFilled</div>
@@ -157,7 +220,9 @@ export default function DailyHealthUpdate() {
                                     type="radio"
                                     name="hunger_level"
                                     id="cb2"
-                                    defaultValue="hungry"
+                                    value="hungry"
+                                    onChange={hungerLevelChange}
+                                    checked={hungerLevelStatus === 'hungry'}
                                 />
                                 <label htmlFor="cb2">Hungry</label>
                                 <div className="toggle_option_slider">Hungry</div>
@@ -167,8 +232,9 @@ export default function DailyHealthUpdate() {
                                     type="radio"
                                     name="hunger_level"
                                     id="cb3"
-                                    defaultValue="perfect"
-                                    defaultChecked=""
+                                    value="perfect"
+                                    onChange={hungerLevelChange}
+                                    checked={hungerLevelStatus === 'perfect'}
                                 />
                                 <label htmlFor="cb3">Perfect</label>
                                 <div className="toggle_option_slider">Perfect</div>
@@ -192,7 +258,9 @@ export default function DailyHealthUpdate() {
                                     name="stress_level"
                                     id="cb4"
                                     className="toggle_option"
-                                    defaultValue="high"
+                                    value="high"
+                                    checked={stressLevelStatus === "high"}
+                                    onChange={stressLevelChange}
                                 />
                                 <label htmlFor="cb4">High</label>
                                 <div className="toggle_option_slider">High</div>
@@ -203,7 +271,9 @@ export default function DailyHealthUpdate() {
                                     name="stress_level"
                                     id="cb5"
                                     className="toggle_option"
-                                    defaultValue="medium"
+                                    value="medium"
+                                    checked={stressLevelStatus === "medium"}
+                                    onChange={stressLevelChange}
                                 />
                                 <label htmlFor="cb5">Medium</label>
                                 <div className="toggle_option_slider">Medium</div>
@@ -214,8 +284,9 @@ export default function DailyHealthUpdate() {
                                     name="stress_level"
                                     id="cb6"
                                     className="toggle_option"
-                                    defaultValue="low"
-                                    defaultChecked=""
+                                    value="low"
+                                    checked={stressLevelStatus === "low"}
+                                    onChange={stressLevelChange}
                                 />
                                 <label htmlFor="cb6">Low</label>
                                 <div className="toggle_option_slider">Low</div>
@@ -290,7 +361,6 @@ export default function DailyHealthUpdate() {
                         <div className="form-group row">
                             <div className="col-lg-4">
                             <label className="col-form-label">
-                                {" "}
                                 Sleep Quality<span className="text-danger"> *</span>
                             </label>
                             </div>
@@ -304,6 +374,8 @@ export default function DailyHealthUpdate() {
                                     steps={1}
                                     defaultValue={1}
                                     className="sleepRange"
+                                    onChange={HandleSleepValChange}
+                                    value={sleepValChange}
                                 />
                                 </div>
                                 <ul className="range-labels d-flex">
@@ -378,14 +450,14 @@ export default function DailyHealthUpdate() {
                                     max={6}
                                     defaultValue={0}
                                     id="moodSlider"
-                                    data-value="Happy"
+                                    data-value={moodLabel}
                                     onChange={handleMoodChange}
                                     />
                                     <input
                                     type="hidden"
                                     name="mood"
                                     id="mood"
-                                    defaultValue="happy"
+                                    defaultValue={moodLabel}
                                     />
                                     <div className="mood-wrapper">
                                         <span className="mood-tooltip">{moodLabel}</span>
@@ -404,7 +476,22 @@ export default function DailyHealthUpdate() {
                             </div>
                             <div className="col-lg-8">
 
-                            <Select options={PhysicalActivityFilterOptions} onChange={handlePhysicalActivityFilterChange}></Select>
+                            {/* <Select 
+                            options={PhysicalActivityFilterOptions} 
+                            onChange={handlePhysicalActivityFilterChange} 
+                            value={physicalActivityStatus} 
+                            defaultValue={physicalActivityStatus}></Select> */}
+
+
+                                <select 
+                                value={physicalActivityStatus} 
+                                onChange={handlePhysicalActivityFilterChange}>
+                                    {PhysicalActivityFilterOptions.map(option => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.label}
+                                    </option>
+                                    ))}
+                                </select>
                             </div>
                         </div>
                         </div>
@@ -423,6 +510,8 @@ export default function DailyHealthUpdate() {
                                     name="energy_level"
                                     data-value="energetic"
                                     defaultChecked="checked"
+                                    onChange={energyLevelChange}
+                                    value={energyLevelStatus}
                                 />
                                 <div
                                     className="toggler"
@@ -452,6 +541,8 @@ export default function DailyHealthUpdate() {
                                         className="checkbox alcohol-check"
                                         name="alcohol"
                                         data-value="no"
+                                        onChange={alcoholValueChange}
+                                        value={alcoholStatus}
                                     />
                                     <div
                                         className="toggler"
@@ -476,6 +567,8 @@ export default function DailyHealthUpdate() {
                                         className="checkbox smoking-check"
                                         name="smoking"
                                         data-value="no"
+                                        onChange={smokingValueChange}
+                                        value={smokingStatus}
                                     />
                                     <div
                                         className="toggler"
@@ -503,6 +596,9 @@ export default function DailyHealthUpdate() {
                                     name="stool_type"
                                     id="cb15"
                                     defaultValue="difficult_passing_tool"
+                                    onChange={handleStoolTypeChange}
+                                    value="difficult_passing_tool"
+                                    checked={stoolTypeStatus === "difficult_passing_tool"}
                                     />
                                     <label className="stood sleep-hrs" htmlFor="cb15">
                                     Diffculty passing stool{" "}
@@ -514,6 +610,9 @@ export default function DailyHealthUpdate() {
                                     name="stool_type"
                                     id="cb16"
                                     defaultValue="hard_stool"
+                                    onChange={handleStoolTypeChange}
+                                    value="hard_stool"
+                                    checked={stoolTypeStatus === "hard_stool"}
                                     />
                                     <label className="stood sleep-hrs" htmlFor="cb16">
                                     Hard Stool
@@ -525,6 +624,9 @@ export default function DailyHealthUpdate() {
                                     name="stool_type"
                                     id="cb17"
                                     defaultValue="loose_stool"
+                                    onChange={handleStoolTypeChange}
+                                    value="loose_stool"
+                                    checked={stoolTypeStatus === "loose_stool"}
                                     />
                                     <label className="stood sleep-hrs" htmlFor="cb17">
                                     Loose Stool
@@ -536,6 +638,9 @@ export default function DailyHealthUpdate() {
                                     name="stool_type"
                                     id="cb18"
                                     defaultValue="constipated"
+                                    onChange={handleStoolTypeChange}
+                                    value="constipated"
+                                    checked={stoolTypeStatus === "constipated"}
                                     />
                                     <label htmlFor="cb18" className="sleep-hrs">
                                     Constipated
@@ -547,7 +652,9 @@ export default function DailyHealthUpdate() {
                                     name="stool_type"
                                     id="cb19"
                                     defaultValue="normal"
-                                    defaultChecked=""
+                                    onChange={handleStoolTypeChange}
+                                    value="normal"
+                                    checked={stoolTypeStatus === "normal"}
                                     />
                                     <label htmlFor="cb19" className="sleep-hrs">
                                     Normal
@@ -564,10 +671,12 @@ export default function DailyHealthUpdate() {
                             </label>
                             <div className="form-group col-3">
                                 <input
+                                type="number"
                                 className="form-control"
                                 name="foot_steps_count"
                                 placeholder="Foot Steps Count"
-                                defaultValue=""
+                                value={footStepCount}
+                                onChange={handleFootStepChange}
                                 />
                             </div>
                             </div>
@@ -581,15 +690,16 @@ export default function DailyHealthUpdate() {
                                 <textarea
                                 className="form-control"
                                 name="any_other_concerns"
-                                value=""
+                                value={concernText}
                                 placeholder="Other Concerns"
+                                onChange={handleConcernsTextChange}
                                 />
                             </div>
                             </div>
                         </div>
                         <div className="form-group row mt-5 text-center">
                             <div className="col-12">
-                            <button type="submit" className="daily-health-update-btn btn btn-primary" onClick={handleDailyHealthBtnClick}>
+                            <button type="submit" className="daily-health-update-btn btn btn-primary">
                                 Update
                             </button>
                             </div>
