@@ -9,11 +9,78 @@ import axios from 'axios';
 export default function DailyHealthUpdate() {
     const location =  useLocation();
     const [status, setStatus] = useState()
+    const [energyLevelChk,setEnergyLevelChk] = useState()
+    const [smokeChk,setSmokeLevelChk] = useState()
+    const [alcoholChk,setAlcoholChkChk] = useState()
+    const PhysicalActivityFilterOptions = [
+        {
+            label: 'No Activity',
+            value:'no_activity'
+        },{
+            label: 'Brisk Walk',
+            value:'brisk_walk'
+        },{
+            label: 'Jogging',
+            value:'jogging'
+        },{
+            label: 'Weight Training',
+            value:'weight_training'
+        },{
+            label: 'Other Physical Activity',
+            value:'other_physical_activity',
+        }
+    ]
     useEffect(() => {
+        const mood = [ "happy","irritated","angry","depressed","anxious","normal", "excited",]
+        const sleepVal = ["falling_asleep","4_hrs","6_hrs","8_hrs","exact_8_hrs","more_8_hrs"]
+        const PhysicalActivityFilterOptions1 = [
+            {
+                label: 'No Activity',
+                value:'no_activity'
+            },{
+                label: 'Brisk Walk',
+                value:'brisk_walk'
+            },{
+                label: 'Jogging',
+                value:'jogging'
+            },{
+                label: 'Weight Training',
+                value:'weight_training'
+            },{
+                label: 'Other Physical Activity',
+                value:'other_physical_activity',
+            }
+        ]
+
         if(location.state !== undefined && location.state !== null) {
-            const statusDHU=location.state.id;
-            console.log(statusDHU)
+            const statusDHU=location.state.updatedStatus;
             setStatus(statusDHU)
+            const dailyHealthUpdatedData = location.state?.responseData
+            const updatedData = JSON.parse(dailyHealthUpdatedData).data.data[0]
+            console.log(updatedData)
+            setHungerLevelStatus(updatedData.hunger_level)
+            setStressLevelStatus(updatedData.stress_level)
+            setWaterMeasure(updatedData.hydration_status)
+            setgradientPercentage(updatedData.hydration_status * 2)
+            setSelectedUrineColor(updatedData.urine_color)
+            setSleepValChange(updatedData.sleep_quality)
+            setMoodLabel(updatedData.mood)
+            setMoodStatus(mood.indexOf(updatedData.mood))
+            console.log(moodStatus)
+            setSleepValChange(sleepVal.indexOf(updatedData.sleep_quality))
+
+            const filteredAct = Object.values(PhysicalActivityFilterOptions1).filter(keys => (keys.value === updatedData.physical_activity))
+
+            setPhysicalActivityStatus(filteredAct.label)
+
+            updatedData.energy_level === "energetic" ? setEnergyLevelChk(true) : setEnergyLevelChk(false)
+            updatedData.smoking === "yes"?setSmokeLevelChk(true):setSmokeLevelChk(false)
+            updatedData.alcohol === "yes"?setAlcoholChkChk(true):setAlcoholChkChk(false)
+            
+
+            setStoolTypeStatus(updatedData.stool_type)
+            setFootStepCount(updatedData.foot_steps_count)
+            setConcernText(updatedData.any_other_concerns)
         }
         
     },[location]);
@@ -39,28 +106,11 @@ export default function DailyHealthUpdate() {
         }
     }
 
-    const PhysicalActivityFilterOptions = [
-        {
-            label: 'No Activity',
-            value:'no_activity'
-        },{
-            label: 'Brisk Walk',
-            value:'brisk_walk'
-        },{
-            label: 'Jogging',
-            value:'jogging'
-        },{
-            label: 'Weight Training',
-            value:'weight_training'
-        },{
-            label: 'Other Physical Activity',
-            value:'other_physical_activity',
-        }
-    ]
+    
     const [moodLabel, setMoodLabel] = useState('Happy')
     const [moodStatus, setMoodStatus] = useState()
     const handleMoodChange = (event) => {
-        var mood = [
+        const mood = [
             "Happy",
             "Irritated",
             "Angry",
@@ -78,8 +128,11 @@ export default function DailyHealthUpdate() {
     }
     const [physicalActivityStatus, setPhysicalActivityStatus] = useState()
     const handlePhysicalActivityFilterChange = (event) => {
-        console.log(event.target.value)
-        setPhysicalActivityStatus(event.target.value)
+        // console.log(event.target.value)
+        // setPhysicalActivityStatus(event.target.value)
+
+        setPhysicalActivityStatus(event.label)
+
     }
     const [hungerLevelStatus, setHungerLevelStatus] = useState()
     const hungerLevelChange = (event) => {
@@ -369,10 +422,10 @@ export default function DailyHealthUpdate() {
                                 <div className="range">
                                 <input
                                     type="range"
-                                    min={1}
-                                    max={6}
+                                    min={0}
+                                    max={5}
                                     steps={1}
-                                    defaultValue={1}
+                                    // defaultValue={1}
                                     className="sleepRange"
                                     onChange={HandleSleepValChange}
                                     value={sleepValChange}
@@ -448,7 +501,7 @@ export default function DailyHealthUpdate() {
                                     type="range"
                                     min={0}
                                     max={6}
-                                    defaultValue={0}
+                                    value={moodStatus}
                                     id="moodSlider"
                                     data-value={moodLabel}
                                     onChange={handleMoodChange}
@@ -479,12 +532,13 @@ export default function DailyHealthUpdate() {
                             {/* <Select 
                             options={PhysicalActivityFilterOptions} 
                             onChange={handlePhysicalActivityFilterChange} 
-                            value={physicalActivityStatus} 
-                            defaultValue={physicalActivityStatus}></Select> */}
+                            // value={physicalActivityStatus} 
+                            defaultValue={physicalActivityStatus}
+                            ></Select> */}
 
 
                                 <select 
-                                value={physicalActivityStatus} 
+                                defaultValue={physicalActivityStatus} 
                                 onChange={handlePhysicalActivityFilterChange}>
                                     {PhysicalActivityFilterOptions.map(option => (
                                     <option key={option.value} value={option.value}>
@@ -509,9 +563,9 @@ export default function DailyHealthUpdate() {
                                     className="checkbox energy-level"
                                     name="energy_level"
                                     data-value="energetic"
-                                    defaultChecked="checked"
                                     onChange={energyLevelChange}
                                     value={energyLevelStatus}
+                                    defaultChecked={energyLevelChk}
                                 />
                                 <div
                                     className="toggler"
@@ -543,6 +597,7 @@ export default function DailyHealthUpdate() {
                                         data-value="no"
                                         onChange={alcoholValueChange}
                                         value={alcoholStatus}
+                                        defaultChecked={alcoholChk}
                                     />
                                     <div
                                         className="toggler"
@@ -569,6 +624,7 @@ export default function DailyHealthUpdate() {
                                         data-value="no"
                                         onChange={smokingValueChange}
                                         value={smokingStatus}
+                                        defaultChecked={smokeChk}
                                     />
                                     <div
                                         className="toggler"

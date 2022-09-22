@@ -44,6 +44,12 @@ export default function MyprogressComponent(myprogressData) {
         } 
       })
 
+      Object.entries(myprogressData.data.body_measure_details[0]).filter(keys => {
+        if(keys[0] === "weight_c") { 
+          renderHistory(keys[1])
+        } 
+      })
+
 
     }
 
@@ -204,7 +210,13 @@ export default function MyprogressComponent(myprogressData) {
     axios.post(`${BASE_URL}/weekly_health_store`, data, config)
       .then((response) => {
           const weightLists = response.data.data.original.weight
-          const weightList = weightLists.map((item,i) => 
+          renderHistory(weightLists)
+
+      });
+  }
+
+  const renderHistory = (historyData) => {
+    const historyDataList = historyData.map((item,i) => 
                               <tr data-id={item.id}>
                                 <td>
                                   <Datetime timeFormat={false} 
@@ -253,9 +265,7 @@ export default function MyprogressComponent(myprogressData) {
             </td>
           </tr>
         )
-        setWeightDetails(weightList)
-
-      });
+        setWeightDetails(historyDataList)
   }
 
   // Delete API Call

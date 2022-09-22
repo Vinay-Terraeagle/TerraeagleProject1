@@ -104,17 +104,23 @@ export default function Dashboard() {
     if(!status) {
       navigateDHU('/DailyHealthUpdate', {
         state:{ 
-          id:status.toString(),
+          updatedStatus:status.toString(),
         } 
       })
     } else {
-      const id = ''
+      const id = dailyHealthUpdateStatus.daily_health_update_id
       axios.get(`${BASE_URL}/edit_daily_health/${id} `, {
         headers: {
             Authorization: TOKEN
         }
-      }).then((response) => {
-        
+      }).then((dailyHealthUpdateResponse) => {
+        console.log(dailyHealthUpdateResponse)
+        navigateDHU('/DailyHealthUpdate', {
+          state:{ 
+            updatedStatus:status.toString(),
+            responseData:JSON.stringify(dailyHealthUpdateResponse),
+          } 
+        })
       })
     }
 
