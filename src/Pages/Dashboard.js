@@ -21,8 +21,8 @@ import { BASE_URL, TOKEN } from '../Backend/config';
 import { Calendar3 } from 'react-bootstrap-icons'
 import { ArrowRightShort } from 'react-bootstrap-icons'
 import { ClockHistory } from 'react-bootstrap-icons'
-import NoDataFound from  '../Components/NoDataFound/NoDataFound';
-import Addon from './Addon'
+// import NoDataFound from  '../Components/NoDataFound/NoDataFound';
+// import Addon from './Addon'
 import stethoscope from '../assets/images/stethoscope.png'
 import careicon from '../assets/images/tricn.png'
 import { Rating } from 'react-simple-star-rating'

@@ -179,7 +179,7 @@ export default function RecipeView() {
     }).catch((error) => {
       console.log(error)
     })
-  }, []);
+  }, [trendingrecipesdata]);
 
   
 

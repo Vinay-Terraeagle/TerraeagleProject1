@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/footer'   
 import { Row, Col } from 'react-bootstrap'
-import BreakfastRecipe from "../assets/images/blueberryToast.jpg";
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react'
 
