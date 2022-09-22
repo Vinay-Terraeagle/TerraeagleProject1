@@ -26,7 +26,7 @@ export default function MyprogressComponent(myprogressData) {
   const [firstImage, setFirstImage] = useState('');
   const [secondImage, setSecondImage] = useState('');
   const [ShowUpdateInput, setUpdateInput] = useState('hide');
-  const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
+  // const [ShowUpdateBtn, setUpdateBtnState] = useState('hide');
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -349,10 +349,10 @@ export default function MyprogressComponent(myprogressData) {
             <div className='progress-filter-wrapper col-3 d-flex justify-content-between'>
               <Select options={MyProgressFilterMenus} value={MyProgressFilterMenus.value} onChange={handleChange}
                defaultValue={{ label: 'weight', value: 11 }}/>
-              <Select options={MyProgressFilterMenus} 
+              {/* <Select options={MyProgressFilterMenus} 
               onChange={handleChange}
               defaultValue={MyProgressFilterMenus[0]}
-              ref={bodyMeasureDD}></Select>
+              ref={bodyMeasureDD}></Select> */}
             </div>
           </div>
         </div>
